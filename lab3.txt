@@ -1,0 +1,15 @@
+5 - blue
+6 - green
+
+
+YELLOW:
+PWMOutputState(PWM1_BASE, PWM_OUT_5_BIT|PWM_OUT_7_BIT, true);
+    PWMOutputState(PWM1_BASE, PWM_OUT_6_BIT, false);
+
+CYAN:
+ PWMOutputState(PWM1_BASE, PWM_OUT_6_BIT|PWM_OUT_7_BIT, true);
+    PWMOutputState(PWM1_BASE, PWM_OUT_5_BIT, false);
+
+MAJENTA:
+ PWMOutputState(PWM1_BASE, PWM_OUT_5_BIT|PWM_OUT_6_BIT, true);
+    PWMOutputState(PWM1_BASE, PWM_OUT_7_BIT, false);
