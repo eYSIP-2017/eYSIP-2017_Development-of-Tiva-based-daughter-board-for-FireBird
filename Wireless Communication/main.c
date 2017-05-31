@@ -1,6 +1,7 @@
+#include <stdlib.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include <stdlib.h>
+#include<math.h>
 #include "inc/hw_memmap.h"
 #include "inc/hw_types.h"
 #include "driverlib/pin_map.h"
@@ -13,13 +14,16 @@
 void configCLK();
 void peripheralEnable();
 void uartEnable();
+void uartInterruptEnable();
+void UARTIntHandler(void);
+void tranString(char *,char);
+void uartInteger(int64_t number);
 int main(){
     configCLK();
     peripheralEnable();
     uartEnable();
+    uartInterruptEnable();
     while(1){
-    UARTCharPut(UART1_BASE,'1');
-    SysCtlDelay(400000);
     }
 }
 void configCLK(){
@@ -42,4 +46,17 @@ void tranString(char * data,char delimeter){
         UARTCharPut(UART1_BASE,data[k++]);
     }
     UARTCharPut(UART1_BASE,delimeter);
+}
+void uartInterruptEnable(){
+    IntMasterEnable();//Enable processor interrupt
+    IntEnable(INT_UART1);//Enable interrupt on UART0
+    UARTIntEnable(UART1_BASE, UART_INT_RX | UART_INT_RT);//Enable RX interrupt ant rx Timeout interrupt
+}
+void UARTIntHandler(void){
+    uint32_t ui32Status;
+    ui32Status = UARTIntStatus(UART1_BASE, true); //get interrupt status
+    UARTIntClear(UART1_BASE, ui32Status); //clear the asserted interrupts
+    while(UARTCharsAvail(UART1_BASE)){ //loop while there are chars
+        UARTCharPutNonBlocking(UART1_BASE, UARTCharGetNonBlocking(UART1_BASE));
+    }
 }
