@@ -787,10 +787,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="12"/>
 <wire x1="10.16" y1="63.5" x2="27.94" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="63.5" x2="33.02" y2="63.5" width="0.1524" layer="91"/>
+<label x="33.02" y="63.5" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PB5"/>
 <wire x1="50.8" y1="30.48" x2="45.72" y2="30.48" width="0.1524" layer="91"/>
+<label x="43.18" y="30.48" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="13" class="0">
@@ -799,10 +801,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="13"/>
 <wire x1="10.16" y1="66.04" x2="27.94" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="66.04" x2="33.02" y2="66.04" width="0.1524" layer="91"/>
+<label x="33.02" y="66.04" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PB1"/>
 <wire x1="50.8" y1="25.4" x2="45.72" y2="25.4" width="0.1524" layer="91"/>
+<label x="43.18" y="25.4" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="14" class="0">
@@ -811,10 +815,13 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="14"/>
 <wire x1="10.16" y1="68.58" x2="27.94" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="68.58" x2="33.02" y2="68.58" width="0.1524" layer="91"/>
+<label x="33.02" y="68.58" size="1.016" layer="95" xref="yes"/>
+<label x="33.02" y="68.58" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PB0"/>
 <wire x1="50.8" y1="27.94" x2="45.72" y2="27.94" width="0.1524" layer="91"/>
+<label x="43.18" y="27.94" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="15" class="0">
@@ -823,6 +830,7 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="15"/>
 <wire x1="10.16" y1="71.12" x2="27.94" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="71.12" x2="33.02" y2="71.12" width="0.1524" layer="91"/>
+<label x="33.02" y="71.12" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="16" class="0">
@@ -831,10 +839,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="16"/>
 <wire x1="10.16" y1="73.66" x2="27.94" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="73.66" x2="33.02" y2="73.66" width="0.1524" layer="91"/>
+<label x="33.02" y="73.66" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PD0"/>
 <wire x1="50.8" y1="2.54" x2="45.72" y2="2.54" width="0.1524" layer="91"/>
+<label x="43.18" y="2.54" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$13" class="0">
@@ -857,10 +867,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="22'"/>
 <wire x1="45.72" y1="81.28" x2="45.72" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="81.28" x2="45.72" y2="78.74" width="0.1524" layer="91"/>
+<label x="45.72" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PD6"/>
 <wire x1="101.6" y1="-10.16" x2="106.68" y2="-10.16" width="0.1524" layer="91"/>
+<label x="106.68" y="-10.16" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="5V" class="0">
@@ -869,6 +881,7 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="23'"/>
 <wire x1="48.26" y1="81.28" x2="48.26" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="81.28" x2="48.26" y2="78.74" width="0.1524" layer="91"/>
+<label x="48.26" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="24" class="0">
@@ -877,10 +890,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="24'"/>
 <wire x1="50.8" y1="81.28" x2="50.8" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="81.28" x2="50.8" y2="78.74" width="0.1524" layer="91"/>
+<label x="50.8" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PD7"/>
 <wire x1="101.6" y1="-12.7" x2="106.68" y2="-12.7" width="0.1524" layer="91"/>
+<label x="106.68" y="-12.7" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="25" class="0">
@@ -889,10 +904,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="25'"/>
 <wire x1="53.34" y1="81.28" x2="53.34" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="81.28" x2="53.34" y2="78.74" width="0.1524" layer="91"/>
+<label x="53.34" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PA3"/>
 <wire x1="101.6" y1="12.7" x2="106.68" y2="12.7" width="0.1524" layer="91"/>
+<label x="106.68" y="12.7" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="26" class="0">
@@ -901,10 +918,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="26'"/>
 <wire x1="55.88" y1="81.28" x2="55.88" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="81.28" x2="55.88" y2="78.74" width="0.1524" layer="91"/>
+<label x="55.88" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PA2"/>
 <wire x1="101.6" y1="10.16" x2="106.68" y2="10.16" width="0.1524" layer="91"/>
+<label x="106.68" y="10.16" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="27" class="0">
@@ -913,10 +932,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="27'"/>
 <wire x1="58.42" y1="81.28" x2="58.42" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="81.28" x2="58.42" y2="78.74" width="0.1524" layer="91"/>
+<label x="58.42" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PA4"/>
 <wire x1="101.6" y1="15.24" x2="106.68" y2="15.24" width="0.1524" layer="91"/>
+<label x="106.68" y="15.24" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="28" class="0">
@@ -925,10 +946,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="28'"/>
 <wire x1="60.96" y1="81.28" x2="60.96" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="81.28" x2="60.96" y2="78.74" width="0.1524" layer="91"/>
+<label x="60.96" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PA5"/>
 <wire x1="50.8" y1="15.24" x2="45.72" y2="15.24" width="0.1524" layer="91"/>
+<label x="43.18" y="15.24" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$22" class="0">
@@ -944,10 +967,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="30'"/>
 <wire x1="66.04" y1="81.28" x2="66.04" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="81.28" x2="66.04" y2="78.74" width="0.1524" layer="91"/>
+<label x="66.04" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PE1"/>
 <wire x1="50.8" y1="-7.62" x2="45.72" y2="-7.62" width="0.1524" layer="91"/>
+<label x="43.18" y="-7.62" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="31" class="0">
@@ -956,10 +981,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="31'"/>
 <wire x1="68.58" y1="81.28" x2="68.58" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="81.28" x2="68.58" y2="78.74" width="0.1524" layer="91"/>
+<label x="68.58" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PE2"/>
 <wire x1="50.8" y1="-10.16" x2="45.72" y2="-10.16" width="0.1524" layer="91"/>
+<label x="43.18" y="-10.16" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="32" class="0">
@@ -968,10 +995,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="32'"/>
 <wire x1="71.12" y1="81.28" x2="71.12" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="81.28" x2="71.12" y2="78.74" width="0.1524" layer="91"/>
+<label x="71.12" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PE3"/>
 <wire x1="50.8" y1="-12.7" x2="45.72" y2="-12.7" width="0.1524" layer="91"/>
+<label x="43.18" y="-12.7" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$26" class="0">
@@ -994,6 +1023,7 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="36'"/>
 <wire x1="81.28" y1="81.28" x2="81.28" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="81.28" x2="81.28" y2="78.74" width="0.1524" layer="91"/>
+<label x="81.28" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="37" class="0">
@@ -1002,6 +1032,7 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="37'"/>
 <wire x1="83.82" y1="81.28" x2="83.82" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="81.28" x2="83.82" y2="78.74" width="0.1524" layer="91"/>
+<label x="83.82" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="38" class="0">
@@ -1010,6 +1041,7 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="38'"/>
 <wire x1="86.36" y1="81.28" x2="86.36" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="81.28" x2="86.36" y2="78.74" width="0.1524" layer="91"/>
+<label x="86.36" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="39" class="0">
@@ -1018,6 +1050,7 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="39'"/>
 <wire x1="88.9" y1="81.28" x2="88.9" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="81.28" x2="88.9" y2="78.74" width="0.1524" layer="91"/>
+<label x="88.9" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="N$33" class="0">
@@ -1033,10 +1066,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="41'"/>
 <wire x1="93.98" y1="81.28" x2="93.98" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="81.28" x2="93.98" y2="78.74" width="0.1524" layer="91"/>
+<label x="93.98" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PD2"/>
 <wire x1="50.8" y1="-2.54" x2="45.72" y2="-2.54" width="0.1524" layer="91"/>
+<label x="43.18" y="-2.54" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="42" class="0">
@@ -1045,10 +1080,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="42'"/>
 <wire x1="96.52" y1="81.28" x2="96.52" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="81.28" x2="96.52" y2="78.74" width="0.1524" layer="91"/>
+<label x="96.52" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PD3"/>
 <wire x1="50.8" y1="-5.08" x2="45.72" y2="-5.08" width="0.1524" layer="91"/>
+<label x="43.18" y="-5.08" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="43" class="0">
@@ -1057,10 +1094,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="43'"/>
 <wire x1="99.06" y1="81.28" x2="99.06" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="81.28" x2="99.06" y2="78.74" width="0.1524" layer="91"/>
+<label x="99.06" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PD1"/>
 <wire x1="50.8" y1="0" x2="45.72" y2="0" width="0.1524" layer="91"/>
+<label x="43.18" y="0" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="44" class="0">
@@ -1069,6 +1108,7 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="44'"/>
 <wire x1="101.6" y1="81.28" x2="101.6" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="81.28" x2="101.6" y2="78.74" width="0.1524" layer="91"/>
+<label x="101.6" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="45" class="0">
@@ -1077,10 +1117,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="45'"/>
 <wire x1="104.14" y1="81.28" x2="104.14" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="81.28" x2="104.14" y2="78.74" width="0.1524" layer="91"/>
+<label x="104.14" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PE4"/>
 <wire x1="50.8" y1="22.86" x2="45.72" y2="22.86" width="0.1524" layer="91"/>
+<label x="43.18" y="22.86" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="46" class="0">
@@ -1089,10 +1131,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="46'"/>
 <wire x1="106.68" y1="81.28" x2="106.68" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="81.28" x2="106.68" y2="78.74" width="0.1524" layer="91"/>
+<label x="106.68" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PE5"/>
 <wire x1="50.8" y1="20.32" x2="45.72" y2="20.32" width="0.1524" layer="91"/>
+<label x="43.18" y="20.32" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$39" class="0">
@@ -1122,10 +1166,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="50'"/>
 <wire x1="116.84" y1="81.28" x2="116.84" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="81.28" x2="116.84" y2="78.74" width="0.1524" layer="91"/>
+<label x="116.84" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PF2"/>
 <wire x1="101.6" y1="7.62" x2="106.68" y2="7.62" width="0.1524" layer="91"/>
+<label x="106.68" y="7.62" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="51" class="0">
@@ -1134,10 +1180,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="51'"/>
 <wire x1="119.38" y1="81.28" x2="119.38" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="81.28" x2="119.38" y2="78.74" width="0.1524" layer="91"/>
+<label x="119.38" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PF3"/>
 <wire x1="101.6" y1="5.08" x2="106.68" y2="5.08" width="0.1524" layer="91"/>
+<label x="106.68" y="5.08" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="52" class="0">
@@ -1146,10 +1194,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="52'"/>
 <wire x1="121.92" y1="81.28" x2="121.92" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="81.28" x2="121.92" y2="78.74" width="0.1524" layer="91"/>
+<label x="121.92" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PB3"/>
 <wire x1="101.6" y1="2.54" x2="106.68" y2="2.54" width="0.1524" layer="91"/>
+<label x="106.68" y="2.54" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="53" class="0">
@@ -1158,10 +1208,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="53'"/>
 <wire x1="124.46" y1="81.28" x2="124.46" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="81.28" x2="124.46" y2="78.74" width="0.1524" layer="91"/>
+<label x="124.46" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PC4"/>
 <wire x1="101.6" y1="0" x2="106.68" y2="0" width="0.1524" layer="91"/>
+<label x="106.68" y="0" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="54" class="0">
@@ -1170,10 +1222,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="54'"/>
 <wire x1="127" y1="81.28" x2="127" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="127" y1="81.28" x2="127" y2="78.74" width="0.1524" layer="91"/>
+<label x="127" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PC5"/>
 <wire x1="101.6" y1="-2.54" x2="106.68" y2="-2.54" width="0.1524" layer="91"/>
+<label x="106.68" y="-2.54" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="55" class="0">
@@ -1182,10 +1236,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="55'"/>
 <wire x1="129.54" y1="81.28" x2="129.54" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="129.54" y1="81.28" x2="129.54" y2="78.74" width="0.1524" layer="91"/>
+<label x="129.54" y="78.74" size="1.016" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PC6"/>
 <wire x1="101.6" y1="-5.08" x2="106.68" y2="-5.08" width="0.1524" layer="91"/>
+<label x="106.68" y="-5.08" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="61" class="0">
@@ -1194,10 +1250,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="61'"/>
 <wire x1="134.62" y1="63.5" x2="152.4" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="63.5" x2="129.54" y2="63.5" width="0.1524" layer="91"/>
+<label x="129.54" y="63.5" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PB2"/>
 <wire x1="101.6" y1="30.48" x2="106.68" y2="30.48" width="0.1524" layer="91"/>
+<label x="106.68" y="30.48" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="62" class="0">
@@ -1206,10 +1264,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="62'"/>
 <wire x1="134.62" y1="60.96" x2="152.4" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="60.96" x2="129.54" y2="60.96" width="0.1524" layer="91"/>
+<label x="129.54" y="60.96" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PF0"/>
 <wire x1="101.6" y1="25.4" x2="106.68" y2="25.4" width="0.1524" layer="91"/>
+<label x="106.68" y="25.4" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$50" class="0">
@@ -1260,6 +1320,7 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="69'"/>
 <wire x1="134.62" y1="43.18" x2="152.4" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="43.18" x2="129.54" y2="43.18" width="0.1524" layer="91"/>
+<label x="129.54" y="43.18" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="70" class="0">
@@ -1268,10 +1329,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="70'"/>
 <wire x1="134.62" y1="40.64" x2="152.4" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="40.64" x2="129.54" y2="40.64" width="0.1524" layer="91"/>
+<label x="129.54" y="40.64" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PE0"/>
 <wire x1="101.6" y1="27.94" x2="106.68" y2="27.94" width="0.1524" layer="91"/>
+<label x="106.68" y="27.94" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="71" class="0">
@@ -1280,10 +1343,12 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <pinref part="U$1" gate="G$1" pin="71'"/>
 <wire x1="134.62" y1="38.1" x2="152.4" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="38.1" x2="129.54" y2="38.1" width="0.1524" layer="91"/>
+<label x="129.54" y="38.1" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="PF4"/>
 <wire x1="101.6" y1="-15.24" x2="106.68" y2="-15.24" width="0.1524" layer="91"/>
+<label x="106.68" y="-15.24" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$59" class="0">
@@ -1304,76 +1369,89 @@ Here the pin and its prime have to be shorted(i.e 1 and 1' have to be shorted)</
 <segment>
 <pinref part="U$2" gate="G$1" pin="PB4"/>
 <wire x1="50.8" y1="17.78" x2="45.72" y2="17.78" width="0.1524" layer="91"/>
+<label x="43.18" y="17.78" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="11'"/>
 <pinref part="U$1" gate="G$1" pin="11"/>
 <wire x1="10.16" y1="60.96" x2="27.94" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="60.96" x2="33.02" y2="60.96" width="0.1524" layer="91"/>
+<label x="33.02" y="60.96" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="3.3V"/>
 <wire x1="50.8" y1="33.02" x2="45.72" y2="33.02" width="0.1524" layer="91"/>
+<label x="43.18" y="33.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$67" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="PA6"/>
 <wire x1="50.8" y1="12.7" x2="45.72" y2="12.7" width="0.1524" layer="91"/>
+<label x="43.18" y="12.7" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$68" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="PA7"/>
 <wire x1="50.8" y1="10.16" x2="45.72" y2="10.16" width="0.1524" layer="91"/>
+<label x="43.18" y="10.16" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$69" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="VBUS"/>
 <wire x1="50.8" y1="7.62" x2="45.72" y2="7.62" width="0.1524" layer="91"/>
+<label x="43.18" y="7.62" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="GND"/>
 <wire x1="50.8" y1="5.08" x2="45.72" y2="5.08" width="0.1524" layer="91"/>
+<label x="43.18" y="5.08" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="GND'"/>
 <wire x1="101.6" y1="33.02" x2="106.68" y2="33.02" width="0.1524" layer="91"/>
+<label x="106.68" y="33.02" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$78" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="PF1"/>
 <wire x1="50.8" y1="-15.24" x2="45.72" y2="-15.24" width="0.1524" layer="91"/>
+<label x="43.18" y="-15.24" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$83" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="RST"/>
 <wire x1="101.6" y1="22.86" x2="106.68" y2="22.86" width="0.1524" layer="91"/>
+<label x="106.68" y="22.86" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$84" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="PB7"/>
 <wire x1="101.6" y1="20.32" x2="106.68" y2="20.32" width="0.1524" layer="91"/>
+<label x="106.68" y="20.32" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$85" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="PB6"/>
 <wire x1="101.6" y1="17.78" x2="106.68" y2="17.78" width="0.1524" layer="91"/>
+<label x="106.68" y="17.78" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$95" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="PC7"/>
 <wire x1="101.6" y1="-7.62" x2="106.68" y2="-7.62" width="0.1524" layer="91"/>
+<label x="106.68" y="-7.62" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
