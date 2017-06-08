@@ -10305,14 +10305,19 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </variantdefs>
 <classes>
 <class number="0" name="default" width="0" drill="0">
+<clearance class="0" value="0.2"/>
 </class>
 <class number="1" name="5V1" width="1" drill="0">
+<clearance class="1" value="0.2"/>
 </class>
 <class number="2" name="3.3V" width="1" drill="0">
+<clearance class="2" value="0.2"/>
 </class>
 <class number="3" name="5V-SERVO" width="1" drill="0">
+<clearance class="3" value="0.2"/>
 </class>
 <class number="4" name="12V" width="1" drill="0">
+<clearance class="4" value="0.2"/>
 </class>
 </classes>
 <parts>
@@ -11737,7 +11742,7 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <label x="-22.86" y="2.54" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="5V2" class="0">
+<net name="5V2" class="1">
 <segment>
 <pinref part="U$1" gate="G$1" pin="10"/>
 <wire x1="27.94" y1="60.96" x2="33.02" y2="60.96" width="0.1524" layer="91"/>

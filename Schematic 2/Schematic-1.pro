@@ -2,24 +2,24 @@ EAGLE AutoRouter Statistics:
 
 Job           : C:/Users/nagu/Desktop/eYSIP/Schematic 2/Schematic-1.brd
 
-Start at      : 16:53:10 (08-06-2017)
-End at        : 16:53:13 (08-06-2017)
-Elapsed time  : 00:00:01
+Start at      : 18:56:40 (08-06-2017)
+End at        : 18:59:18 (08-06-2017)
+Elapsed time  : 00:02:36
 
-Signals       :   102   RoutingGrid: 19.685 mil  Layers: 2
-Connections   :   201   predefined:  198 ( 144 Vias )
+Signals       :   103   RoutingGrid: 3.4685 mil  Layers: 2
+Connections   :   201   predefined:  0 ( 0 Vias )
 
-Router memory :   215600
+Router memory :   6551400
 
-Passname          :    Busses     Route Optimize1 Optimize2 Optimize3 Optimize4
+Passname          : TopRouter     Route Optimize1 Optimize2 Optimize3 Optimize4
 
-Time per pass     :  00:00:00  00:00:00  00:00:01  00:00:00  00:00:00  00:00:00
-Number of Ripups  :         0         0         0         0         0         0
-max. Level        :         0         0         0         0         0         0
-max. Total        :         0         0         0         0         0         0
+Time per pass     :  00:00:31  00:00:21  00:00:26  00:00:25  00:00:27  00:00:26
+Number of Ripups  :         0         3         0         0         0         0
+max. Level        :         0         1         0         0         0         0
+max. Total        :         0         4         0         0         0         0
 
-Routed            :         0         3         3         3         3         3
-Vias              :         0         0         0         0         0         0
-Resolution        :    98.5 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %
+Routed            :       125       199       199       199       199       199
+Vias              :         0       109       132       101        85        86
+Resolution        :    62.2 %    99.0 %    99.0 %    99.0 %    99.0 %    99.0 %
 
-Final             : 100.0% finished
+Final             : 99.0% finished
