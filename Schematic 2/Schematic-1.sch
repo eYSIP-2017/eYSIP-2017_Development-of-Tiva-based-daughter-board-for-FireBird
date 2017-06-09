@@ -10337,7 +10337,7 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0.00508125" drill="0">
+<class number="0" name="default" width="0.2" drill="0">
 <clearance class="0" value="0.2"/>
 </class>
 <class number="1" name="5V1" width="1" drill="0">
@@ -11255,7 +11255,7 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <label x="160.02" y="40.64" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="U$2" gate="G$1" pin="GND"/>
 <wire x1="50.8" y1="7.62" x2="45.72" y2="7.62" width="0.1524" layer="91"/>
