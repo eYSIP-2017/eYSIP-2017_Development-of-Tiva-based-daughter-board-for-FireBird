@@ -8713,9 +8713,14 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0" drill="0">
+<class number="0" name="default" width="0.2" drill="0">
+<clearance class="0" value="0.2"/>
 </class>
-<class number="1" name="VSERVO" width="1" drill="0">
+<class number="1" name="VSERVO" width="0.8" drill="0">
+<clearance class="1" value="0.2"/>
+</class>
+<class number="2" name="VDD" width="0.5" drill="0">
+<clearance class="2" value="0.2"/>
 </class>
 </classes>
 <parts>
@@ -8759,12 +8764,12 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <part name="C20" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="0.1uF"/>
 <part name="U2" library="SparkFun-IC-Amplifiers" deviceset="LMV358" device="SOIC" value="LMV358"/>
 <part name="U3" library="SparkFun-IC-Amplifiers" deviceset="LMV324" device="" value="LMV324"/>
-<part name="R11" library="adafruit" deviceset="R-US_" device="M1206" value="33k"/>
-<part name="R10" library="adafruit" deviceset="R-US_" device="M1206" value="22k"/>
-<part name="R12" library="adafruit" deviceset="R-US_" device="M1206" value="33k"/>
-<part name="R13" library="adafruit" deviceset="R-US_" device="M1206" value="22K"/>
-<part name="R14" library="adafruit" deviceset="R-US_" device="M1206" value="33k"/>
-<part name="R15" library="adafruit" deviceset="R-US_" device="M1206" value="22k"/>
+<part name="R11" library="adafruit" deviceset="R-US_" device="M1206" value="22K"/>
+<part name="R10" library="adafruit" deviceset="R-US_" device="M1206" value="33K"/>
+<part name="R12" library="adafruit" deviceset="R-US_" device="M1206" value="22K"/>
+<part name="R13" library="adafruit" deviceset="R-US_" device="M1206" value="33K"/>
+<part name="R14" library="adafruit" deviceset="R-US_" device="M1206" value="22k"/>
+<part name="R15" library="adafruit" deviceset="R-US_" device="M1206" value="33k"/>
 <part name="R16" library="adafruit" deviceset="R-US_" device="M1206" value="22K"/>
 <part name="R17" library="adafruit" deviceset="R-US_" device="M1206" value="33k"/>
 <part name="R18" library="adafruit" deviceset="R-US_" device="M1206" value="22K"/>
@@ -8787,6 +8792,10 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <part name="JP6" library="adafruit" deviceset="PINHD-1X8" device="BIG"/>
 <part name="JP7" library="adafruit" deviceset="PINHD-1X1" device=""/>
 <part name="JP8" library="adafruit" deviceset="PINHD-1X1" device=""/>
+<part name="5V" library="adafruit" deviceset="PINHD-1X1" device=""/>
+<part name="GND" library="adafruit" deviceset="PINHD-1X1" device=""/>
+<part name="3.3V" library="adafruit" deviceset="PINHD-1X1" device=""/>
+<part name="JP9" library="adafruit" deviceset="PINHD-1X1" device="" value="GND"/>
 </parts>
 <sheets>
 <sheet>
@@ -8798,7 +8807,7 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <text x="170.4086" y="14.478" size="1.778" layer="91">RST</text>
 <text x="170.6118" y="9.1948" size="1.778" layer="91">TXD</text>
 <text x="170.3832" y="11.9888" size="1.778" layer="91">RXD</text>
-<text x="170.2816" y="6.6548" size="1.778" layer="91">EXT DBG</text>
+<text x="170.2816" y="6.6548" size="1.778" layer="91">GND</text>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="66.04" y="78.74"/>
@@ -8881,6 +8890,10 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <instance part="JP6" gate="G$1" x="289.56" y="0"/>
 <instance part="JP7" gate="G$1" x="154.94" y="124.46"/>
 <instance part="JP8" gate="G$1" x="154.94" y="119.38"/>
+<instance part="5V" gate="G$1" x="-10.16" y="121.92"/>
+<instance part="GND" gate="G$1" x="-10.16" y="116.84"/>
+<instance part="3.3V" gate="G$1" x="2.54" y="127"/>
+<instance part="JP9" gate="G$1" x="2.54" y="121.92"/>
 </instances>
 <busses>
 </busses>
@@ -9107,6 +9120,19 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <pinref part="U$1" gate="G$1" pin="23"/>
 <wire x1="25.4" y1="121.92" x2="25.4" y2="104.14" width="0.1524" layer="91"/>
 <label x="25.4" y="104.14" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
+<segment>
+<pinref part="GND" gate="G$1" pin="1"/>
+<wire x1="-12.7" y1="116.84" x2="-20.32" y2="116.84" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="JP9" gate="G$1" pin="1"/>
+<wire x1="0" y1="121.92" x2="-5.08" y2="121.92" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="4"/>
+<wire x1="165.1" y1="7.62" x2="160.02" y2="7.62" width="0.1524" layer="91"/>
+<label x="160.02" y="7.62" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="USB+" class="0">
@@ -9516,7 +9542,7 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <label x="-22.86" y="-15.24" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="VDD" class="1">
+<net name="VDD" class="2">
 <segment>
 <pinref part="U$2" gate="G$1" pin="26-VDD"/>
 <wire x1="-17.78" y1="-17.78" x2="-22.86" y2="-17.78" width="0.1524" layer="91"/>
@@ -9616,6 +9642,10 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <pinref part="IC3" gate="G$1" pin="VDD"/>
 <wire x1="251.46" y1="30.48" x2="246.38" y2="30.48" width="0.1524" layer="91"/>
 <label x="246.38" y="30.48" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="3.3V" gate="G$1" pin="1"/>
+<wire x1="0" y1="127" x2="-5.08" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -10378,6 +10408,10 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <wire x1="271.78" y1="58.42" x2="271.78" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="R23" gate="G$1" pin="1"/>
 <label x="271.78" y="63.5" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="5V" gate="G$1" pin="1"/>
+<wire x1="-12.7" y1="121.92" x2="-20.32" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="WL5" class="0">
