@@ -897,7 +897,7 @@ UsedLibrary="C:/EAGLE 8.2.1/lbr/zilog.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="-8 -31 1191 568"
+Loc="0 0 1199 599"
 State=2
 Number=0
 
