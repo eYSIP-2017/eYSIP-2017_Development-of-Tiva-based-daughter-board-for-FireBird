@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.17)  14 JUN 2017 13:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.17)  14 JUN 2017 16:34
 entering extended mode
 **./Manual.tex
 (Manual.tex
@@ -614,14 +614,14 @@ LaTeX Font Info:    ... okay on input line 24.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(28.45274pt, 557.38951pt, 28.45274pt)
-* v-part:(T,H,B)=(39.83368pt, 715.30263pt, 39.83368pt)
+* v-part:(T,H,B)=(45.52458pt, 703.92082pt, 45.52458pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=557.38951pt
-* \textheight=715.30263pt
+* \textheight=703.92082pt
 * \oddsidemargin=-43.81725pt
 * \evensidemargin=-43.81725pt
-* \topmargin=-69.43631pt
+* \topmargin=-63.7454pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -691,101 +691,198 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 26.
+(Font)              <12> on input line 27.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 26.
+(Font)              <8> on input line 27.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 26.
+(Font)              <6> on input line 27.
  [1
 
 {C:/Users/Ayush/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 28--35
+Underfull \hbox (badness 10000) in paragraph at lines 29--36
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--35
+Underfull \hbox (badness 10000) in paragraph at lines 29--36
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--35
+Underfull \hbox (badness 10000) in paragraph at lines 29--36
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--35
+Underfull \hbox (badness 10000) in paragraph at lines 29--36
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 46--49
+Underfull \hbox (badness 10000) in paragraph at lines 47--50
 
  []
 
-[3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+[3] [4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 71--73
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--71
-
- []
-
-<CCSInstall1.png, id=81, 372.64218pt x 321.45094pt>
+<CCSInstall1.png, id=100, 372.64218pt x 321.45094pt>
 File: CCSInstall1.png Graphic file (type png)
  <use CCSInstall1.png>
-Package pdftex.def Info: CCSInstall1.png used on input line 73.
+Package pdftex.def Info: CCSInstall1.png used on input line 75.
 (pdftex.def)             Requested size: 170.7124pt x 170.72133pt.
 
-<CCSInstall2.png, id=83, 370.38374pt x 319.1925pt>
+<CCSInstall2.png, id=102, 370.38374pt x 319.1925pt>
 File: CCSInstall2.png Graphic file (type png)
  <use CCSInstall2.png>
-Package pdftex.def Info: CCSInstall2.png used on input line 76.
+Package pdftex.def Info: CCSInstall2.png used on input line 78.
 (pdftex.def)             Requested size: 170.71768pt x 170.71515pt.
 
-[5 <./CCSInstall1.png>] <CCSInstall3.png, id=91, 372.64218pt x 319.1925pt>
+[6 <./CCSInstall1.png>] <CCSInstall3.png, id=112, 372.64218pt x 319.1925pt>
 File: CCSInstall3.png Graphic file (type png)
 
 <use CCSInstall3.png>
-Package pdftex.def Info: CCSInstall3.png used on input line 79.
+Package pdftex.def Info: CCSInstall3.png used on input line 81.
 (pdftex.def)             Requested size: 170.7124pt x 170.71515pt.
- <CCSInstall4.png, id=92, 367.3725pt x 319.1925pt>
+ <CCSInstall4.png, id=113, 367.3725pt x 319.1925pt>
 File: CCSInstall4.png Graphic file (type png)
 
 <use CCSInstall4.png>
-Package pdftex.def Info: CCSInstall4.png used on input line 82.
+Package pdftex.def Info: CCSInstall4.png used on input line 84.
 (pdftex.def)             Requested size: 170.71992pt x 170.71515pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--86
+Underfull \hbox (badness 10000) in paragraph at lines 85--88
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 88.
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 25.0pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6 <./CCSInstall2.png> <./CCSInstall3.png> <./CCSInstall4.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 88.
- (Manual.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 88.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 88.
+[7 <./CCSInstall2.png> <./CCSInstall3.png> <./CCSInstall4.png>]
+<CreatingNewProject1.png, id=130, 446.41782pt x 146.79843pt>
+File: CreatingNewProject1.png Graphic file (type png)
+
+<use CreatingNewProject1.png>
+Package pdftex.def Info: CreatingNewProject1.png used on input line 103.
+(pdftex.def)             Requested size: 170.71678pt x 56.90396pt.
+
+<CreatingNewProject2.png, id=131, 447.17062pt x 548.0475pt>
+File: CreatingNewProject2.png Graphic file (type png)
+
+<use CreatingNewProject2.png>
+Package pdftex.def Info: CreatingNewProject2.png used on input line 105.
+(pdftex.def)             Requested size: 184.9446pt x 227.6278pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 110.
+
+
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 110.
+
+[8 <./CreatingNewProject1.png> <./CreatingNewProject2.png>]
+<AddVariables.png, id=141, 149.05687pt x 195.73125pt>
+File: AddVariables.png Graphic file (type png)
+ <use AddVariables.png>
+Package pdftex.def Info: AddVariables.png used on input line 122.
+(pdftex.def)             Requested size: 85.35904pt x 113.81091pt.
+
+<AddVariables2.png, id=142, 185.94469pt x 332.74312pt>
+File: AddVariables2.png Graphic file (type png)
+ <use AddVariables2.png>
+Package pdftex.def Info: AddVariables2.png used on input line 125.
+(pdftex.def)             Requested size: 127.20108pt x 227.62204pt.
+
+<AddVariables3.png, id=143, 450.18187pt x 271.76532pt>
+File: AddVariables3.png Graphic file (type png)
+ <use AddVariables3.png>
+Package pdftex.def Info: AddVariables3.png used on input line 131.
+(pdftex.def)             Requested size: 450.18077pt x 271.76465pt.
+
+[9 <./AddVariables.png> <./AddVariables2.png>]
+<AddVariables4.png, id=150, 271.76532pt x 265.74281pt>
+File: AddVariables4.png Graphic file (type png)
+ <use AddVariables4.png>
+Package pdftex.def Info: AddVariables4.png used on input line 138.
+(pdftex.def)             Requested size: 271.76465pt x 265.74216pt.
+
+<AddVariables5.png, id=151, 414.04688pt x 219.82124pt>
+File: AddVariables5.png Graphic file (type png)
+ <use AddVariables5.png>
+Package pdftex.def Info: AddVariables5.png used on input line 139.
+(pdftex.def)             Requested size: 256.08093pt x 227.62926pt.
+
+[10 <./AddVariables3.png> <./AddVariables4.png>]
+<AddVariables6.png, id=158, 732.48656pt x 509.65407pt>
+File: AddVariables6.png Graphic file (type png)
+ <use AddVariables6.png>
+Package pdftex.def Info: AddVariables6.png used on input line 141.
+(pdftex.def)             Requested size: 284.52856pt x 227.62355pt.
+
+<AddVariables7.png, id=159, 178.41656pt x 252.945pt>
+File: AddVariables7.png Graphic file (type png)
+ <use AddVariables7.png>
+Package pdftex.def Info: AddVariables7.png used on input line 148.
+(pdftex.def)             Requested size: 199.17995pt x 227.62523pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
+
+ []
+
+[11 <./AddVariables5.png> <./AddVariables6.png>]
+Overfull \hbox (7.6595pt too wide) in paragraph at lines 149--153
+[]\OT1/cmr/m/n/12 Click the Add but-ton. When the De-fine a New Build Vari-able
+ di-a-log ap-pears, in-sert TIVAWARE[]INSTALL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--153
+
+ []
+
+<AddVariables8.png, id=166, 376.40625pt x 247.67531pt>
+File: AddVariables8.png Graphic file (type png)
+ <use AddVariables8.png>
+Package pdftex.def Info: AddVariables8.png used on input line 156.
+(pdftex.def)             Requested size: 284.54968pt x 227.62218pt.
+
+<AddVariables9.png, id=167, 667.74469pt x 203.25937pt>
+File: AddVariables9.png Graphic file (type png)
+ <use AddVariables9.png>
+Package pdftex.def Info: AddVariables9.png used on input line 160.
+(pdftex.def)             Requested size: 512.18834pt x 341.44548pt.
+
+[12 <./AddVariables7.png> <./AddVariables8.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 162.
+ [13 <./AddVariables9.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 162.
+
+(Manual.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 162.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 162.
 Package rerunfilecheck Info: File `Manual.out' has not changed.
-(rerunfilecheck)             Checksum: 273ED6531400E2CABE76C9D8A25B8001;697.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 88.
+(rerunfilecheck)             Checksum: 02541FBFB18F093CC9D53E920EE9AAF0;1034.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 162.
  ) 
 Here is how much of TeX's memory you used:
- 6853 strings out of 493333
- 99817 string characters out of 3130143
- 198398 words of memory out of 3000000
- 10287 multiletter control sequences out of 15000+200000
+ 6948 strings out of 493333
+ 101651 string characters out of 3130143
+ 197381 words of memory out of 3000000
+ 10354 multiletter control sequences out of 15000+200000
  9872 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,43p,1012b,464s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,43p,1010b,462s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb><C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmbx12.pfb><C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/f
@@ -793,10 +890,11 @@ onts/type1/public/amsfonts/cm/cmbxsl10.pfb><C:/Users/Ayush/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Ayush/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Ay
 ush/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb
->
-Output written on Manual.pdf (6 pages, 261188 bytes).
+><C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb>
+Output written on Manual.pdf (13 pages, 464111 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 30 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 216 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 500000)
+ 204 words of extra memory for PDF output out of 10000 (max. 10000000)
 
