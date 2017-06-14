@@ -1,4 +1,12 @@
-\BOOKMARK [1][-]{section.1}{Index}{}% 1
-\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
-\BOOKMARK [1][-]{section.3}{Tiva Based Firebird V}{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{Technical Specification}{section.3}% 4
+\BOOKMARK [1][-]{section.1}{Credits}{}% 1
+\BOOKMARK [1][-]{section.2}{Notice}{}% 2
+\BOOKMARK [1][-]{section.3}{Index}{}% 3
+\BOOKMARK [1][-]{section.4}{Introduction}{}% 4
+\BOOKMARK [1][-]{section.5}{Tiva Based Daughter Board}{}% 5
+\BOOKMARK [2][-]{subsection.5.1}{Technical Specification}{section.5}% 6
+\BOOKMARK [2][-]{subsection.5.2}{}{section.5}% 7
+\BOOKMARK [1][-]{section.6}{Hardware Manual:}{}% 8
+\BOOKMARK [1][-]{section.7}{Software Manual:}{}% 9
+\BOOKMARK [2][-]{subsection.7.1}{Code Composer Studio:}{section.7}% 10
+\BOOKMARK [3][-]{subsubsection.7.1.1}{Download CC Studio:}{subsection.7.1}% 11
+\BOOKMARK [3][-]{subsubsection.7.1.2}{Installing C C Studio:}{subsection.7.1}% 12
