@@ -8720,7 +8720,7 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </classes>
 <parts>
 <part name="U$1" library="Daughterboard" deviceset="DAUGHTERBOARD" device="DAUGHTERBOARD"/>
-<part name="IC1" library="lm1117" deviceset="LM1117IMPX-*" device="" technology="3.3"/>
+<part name="IC1" library="lm1117" deviceset="LM1117IMPX-*" device="" technology="3.3" value="LM1117-3.3"/>
 <part name="C4" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
 <part name="C5" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
 <part name="C3" library="SparkFun-Capacitors" deviceset="2.2UF" device="-1206-50V-10%" value="2.2uF"/>
@@ -8779,9 +8779,9 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <part name="IC2" library="adafruit" deviceset="78*" device="T" technology="05"/>
 <part name="C18" library="adafruit" deviceset="C-US" device="025-024X044" value="100uF"/>
 <part name="C19" library="SparkFun-Retired" deviceset="2.2UF-CER" device="CAP-10009" value="0.1uF"/>
-<part name="JP2" library="adafruit" deviceset="PINHD-1X3" device=""/>
-<part name="JP3" library="adafruit" deviceset="PINHD-1X3" device=""/>
-<part name="JP4" library="adafruit" deviceset="PINHD-1X3" device=""/>
+<part name="SERVO1" library="adafruit" deviceset="PINHD-1X3" device=""/>
+<part name="SERVO2" library="adafruit" deviceset="PINHD-1X3" device=""/>
+<part name="SERVO3" library="adafruit" deviceset="PINHD-1X3" device=""/>
 <part name="IC3" library="adafruit" deviceset="MCP23017" device="SO" value="MCP23017SO"/>
 <part name="JP5" library="adafruit" deviceset="PINHD-1X8" device="BIG"/>
 <part name="JP6" library="adafruit" deviceset="PINHD-1X8" device="BIG"/>
@@ -8873,9 +8873,9 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <instance part="IC2" gate="A1" x="228.6" y="114.3"/>
 <instance part="C18" gate="G$1" x="215.9" y="106.68"/>
 <instance part="C19" gate="G$1" x="241.3" y="104.14"/>
-<instance part="JP2" gate="A" x="-38.1" y="124.46"/>
-<instance part="JP3" gate="A" x="-38.1" y="114.3"/>
-<instance part="JP4" gate="A" x="-38.1" y="104.14"/>
+<instance part="SERVO1" gate="A" x="-38.1" y="124.46"/>
+<instance part="SERVO2" gate="A" x="-38.1" y="114.3"/>
+<instance part="SERVO3" gate="A" x="-38.1" y="104.14"/>
 <instance part="IC3" gate="G$1" x="264.16" y="10.16"/>
 <instance part="JP5" gate="G$1" x="289.56" y="22.86"/>
 <instance part="JP6" gate="G$1" x="289.56" y="0"/>
@@ -9072,17 +9072,17 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <label x="228.6" y="101.6" size="1.778" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP2" gate="A" pin="3"/>
+<pinref part="SERVO1" gate="A" pin="3"/>
 <wire x1="-40.64" y1="121.92" x2="-48.26" y2="121.92" width="0.1524" layer="91"/>
 <label x="-48.26" y="121.92" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP3" gate="A" pin="3"/>
+<pinref part="SERVO2" gate="A" pin="3"/>
 <wire x1="-40.64" y1="111.76" x2="-45.72" y2="111.76" width="0.1524" layer="91"/>
 <label x="-45.72" y="111.76" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP4" gate="A" pin="3"/>
+<pinref part="SERVO3" gate="A" pin="3"/>
 <wire x1="-40.64" y1="101.6" x2="-45.72" y2="101.6" width="0.1524" layer="91"/>
 <label x="-45.72" y="101.6" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -10283,7 +10283,7 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <label x="-22.86" y="-12.7" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP4" gate="A" pin="1"/>
+<pinref part="SERVO3" gate="A" pin="1"/>
 <wire x1="-40.64" y1="106.68" x2="-45.72" y2="106.68" width="0.1524" layer="91"/>
 <label x="-45.72" y="106.68" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -10319,7 +10319,7 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <label x="-22.86" y="38.1" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP3" gate="A" pin="1"/>
+<pinref part="SERVO2" gate="A" pin="1"/>
 <wire x1="-40.64" y1="116.84" x2="-45.72" y2="116.84" width="0.1524" layer="91"/>
 <label x="-45.72" y="116.84" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -10331,7 +10331,7 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <label x="-22.86" y="45.72" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP2" gate="A" pin="1"/>
+<pinref part="SERVO1" gate="A" pin="1"/>
 <wire x1="-40.64" y1="127" x2="-48.26" y2="127" width="0.1524" layer="91"/>
 <label x="-48.26" y="127" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -10347,17 +10347,17 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <label x="246.38" y="114.3" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP2" gate="A" pin="2"/>
+<pinref part="SERVO1" gate="A" pin="2"/>
 <wire x1="-40.64" y1="124.46" x2="-48.26" y2="124.46" width="0.1524" layer="91"/>
 <label x="-48.26" y="124.46" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP3" gate="A" pin="2"/>
+<pinref part="SERVO2" gate="A" pin="2"/>
 <wire x1="-40.64" y1="114.3" x2="-45.72" y2="114.3" width="0.1524" layer="91"/>
 <label x="-45.72" y="114.3" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP4" gate="A" pin="2"/>
+<pinref part="SERVO3" gate="A" pin="2"/>
 <wire x1="-40.64" y1="104.14" x2="-45.72" y2="104.14" width="0.1524" layer="91"/>
 <label x="-45.72" y="104.14" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>

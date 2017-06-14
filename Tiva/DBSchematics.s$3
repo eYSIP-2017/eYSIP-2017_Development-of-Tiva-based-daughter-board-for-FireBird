@@ -8807,7 +8807,7 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <text x="170.4086" y="14.478" size="1.778" layer="91">RST</text>
 <text x="170.6118" y="9.1948" size="1.778" layer="91">TXD</text>
 <text x="170.3832" y="11.9888" size="1.778" layer="91">RXD</text>
-<text x="170.2816" y="6.6548" size="1.778" layer="91">EXT DBG</text>
+<text x="170.2816" y="6.6548" size="1.778" layer="91">GND</text>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="66.04" y="78.74"/>
@@ -9128,6 +9128,11 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <segment>
 <pinref part="JP9" gate="G$1" pin="1"/>
 <wire x1="0" y1="121.92" x2="-5.08" y2="121.92" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="4"/>
+<wire x1="165.1" y1="7.62" x2="160.02" y2="7.62" width="0.1524" layer="91"/>
+<label x="160.02" y="7.62" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="USB+" class="0">

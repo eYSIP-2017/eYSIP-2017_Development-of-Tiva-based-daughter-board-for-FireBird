@@ -8713,9 +8713,14 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0" drill="0">
+<class number="0" name="default" width="0.2" drill="0">
+<clearance class="0" value="0.2"/>
 </class>
-<class number="1" name="VSERVO" width="1" drill="0">
+<class number="1" name="VSERVO" width="0.8" drill="0">
+<clearance class="1" value="0.2"/>
+</class>
+<class number="2" name="VDD" width="0.5" drill="0">
+<clearance class="2" value="0.2"/>
 </class>
 </classes>
 <parts>
@@ -8759,12 +8764,12 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <part name="C20" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="0.1uF"/>
 <part name="U2" library="SparkFun-IC-Amplifiers" deviceset="LMV358" device="SOIC" value="LMV358"/>
 <part name="U3" library="SparkFun-IC-Amplifiers" deviceset="LMV324" device="" value="LMV324"/>
-<part name="R11" library="adafruit" deviceset="R-US_" device="M1206" value="33k"/>
-<part name="R10" library="adafruit" deviceset="R-US_" device="M1206" value="22k"/>
-<part name="R12" library="adafruit" deviceset="R-US_" device="M1206" value="33k"/>
-<part name="R13" library="adafruit" deviceset="R-US_" device="M1206" value="22K"/>
-<part name="R14" library="adafruit" deviceset="R-US_" device="M1206" value="33k"/>
-<part name="R15" library="adafruit" deviceset="R-US_" device="M1206" value="22k"/>
+<part name="R11" library="adafruit" deviceset="R-US_" device="M1206" value="22K"/>
+<part name="R10" library="adafruit" deviceset="R-US_" device="M1206" value="33K"/>
+<part name="R12" library="adafruit" deviceset="R-US_" device="M1206" value="22K"/>
+<part name="R13" library="adafruit" deviceset="R-US_" device="M1206" value="33K"/>
+<part name="R14" library="adafruit" deviceset="R-US_" device="M1206" value="22k"/>
+<part name="R15" library="adafruit" deviceset="R-US_" device="M1206" value="33k"/>
 <part name="R16" library="adafruit" deviceset="R-US_" device="M1206" value="22K"/>
 <part name="R17" library="adafruit" deviceset="R-US_" device="M1206" value="33k"/>
 <part name="R18" library="adafruit" deviceset="R-US_" device="M1206" value="22K"/>
