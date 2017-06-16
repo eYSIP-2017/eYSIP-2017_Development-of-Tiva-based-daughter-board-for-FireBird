@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.001" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -256,37 +256,13 @@ Source: tuxgr_12x2_r2.pdf</description>
 </classes>
 <parts>
 <part name="DIS1" library="display-lcd" deviceset="TUXGR_16X2_R2" device=""/>
-<part name="DIS2" library="display-lcd" deviceset="TUXGR_16X2_R2" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="31.3182" y="44.6024" size="1.778" layer="91">Connected to PD6</text>
-<text x="31.242" y="47.4472" size="1.778" layer="91">Connected to GND</text>
-<text x="31.3436" y="49.9364" size="1.778" layer="91">Connected to PD7</text>
-<text x="31.3182" y="62.6872" size="1.778" layer="91">Connected to PA2</text>
-<text x="31.242" y="65.278" size="1.778" layer="91">Connected to PA3</text>
-<text x="31.1404" y="67.6656" size="1.778" layer="91">Connected to PA4</text>
-<text x="31.0642" y="70.3834" size="1.778" layer="91">Connected to PA5</text>
-<text x="31.369" y="41.91" size="1.778" layer="91">Connected to Potentiometer</text>
-<text x="31.369" y="39.4716" size="1.778" layer="91">Connected to 5V</text>
-<text x="31.369" y="37.2364" size="1.778" layer="91">Connected to GND</text>
-<text x="-9.8298" y="30.607" size="2.54" layer="91">LCD Connections of Plug and Play board</text>
-<text x="101.473" y="43.5864" size="1.778" layer="91">Connected to PF0</text>
-<text x="101.3968" y="46.4312" size="1.778" layer="91">Connected to GND</text>
-<text x="101.4984" y="48.9204" size="1.778" layer="91">Connected to PF2</text>
-<text x="101.473" y="61.6712" size="1.778" layer="91">Connected to PD4</text>
-<text x="101.3968" y="64.262" size="1.778" layer="91">Connected to PD5</text>
-<text x="101.2952" y="66.6496" size="1.778" layer="91">Connected to PD6</text>
-<text x="101.1936" y="69.3674" size="1.778" layer="91">Connected to PD7</text>
-<text x="101.5238" y="40.894" size="1.778" layer="91">Connected to Potentiometer</text>
-<text x="101.5238" y="38.4556" size="1.778" layer="91">Connected to 5V</text>
-<text x="101.5238" y="36.2204" size="1.778" layer="91">Connected to GND</text>
-<text x="71.374" y="30.5562" size="2.54" layer="91">LCD Connections of uC based board</text>
 </plain>
 <instances>
-<instance part="DIS1" gate="G$1" x="20.32" y="55.88" rot="R90"/>
-<instance part="DIS2" gate="G$1" x="90.4748" y="54.864" rot="R90"/>
+<instance part="DIS1" gate="G$1" x="30.48" y="55.88" rot="R90"/>
 </instances>
 <busses>
 </busses>
