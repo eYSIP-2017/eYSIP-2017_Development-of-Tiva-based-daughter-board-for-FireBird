@@ -3026,14 +3026,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <sheets>
 <sheet>
 <plain>
-<text x="-19.446240625" y="23.708359375" size="1.778" layer="91">3.3V Supply</text>
-<text x="7.541259375" y="20.957540625" size="1.778" layer="91">Connected to reset of uC on pin 38</text>
-<text x="2.54" y="-5.08" size="2.54" layer="91">Reset Switch</text>
+<text x="-17.78" y="22.86" size="1.778" layer="91">3.3V Supply</text>
+<text x="7.62" y="20.32" size="1.778" layer="91">Connected to reset of uC on pin 38</text>
 </plain>
 <instances>
 <instance part="S1" gate="G$1" x="12.7" y="15.24"/>
 <instance part="R1" gate="G$1" x="0" y="22.86"/>
-<instance part="C9" gate="G$1" x="2.54" y="7.62"/>
+<instance part="C9" gate="G$1" x="5.08" y="7.62"/>
 <instance part="GND2" gate="G$1" x="12.7" y="2.54"/>
 </instances>
 <busses>
@@ -3050,13 +3049,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="5.08" y1="22.86" x2="5.08" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="20.32" x2="5.08" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="15.24" x2="5.08" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="20.32" x2="5.08" y2="20.32" width="0.1524" layer="91"/>
 <junction x="5.08" y="20.32"/>
+<pinref part="C9" gate="G$1" pin="1"/>
 <pinref part="S1" gate="G$1" pin="1"/>
 <wire x1="7.62" y1="15.24" x2="5.08" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="C9" gate="G$1" pin="1"/>
-<wire x1="2.54" y1="12.7" x2="2.54" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="15.24" x2="5.08" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="3.3V" class="1">
@@ -3066,7 +3064,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="C9" gate="G$1" pin="2"/>
 <wire x1="20.32" y1="5.08" x2="12.7" y2="5.08" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="G$1" pin="3.3V"/>
-<wire x1="12.7" y1="5.08" x2="2.54" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="5.08" x2="5.08" y2="5.08" width="0.1524" layer="91"/>
 <junction x="12.7" y="5.08"/>
 </segment>
 </net>

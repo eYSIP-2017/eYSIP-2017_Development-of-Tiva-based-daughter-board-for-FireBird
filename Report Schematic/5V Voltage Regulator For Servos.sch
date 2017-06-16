@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.0001" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -2771,8 +2771,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <sheet>
 <plain>
 <text x="32.512" y="39.37" size="1.778" layer="91">5V Voltage Regulator for Servo Motors</text>
-<text x="12.954" y="64.262" size="1.6764" layer="91">From oin 29 on MB (V Battery)</text>
-<text x="64.516" y="64.516" size="1.6764" layer="91">Regulated 5V supply for servo motors</text>
+<text x="7.874" y="64.6811" size="1.6764" layer="91">From oin 29 on MB (V Battery)</text>
+<text x="66.69531875" y="64.5795" size="1.6764" layer="91">Regulated 5V supply for servo motors</text>
 </plain>
 <instances>
 <instance part="IC2" gate="A1" x="53.34" y="63.5"/>
@@ -2802,7 +2802,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="43.18" y1="63.5" x2="40.64" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="C18" gate="G$1" pin="1"/>
 <wire x1="40.64" y1="63.5" x2="40.64" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="63.5" x2="33.02" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="63.5" x2="34.229040625" y2="63.5" width="0.1524" layer="91"/>
 <junction x="40.64" y="63.5"/>
 </segment>
 </net>
