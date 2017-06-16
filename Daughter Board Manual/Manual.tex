@@ -1,5 +1,5 @@
-\documentclass[17pt]{article}
-\usepackage[top=1.6cm,bottom=1.6cm,left=1cm,right=1cm]{geometry}
+\documentclass[a4paper,10pt,oneside]{article}
+\usepackage[top=2cm,bottom=2cm,left=1cm,right=1cm]{geometry}
 %\usepackage{fontspec}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
@@ -9,6 +9,8 @@
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\usepackage{titlesec}
+
 \hypersetup{
 	colorlinks=true,      
 	urlcolor=magenta,
@@ -21,12 +23,21 @@
 \rhead{Manual for Tiva Based Daughter Board for Firebird V.}
 \lfoot{eRTS Lab IIT Bombay}
 
+\renewcommand*\contentsname{\Huge \textbf{Table Of Content}}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 \begin{document}
 	\large
 	\maketitle
 	\newpage
 	\section{\Huge{\textbf{Credits}}}
-	\textbf{\\ \\ Version 1.0\\ \date{\today}}% Right allign
+	\textbf{\\\\ Version 1.0\\\date{\today}}% Right allign
 	\\
 	\\
 	\\
@@ -48,16 +59,28 @@
 	ensure the accuracy of contents in this manual. However, should any errors be detected, e-yantra welcomes your corrections. You can send us your queries / suggestions at
 	\href{mailto:helpdesk@eyantra.org}{Contact Us}\\}
 	\newpage
-	\section{\Huge{\textbf{Index}}}%centre Allign This
-	\begin{enumerate}
-		\item 
-	\end{enumerate}
+	\tableofcontents
 	\newpage 
 	\section{\Huge\textbf{Introduction}}
 	\section{\Huge\textbf{Tiva Based Daughter Board}}
 		\subsection{{\huge \textbf{Technical Specification}}}
 		\subsection{}%start with the functionality
 	\section{\Huge\textbf{Hardware Manual:}}
+	%mention about the upcoming sub section in brief
+	\subsection{\huge Voltage Regulation on the Daughter Board}
+		\subsubsection{\Large Powering Micro-controller}
+		\subsubsection{\Large Powering Servos}
+	\subsection{\huge Level Converters}
+	\subsection{\huge Sensors} %problem faced with interfacing them
+		\subsubsection{\Large 3.3V sensors}
+		\subsubsection{\Large 5V sensors}
+	\subsection{\huge Port Expander}
+	\subsection{\huge External ADC}
+	\subsection{\huge LCD Interfacing}
+	\subsubsection{\huge Serial Communication}
+	\subsubsection{\huge Programing the Controller}
+	\subsubsection{\huge Reset Switch}
+	\subsubsection{\huge Pin Functionality}
 	\newpage
 	\section{\Huge\textbf{Software Manual:}}
 		\subsection{\huge \textbf{Code Composer Studio:}}
@@ -96,7 +119,7 @@
 				BoosterPack webpage: www.ti.com/boosterpack\\
 				LaunchPad Wiki:\\ www.ti.com/launchpadwiki\\}	\\	
 				{\Large For understanding the launchpad properly and to learn more about Tiva it is strongly recommended to go through the webpage \href{http://processors.wiki.ti.com/index.php/Getting_Started_with_the_TIVA\%E2\%84\%A2_C_Series_TM4C123G_LaunchPad}{TIva Worshops} and download and read the workbook }
-			\subsubsection{\huge Create a New Project}
+			\subsubsection{\Large Create a New Project}
 				To create new project follow the steps mentioned:
 				\begin{enumerate}
 					\item Click File then New and then CCS Projects \\
@@ -104,7 +127,7 @@
 					\item Select Target and connection as shown in the photo. Give a name to your project and save in a location.Click Finish. A main.c file will be open\\
 						\includegraphics[width=6.5cm, height=8cm]{CreatingNewProject2}
 				\end{enumerate}
-			\subsubsection{\huge Add Path and Build Variables}
+			\subsubsection{\Large Add Path and Build Variables}
 					{The path and build variables are used for:
 					\begin{itemize}
 						\item  Path variable – when you ADD (link) a file to your project, you can specify a "relative to" path. The default is PROJECT\_LOC which means that your linked resource (like a .lib	file) will be linked relative to your project directory.
@@ -115,7 +138,7 @@
 					In the next step, we need to add (link) a library file and then add a search path for include files.
 					First, we’ll add these variables MANUALLY as WORKSPACE variables so that any project in your
 					workspace can use the variables. Refer to the workbook by TI for adding as PROJECT}
-				\subsubsection{\huge Adding a Path Variable}
+				\paragraph{\Large Adding a Path Variable\\}
 					To add a path variable,:
 					\begin{itemize}
 						\item Right-click on your Window Tab and select Preference.\\
@@ -140,7 +163,7 @@
 						\item Click OK. You should see your new variable listed in the Variables list.\\
 						\includegraphics[width=10cm, height=8cm]{AddVariables6}
 					\end{itemize}
-					\subsubsection{\huge Adding a Build Variable}
+					\paragraph{\Large Adding a Build Variable\\}
 					Now let’s add a build variable that we will use in the include search path for the INCLUDE files
 					associated with the TivaWare driver libraries.
 					\begin{itemize}
@@ -157,7 +180,30 @@
 						\item  Click OK.
 						\item  Click OK again to save and close
 						the Build Properties window.\\
-						\includegraphics[width=18cm,height=12cm]{AddVariables9}
+						\includegraphics[width=20cm,height=10cm]{AddVariables9}
 					\end{itemize}
-		\subsection{Buzzer}
+		\subsection{\huge driver.lib}
+		\subsection{\huge Buzzer}
+		{
+			Located in the folder “Buzzer\_Beep” folder in the documentation.
+			In this example, we will load buzzer beep code in Tiva based Fire Bird V. Now we will see in
+			detail the structure of this code.This experiment demonstrates the simple operation of Buzzer ON/OFF with one some delay.
+			Buzzer is connected to PORTF 4 pin of the Tiva Launchpad. If you have uC based board then it is connected to PORTA 2.
+			Concepts covered: Output operation, generating delay
+			Note: Make sure that you have included  driver.lib
+			// Buzzer is connected at PF4/PA2 on Tiva launchPad/uC
+			// To turn it on make PF4/PA2 pin logic 1
+			
+		}
+		\subsection{\huge Programming the Robot}
+		\subsection{\huge Using Debugger of The Programmer}
+		\subsection{\huge Simple I/O Operation}
+		\subsection{\huge Robot Direction Control}
+		\subsection{\huge Robot Position Control Using Interrupts}
+		\subsection{\huge Timers and its Interrupts}
+		\subsection{\huge Robot Speed Control}
+		\subsection{\huge LCD Interfacing}
+		\subsection{\huge Analog To Digital Converter}
+		\subsection{\huge Serial Communication}
+		\subsection{\huge I2C Communication}
 \end{document}

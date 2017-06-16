@@ -1,5 +1,5 @@
 [Eagle]
-Version="08 02 01"
+Version="08 02 02"
 Platform="Windows"
 Globals="Globals"
 Desktop="Desktop"
@@ -898,7 +898,7 @@ UsedLibrary="C:/EAGLE 8.2.1/lbr/zilog.lbr"
 [Win_1]
 Type="Control Panel"
 Loc="0 0 1199 599"
-State=0
+State=2
 Number=0
 
 [Desktop]

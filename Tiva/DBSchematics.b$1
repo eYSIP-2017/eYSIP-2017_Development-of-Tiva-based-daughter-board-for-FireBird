@@ -165,6 +165,19 @@
 <wire x1="0" y1="49.93" x2="0" y2="50" width="0.2032" layer="20"/>
 <wire x1="0" y1="49.93" x2="0" y2="51.097" width="0.254" layer="20"/>
 <wire x1="0" y1="51.097" x2="0.049" y2="51.146" width="0.254" layer="20"/>
+<text x="6.5" y="3.27" size="1.4224" layer="1">1</text>
+<text x="6.68" y="3.18" size="1.4224" layer="1">1</text>
+<text x="6.64" y="3.32" size="1.4224" layer="1">1</text>
+<text x="6.73" y="3.09" size="1.4224" layer="1">1</text>
+<text x="6.73" y="3.09" size="1.4224" layer="1">1</text>
+<text x="6.73" y="3.09" size="1.4224" layer="1">1</text>
+<text x="6.46" y="3" size="1.4224" layer="1">1</text>
+<text x="6.46" y="3" size="1.4224" layer="1">1</text>
+<text x="6.46" y="3" size="1.4224" layer="1">1</text>
+<text x="6.59" y="3.18" size="1.4224" layer="25">1</text>
+<text x="5.96" y="45.92" size="1.4224" layer="25">16</text>
+<text x="12.42" y="43.45" size="1.4224" layer="25">17a</text>
+<text x="12.33" y="46.01" size="1.4224" layer="25">17b</text>
 </plain>
 <libraries>
 <library name="SparkFun-Retired">
