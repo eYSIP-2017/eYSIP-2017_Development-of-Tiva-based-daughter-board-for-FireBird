@@ -4907,6 +4907,29 @@ design rules under a new name.</description>
 <signal name="N$176">
 <via x="29.8" y="-7" extent="1-16" drill="0.3" shape="square"/>
 </signal>
+<signal name="S$1">
+<polygon width="0.8128" layer="1">
+<vertex x="-13.7" y="57.27"/>
+<vertex x="138.29" y="57.27"/>
+<vertex x="138.29" y="-45.71"/>
+<vertex x="-20.54" y="-45.71"/>
+<vertex x="-20.54" y="50.32"/>
+<vertex x="-13.6" y="57.26"/>
+</polygon>
+</signal>
+<signal name="S$2">
+<polygon width="0.8128" layer="16">
+<vertex x="-25.24" y="66.35"/>
+<vertex x="-25.24" y="66.58"/>
+<vertex x="152.58" y="66.58"/>
+<vertex x="152.58" y="-53.13"/>
+<vertex x="152.58" y="-53.59"/>
+<vertex x="-37.28" y="-53.59"/>
+<vertex x="-37.28" y="66.81"/>
+<vertex x="-32.18" y="66.81"/>
+<vertex x="-25.47" y="66.81"/>
+</polygon>
+</signal>
 </signals>
 </board>
 </drawing>

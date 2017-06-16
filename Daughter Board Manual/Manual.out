@@ -1,17 +1,40 @@
 \BOOKMARK [1][-]{section.1}{Credits}{}% 1
 \BOOKMARK [1][-]{section.2}{Notice}{}% 2
-\BOOKMARK [1][-]{section.3}{Index}{}% 3
-\BOOKMARK [1][-]{section.4}{Introduction}{}% 4
-\BOOKMARK [1][-]{section.5}{Tiva Based Daughter Board}{}% 5
-\BOOKMARK [2][-]{subsection.5.1}{Technical Specification}{section.5}% 6
-\BOOKMARK [2][-]{subsection.5.2}{}{section.5}% 7
-\BOOKMARK [1][-]{section.6}{Hardware Manual:}{}% 8
-\BOOKMARK [1][-]{section.7}{Software Manual:}{}% 9
-\BOOKMARK [2][-]{subsection.7.1}{Code Composer Studio:}{section.7}% 10
-\BOOKMARK [3][-]{subsubsection.7.1.1}{Download CC Studio:}{subsection.7.1}% 11
-\BOOKMARK [3][-]{subsubsection.7.1.2}{Installing C C Studio:}{subsection.7.1}% 12
-\BOOKMARK [3][-]{subsubsection.7.1.3}{Create a New Project}{subsection.7.1}% 13
-\BOOKMARK [3][-]{subsubsection.7.1.4}{Add Path and Build Variables}{subsection.7.1}% 14
-\BOOKMARK [3][-]{subsubsection.7.1.5}{Adding a Path Variable}{subsection.7.1}% 15
-\BOOKMARK [3][-]{subsubsection.7.1.6}{Adding a Build Variable}{subsection.7.1}% 16
-\BOOKMARK [2][-]{subsection.7.2}{Buzzer}{section.7}% 17
+\BOOKMARK [1][-]{section.3}{Introduction}{}% 3
+\BOOKMARK [1][-]{section.4}{Tiva Based Daughter Board}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Technical Specification}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{}{section.4}% 6
+\BOOKMARK [1][-]{section.5}{Hardware Manual:}{}% 7
+\BOOKMARK [2][-]{subsection.5.1}{Voltage Regulation on the Daughter Board}{section.5}% 8
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Powering Micro-controller}{subsection.5.1}% 9
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Powering Servos}{subsection.5.1}% 10
+\BOOKMARK [2][-]{subsection.5.2}{Level Converters}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.3}{Sensors}{section.5}% 12
+\BOOKMARK [3][-]{subsubsection.5.3.1}{3.3V sensors}{subsection.5.3}% 13
+\BOOKMARK [3][-]{subsubsection.5.3.2}{5V sensors}{subsection.5.3}% 14
+\BOOKMARK [2][-]{subsection.5.4}{Port Expander}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.5}{External ADC}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.6}{LCD Interfacing}{section.5}% 17
+\BOOKMARK [3][-]{subsubsection.5.6.1}{Serial Communication}{subsection.5.6}% 18
+\BOOKMARK [3][-]{subsubsection.5.6.2}{Programing the Controller}{subsection.5.6}% 19
+\BOOKMARK [3][-]{subsubsection.5.6.3}{Reset Switch}{subsection.5.6}% 20
+\BOOKMARK [3][-]{subsubsection.5.6.4}{Pin Functionality}{subsection.5.6}% 21
+\BOOKMARK [1][-]{section.6}{Software Manual:}{}% 22
+\BOOKMARK [2][-]{subsection.6.1}{Code Composer Studio:}{section.6}% 23
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Download CC Studio:}{subsection.6.1}% 24
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Installing C C Studio:}{subsection.6.1}% 25
+\BOOKMARK [3][-]{subsubsection.6.1.3}{Create a New Project}{subsection.6.1}% 26
+\BOOKMARK [3][-]{subsubsection.6.1.4}{Add Path and Build Variables}{subsection.6.1}% 27
+\BOOKMARK [2][-]{subsection.6.2}{driver.lib}{section.6}% 28
+\BOOKMARK [2][-]{subsection.6.3}{Buzzer}{section.6}% 29
+\BOOKMARK [2][-]{subsection.6.4}{Programming the Robot}{section.6}% 30
+\BOOKMARK [2][-]{subsection.6.5}{Using Debugger of The Programmer}{section.6}% 31
+\BOOKMARK [2][-]{subsection.6.6}{Simple I/O Operation}{section.6}% 32
+\BOOKMARK [2][-]{subsection.6.7}{Robot Direction Control}{section.6}% 33
+\BOOKMARK [2][-]{subsection.6.8}{Robot Position Control Using Interrupts}{section.6}% 34
+\BOOKMARK [2][-]{subsection.6.9}{Timers and its Interrupts}{section.6}% 35
+\BOOKMARK [2][-]{subsection.6.10}{Robot Speed Control}{section.6}% 36
+\BOOKMARK [2][-]{subsection.6.11}{LCD Interfacing}{section.6}% 37
+\BOOKMARK [2][-]{subsection.6.12}{Analog To Digital Converter}{section.6}% 38
+\BOOKMARK [2][-]{subsection.6.13}{Serial Communication}{section.6}% 39
+\BOOKMARK [2][-]{subsection.6.14}{I2C Communication}{section.6}% 40
