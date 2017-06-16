@@ -14,6 +14,7 @@
 \hypersetup{
 	colorlinks=true,      
 	urlcolor=magenta,
+	linkcolor  = black
 }
 
 \title{\Huge{\textbf{Tiva Based Daughter Board for Firebird V \\ Hardware And Software Manual.}}}
@@ -63,24 +64,54 @@
 	\newpage 
 	\section{\Huge\textbf{Introduction}}
 	\section{\Huge\textbf{Tiva Based Daughter Board}}
-		\subsection{{\huge \textbf{Technical Specification}}}
-		\subsection{}%start with the functionality
+		{There are two daughter boards one with the launchpad and other one with the Arm Cortex M4 based uC. Almost all the specification are same unless mentioned otherwise.\\}
+		\subsection{{\huge \textbf{Technical Specification}}\\}
+			{\textbf{Microcontroller:\\}
+			TM4C123gh6pm (ARM architecture based Microcontroller)\\ To know more about the microcontroller please refer to \href{www.ti.com/lit/gpn/tm4c123gh6pm}{datasheet}.\\ \\}
+			{\textbf{Sensors:}\\
+			Three white line sensors (extendable to 7)\\
+			Five Sharp GP2Y0A02YK IR range sensor (One in default configuration)\\
+			Eight analog IR proximity sensors\\
+			Two position encoders\\\\} 
+			\textbf{Indicators:\\}
+			{2 x 16 Characters LCD\\
+			Buzzer\\\\}
+			\textbf{Communication:\\}
+			{USB Communication\\
+			Wireless ZigBee Communication (2.4GHZ) (if XBee wireless module is installed)\\
+			Bluetooth communication(Can be interfaced on external UART0 available on the board)\\
+			Simplex infrared communication (From infrared remote to robot)\\
+			I2C Communication \\\\}
+			\textbf{Battery Life:\\}
+			{2 Hours, while motors are operational at 75\% of time\\\\}
+			\textbf{Locomotion:\\}
+			{Two DC geared motors in differential drive configuration and caster wheel at front as support\\
+			Top Speed: 24 cm / second\\
+			Wheel Diameter: 51mm\\
+			Position encoder: 30 pulses per revolution\\
+			Position encoder resolution: 5.44 mm\\\\}
+		%\subsection{}%start with the functionality
 	\section{\Huge\textbf{Hardware Manual:}}
 	%mention about the upcoming sub section in brief
-	\subsection{\huge Voltage Regulation on the Daughter Board}
-		\subsubsection{\Large Powering Micro-controller}
-		\subsubsection{\Large Powering Servos}
-	\subsection{\huge Level Converters}
-	\subsection{\huge Sensors} %problem faced with interfacing them
-		\subsubsection{\Large 3.3V sensors}
-		\subsubsection{\Large 5V sensors}
-	\subsection{\huge Port Expander}
-	\subsection{\huge External ADC}
-	\subsection{\huge LCD Interfacing}
-	\subsubsection{\huge Serial Communication}
-	\subsubsection{\huge Programing the Controller}
-	\subsubsection{\huge Reset Switch}
-	\subsubsection{\huge Pin Functionality}
+	\subsection{\huge \textbf{Voltage Regulation on the Daughter Board\\}}
+	{The voltage source available on the Firebird is 9.6V. But the TIVA platform works on 3.3V and the servos can operate upto 6V. So there must be 3 different voltage levels on the board. The uC based board has 2 voltage regulators and the plug and play board has 1 voltage regulator. In the uC based board the 9.6 volts is 3.3V to power the microcontroller. In the plug and play board the there is an inbuilt voltage regulator, so it is directly connected connected to 5v, 300mA source. The servo in both the boards has a separate 5V regulator.   }
+		\subsubsection{\Large \textbf{Powering Micro-controller}}
+		{The boards have different powering circuits.In the plug and play board is connected to 5V source on Pin 10. In the uC based board the 9.6V source available on Pin 29 is reduced to 3.3V. Refer to the schematic below for further details. } \\
+		{\centering
+		\includegraphics[width=10cm, height=8cm]{3VPowerSupply}}
+		
+		\subsubsection{\Large \textbf{Powering Servos}}
+	\subsection{\huge \textbf{Level Converters}}
+	\subsection{\huge \textbf{Sensors}} %problem faced with interfacing them
+		\subsubsection{\Large \textbf{3.3V sensors}}
+		\subsubsection{\Large \textbf{5V sensors}}
+	\subsection{\huge \textbf{Port Expander}}
+	\subsection{\huge \textbf{External ADC}}
+	\subsection{\huge \textbf{LCD Interfacing}}
+	\subsection{\huge \textbf{Serial Communication}}
+	\subsection{\huge \textbf{Programing the Controller}}
+	\subsection{\huge \textbf{Reset Switch}}
+	\subsection{\huge \textbf{Pin Functionality}}
 	\newpage
 	\section{\Huge\textbf{Software Manual:}}
 		\subsection{\huge \textbf{Code Composer Studio:}}
@@ -119,7 +150,7 @@
 				BoosterPack webpage: www.ti.com/boosterpack\\
 				LaunchPad Wiki:\\ www.ti.com/launchpadwiki\\}	\\	
 				{\Large For understanding the launchpad properly and to learn more about Tiva it is strongly recommended to go through the webpage \href{http://processors.wiki.ti.com/index.php/Getting_Started_with_the_TIVA\%E2\%84\%A2_C_Series_TM4C123G_LaunchPad}{TIva Worshops} and download and read the workbook }
-			\subsubsection{\Large Create a New Project}
+			\subsubsection{\Large \textbf{Create a New Project}}
 				To create new project follow the steps mentioned:
 				\begin{enumerate}
 					\item Click File then New and then CCS Projects \\
@@ -127,7 +158,7 @@
 					\item Select Target and connection as shown in the photo. Give a name to your project and save in a location.Click Finish. A main.c file will be open\\
 						\includegraphics[width=6.5cm, height=8cm]{CreatingNewProject2}
 				\end{enumerate}
-			\subsubsection{\Large Add Path and Build Variables}
+			\subsubsection{\Large \textbf{Add Path and Build Variables}}
 					{The path and build variables are used for:
 					\begin{itemize}
 						\item  Path variable – when you ADD (link) a file to your project, you can specify a "relative to" path. The default is PROJECT\_LOC which means that your linked resource (like a .lib	file) will be linked relative to your project directory.
@@ -138,7 +169,7 @@
 					In the next step, we need to add (link) a library file and then add a search path for include files.
 					First, we’ll add these variables MANUALLY as WORKSPACE variables so that any project in your
 					workspace can use the variables. Refer to the workbook by TI for adding as PROJECT}
-				\paragraph{\Large Adding a Path Variable\\}
+				\paragraph{\Large \textbf{Adding a Path Variable}\\}
 					To add a path variable,:
 					\begin{itemize}
 						\item Right-click on your Window Tab and select Preference.\\
@@ -163,7 +194,7 @@
 						\item Click OK. You should see your new variable listed in the Variables list.\\
 						\includegraphics[width=10cm, height=8cm]{AddVariables6}
 					\end{itemize}
-					\paragraph{\Large Adding a Build Variable\\}
+					\paragraph{\Large \textbf{Adding a Build Variable}\\}
 					Now let’s add a build variable that we will use in the include search path for the INCLUDE files
 					associated with the TivaWare driver libraries.
 					\begin{itemize}
@@ -182,8 +213,8 @@
 						the Build Properties window.\\
 						\includegraphics[width=20cm,height=10cm]{AddVariables9}
 					\end{itemize}
-		\subsection{\huge driver.lib}
-		\subsection{\huge Buzzer}
+		\subsection{\huge \textbf{driver.lib}}
+		\subsection{\huge \textbf{Buzzer}}
 		{
 			Located in the folder “Buzzer\_Beep” folder in the documentation.
 			In this example, we will load buzzer beep code in Tiva based Fire Bird V. Now we will see in
@@ -195,15 +226,15 @@
 			// To turn it on make PF4/PA2 pin logic 1
 			
 		}
-		\subsection{\huge Programming the Robot}
-		\subsection{\huge Using Debugger of The Programmer}
-		\subsection{\huge Simple I/O Operation}
-		\subsection{\huge Robot Direction Control}
-		\subsection{\huge Robot Position Control Using Interrupts}
-		\subsection{\huge Timers and its Interrupts}
-		\subsection{\huge Robot Speed Control}
-		\subsection{\huge LCD Interfacing}
-		\subsection{\huge Analog To Digital Converter}
-		\subsection{\huge Serial Communication}
-		\subsection{\huge I2C Communication}
+		\subsection{\huge \textbf{Programming the Robot}}
+		\subsection{\huge \textbf{Using Debugger of The Programmer}}
+		\subsection{\huge \textbf{Simple I/O Operation}}
+		\subsection{\huge \textbf{Robot Direction Control}}
+		\subsection{\huge \textbf{Robot Position Control Using Interrupts}}
+		\subsection{\huge \textbf{Timers and its Interrupts}}
+		\subsection{\huge \textbf{Robot Speed Control}}
+		\subsection{\huge \textbf{LCD Interfacing}}
+		\subsection{\huge \textbf{Analog To Digital Converter}}
+		\subsection{\huge \textbf{Serial Communication}}
+		\subsection{\huge \textbf{I2C Communication}}
 \end{document}
