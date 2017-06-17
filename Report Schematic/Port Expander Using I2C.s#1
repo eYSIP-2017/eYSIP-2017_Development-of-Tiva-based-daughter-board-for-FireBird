@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.2.2">
+<eagle version="8.2.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -926,13 +926,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <sheets>
 <sheet>
 <plain>
-<text x="66.04" y="12.7" size="2.54" layer="91">Port Expander For uC</text>
+<text x="81.28" y="12.7" size="2.54" layer="91">Port Expander Using I2C</text>
 <text x="59.944" y="67.056" size="1.6764" layer="91">3.3 V Power Supply</text>
 <text x="50.038" y="61.468" size="1.6764" layer="91">Reset From the Microcontroller</text>
 <text x="50.038" y="53.848" size="1.6764" layer="91">Interrupt To uC on Pin 29 PF1</text>
 <text x="39.624" y="43.434" size="1.6764" layer="91">SCL going to I2C0SCL of uC on Pin 47 PB2</text>
 <text x="39.37" y="40.894" size="1.6764" layer="91">SDA going to I2C0SDA of uC on Pin 48 PB3</text>
-<text x="177.8" y="10.16" size="2.54" layer="91">Port Expander For Plug and Play</text>
+<text x="195.58" y="10.16" size="2.54" layer="91">Port Expander Using I2C</text>
 <text x="174.244" y="64.516" size="1.6764" layer="91">3.3 V Power Supply</text>
 <text x="164.338" y="58.928" size="1.6764" layer="91">Reset From the Microcontroller</text>
 <text x="177.038" y="51.308" size="1.6764" layer="91">Interrupt on PC7</text>

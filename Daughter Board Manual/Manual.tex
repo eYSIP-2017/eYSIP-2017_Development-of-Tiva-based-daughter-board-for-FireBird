@@ -117,21 +117,97 @@
 		\\
 		\hline
 	\end{tabular}\\\\
-	\subsection{\huge \textbf{Sensors}} %problem faced with interfacing them
+	\subsection{\huge \textbf{Sensors}}{The firebird V has as many as 22 sensors, but maximum 12 sensors can be interfaced directly with the controller. The daughter board has interfaced 20 of those 22 sensors using external I2C bases ADC. Sensors that were not included in the daughter board are current sensor and battery monitoring sensor. These sensors are working either on 3.3V or on 5V. Interfacing 3.3V sensors are simple and can be directly connected to the controller. On the other hand 5V can not be directly interfaced so a different approach is taken which will be mentioned in the 5V sensors sub heading.}
 		\subsubsection{\Large \textbf{3.3V sensors}}
-		{The output white line sensors and IR Proximity sensors vary from 0  to 3.3V. Hence these sensors can be interfaced directly with the microcontroller. Refer the table below for pin connections.}
+		{The output white line sensors and IR Proximity sensors vary from 0  to 3.3V. Hence these sensors can be interfaced directly with the microcontroller. Refer the table below for pin connections.\\
+		\begin{center}
+		\includegraphics{3v3Sensors}\\
+		\end{center}
+	}
 		\subsubsection{\Large \textbf{5V sensors}}
+		{Sharp Sensors are the only sensors on board that works on 5V supply. The output of the sharp sensor ranges from 0-5V and according to the output we have a formula to calculate the distance. While uC has VREF as 3.3V so these sensors cannot be directly connected. The approach we followed is to feed the output of the sensor to a buffer and then using a voltage divider convert 0-5 range to 0-3V range. For better understanding refer to the schematic below. There is a  also table which tells about the pin connection.}
+		\begin{center}
+			\includegraphics{5Vsensor1}\\
+			\includegraphics{5Vsensor2}\\
+		\end{center}
 	\subsection{\huge \textbf{Port Expander}}
+	{TM4C123GH6PM has only 64 pins out which only 43 are GPIO pins. This limits our application to read input and respond correspondingly. To increase the number of GPIO and there interrupts we have used I2C compatible a port expander MCP23017. It has 2 PORTS A and B, with each port having 8 Pins.The interrupts on each pin can also be monitored. To read more about it, download the datasheet from   \href{www.microchip.com/downloads/en/DeviceDoc/21952b.pdf}{here.}The schematic of the connection is shown below.Keep in mind that I2C SCL and SDA have already been pulled up using 10K resistor.\\}
+	\begin{center}
+		\includegraphics{portexpandePlug}\\
+		\includegraphics{portExpanderuc}\\
+		\end{center}
 	\subsection{\huge \textbf{External ADC}}
-	\subsection{\huge \textbf{LCD Interfacing}}
-	\subsection{\huge \textbf{Serial Communication}}
+	{It has already been mentioned that adc channels on the microcontroller is limited to 12 while firebird has 22 sensors available. We have interfaced an external ADC which is also I2C compatible. It has  8 channel with 12 bit resolution.To read more about it, download the datasheet from \href{www.ti.com/lit/pdf/snas483}{here.}The schematic of the connection is shown below.Keep in mind that I2C SCL and SDA have already been pulled up using 10K resistor.\\}
+		\begin{center}
+		\includegraphics{externaladcuC}\\
+		\includegraphics{externalADCplug}\\
+	\end{center}
+	\subsection{\huge \textbf{LCD Interfacing}}{
+	LCD can be interfaced in 8bit or 4 bit interfacing mode. In 8 bit mode it requires 3 control line
+	and 8 data lines. To reduce number of I/Os required, Fire Bird V robot uses 4 bit interfacing
+	mode which requires 2 control lines and 4 data lines. In this mode upper and lower nibble of the
+	data/command byte needs to be sent separately. RW(Read/Write) control line of lcd is grounded so it can only work in write mode.\\
+	The EN line is used to tell the LCD that microcontroller
+	has sent data to it or microcontroller is ready to receive data from LCD. This is indicated by a
+	high-to-low transition on this line. To send data to the LCD, program should make sure that this
+	line is low (0) and then set the other two control lines as required and put data on the data bus.
+	When this is done, make EN high (1) and wait for the minimum amount of time as specified by
+	the LCD datasheet, and end by bringing it to low (0) again.\\
+	When RS is low (0), data is treated as a command or special
+	instruction by the LCD (such as clear screen, position cursor, etc.). When RS is high (1), data
+	being sent is treated as text data which should be displayed on the screen.\\
+	written to the LCD.//}
+		\begin{center}
+		\includegraphics{lcdPlug}\\
+		\includegraphics{lcduC}\\
+		\includegraphics{lcdpin}
+		\end{center}
+	\subsection{\huge \textbf{USB Communication}}
+	{Fire Bird V’s main board has USB port socket. Microcontroller accesses USB port via main
+		board socket. All its pins are connected to the microcontroller adapter board via main board's
+		socket connector.FT232 is a USB to TTL level serial converter. It is used for adding USB connectivity to the
+		microcontroller adapter board. With onboard USB circuit Fire Bird V can communicate serially
+		with the PC through USB port without the use of any external USB to Serial converter.
+		Microcontroller socket uses USB port from the main board. Data transmission and reception is
+		indicated suing TX and RX LEDs which are located near the FT232 IC. This IC is only on the uC based board. Plug and play board has its own usb port on TIVA launcpad. The schematic of ft232 is shown below.}
+		\begin{center}
+		\includegraphics{ft232}\\
+		\end{center}
 	\subsection{\huge \textbf{Programing the Controller}}
 	\subsection{\huge \textbf{Reset Switch}}
 	{The Plug and play board makes use of reset button present on the TIVA launchpad. The uC based has a switch connected to the reset the reset pin 38 of the microcontroller. The schematic is given below.}\\
-	
-	\hspace{3cm}
-	\includegraphics[width=13cm, height=6cm]{Reset_Switch}\\\\
-		
+	\begin{center}
+	\includegraphics[width=13cm, height=6cm]{Reset_Switch}
+	\end{center}
+	\subsection{\huge \textbf{Servo Connectors}}
+	{The microcontroller board has three Servo connectors. It can be used for
+		driving servo motors of camera pod or any other attachment. Power for the servo connector is
+		provided by the “5V servo supply” voltage regulator. Both the board have different pwm pins for servo which can be seen from the schematic. \\}
+		\begin{center}
+			\includegraphics{servoPlug}\\
+			\includegraphics{servouc}\\
+		\end{center}
+	\subsection{\huge \textbf{TM4C123GH6PM Micro-controller:}}
+	{The Tiva™ C Series ARM Cortex-M4 microcontrollers provide top performance and advanced
+		integration. The product family is positioned for cost-conscious applications requiring significant
+		control processing and connectivity capabilities such as:
+		\begin{itemize}
+		\item Low power, hand-held smart devices
+		\item Gaming equipment
+		\item Home and commercial site monitoring and control
+		\item Motion control
+		\item Medical instrumentation
+		\item Test and measurement equipment
+		\item	Factory automation
+		\item Fire and security
+		\item  Smart Energy/Smart Grid solutions
+		\item Intelligent lighting control
+		\item Transportation
+	\end{itemize}
+	Schematic Of the connections is shown below.}
+	\begin{center}
+		\includegraphics{uc}\\
+	\end{center}
 	\subsection{\huge \textbf{Pin Functionality}}
 	\newpage
 	\section{\Huge\textbf{Software Manual:}}

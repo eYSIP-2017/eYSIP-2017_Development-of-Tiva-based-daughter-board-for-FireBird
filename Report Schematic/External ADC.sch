@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.2.1">
+<eagle version="8.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3754,6 +3754,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="7.43458125" y="-23.29688125" size="1.6764" layer="91">3.3 V Power Supply</text>
 <text x="19.4056" y="-13.434059375" size="1.778" layer="91">3.3V</text>
 <text x="-3.7185625" y="-39.143940625" size="1.778" layer="91">3.3V</text>
+<text x="20.32" y="-50.8" size="2.54" layer="91">External ADC connection for uC Board</text>
 </plain>
 <instances>
 <instance part="U$4" gate="G$1" x="45.72" y="20.32"/>
