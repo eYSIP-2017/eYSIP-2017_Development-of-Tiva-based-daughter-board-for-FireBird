@@ -94,16 +94,32 @@
 	\section{\Huge\textbf{Hardware Manual:}}
 	%mention about the upcoming sub section in brief
 	\subsection{\huge \textbf{Voltage Regulation on the Daughter Board\\}}
-	{The voltage source available on the Firebird is 9.6V. But the TIVA platform works on 3.3V and the servos can operate upto 6V. So there must be 3 different voltage levels on the board. The uC based board has 2 voltage regulators and the plug and play board has 1 voltage regulator. In the uC based board the 9.6 volts is 3.3V to power the microcontroller. In the plug and play board the there is an inbuilt voltage regulator, so it is directly connected connected to 5v, 300mA source. The servo in both the boards has a separate 5V regulator.   }
-		\subsubsection{\Large \textbf{Powering Micro-controller}}
-		{The boards have different powering circuits.In the plug and play board is connected to 5V source on Pin 10. In the uC based board the 9.6V source available on Pin 29 is reduced to 3.3V. Refer to the schematic below for further details. } \\
-		{\centering
-		\includegraphics[width=10cm, height=8cm]{3VPowerSupply}}
+	{The voltage source available on the Firebird is 9.6V. But the TIVA platform works on 3.3V and the servos can operate upto 6V. So there must be 3 different voltage levels on the board. The uC based board has 2 voltage regulators and the plug and play board has 1 voltage regulator. In the uC based board the 9.6 volts is 3.3V to power the microcontroller. In the plug and play board the there is an inbuilt voltage regulator, so it is directly connected connected to 5v, 300mA source. The servo in both the boards has a separate 5V regulator.}
+	
+	\subsubsection{\Large \textbf{Powering Micro-controller}}
+	{The boards have different powering circuits.In the plug and play board is connected to 5V source on Pin 10. In the uC based board the 9.6V source available on Pin 29 is reduced to 3.3V. Refer to the schematic below for further details.\\} 
+				
+	\includegraphics[width=18cm, height=8cm]{3VPowerSupply}\\\\
+				
+	\subsubsection{\Large \textbf{Powering Servos}}
+	{The servo motors can operate safely up to 6V, beyond this voltage they get damaged. Also, the servos require high current. There is a separate power line for servos taken from Pin 29 and reduced to 5V using the voltage regulator. Refer the schematic for further details.\\ }
 		
-		\subsubsection{\Large \textbf{Powering Servos}}
+	\includegraphics[width=18cm, height=8cm]{ServoPowerSupply}\\			
 	\subsection{\huge \textbf{Level Converters}}
+	{The TIVA platform operates at 3.3V and the Firebird operates at 5V. Directly connecting these pins to the TIVA may be fatal. So to interface these sensors, a level converter is used. A bidirectional MOSFET based level converter used. The level converter is necessary is for input pins. In the boards Level converter is used for interfacing the position encoders of the motors. Refer the schematic for further details.\\ }
+		
+	\hspace{3.5cm}
+	\includegraphics[width=12cm, height=6cm]{Level_Converter}\\
+	\begin{tabular}{|c|}
+		\hline
+		\\
+		\textbf{NOTE: If the user wishes to interface extra sensors using the GPIOs provided on the board,} \\ \textbf{then external level converters have to used if the output of sensor above 3.3V.}
+		\\
+		\hline
+	\end{tabular}\\\\
 	\subsection{\huge \textbf{Sensors}} %problem faced with interfacing them
 		\subsubsection{\Large \textbf{3.3V sensors}}
+		
 		\subsubsection{\Large \textbf{5V sensors}}
 	\subsection{\huge \textbf{Port Expander}}
 	\subsection{\huge \textbf{External ADC}}
@@ -111,6 +127,11 @@
 	\subsection{\huge \textbf{Serial Communication}}
 	\subsection{\huge \textbf{Programing the Controller}}
 	\subsection{\huge \textbf{Reset Switch}}
+	{The Plug and play board makes use of reset button present on the TIVA launchpad. The uC based has a switch connected to the reset the reset pin 38 of the microcontroller. The schematic is given below.}\\
+	
+	\hspace{3cm}
+	\includegraphics[width=13cm, height=6cm]{Reset_Switch}\\\\
+		
 	\subsection{\huge \textbf{Pin Functionality}}
 	\newpage
 	\section{\Huge\textbf{Software Manual:}}

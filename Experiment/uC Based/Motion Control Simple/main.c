@@ -33,6 +33,8 @@ This experiment demonstrates simple motion control.
 #include "driverlib/gpio.h"
 #define right           0x22
 #define left            0x11
+#define softRight       0x02
+#define softLeft        0x10
 #define forward         0x12
 #define backward        0x21
 #define stop            0x00
@@ -77,6 +79,7 @@ void peripheralEnable(){
 }
 /*************************************
  * Configuring Pin as Input Or Output
+ * And Setting PWM Pin to Always High
  *************************************/
 void configIOPin(){
     GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1);
@@ -94,6 +97,16 @@ void delay_ms(uint64_t delay){
 void delay_us(uint64_t delay){
     SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));
 }
+/******************************************************
+ * This function is for giving the direction of motion
+ * Macros have been defined at starting
+ * Macros for directions are 8 bits
+ * Out of these 8 bits only 4 are used
+ * Bit 0 (LSB) corresponds to PB0
+ * Bit 1       corresponds to PF1
+ * Bit 4       corresponds to PF4
+ * Bit 5       corresponds to PA5
+ *****************************************************/
 void motion(uint8_t direction){
     GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,direction);
     GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_5,direction);

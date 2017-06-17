@@ -28,9 +28,11 @@ From eRTS Lab, CSE Department, IIT Bombay.
 #include "inc/hw_gpio.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/gpio.h"
-#define right           0x40
+#define right           0x41
 #define left            0x18
-#define forward         0x10
+#define softRight       0x10
+#define softLeft        0x01
+#define forward         0x11
 #define backward        0x48
 #define stop            0x00
 void setupCLK();
@@ -60,21 +62,6 @@ int main(void) {
     delay_ms(1000);
     leftDegrees(90);
     delay_ms(1000);
-
-    forwardMM(100);
-    delay_ms(1000);
-    leftDegrees(90);
-    delay_ms(1000);
-
-    forwardMM(100);
-    delay_ms(1000);
-    leftDegrees(90);
-    delay_ms(1000);
-
-    forwardMM(100);
-    delay_ms(1000);
-    leftDegrees(90);
-    delay_ms(1000);
     }
 }
 /***************************************************************************************
@@ -97,6 +84,9 @@ void peripheralEnable(){
 }
 /*************************************
  * Configuring Pin as Input Or Output
+ * Unlocking PF0
+ * Setting PWM Pins to Always High
+ * Weak Pull to the Input Pins
  *************************************/
 void configIOPin(){
     GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE,GPIO_PIN_3);
@@ -122,11 +112,22 @@ void delay_ms(uint64_t delay){
 void delay_us(uint64_t delay){
     SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));
 }
+/******************************************************
+ * This function is for giving the direction of motion
+ * Macros have been defined at starting
+ * Macros for directions are 8 bits
+ * Out of these 8 bits only 4 are used
+ * Bit 0 (LSB) corresponds to PB3
+ * Bit 3       corresponds to PF3
+ * Bit 4       corresponds to PC4
+ * Bit 6       corresponds to PF6
+ *****************************************************/
 void motion(uint8_t direction){
-    GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_3,~direction);
+    GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_3,direction<<3);
     GPIOPinWrite(GPIO_PORTC_BASE,GPIO_PIN_4|GPIO_PIN_6,direction);
     GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_3,direction);
 }
+/****For Enabling Interrupt on PORTF and PORTB****/
 void interruptEnable(){
     GPIOIntDisable(GPIO_PORTF_BASE,GPIO_PIN_0);
     GPIOIntClear(GPIO_PORTF_BASE,GPIO_PIN_0);
@@ -136,30 +137,33 @@ void interruptEnable(){
 
     GPIOIntDisable(GPIO_PORTB_BASE,GPIO_PIN_2);
     GPIOIntClear(GPIO_PORTB_BASE,GPIO_PIN_2);
-    GPIOIntRegister(GPIO_PORTB_BASE, encoderInterruptEncountered1);
+    GPIOIntRegister(GPIO_PORTB_BASE, encoderInterruptEncountered);
     GPIOIntTypeSet(GPIO_PORTB_BASE,GPIO_PIN_2,GPIO_FALLING_EDGE);
     GPIOIntEnable(GPIO_PORTB_BASE,GPIO_PIN_2);
 }
+
+/**** ISR For External Interrupt on PortF************************
+ * Check on which pin of the PORTA has encountered an interrupt
+ * There is only one ISR for complete PORT
+ * No two PORTs can have same ISR
+ ****************************************************************/
 void encoderInterruptEncountered(){
    if(GPIOIntStatus(GPIO_PORTF_BASE, false)&GPIO_PIN_0){
        ShaftCountRight++;
        GPIOIntClear(GPIO_PORTF_BASE, GPIO_PIN_0);
    }
-   GPIOIntClear(GPIO_PORTF_BASE, GPIO_PIN_0);
-}
-void encoderInterruptEncountered1(){
    if(GPIOIntStatus(GPIO_PORTB_BASE, false)&GPIO_PIN_2){
-       ShaftCountLeft++;
-       GPIOIntClear(GPIO_PORTB_BASE, GPIO_PIN_2);
-   }
-   GPIOIntClear(GPIO_PORTB_BASE, GPIO_PIN_2);
+          ShaftCountLeft++;
+          GPIOIntClear(GPIO_PORTB_BASE, GPIO_PIN_2);
+      }
 }
-/*************************************
- * Calculating Delays
- *************************************/
+/****************************************************
+ * Function to Rotate to desired Angle
+ * Resolution can be Change to Get Higher Precision
+ ****************************************************/
 void angleRotate(uint16_t Degrees){
-     unsigned long int ReqdShaftCountInt = 0;  // division by resolution to get shaft count
-     ReqdShaftCountInt = Degrees/ 4.09;;
+     unsigned long int ReqdShaftCountInt = 0;
+     ReqdShaftCountInt = Degrees/ 4.09;// division by resolution to get shaft count
      ShaftCountRight = 0;
      while (1){
          if((ShaftCountRight>=ReqdShaftCountInt))
@@ -167,6 +171,10 @@ void angleRotate(uint16_t Degrees){
      }
      motion(stop);
 }
+/****************************************************
+ * Function to Move in a Linear Distance
+ * Resolution can be Change to Get Higher Precision
+ ****************************************************/
 void linearDistanceMM(unsigned int DistanceInMM){
      unsigned long int ReqdShaftCountInt = 0;
      ReqdShaftCountInt =DistanceInMM / 5.338;;
@@ -175,6 +183,10 @@ void linearDistanceMM(unsigned int DistanceInMM){
      while(1){
          if((ShaftCountRight > ReqdShaftCountInt)&&(ShaftCountLeft > ReqdShaftCountInt))
              break;
+         else if((ShaftCountRight > ReqdShaftCountInt))
+             motion(softRight);
+         else if((ShaftCountLeft > ReqdShaftCountInt))
+             motion(softLeft);
      }
      motion(stop); //Stop robot
 }
@@ -188,12 +200,10 @@ void backwardMM(unsigned int DistanceInMM){
     linearDistanceMM(DistanceInMM);
 }
 void leftDegrees(unsigned int Degrees){
-    // 88 pulses for 360 degrees rotation 4.090 degrees per count
     motion(left); //Turn left
     angleRotate(Degrees);
 }
 void rightDegrees(unsigned int Degrees){
-    // 88 pulses for 360 degrees rotation 4.090 degrees per count
     motion(right); //Turn right
     angleRotate(Degrees);
 }

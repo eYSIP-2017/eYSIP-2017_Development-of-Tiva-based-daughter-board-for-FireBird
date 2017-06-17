@@ -6,7 +6,11 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
+<<<<<<< HEAD
 <grid distance="0.001" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+=======
+<grid distance="0.00001" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+>>>>>>> 1b3412934157c5b6c323c2359d7e9d0124eb2218
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -2662,9 +2666,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <sheets>
 <sheet>
 <plain>
+<<<<<<< HEAD
 <text x="-27.94" y="38.1" size="1.778" layer="91">12V supply(Vbat) from pin 29</text>
 <text x="17.78" y="38.1" size="1.778" layer="91">3.3V regulated supply</text>
 <text x="-8.3312" y="9.0678" size="2.54" layer="91">3.3V Power Supply</text>
+=======
+<text x="-29.93873125" y="38.689790625" size="1.778" layer="91">12V supply(Vbat) from pin 29</text>
+<text x="25.957275" y="38.7786875" size="1.778" layer="91">3.3V regulated supply</text>
+<text x="8.7122" y="7.4747125" size="2.54" layer="91">3.3V Power Supply</text>
+>>>>>>> 1b3412934157c5b6c323c2359d7e9d0124eb2218
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="10.16" y="38.1"/>

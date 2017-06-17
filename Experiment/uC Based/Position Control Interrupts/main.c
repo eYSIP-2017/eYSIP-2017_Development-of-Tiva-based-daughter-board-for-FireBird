@@ -57,30 +57,34 @@ int main(void) {
         delay_ms(1000);
         rightDegrees(90);
         delay_ms(1000);
-
-        forwardMM(100);
-        delay_ms(1000);
-        rightDegrees(90);
-        delay_ms(1000);
-
-        forwardMM(100);
-        delay_ms(1000);
-        rightDegrees(90);
-        delay_ms(1000);
-
-        forwardMM(100);
-        delay_ms(1000);
-        rightDegrees(90);
-        delay_ms(1000);
-    }
 }
+}
+
+/***************************************************************************************
+ * This function is used to setup Clock frequency of the controller
+ * It can be changed through codes
+ * In this we have set frequency as 40Mhz
+ * Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+ ***************************************************************************************/
 void setupCLK(){
     SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
 }
+
+/*******************************
+ * Enabling System Peripherals
+ * PORTF,PORTB and PORTA in this case
+ ******************************/
 void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);}
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+}
+
+/*************************************
+ * Configuring Pin as Input Or Output
+ * Setting PWM Pins to Always High
+ * Weak Pull to the Input Pins
+ *************************************/
 void gpioEnable(){
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2);
     GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1);
@@ -91,6 +95,7 @@ void gpioEnable(){
     GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_4|GPIO_PIN_3);
     GPIOPadConfigSet(GPIO_PORTA_BASE ,GPIO_PIN_4|GPIO_PIN_5,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);
 }
+/****For Enabling Interrupt on PortA****/
 void interruptEnable(){
     GPIOIntDisable(GPIO_PORTA_BASE,GPIO_PIN_4|GPIO_PIN_3);
     GPIOIntClear(GPIO_PORTA_BASE, GPIO_PIN_4|GPIO_PIN_3);
@@ -98,6 +103,11 @@ void interruptEnable(){
     GPIOIntTypeSet(GPIO_PORTA_BASE,GPIO_PIN_4|GPIO_PIN_3,GPIO_FALLING_EDGE);
     GPIOIntEnable(GPIO_PORTA_BASE,GPIO_PIN_4|GPIO_PIN_3);
 }
+/**** ISR For External Interrupt on PortA************************
+ * Check on which pin of the PORTA has encountered an interrupt
+ * There is only one ISR for complete PORT
+ * No two PORTs can have same ISR
+ ****************************************************************/
 void encoderInterruptEncountered(){
    if(GPIOIntStatus(GPIO_PORTA_BASE, false)&GPIO_PIN_4){
        ShaftCountLeft++;
@@ -107,7 +117,6 @@ void encoderInterruptEncountered(){
        ShaftCountRight++;
        GPIOIntClear(GPIO_PORTA_BASE, GPIO_PIN_3);
    }
-   GPIOIntClear(GPIO_PORTA_BASE, GPIO_PIN_3|GPIO_PIN_4);
 }
 /*************************************
  * Calculating Delays
@@ -118,11 +127,25 @@ void delay_ms(uint64_t delay){
 void delay_us(uint64_t delay){
     SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));
 }
+/******************************************************
+ * This function is for giving the direction of motion
+ * Macros have been defined at starting
+ * Macros for directions are 8 bits
+ * Out of these 8 bits only 4 are used
+ * Bit 0 (LSB) corresponds to PB3
+ * Bit 3       corresponds to PF3
+ * Bit 4       corresponds to PC4
+ * Bit 6       corresponds to PF6
+ *****************************************************/
 void motion(uint8_t direction){
     GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,direction);
     GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_5,direction);
     GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_4,direction);
 }
+/****************************************************
+ * Function to Rotate to desired Angle
+ * Resolution can be Change to Get Higher Precision
+ ****************************************************/
 void angleRotate(uint16_t Degrees){
      unsigned long int ReqdShaftCountInt = 0;  // division by resolution to get shaft count
      ReqdShaftCountInt = Degrees/ 4.09;;
@@ -134,6 +157,10 @@ void angleRotate(uint16_t Degrees){
      }
      motion(stop);
 }
+/****************************************************
+ * Function to Move in a Linear Distance
+ * Resolution can be Change to Get Higher Precision
+ ****************************************************/
 void linearDistanceMM(unsigned int DistanceInMM){
      unsigned long int ReqdShaftCountInt = 0;
      ReqdShaftCountInt =DistanceInMM / 5.338;;
@@ -159,13 +186,10 @@ void backwardMM(unsigned int DistanceInMM){
     linearDistanceMM(DistanceInMM);
 }
 void leftDegrees(unsigned int Degrees){
-    // 88 pulses for 360 degrees rotation 4.090 degrees per count
     motion(left); //Turn left
-angleRotate(Degrees);
+    angleRotate(Degrees);
 }
 void rightDegrees(unsigned int Degrees){
-    // 88 pulses for 360 degrees rotation 4.090 degrees per count
     motion(right); //Turn right
      angleRotate(Degrees);
 }
-
