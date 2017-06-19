@@ -18,14 +18,12 @@ This experiment demonstrates simple motion control.
                         R-1---->PC4;        R-2---->PC6;
                         PF2----> PWM L     PC5----> PWM R;
 
-
 *********************************************************************************/
 #include <stdint.h>
 #include <stdbool.h>
 #include "inc/hw_types.h"
 #include "inc/hw_memmap.h"
 #include "driverlib/pin_map.h"
-
 //This header File is important to Unlock GPIO Pins
 #include "inc/hw_gpio.h"
 #include "driverlib/sysctl.h"
@@ -49,7 +47,6 @@ void motion(uint8_t);
 void enablePWM();
 void Velocity(uint8_t lSpeed,uint8_t rSpeed);
 int main(void) {
-    int i;
     setupCLK();
     peripheralEnable();
     configIOPin();
@@ -85,6 +82,9 @@ int main(void) {
  * It can be changed through codes
  * In this we have set frequency as 40Mhz
  * Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+ * The PWM module is clocked by the system clock through a divider, and that divider has
+   a range of 2 to 64.
+ * By setting the divider to 64, it will run the PWM clock at 625 kHz.
  ***************************************************************************************/
 void setupCLK(){
     SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
@@ -110,8 +110,6 @@ void configIOPin(){
     GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE,GPIO_PIN_3);
     GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE,GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6);
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_3|GPIO_PIN_2);
-    GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_2,255);
-    GPIOPinWrite(GPIO_PORTC_BASE,GPIO_PIN_5,255);
 }
 /*************************************
  * Calculating Delays
@@ -162,8 +160,8 @@ void enablePWM(){
  * rSpeed is used to control the speed of right motor
  ************************************************************/
 void Velocity(uint8_t lSpeed,uint8_t rSpeed){
-        //lSpeed=(lSpeed>255)?255:lSpeed;
-        //rSpeed=(rSpeed>255)?255:rSpeed;
+        lSpeed=(lSpeed>255)?255:lSpeed;
+        rSpeed=(rSpeed>255)?255:rSpeed;
         PWMPulseWidthSet(PWM1_BASE, PWM_OUT_6, lSpeed);
         PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, rSpeed);
 }
