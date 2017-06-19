@@ -31,12 +31,12 @@ This experiment demonstrates simple motion control.
 //Used for PWM
 #include "driverlib/pwm.h"
 
-#define right           0x41
-#define left            0x18
+#define right           0x22
+#define left            0x11
 #define softRight       0x10
-#define softLeft        0x01
-#define forward         0x11
-#define backward        0x48
+#define softLeft        0x02
+#define forward         0x12
+#define backward        0x21
 #define stop            0x00
 void setupCLK();
 void peripheralEnable();
@@ -47,7 +47,6 @@ void motion(uint8_t);
 void enablePWM();
 void Velocity(uint8_t lSpeed,uint8_t rSpeed);
 int main(void) {
-    int i;
     setupCLK();
     peripheralEnable();
     configIOPin();
@@ -91,13 +90,12 @@ void setupCLK(){
 }
 /*******************************
  * Enabling System Peripherals
- * PORTF,PORTB and PORTC in this case
+ * PORTF,PORTB and PORTA in this case
  ******************************/
 void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM0); // Enabling PWM0
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1); // Enabling PWM1
 }
 /*************************************
@@ -105,11 +103,9 @@ void peripheralEnable(){
  * And Setting PWM Pin to Always High
  *************************************/
 void configIOPin(){
-    GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE,GPIO_PIN_3);
-    GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE,GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6);
-    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_3|GPIO_PIN_2);
-    GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_2,255);
-    GPIOPinWrite(GPIO_PORTC_BASE,GPIO_PIN_5,255);
+    GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1);
+    GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE,GPIO_PIN_5);
+    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_4);
 }
 /*************************************
  * Calculating Delays
@@ -125,33 +121,32 @@ void delay_us(uint64_t delay){
  * Macros have been defined at starting
  * Macros for directions are 8 bits
  * Out of these 8 bits only 4 are used
- * Bit 0 (LSB) corresponds to PB3
- * Bit 3       corresponds to PF3
- * Bit 4       corresponds to PC4
- * Bit 6       corresponds to PF6
+ * Bit 0       corresponds to PB0
+ * Bit 1       corresponds to PB1
+ * Bit 4       corresponds to PF4
+ * Bit 5       corresponds to PA5
  *****************************************************/
 void motion(uint8_t direction){
-    GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_3,direction<<3);
-    GPIOPinWrite(GPIO_PORTC_BASE,GPIO_PIN_4|GPIO_PIN_6,direction);
-    GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_3,direction);
+    GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_1|GPIO_PIN_0,direction);
+    GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_4,direction);
+    GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_5,direction);
 }
 /******************************************************
  * This function is for enabling the PWM Modules
  * PWM can be enabled on a pin based on the datasheet
  *****************************************************/
 void enablePWM(){
-    GPIOPinTypePWM(GPIO_PORTF_BASE, GPIO_PIN_2);
-    GPIOPinConfigure(GPIO_PF2_M1PWM6);
-    GPIOPinTypePWM(GPIO_PORTC_BASE, GPIO_PIN_5);
-    GPIOPinConfigure(GPIO_PC5_M0PWM7);
-    PWMGenConfigure(PWM0_BASE, PWM_GEN_3, PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);//Count Down Mode
-    PWMGenPeriodSet(PWM0_BASE, PWM_GEN_3, 255); //Load Count value
+    GPIOPinTypePWM(GPIO_PORTF_BASE, GPIO_PIN_3);
+    GPIOPinConfigure(GPIO_PF3_M1PWM7);
+    GPIOPinTypePWM(GPIO_PORTA_BASE, GPIO_PIN_6);
+    GPIOPinConfigure(GPIO_PA6_M1PWM2);
     PWMGenConfigure(PWM1_BASE, PWM_GEN_3, PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);//Count Down Mode
     PWMGenPeriodSet(PWM1_BASE, PWM_GEN_3, 255); //Load Count value
-    PWMGenEnable(PWM0_BASE, PWM_GEN_3);
-    PWMGenEnable(PWM1_BASE, PWM_GEN_3);
-    PWMOutputState(PWM1_BASE, PWM_OUT_6_BIT, true);
-    PWMOutputState(PWM0_BASE, PWM_OUT_7_BIT, true);
+    PWMGenConfigure(PWM1_BASE, PWM_GEN_1, PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);//Count Down Mode
+    PWMGenPeriodSet(PWM1_BASE, PWM_GEN_1, 255); //Load Count value
+    PWMGenEnable(PWM1_BASE, PWM_GEN_3); //Enable the generators
+    PWMGenEnable(PWM1_BASE, PWM_GEN_1);
+    PWMOutputState(PWM1_BASE, PWM_OUT_7_BIT|PWM_OUT_2_BIT, true);
 }
 /*************************************************************
  * This function is used to control the speed of the motors
@@ -160,8 +155,8 @@ void enablePWM(){
  * rSpeed is used to control the speed of right motor
  ************************************************************/
 void Velocity(uint8_t lSpeed,uint8_t rSpeed){
-        //lSpeed=(lSpeed>255)?255:lSpeed;
-        //rSpeed=(rSpeed>255)?255:rSpeed;
-        PWMPulseWidthSet(PWM1_BASE, PWM_OUT_6, lSpeed);
-        PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, rSpeed);
+        lSpeed=(lSpeed>255)?255:lSpeed;
+        rSpeed=(rSpeed>255)?255:rSpeed;
+        PWMPulseWidthSet(PWM1_BASE, PWM_OUT_7, lSpeed);
+        PWMPulseWidthSet(PWM1_BASE, PWM_OUT_2, rSpeed);
 }

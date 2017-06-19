@@ -33,6 +33,10 @@
 	</linkedResources>
 	<variableList>
 		<variable>
+			<name>TIVAWARE_INSTALL</name>
+			<value>file:/C:/ti/TivaWare_C_Series-2.1.4.178</value>
+		</variable>
+		<variable>
 			<name>copy_PARENT</name>
 			<value>$%7BPARENT-1-TI_PRODUCTS_DIR%7D</value>
 		</variable>
