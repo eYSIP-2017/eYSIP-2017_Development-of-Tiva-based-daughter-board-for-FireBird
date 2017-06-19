@@ -14,10 +14,9 @@ This experiment demonstrates simple motion control.
 
  Connection Details:
             For Plug And Play Board
-                        L-1---->PF3;        L-2---->PB3;
-                        R-1---->PC4;        R-2---->PC6;
-                        PF2----> PWM L     PC5----> PWM R;
-
+                        L-1---->PB0;        L-2---->PB1;
+                        R-1---->PF4;        R-2---->PA5;
+                        PF3 ----> PWM L;     PA6 ----> PWM R;
 *********************************************************************************/
 #include <stdint.h>
 #include <stdbool.h>
