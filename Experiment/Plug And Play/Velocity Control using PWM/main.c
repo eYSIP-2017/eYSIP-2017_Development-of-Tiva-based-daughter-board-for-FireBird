@@ -24,7 +24,6 @@ This experiment demonstrates simple motion control.
 #include "inc/hw_types.h"
 #include "inc/hw_memmap.h"
 #include "driverlib/pin_map.h"
-
 //This header File is important to Unlock GPIO Pins
 #include "inc/hw_gpio.h"
 #include "driverlib/sysctl.h"
@@ -83,6 +82,9 @@ int main(void) {
  * It can be changed through codes
  * In this we have set frequency as 40Mhz
  * Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+ * The PWM module is clocked by the system clock through a divider, and that divider has
+   a range of 2 to 64.
+ * By setting the divider to 64, it will run the PWM clock at 625 kHz.
  ***************************************************************************************/
 void setupCLK(){
     SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);

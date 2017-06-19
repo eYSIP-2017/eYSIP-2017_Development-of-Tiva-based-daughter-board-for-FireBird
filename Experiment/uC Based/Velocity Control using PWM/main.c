@@ -13,7 +13,7 @@ This experiment demonstrates simple motion control.
  2. Velocity control using PWM.
 
  Connection Details:
-            For Plug And Play Board
+            For uC based Board
                         L-1---->PB0;        L-2---->PB1;
                         R-1---->PF4;        R-2---->PA5;
                         PF3 ----> PWM L;     PA6 ----> PWM R;
@@ -82,6 +82,9 @@ int main(void) {
  * It can be changed through codes
  * In this we have set frequency as 40Mhz
  * Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+ * * The PWM module is clocked by the system clock through a divider, and that divider has
+   a range of 2 to 64.
+ * By setting the divider to 64, it will run the PWM clock at 625 kHz.
  ***************************************************************************************/
 void setupCLK(){
     SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
