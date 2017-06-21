@@ -30,17 +30,17 @@
 //Used for enabling interrupt
 #include "driverlib/interrupt.h"
 /**** Useful Macros Definition******/
-/******Remove the comments if you are using uC board******/
+/******Remove the comments if you are using uC board******
 #define buzzerEnable    SYSCTL_PERIPH_GPIOA
 #define buzzer          GPIO_PORTA_BASE
 #define buzzerPin       GPIO_PIN_2
-/**********************************************************/
+**********************************************************/
 
-/******Remove the comments if you are using uC board******
+/******Remove the comments if you are using uC board******/
 #define buzzerEnable    SYSCTL_PERIPH_GPIOF
 #define buzzer          GPIO_PORTF_BASE
 #define buzzerPin       GPIO_PIN_4
-**********************************************************/
+/**********************************************************/
 
 #define buzzerOn()      GPIOPinWrite(buzzer,buzzerPin,255)
 #define buzzerOff()     GPIOPinWrite(buzzer,buzzerPin,0)
@@ -51,14 +51,20 @@ void configIOPin();
 void timerEnable();
 
 uint32_t ui32Period;    // used for generating one second delay
-int flag = 0;           //used to monitor the state of buzzer
+volatile int flag = 0;           //used to monitor the state of buzzer
 int main(void) {
     setupCLK();
     peripheralEnable();
     configIOPin();
     timerEnable();
+    flag = 0;
     while(1){
-
+        if(flag == 0){
+                buzzerOn();
+            }
+            else{
+                buzzerOff();
+            }
     }
 }
 /***************************************************************************************
@@ -113,11 +119,5 @@ void Timer0IntHandler(void)
 {
     // Clear the timer interrupt
     TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
-    if(flag == 0){
-        buzzerOn();
-        flag = 1;
-    }
-    else{
-        buzzerOff();
-    }
+    flag = !flag;
 }
