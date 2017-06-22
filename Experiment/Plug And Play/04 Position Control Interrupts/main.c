@@ -91,7 +91,7 @@ void peripheralEnable(){
 void configIOPin(){
     GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE,GPIO_PIN_3);
     GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE,GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6);
-    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_3|GPIO_PIN_2);
+    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_3|GPIO_PIN_2|GPIO_PIN_1);
     GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_2,255);
     GPIOPinWrite(GPIO_PORTC_BASE,GPIO_PIN_5,255);
     HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
@@ -150,10 +150,12 @@ void interruptEnable(){
 void encoderInterruptEncountered(){
    if(GPIOIntStatus(GPIO_PORTF_BASE, false)&GPIO_PIN_0){
        ShaftCountRight++;
+       //GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1,2);
        GPIOIntClear(GPIO_PORTF_BASE, GPIO_PIN_0);
    }
    if(GPIOIntStatus(GPIO_PORTB_BASE, false)&GPIO_PIN_2){
           ShaftCountLeft++;
+          GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1,2);
           GPIOIntClear(GPIO_PORTB_BASE, GPIO_PIN_2);
       }
 }
