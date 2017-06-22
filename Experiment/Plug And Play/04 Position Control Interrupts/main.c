@@ -39,7 +39,7 @@ void setupCLK();
 void peripheralEnable();
 void configIOPin();
 void delay_ms(uint64_t delay);
-void delay_ms(uint64_t delay);
+void delay_us(uint64_t delay);
 void motion(uint8_t);
 void interruptEnable();
 void encoderInterruptEncountered();
@@ -58,8 +58,8 @@ int main(void) {
     configIOPin();
     interruptEnable();
     while(1){
-    forwardMM(100);
-    delay_ms(1000);
+    //forwardMM(100);
+    //delay_ms(1000);
     leftDegrees(90);
     delay_ms(1000);
     }
@@ -137,7 +137,7 @@ void interruptEnable(){
 
     GPIOIntDisable(GPIO_PORTB_BASE,GPIO_PIN_2);
     GPIOIntClear(GPIO_PORTB_BASE,GPIO_PIN_2);
-    GPIOIntRegister(GPIO_PORTB_BASE, encoderInterruptEncountered);
+    GPIOIntRegister(GPIO_PORTB_BASE, encoderInterruptEncountered1);
     GPIOIntTypeSet(GPIO_PORTB_BASE,GPIO_PIN_2,GPIO_FALLING_EDGE);
     GPIOIntEnable(GPIO_PORTB_BASE,GPIO_PIN_2);
 }
@@ -181,7 +181,7 @@ void linearDistanceMM(unsigned int DistanceInMM){
      ShaftCountRight=0;
      ShaftCountLeft=0;
      while(1){
-         if((ShaftCountRight > ReqdShaftCountInt)&&(ShaftCountLeft > ReqdShaftCountInt))
+         if((ShaftCountRight >=ReqdShaftCountInt)&&(ShaftCountLeft >= ReqdShaftCountInt))
              break;
          else if((ShaftCountRight > ReqdShaftCountInt))
              motion(softRight);

@@ -42,7 +42,7 @@ void setupCLK();
 void peripheralEnable();
 void configIOPin();
 void delay_ms(uint64_t delay);
-void delay_ms(uint64_t delay);
+void delay_us(uint64_t delay);
 void motion(uint8_t);
 int main(void) {
     setupCLK();

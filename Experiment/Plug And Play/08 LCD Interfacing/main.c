@@ -73,16 +73,19 @@ void lcdCheck();
 //void lcdInteger(long long int);
 void setupCLK();
 void peripheralEnable();
+void configIOPin();
 void _delay_ms(uint64_t delay);
 void _delay_us(uint64_t delay);
 int main(){
+    _delay_ms(2000);
     setupCLK();
     peripheralEnable();
+    configIOPin();
     lcdInit();
+    lcdClear();
+    lcdGotoxy(0,0);
+    lcdString("TIVA C Series");
     while(1){
-        lcdClear();
-        lcdGotoxy(0,0);
-        lcdString("TIVA C Series");
         _delay_ms(100);
     }
 }
@@ -93,11 +96,15 @@ void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
 }
+void configIOPin(){
+    GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE,D4|D5|D6|D7);
+    GPIOPinTypeGPIOOutput(GPIO_PORTD_BASE,EN|RS);
+}
 void lcdInit(){
-    GPIOPinWrite(lcdPORT,RS|EN,0);
-    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
-    lcdCommand(0x02);//get the cursor to home
+    //GPIOPinWrite(lcdPORT,RS|EN,0);
+    //GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
     lcdCommand(0x28);
+    //lcdCommand(0x02);//get the cursor to home
     /**************************
     0x30 8bit mode single line*
     0x38 8bit mode double line*
@@ -105,7 +112,7 @@ void lcdInit(){
     0x28 4bit mode double line*
     ***************************/
     lcdCommand(0x06);//entry mode and auto increment mode
-    lcdCommand(0x0c);//
+    lcdCommand(0x0F);//
     /********************************
     Display off Cursor off      0x08*
     Display on Cursor on        0x0E*
@@ -114,23 +121,25 @@ void lcdInit(){
     *********************************/
 }
 void lcdCommand(unsigned char command){
+    unsigned char temp;
+    temp = command;
     GPIOPinWrite(lcdPORT,RS|EN,0);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
     //lcdPORT=0;
-    _delay_ms(1);
-    //GPIOPinWrite(lcdPORT,RS|RW|EN|D4|D5|D6|D7,0xf0&command);
-    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command)>>2);
-    //lcdPORT=(0xf0&command);
     _delay_us(100);
+    //GPIOPinWrite(lcdPORT,RS|RW|EN|D4|D5|D6|D7,0xf0&command);
+    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command>>2));
+    //lcdPORT=(0xf0&command);
+    _delay_ms(1);
     GPIOPinWrite(lcdPORT,EN|RS,0x80);
     //lcdPORT|=(0<<RS)|(0<<RW)|(1<<EN);
     _delay_us(100);
     GPIOPinWrite(lcdPORT,EN,0);
     //lcdPORT&=~(1<<EN);
     _delay_us(100);
-    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command)<<2);
+    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command<<2));
     //lcdPORT=(0x0f&command)<<4;
-    _delay_us(100);
+    _delay_ms(1);
     GPIOPinWrite(lcdPORT,EN|RS,0x80);
     //lcdPORT|=(0<<RS)|(0<<RW)|(1<<EN);
     _delay_us(100);
@@ -139,7 +148,9 @@ void lcdCommand(unsigned char command){
     _delay_us(100);
 }
 void lcdData(unsigned char data){
+    unsigned char temp2;
     lcdCheck();
+    temp2 = data;
     GPIOPinWrite(lcdPORT,RS|EN,0);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
     //lcdPORT=0;
@@ -152,7 +163,7 @@ void lcdData(unsigned char data){
     GPIOPinWrite(lcdPORT,EN,0);
     //lcdPORT&=~(1<<EN);
     _delay_us(100);
-    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(data)<<2);
+    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(data<<2));
     //lcdPORT=(0x0f&(data))<<4;
     _delay_us(100);
     GPIOPinWrite(lcdPORT,EN|RS,0xc0);
