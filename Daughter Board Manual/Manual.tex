@@ -69,6 +69,40 @@
 	\singlespacing
 	\newpage 
 	\section{\Huge\textbf{Introduction}}
+	Tiva Daughter board for Fire Bird V will help you gain exposure to the world of robotics and embedded systems with ARM Cortex M4. The board is designed with Open Source Philosophy in software and hardware design ,you will be able to create and contribute to complex applications that run on this platform, helping you	acquire expertise as you spend more time with them.
+	\subsection{\textbf{Safety precautions:}}
+	\begin{itemize}
+
+	\item  Robot’s electronics is static sensitive. Use robot in static free environment.
+	\item Read the assembling and operating instructions before working with the robot.
+	\item If robot’s battery low buzzer starts beeping, immediately charge the batteries.
+	\item To prevent fire hazard, do not expose the equipment to rain or moisture.
+	\item Refrain from dismantling the unit or any of its accessories once robot is assembled.
+	\item Charge the NiMH battery only with the charger provided on the robot.
+	\item Never allow NiMH battery to deep discharge.
+	\item Mount all the components with correct polarity.
+	\item Keep wheels away from long hair or fur.
+	\item Keep the robot away from the wet areas. Contact with water will damage the robot.
+	\item To avoid risk of fall, keep your robot in a stable position.
+	\item Do not attach any connectors while robot is powered ON.
+	\item Never leave the robot powered ON when it is not in use.
+	\item Disconnect the battery charger after charging the robot. 
+\end{itemize}
+	\subsection{\textbf{Inappropriate Operation:}}
+	Inappropriate operation can damage your robot. Inappropriate operation includes, but is not
+	limited to:
+	\begin{itemize}
+	\item Dropping the robot, running it off an edge, or otherwise operating it in irresponsible
+	manner.
+	\item Interfacing new hardware without considering compatibility.
+	\item Overloading the robot above its payload capacity.
+	\item Exposing the robot to wet environments.
+	\item Continuing to run the robot after hair, yarn, string, or any other item is entangled in the
+	robot’s axles or wheels.
+	\item All other forms of inappropriate operations.
+	\item Using robot in areas prone to static electricity.
+	\item Read carefully paragraphs marked with caution symbol.
+	\end{itemize}
 	\section{\Huge\textbf{Tiva Based Daughter Board}}
 		{There are two daughter boards one with the launchpad and other one with the Arm Cortex M4 based uC. Almost all the specification are same unless mentioned otherwise.\\}
 		\subsection{{\huge \textbf{Technical Specification}}\\}
@@ -357,10 +391,10 @@
 				59&	NC&&	\\ \hline	
 				60&	NC&&	\\ \hline	
 				61&	NC	&&	\\ \hline
-				62&	Position encoder left	Output of Left position encoder (0-5V)	PA4&&\\ \hline
-				63&	Position encoder right 	Output of Right position encoder (0-5V)	PA3&&\\ \hline
-				64&	position enocder C2	Output of C2 position encoder (0-5V)&&	\\ \hline
-				65&	Position encoder C1	Output of C1 position encoder (0-5V)&&	\\ \hline
+				62&	Position encoder left&	Output of Left position encoder (0-5V)	PA4&&\\ \hline
+				63&	Position encoder right& 	Output of Right position encoder (0-5V)	PA3&&\\ \hline
+				64&	position enocder C2&	Output of C2 position encoder (0-5V)&&	\\ \hline
+				65&	Position encoder C1& Output of C1 position encoder (0-5V)&&	\\ \hline
 				66&	C22&	NC&	\\ \hline
 				67&	C21	& NC&	\\ \hline
 				68&	C2&Pwm&	NC	\\ \hline
@@ -590,7 +624,7 @@
 			* Frequency is set by SYSDIV which can be found in data sheet for different frequencies\\
 			***************************************************************************************/\\
 			void setupCLK()\{\\
-				SysCtlClockSet(SYSCTL\_SYSDIV\_5 \vert SYSCTL\_USE\_PLL \vert SYSCTL\_XTAL\_16MHZ \vert SYSCTL\_OSC\_MAIN);\\
+				SysCtlClockSet(SYSCTL\_SYSDIV\_5|SYSCTL\_USE\_PLL | SYSCTL\_XTAL\_16MHZ|SYSCTLOSC\_MAIN);\\
 			\}\\
 			/*******************************\\
 			* Enabling System Peripherals\\
@@ -685,7 +719,7 @@
 			unsigned char flagSW1=0;\\
 			unsigned char flagSW2=0;\\
 			while(1)\{\\
-				pinData=GPIOPinRead(GPIO\_PORTF\_BASE,userSwitch2 \vert userSwitch1);\\
+				pinData=GPIOPinRead(GPIO\_PORTF\_BASE,userSwitch2| userSwitch1);\\
 				if((pinData\&0x01)==0)\\
 				flagSW1=1;\\
 				else if((flagSW1==1)\&\&(pinData\&0x01)==1)\{\\
@@ -693,12 +727,12 @@
 					flagSW1=0;\\
 				\}\\
 				if((pinData\&0x10)==0)\{\\
-					GPIOPinWrite(GPIO\_PORTF\_BASE,redLed \vert blueLed \vert greenLed,state);\\
+					GPIOPinWrite(GPIO\_PORTF\_BASE,redLed | blueLed | greenLed,state);\\
 					flagSW2=1;\\
 				\}\\
 				else if(((flagSW2==1)\&\&(pinData\&0x10)==0x10))\{\\
 					flagSW2=0;\\
-					GPIOPinWrite(GPIO\_PORTF\_BASE,redLed \vert blueLed \vert greenLed,0);\\
+					GPIOPinWrite(GPIO\_PORTF\_BASE,redLed | blueLed | greenLed,0);\\
 					state=state*2;\\
 					if(state>8)\\
 					state=2;\\

@@ -77,17 +77,15 @@ void configIOPin();
 void _delay_ms(uint64_t delay);
 void _delay_us(uint64_t delay);
 int main(){
+   // _delay_ms(2000);
     setupCLK();
     peripheralEnable();
     configIOPin();
     lcdInit();
-    lcdClear();
-    //lcdGotoxy(0,0);
-    //lcdString("TIVA C Series");
+    //lcdClear();
+    lcdGotoxy(0,0);
+    lcdString("TIVA C Series");
     while(1){
-        lcdGotoxy(0,0);
-        lcdString("TIVA C Series");
-        _delay_ms(1000);
     }
 }
 void setupCLK(){
@@ -98,27 +96,18 @@ void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
 }
 void configIOPin(){
-    GPIOPinWrite(lcdPORT,RS|EN,0);
-    GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE,D4|D5|D6|D7);
-    // Unlock access to the commit register
     HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
-    // Set the commit register for PD7 to allow changing the function
-    HWREG(GPIO_PORTD_BASE + GPIO_O_CR) |= 0x80;
-    // Enable the alternate function for PD7 (U2TX)
-    HWREG(GPIO_PORTD_BASE + GPIO_O_AFSEL) |= 0x80;
-    HWREG(GPIO_PORTD_BASE + 0x52C) = 0x10000000;
-    // Turn on the digital enable for PD7
-    HWREG(GPIO_PORTD_BASE + GPIO_O_DEN) |= 0x80;
-    // Relock the commit register
+    HWREG(GPIO_PORTD_BASE + GPIO_O_CR) |= (1<<7);
     HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = 0;
     GPIOPinTypeGPIOOutput(GPIO_PORTD_BASE,EN|RS);
+    GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE,D4|D5|D6|D7);
+
 }
 void lcdInit(){
-    GPIOPinWrite(lcdPORT,RS|EN,0);
-    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
-    _delay_ms(1);
+    //GPIOPinWrite(lcdPORT,RS|EN,0);
+    //GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
     lcdCommand(0x28);
-    lcdCommand(0x02);//get the cursor to home
+    //lcdCommand(0x02);//get the cursor to home
     /**************************
     0x30 8bit mode single line*
     0x38 8bit mode double line*
@@ -137,48 +126,48 @@ void lcdInit(){
 void lcdCommand(unsigned char command){
     GPIOPinWrite(lcdPORT,RS|EN,0);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
-    GPIOPinWrite(lcdPORT,RS,0x00);
     //lcdPORT=0;
-    _delay_ms(1);
+    _delay_us(100);
     //GPIOPinWrite(lcdPORT,RS|RW|EN|D4|D5|D6|D7,0xf0&command);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command>>2));
     //lcdPORT=(0xf0&command);
     _delay_ms(1);
-    GPIOPinWrite(lcdPORT,EN,0x80);
+    GPIOPinWrite(lcdPORT,EN|RS,0x80);
     //lcdPORT|=(0<<RS)|(0<<RW)|(1<<EN);
-    _delay_ms(1);
+    _delay_us(100);
     GPIOPinWrite(lcdPORT,EN,0);
     //lcdPORT&=~(1<<EN);
-    _delay_ms(1);
+    _delay_us(100);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command<<2));
     //lcdPORT=(0x0f&command)<<4;
     _delay_ms(1);
     GPIOPinWrite(lcdPORT,EN|RS,0x80);
     //lcdPORT|=(0<<RS)|(0<<RW)|(1<<EN);
-    _delay_ms(1);
+    _delay_us(100);
     GPIOPinWrite(lcdPORT,EN,0);
   //lcdPORT&=~(1<<EN);
-    _delay_ms(1);
+    _delay_us(100);
 }
 void lcdData(unsigned char data){
+    lcdCheck();
     GPIOPinWrite(lcdPORT,RS|EN,0);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
     //lcdPORT=0;
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(data>>2));
     //lcdPORT=(0xf0&data);
-    _delay_ms(1);
+    _delay_us(100);
     GPIOPinWrite(lcdPORT,EN|RS,0xc0);
     //lcdPORT|=(0<<RW)|(1<<EN)|(1<<RS);
     _delay_ms(1);
     GPIOPinWrite(lcdPORT,EN,0);
     //lcdPORT&=~(1<<EN);
-    _delay_ms(1);
+    _delay_us(100);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(data<<2));
     //lcdPORT=(0x0f&(data))<<4;
-    _delay_ms(1);
+    _delay_us(100);
     GPIOPinWrite(lcdPORT,EN|RS,0xc0);
     //lcdPORT|=(0<<RW)|(1<<EN)|(1<<RS);
-    _delay_ms(1);
+    _delay_us(100);
     GPIOPinWrite(lcdPORT,EN,0);
     //lcdPORT&=~(1<<EN);
     cursorPositionCheck=(cursorPositionCheck+1)%32;
