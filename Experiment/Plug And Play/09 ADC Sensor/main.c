@@ -56,11 +56,13 @@ ADC Connection:
 void configCLK();
 void peripheralEnable();
 void uartEnable();
+
 void ADC0Enable();
 unsigned int readADC();
 void tranString(char * data,char delimeter);
 void uartInteger(long long int integer,char delimeter);
 void converter(unsigned int);
+void _delay_ms(uint64_t delay);
 
 uint32_t senval;
 int main(){
@@ -71,6 +73,7 @@ int main(){
     while(1){
         senval = readADC();
         converter(senval);
+        _delay_ms(1000);
     }
 }
 void configCLK(){
@@ -78,27 +81,26 @@ void configCLK(){
 }
 void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);//Enablinig TIMER0
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);//Enabling TIMER0
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
     ADCHardwareOversampleConfigure(ADC0_BASE, 64);
  }
 void uartEnable(){
-    GPIOPinConfigure(GPIO_PC4_U1RX);//Configure Pin A0 as RX of U0
-    GPIOPinConfigure(GPIO_PC5_U1TX);//Configure Pin A1 as TX of U0
-    GPIOPinTypeUART(GPIO_PORTC_BASE, GPIO_PIN_4 | GPIO_PIN_5);
-    UARTConfigSetExpClk(UART1_BASE, SysCtlClockGet(), 9600,
-        (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+    GPIOPinConfigure(GPIO_PB0_U1RX);    //Configure Pin B0 as RX of U0
+    GPIOPinConfigure(GPIO_PB1_U1TX);    //Configure Pin B1 as TX of U0
+    GPIOPinTypeUART(GPIO_PORTB_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+    UARTConfigSetExpClk(UART1_BASE, SysCtlClockGet(), 9600,(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
 }
 
 void ADC0Enable(){
     ADCSequenceConfigure(ADC0_BASE, 1, ADC_TRIGGER_PROCESSOR, 0);
-    ADCSequenceStepConfigure(ADC0_BASE, 1, 0, ADC_CTL_CH0);
-    ADCSequenceStepConfigure(ADC0_BASE, 1, 1, ADC_CTL_CH0);
-    ADCSequenceStepConfigure(ADC0_BASE, 1, 2, ADC_CTL_CH0);
-    ADCSequenceStepConfigure(ADC0_BASE,1,3,ADC_CTL_CH0|ADC_CTL_IE|ADC_CTL_END);
-    ADCSequenceEnable(ADC0_BASE, 1);
-    GPIOPinTypeADC(GPIO_PORTE_BASE, GPIO_PIN_3);
+        ADCSequenceStepConfigure(ADC0_BASE, 1, 0, ADC_CTL_CH4);
+        ADCSequenceStepConfigure(ADC0_BASE, 1, 1, ADC_CTL_CH4);
+        ADCSequenceStepConfigure(ADC0_BASE, 1, 2, ADC_CTL_CH4);
+        ADCSequenceStepConfigure(ADC0_BASE,1,3,ADC_CTL_CH4|ADC_CTL_IE|ADC_CTL_END);
+        ADCSequenceEnable(ADC0_BASE, 1);
+        GPIOPinTypeADC(GPIO_PORTD_BASE, GPIO_PIN_3);
 }
 unsigned int readADC(){
     unsigned int Avg;
@@ -113,6 +115,7 @@ unsigned int readADC(){
 void converter(uint32_t q)
 {
     unsigned int p;
+    p=q;
     do
     {
         p = (q % 10);
@@ -120,5 +123,8 @@ void converter(uint32_t q)
         SysCtlDelay(400000);
         q = q / 10;
     }while(q != 0);
+    UARTCharPut(UART1_BASE,' ');
 }
-
+void _delay_ms(uint64_t delay){
+    SysCtlDelay(delay*(SysCtlClockGet()/3000));
+}

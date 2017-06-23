@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker PC v16.9.1                     
 ******************************************************************************
->> Linked Tue Jun 20 16:31:07 2017
+>> Linked Fri Jun 23 23:02:46 2017
 
 OUTPUT FILE NAME:   <Timer Overflow Interrupt.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 00000939
@@ -177,7 +177,7 @@ UNDEFED   SHT$$INIT_ARRAY$$Limit
 000004b1  SysCtlClockSet                 
 00000b41  SysCtlDelay                    
 00000a2d  SysCtlPeripheralEnable         
-00000645  Timer0IntHandler               
+00000629  Timer0IntHandler               
 000008d9  TimerConfigure                 
 00000af3  TimerEnable                    
 00000b47  TimerIntClear                  
@@ -225,7 +225,7 @@ ffffffff  __c_args__
 20000210  _unlock                        
 00000991  abort                          
 ffffffff  binit                          
-000005f5  configIOPin                    
+000005d9  configIOPin                    
 000009e1  copy_in                        
 00000999  exit                           
 20000214  flag                           
@@ -234,9 +234,9 @@ ffffffff  binit
 20000218  main_func_sp                   
 00000681  memcpy                         
 00000725  memset                         
-000005e5  peripheralEnable               
-000005db  setupCLK                       
-00000601  timerEnable                    
+000005c9  peripheralEnable               
+000005bf  setupCLK                       
+000005e5  timerEnable                    
 2000021c  ui32Period                     
 
 
@@ -252,11 +252,11 @@ address   name
 000003a1  SysCtlClockGet                 
 000004b1  SysCtlClockSet                 
 000005a5  main                           
-000005db  setupCLK                       
-000005e5  peripheralEnable               
-000005f5  configIOPin                    
-00000601  timerEnable                    
-00000645  Timer0IntHandler               
+000005bf  setupCLK                       
+000005c9  peripheralEnable               
+000005d9  configIOPin                    
+000005e5  timerEnable                    
+00000629  Timer0IntHandler               
 00000681  __aeabi_memcpy                 
 00000681  __aeabi_memcpy4                
 00000681  __aeabi_memcpy8                
