@@ -11,42 +11,31 @@
 #include "driverlib/pin_map.h"
 #include "inc/tm4c123gh6pm.h"
 #include "driverlib/interrupt.h"
-#define PORTF       GPIO_PORTF_BASE
-#define userSwitch2 GPIO_PIN_0
-#define redLed      GPIO_PIN_1
-#define blueLed     GPIO_PIN_2
-#define greenLed    GPIO_PIN_3
-#define userSwitch1 GPIO_PIN_4
 void setupCLK();
 void peripheralEnable();
 void gpioEnable();
-void interruptEnable();
-void onButtonDown();
 void InitI2C1(void);
 void I2CSendString(uint32_t slave_addr, char array[]);
 void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...);
 uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg);
-volatile char check=0,state;
-
+void portExpanderIO(unsigned char port,unsigned char pin);
+void portExpanderSetOutput(unsigned char,unsigned char);
+unsigned char portExpanderReadInput(unsigned char);
+void portExpanderInterruptEnableAnyChange(unsigned char,unsigned char);
+void portExpanderpullup(unsigned char,unsigned char);
+void portExpanderInterruptHandler();
 int main(void) {
     setupCLK();
     peripheralEnable();
     gpioEnable();
-    interruptEnable();
     InitI2C1();
-    I2CSend(0x20,2,0x01,0xff);
-    I2CSend(0x20,2,0x03,0x00);
-    I2CSend(0x20,2,0x05,0xff);
-    I2CSend(0x20,2,0x09,0x00);
-    I2CSend(0x20,2,0x0D,0xff);
+    portExpanderIO(0x00,0xff);
+    portExpanderIO(0x01,0x00);
+    portExpanderSetOutput(0x01,0x00);
+    portExpanderpullup(0x00,0x0f);
+    portExpanderInterruptEnableAnyChange(0x00,0xff);
     while(1){
-        /*
-        GPIOPinWrite(GPIO_PORTF_BASE,redLed,2);
-        SysCtlDelay(120000000/3);
-        GPIOPinWrite(GPIO_PORTF_BASE,redLed,0);
-        SysCtlDelay(120000000/3);*/
     }
-
 }
 void setupCLK(){
     SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
@@ -59,23 +48,7 @@ void gpioEnable(){
     GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_7);
     GPIOPadConfigSet(GPIO_PORTC_BASE ,GPIO_PIN_7,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);
 }
-void interruptEnable(){
-    GPIOIntDisable(GPIO_PORTC_BASE,GPIO_PIN_7);        // Disable interrupt for PF4 (in case it was enabled)
-    GPIOIntClear(GPIO_PORTC_BASE,GPIO_PIN_7);      // Clear pending interrupts for PF4
-    GPIOIntRegister(GPIO_PORTC_BASE,GPIO_PIN_7);     // Register our handler function for port F
-    GPIOIntTypeSet(GPIO_PORTC_BASE,GPIO_PIN_7,GPIO_FALLING_EDGE);             // Configure PF4 for falling edge trigger
-    GPIOIntEnable(GPIO_PORTC_BASE,GPIO_PIN_7);
-}
-void onButtonDown(){
-       if(GPIOIntStatus(GPIO_PORTC_BASE, false)&GPIO_PIN_7){
-           if(I2CReceive(0x20,0x0f)&0x01==0x01)
-            GPIOPinWrite(GPIO_PORTF_BASE,greenLed,8);
-        }
-       I2CReceive(0x20,0x11);
-       GPIOIntClear(GPIO_PORTC_BASE,GPIO_PIN_7);
-}
-void InitI2C1(void)
-{
+void InitI2C1(void){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C1);
     SysCtlPeripheralReset(SYSCTL_PERIPH_I2C1);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
@@ -244,47 +217,35 @@ uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg)
     //return data pulled from the specified register
     return I2CMasterDataGet(I2C1_BASE);
 }
-/*
-void write1Byte(unsigned char devID,unsigned char internalRegAdd,unsigned char data){
-    TWIStart();
-    TWISLAW(devID);
-    slaveDataWriteWithoutAck(internalRegAdd);
-    slaveDataWriteWithoutAck(data);
-    TWIStop();
+void portExpanderIO(unsigned char port,unsigned char pin){
+    I2CSend(0x20,2,port,pin);
 }
-void writeMultiByte(unsigned char devID,unsigned char internalRegAdd,unsigned char numberOfBytes,unsigned char data){
-    unsigned char i=0;
-    TWIStart();
-    TWISLAW(devID);
-    slaveDataWriteWithAck(internalRegAdd);
-    for(i=0;i<numberOfBytes-1;i++){
-        slaveDataWriteWithAck(data);
+void portExpanderSetOutput(unsigned char port,unsigned char pin){
+    I2CSend(0x20,2,port+(0x12),pin);
+}
+unsigned char portExpanderReadInput(unsigned char port){
+    return(I2CReceive(0x20,(port+12)));
+}
+void portExpanderInterruptEnableAnyChange(unsigned char port,unsigned char pin){
+    portExpanderIO(port,pin);
+    I2CSend(0x20,2,(0x04)+port,pin);
+    I2CSend(0x20,2,(0x08)+port,pin);
+    GPIOIntDisable(GPIO_PORTC_BASE,GPIO_PIN_7);        // Disable interrupt for PF4 (in case it was enabled)
+    GPIOIntClear(GPIO_PORTC_BASE,GPIO_PIN_7);      // Clear pending interrupts for PF4
+    GPIOIntRegister(GPIO_PORTC_BASE,portExpanderInterruptHandler);     // Register our handler function for port F
+    GPIOIntTypeSet(GPIO_PORTC_BASE,GPIO_PIN_7,GPIO_FALLING_EDGE);             // Configure PF4 for falling edge trigger
+    GPIOIntEnable(GPIO_PORTC_BASE,GPIO_PIN_7);
+}
+void portExpanderInterruptHandler(){
+    if(GPIOIntStatus(GPIO_PORTC_BASE, false)&GPIO_PIN_7){
+        if(I2CReceive(0x20,0x0e)&0x01==0x01){
+            portExpanderSetOutput(0x01,0xff);
+        }
+        I2CReceive(0x20,0x10);
+        I2CReceive(0x20,0x11);
+        GPIOIntClear(GPIO_PORTC_BASE,GPIO_PIN_7);
     }
-
-    slaveDataWriteWithoutAck(data);
-    TWIStop();
 }
-unsigned char *read1Byte(unsigned char devID,unsigned char internalRegAdd,unsigned char *data){
-    TWIStart();
-    TWISLAW(devID);
-    slaveDataWriteWithoutAck(internalRegAdd);
-    TWIRepeatStart();
-    TWISLAR(devID);
-    slaveDataReadNACK(data);
-    TWIStop();
-    return data;
+void portExpanderpullup(unsigned char port,unsigned char pin){
+    I2CSend(0x20,2,(0x0C)+port,pin);
 }
-unsigned char *readMultiByte(unsigned char devID,unsigned char internalRegAdd,unsigned char numberOfBytes,unsigned char *data){
-    unsigned char i=0;
-    TWIStart();
-    TWISLAW(devID);
-    slaveDataWriteWithoutAck(internalRegAdd);
-    TWIRepeatStart();
-    TWISLAR(internalRegAdd);
-    for(i=0;i<numberOfBytes-1;i++)
-    slaveDataReadACK(data+i);
-    slaveDataReadNACK(data+i);
-    TWIStop();
-    return data;
-}
-*/

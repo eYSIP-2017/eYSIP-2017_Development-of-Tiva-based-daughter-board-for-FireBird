@@ -27,7 +27,7 @@
 #define buzzerEnable    SYSCTL_PERIPH_GPIOA
 #define buzzer          GPIO_PORTA_BASE
 #define buzzerPin       GPIO_PIN_2
-/**********************************************************/
+/*********************************************************/
 
 /******Remove the comments if you are using uC board******
 #define buzzerEnable    SYSCTL_PERIPH_GPIOF
