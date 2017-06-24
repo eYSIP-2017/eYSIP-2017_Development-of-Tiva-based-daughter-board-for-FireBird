@@ -9,7 +9,7 @@
  Concepts covered:  Use of timer overflow interrupt to do tasks in a periodic way
 
  In this example timer 0's(subtimer A) overflow interrupt is used to turn on and off buzzer
- with the time period of 1 second
+ with the time period of 2 second
 
  Connections: Buzzer is connected to PF4 on plug and play board and to PA2 on uC board.
 
@@ -59,12 +59,7 @@ int main(void) {
     timerEnable();
     flag = 0;
     while(1){
-        if(flag == 0){
-                buzzerOn();
-            }
-            else{
-                buzzerOff();
-            }
+
     }
 }
 /***************************************************************************************
@@ -94,30 +89,36 @@ void peripheralEnable(){
  *************************************/
 void configIOPin(){
     GPIOPinTypeGPIOOutput(buzzer, buzzerPin);
-    /***** Just in case you are not familiar with macros*****
-        GPIOPinTypeGPIOOutput(buzzer, GPIO_PIN_4);
-     *****************This is P4 output*********************/
 }
 /*******************************
  * Enabling Timer 0
- * Timer is configured to be periodic
+ * Timer is configured to be generate
+   interrupt every second
+ * Here sysCtlClockGet() is divided
+   by the on time of buzzer
  ******************************/
 void timerEnable(){
     TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC);
-    ui32Period = (SysCtlClockGet() / 100) / 2;
+    ui32Period = (SysCtlClockGet() / 1) / 2;
     TimerLoadSet(TIMER0_BASE, TIMER_A, ui32Period -1);
     IntEnable(INT_TIMER0A);
     TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
     IntMasterEnable();
     TimerEnable(TIMER0_BASE, TIMER_A);
 }
-/*******************************************************
+/*******************************************************************
  * This function is executed when the timer overflows
- * In this example the buzzer is switched on and off
- ******************************************************/
+ * In this example the buzzer is switched on and off alternatively
+ *******************************************************************/
 void Timer0IntHandler(void)
 {
     // Clear the timer interrupt
     TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
     flag = !flag;
+    if(flag == 0){
+        buzzerOn();
+    }
+    else{
+        buzzerOff();
+    }
 }
