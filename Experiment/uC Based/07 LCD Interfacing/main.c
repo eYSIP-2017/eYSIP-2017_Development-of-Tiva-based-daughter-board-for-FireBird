@@ -37,9 +37,6 @@ Connections:
 #ifndef     lcdDDR
 #define     lcdDDR      GPIO_PORTD_BASE
 #endif
-#ifndef     lcdPIN
-#define     lcdPIN      PINC
-#endif
 #ifndef     RS
 #define     RS          GPIO_PIN_0
 #endif
@@ -58,6 +55,8 @@ Connections:
 #ifndef     D7
 #define     D7          GPIO_PIN_7
 #endif
+#define LOCK_F (*((volatile unsigned long *)0x40025520))
+#define CR_F   (*((volatile unsigned long *)0x40025524))
 unsigned char cursorPositionCheck=0;
 void lcdInit();
 //void isBusy();
@@ -79,11 +78,16 @@ int main(){
     peripheralEnable();
     configIOPin();
     lcdInit();
-    //lcdClear();
+    lcdClear();
     lcdGotoxy(0,0);
     lcdString("TIVA C Series");
     while(1){
+
+    lcdGotoxy(0,0);
+    lcdString("Ayush");
     }
+
+
 }
 void setupCLK(){
     SysCtlClockSet(SYSCTL_SYSDIV_4|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
@@ -93,6 +97,13 @@ void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
 }
 void configIOPin(){
+    HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
+    HWREG(GPIO_PORTD_BASE + GPIO_O_CR) |= (1<<7);
+    HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = 0;
+
+    HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
+    HWREG(GPIO_PORTF_BASE + GPIO_O_CR) |= 0x01;
+    HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = 0;
     GPIOPinTypeGPIOOutput(lcdPORT,EN|RS);
     GPIOPinTypeGPIOOutput(lcdDDR,D4|D5|D6|D7);
 }
