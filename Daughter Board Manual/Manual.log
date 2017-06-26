@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.17)  21 JUN 2017 10:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.6.16)  26 JUN 2017 16:20
 entering extended mode
 **./Manual.tex
 (Manual.tex
 LaTeX2e <2017/01/01> patch level 1
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -21,26 +21,21 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
-sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.st
-y"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.s
-ty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.
-sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.
-sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count87
@@ -56,20 +51,20 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks15
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
-cfg"))
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -306,7 +301,7 @@ File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -347,7 +342,7 @@ File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
 File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -371,17 +366,14 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hyperref.
-sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsub-
-hyperref.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsub-
-generic.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
@@ -420,28 +412,24 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\auxhook.s
-ty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions
-.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen111
 \Hy@linkcounter=\count90
 \Hy@pagecounter=\count91
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.de
-f"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count92
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperref.
-cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4486.
@@ -452,7 +440,8 @@ Package hyperref Info: Backreferencing OFF on input line 4506.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4735.
 \c@Hy@tempcnt=\count93
- ("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
+
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -477,23 +466,19 @@ LaTeX Info: Redefining \pageref on input line 6416.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex.d
-ef"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
 \Fld@listcount=\count98
 \c@bookmark@seq@number=\count99
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfile
-check.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip43
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\enumitem\enumitem.
-sty"
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\enumitem\enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip44
 \enit@outerparindent=\dimen115
@@ -501,31 +486,27 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box26
 \enitdp@description=\count100
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\changepage\changep
-age.sty"
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\changepage\changepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
 \c@cp@cntr=\count101
 \cp@tempcnt=\count102
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\color
-.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdfte
-x.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
 File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
 \Gread@gobject=\count103
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\colortbl\colortbl.
-sty"
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\colortbl\colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \col@sep=\dimen116
 \extrarowheight=\dimen117
@@ -547,19 +528,16 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.
-sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.
-sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\graph
-ics.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
@@ -567,8 +545,7 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 \Gin@req@height=\dimen118
 \Gin@req@width=\dimen119
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.
-sty"
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\fancyhdr\fancyhdr.sty
 Package: fancyhdr 2016/10/11 v3.9 Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip48
@@ -581,8 +558,7 @@ Package: fancyhdr 2016/10/11 v3.9 Extensive control of page headers and footers
 \f@nch@O@olf=\skip55
 \f@nch@O@orf=\skip56
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\titlesec\titlesec.
-sty"
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\titlesec\titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box27
 \beforetitleunit=\skip57
@@ -594,8 +570,7 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \titlewidthlast=\dimen123
 \titlewidthfirst=\dimen124
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\longtable.st
-y"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\longtable.sty"
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip59
 \LTright=\skip60
@@ -613,34 +588,27 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count109
 \LT@p@ftn=\toks22
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\setspace\setspace.
-sty"
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\setspace\setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.st
-y"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2016/11/05 v2.16a AMS math features
 \@mathmargin=\skip63
 
 For additional information on amsmath, use the `?' option.
-
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.st
-y"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
-"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks23
 \ex@=\dimen126
 ))
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty
-"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen127
 )
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty
-"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count110
@@ -681,24 +649,49 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 21.
- (Manual.aux)
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
+\lst@mode=\count122
+\lst@gtempboxa=\box34
+\lst@token=\toks28
+\lst@length=\count123
+\lst@currlwidth=\dimen135
+\lst@column=\count124
+\lst@pos=\count125
+\lst@lostspace=\dimen136
+\lst@width=\dimen137
+\lst@newlines=\count126
+\lst@lineno=\count127
+\lst@maxwidth=\dimen138
+
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count128
+\lst@skipnumbers=\count129
+\lst@framebox=\box35
+)
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+Package hyperref Info: Option `colorlinks' set `true' on input line 24.
+
+(Manual.aux)
 \openout1 = `Manual.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -734,48 +727,42 @@ LaTeX Font Info:    ... okay on input line 39.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring ON on input line 39.
-
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
-ty"
+\AtBeginShipoutBox=\box36
+Package hyperref Info: Link coloring ON on input line 67.
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\gettitl
-estring.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count122
+\c@section@level=\count130
 )
-LaTeX Info: Redefining \ref on input line 39.
-LaTeX Info: Redefining \pageref on input line 39.
-LaTeX Info: Redefining \nameref on input line 39.
- (Manual.out) (Manual.out)
+LaTeX Info: Redefining \ref on input line 67.
+LaTeX Info: Redefining \pageref on input line 67.
+LaTeX Info: Redefining \nameref on input line 67.
+
+(Manual.out) (Manual.out)
 \@outlinefile=\write3
 \openout3 = `Manual.out'.
 
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
-ii"
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count123
-\scratchdimen=\dimen135
-\scratchbox=\box35
-\nofMPsegments=\count124
-\nofMParguments=\count125
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count126
-\MPscratchDim=\dimen136
-\MPnumerator=\count127
-\makeMPintoPDFobject=\count128
-\everyMPtoPDFconversion=\toks29
-)
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
-base.sty"
+\scratchcounter=\count131
+\scratchdimen=\dimen139
+\scratchbox=\box37
+\nofMPsegments=\count132
+\nofMParguments=\count133
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count134
+\MPscratchDim=\dimen140
+\MPnumerator=\count135
+\makeMPintoPDFobject=\count136
+\everyMPtoPDFconversion=\toks30
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.st
-y"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -784,30 +771,32 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-) [1
+)
+\c@lstlisting=\count137
+ [1
 
-{C:/Users/Ayush/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 44--51
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--51
+{C:/Users/nagu/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 72--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--51
+Underfull \hbox (badness 10000) in paragraph at lines 72--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--51
+Underfull \hbox (badness 10000) in paragraph at lines 72--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--79
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 63--66
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
 
  []
 
@@ -823,100 +812,100 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout4 = `Manual.toc'.
 
  [5]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 76.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 104.
 
-("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 76.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 104.
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 108.
+(hyperref)                removing `\\' on input line 136.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--134
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--134
+Underfull \hbox (badness 10000) in paragraph at lines 137--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--134
+Underfull \hbox (badness 10000) in paragraph at lines 137--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--134
+Underfull \hbox (badness 10000) in paragraph at lines 137--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--134
+Underfull \hbox (badness 10000) in paragraph at lines 137--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--134
+Underfull \hbox (badness 10000) in paragraph at lines 137--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--134
+Underfull \hbox (badness 10000) in paragraph at lines 137--162
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--162
 
  []
 
 [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 136.
+(hyperref)                removing `\\' on input line 164.
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
-<3VPowerSupply.png, id=278, 796.47563pt x 355.3275pt>
+<3VPowerSupply.png, id=288, 796.47563pt x 355.3275pt>
 File: 3VPowerSupply.png Graphic file (type png)
  <use 3VPowerSupply.png>
-Package pdftex.def Info: 3VPowerSupply.png used on input line 142.
+Package pdftex.def Info: 3VPowerSupply.png used on input line 170.
 (pdftex.def)             Requested size: 512.16116pt x 227.62569pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
-<ServoPowerSupply.png, id=280, 797.22844pt x 305.64188pt>
+<ServoPowerSupply.png, id=290, 797.22844pt x 305.64188pt>
 File: ServoPowerSupply.png Graphic file (type png)
 
 <use ServoPowerSupply.png>
-Package pdftex.def Info: ServoPowerSupply.png used on input line 147.
+Package pdftex.def Info: ServoPowerSupply.png used on input line 175.
 (pdftex.def)             Requested size: 512.17082pt x 227.62184pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
 
  []
 
@@ -927,623 +916,625 @@ Package Fancyhdr Warning: \headheight is too small (20.67049pt):
  This may cause the page layout to be inconsistent, however.
 
 [8 <./3VPowerSupply.png> <./ServoPowerSupply.png>]
-<Level_Converter.png, id=289, 502.12593pt x 272.51813pt>
+<Level_Converter.png, id=299, 502.12593pt x 272.51813pt>
 File: Level_Converter.png Graphic file (type png)
 
 <use Level_Converter.png>
-Package pdftex.def Info: Level_Converter.png used on input line 152.
+Package pdftex.def Info: Level_Converter.png used on input line 180.
 (pdftex.def)             Requested size: 341.44878pt x 170.71428pt.
 
-Overfull \hbox (20.51294pt too wide) in paragraph at lines 151--160
+Overfull \hbox (20.51294pt too wide) in paragraph at lines 179--188
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--160
+Underfull \hbox (badness 10000) in paragraph at lines 179--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--160
+Underfull \hbox (badness 10000) in paragraph at lines 179--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
-<3v3Sensors.png, id=290, 348.55219pt x 275.52937pt>
+<3v3Sensors.png, id=300, 348.55219pt x 275.52937pt>
 File: 3v3Sensors.png Graphic file (type png)
  <use 3v3Sensors.png>
-Package pdftex.def Info: 3v3Sensors.png used on input line 164.
+Package pdftex.def Info: 3v3Sensors.png used on input line 192.
 (pdftex.def)             Requested size: 348.55132pt x 275.52869pt.
 
-[9 <./Level_Converter.png>] <5Vsensor1.png, id=296, 325.215pt x 170.13562pt>
+[9 <./Level_Converter.png>] <5Vsensor1.png, id=306, 325.215pt x 170.13562pt>
 File: 5Vsensor1.png Graphic file (type png)
 
 <use 5Vsensor1.png>
-Package pdftex.def Info: 5Vsensor1.png used on input line 170.
+Package pdftex.def Info: 5Vsensor1.png used on input line 198.
 (pdftex.def)             Requested size: 325.2142pt x 170.1352pt.
- <5Vsensor2.png, id=297, 347.79938pt x 91.09032pt>
+ <5Vsensor2.png, id=307, 347.79938pt x 91.09032pt>
 File: 5Vsensor2.png Graphic file (type png)
 
 <use 5Vsensor2.png>
-Package pdftex.def Info: 5Vsensor2.png used on input line 171.
+Package pdftex.def Info: 5Vsensor2.png used on input line 199.
 (pdftex.def)             Requested size: 347.79852pt x 91.09007pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
 [10 <./3v3Sensors.png> <./5Vsensor1.png> <./5Vsensor2.png>]
-<portexpandePlug.png, id=306, 306.39468pt x 249.18094pt>
+<portexpandePlug.png, id=316, 306.39468pt x 249.18094pt>
 File: portexpandePlug.png Graphic file (type png)
 
 <use portexpandePlug.png>
-Package pdftex.def Info: portexpandePlug.png used on input line 176.
+Package pdftex.def Info: portexpandePlug.png used on input line 204.
 (pdftex.def)             Requested size: 306.39394pt x 249.18031pt.
 
-<portExpanderuc.png, id=307, 338.01282pt x 276.28218pt>
+<portExpanderuc.png, id=317, 338.01282pt x 276.28218pt>
 File: portExpanderuc.png Graphic file (type png)
 
 <use portExpanderuc.png>
-Package pdftex.def Info: portExpanderuc.png used on input line 177.
+Package pdftex.def Info: portExpanderuc.png used on input line 205.
 (pdftex.def)             Requested size: 338.01198pt x 276.2815pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
 
 [11 <./portexpandePlug.png> <./portExpanderuc.png>]
-<externaladcuC.png, id=315, 374.90062pt x 161.85469pt>
+<externaladcuC.png, id=325, 374.90062pt x 161.85469pt>
 File: externaladcuC.png Graphic file (type png)
  <use externaladcuC.png>
-Package pdftex.def Info: externaladcuC.png used on input line 182.
+Package pdftex.def Info: externaladcuC.png used on input line 210.
 (pdftex.def)             Requested size: 374.8997pt x 161.85428pt.
 
-<externalADCplug.png, id=316, 386.19281pt x 151.3153pt>
+<externalADCplug.png, id=326, 386.19281pt x 151.3153pt>
 File: externalADCplug.png Graphic file (type png)
 
 <use externalADCplug.png>
-Package pdftex.def Info: externalADCplug.png used on input line 183.
+Package pdftex.def Info: externalADCplug.png used on input line 211.
 (pdftex.def)             Requested size: 386.19185pt x 151.31493pt.
- <lcdPlug.png, id=317, 295.1025pt x 231.86626pt>
+ <lcdPlug.png, id=327, 295.1025pt x 231.86626pt>
 File: lcdPlug.png Graphic file (type png)
 
 <use lcdPlug.png>
-Package pdftex.def Info: lcdPlug.png used on input line 201.
+Package pdftex.def Info: lcdPlug.png used on input line 229.
 (pdftex.def)             Requested size: 295.10176pt x 231.86568pt.
- <lcduC.png, id=318, 249.93375pt x 213.79875pt> [12 <./externaladcuC.png> <./ex
+ <lcduC.png, id=328, 249.93375pt x 213.79875pt> [12 <./externaladcuC.png> <./ex
 ternalADCplug.png>]
 File: lcduC.png Graphic file (type png)
  <use lcduC.png>
-Package pdftex.def Info: lcduC.png used on input line 202.
+Package pdftex.def Info: lcduC.png used on input line 230.
 (pdftex.def)             Requested size: 249.93314pt x 213.79822pt.
 
-<lcdpin.png, id=325, 345.54094pt x 104.64093pt>
+<lcdpin.png, id=335, 345.54094pt x 104.64093pt>
 File: lcdpin.png Graphic file (type png)
  <use lcdpin.png>
-Package pdftex.def Info: lcdpin.png used on input line 203.
+Package pdftex.def Info: lcdpin.png used on input line 231.
 (pdftex.def)             Requested size: 345.54008pt x 104.64066pt.
 
-<ft232.png, id=326, 387.69844pt x 288.3272pt>
+<ft232.png, id=336, 387.69844pt x 288.3272pt>
 File: ft232.png Graphic file (type png)
  <use ft232.png>
-Package pdftex.def Info: ft232.png used on input line 214.
+Package pdftex.def Info: ft232.png used on input line 242.
 (pdftex.def)             Requested size: 387.69748pt x 288.32648pt.
  [13 <./lcdPlug.png> <./lcduC.png> <./lcdpin.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 218--219
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
-<Reset_Switch.png, id=335, 553.31718pt x 270.25969pt>
+<Reset_Switch.png, id=345, 553.31718pt x 270.25969pt>
 File: Reset_Switch.png Graphic file (type png)
  <use Reset_Switch.png>
-Package pdftex.def Info: Reset_Switch.png used on input line 220.
+Package pdftex.def Info: Reset_Switch.png used on input line 248.
 (pdftex.def)             Requested size: 369.88474pt x 170.71811pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--226
+Underfull \hbox (badness 10000) in paragraph at lines 251--254
 
  []
 
-<servoPlug.png, id=336, 396.7322pt x 225.09094pt>
+<servoPlug.png, id=346, 396.7322pt x 225.09094pt>
 File: servoPlug.png Graphic file (type png)
  <use servoPlug.png>
-Package pdftex.def Info: servoPlug.png used on input line 227.
+Package pdftex.def Info: servoPlug.png used on input line 255.
 (pdftex.def)             Requested size: 396.73122pt x 225.09038pt.
 
-<servouc.png, id=337, 313.17pt x 228.855pt> [14 <./ft232.png> <./Reset_Switch.p
+<servouc.png, id=347, 313.17pt x 228.855pt> [14 <./ft232.png> <./Reset_Switch.p
 ng>]
 File: servouc.png Graphic file (type png)
  <use servouc.png>
-Package pdftex.def Info: servouc.png used on input line 228.
+Package pdftex.def Info: servouc.png used on input line 256.
 (pdftex.def)             Requested size: 313.16922pt x 228.85443pt.
  [15 <./servoPlug.png> <./servouc.png>]
-<uc.png, id=351, 238.64156pt x 741.52031pt>
+<uc.png, id=361, 238.64156pt x 741.52031pt>
 File: uc.png Graphic file (type png)
  <use uc.png>
-Package pdftex.def Info: uc.png used on input line 249.
+Package pdftex.def Info: uc.png used on input line 277.
 (pdftex.def)             Requested size: 238.64096pt x 741.5185pt.
  [16]
 Overfull \vbox (10.28265pt too high) has occurred while \output is active []
 
 
 [17 <./uc.png>]
-Underfull \vbox (badness 10000) detected at line 273
+Underfull \vbox (badness 10000) detected at line 301
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 322--322
+Underfull \hbox (badness 10000) in paragraph at lines 350--350
 []|\OT1/cmr/m/n/12 Pin
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--322
+Underfull \hbox (badness 10000) in paragraph at lines 350--350
 []|\OT1/cmr/m/n/12 PIN on
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--322
+Underfull \hbox (badness 10000) in paragraph at lines 350--350
 []|\OT1/cmr/m/n/12 Pin on
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--322
+Underfull \hbox (badness 10000) in paragraph at lines 350--350
 \OT1/cmr/m/n/12 Plug-gable
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--324
+Underfull \hbox (badness 10000) in paragraph at lines 352--352
 []|\OT1/cmr/m/n/12 External
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--326
+Underfull \hbox (badness 10000) in paragraph at lines 354--354
 []|\OT1/cmr/m/n/12 USB con-nec-tion go-ing to the AT-
  []
 
 
-Overfull \hbox (3.04977pt too wide) in paragraph at lines 341--341
+Overfull \hbox (3.04977pt too wide) in paragraph at lines 369--369
 []|\OT1/cmr/m/n/12 PE0(lm324
  []
 
 
-Overfull \hbox (3.04977pt too wide) in paragraph at lines 345--345
+Overfull \hbox (3.04977pt too wide) in paragraph at lines 373--373
 []|\OT1/cmr/m/n/12 PE2(lm324
  []
 
 
-Overfull \hbox (2.93333pt too wide) in alignment at lines 321--349
+Overfull \hbox (2.93333pt too wide) in alignment at lines 349--377
  [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 349
+Underfull \vbox (badness 10000) detected at line 377
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--367
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
 []|\OT1/cmr/m/n/12 up any
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--367
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
 \OT1/cmr/m/n/12 dig-i-tal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--367
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
 \OT1/cmr/m/n/12 de-vice.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--367
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
 \OT1/cmr/m/n/12 Cur-rent
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--367
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
 \OT1/cmr/m/n/12 Limit:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--368
+Underfull \hbox (badness 10000) in paragraph at lines 396--396
 []|\OT1/cmr/m/n/12 External
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--369
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
 []|\OT1/cmr/m/n/12 External
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--370
+Underfull \hbox (badness 10000) in paragraph at lines 398--398
 []|\OT1/cmr/m/n/12 External
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--371
+Underfull \hbox (badness 10000) in paragraph at lines 399--399
 []|\OT1/cmr/m/n/12 External
  []
 
 
-Overfull \hbox (2.93333pt too wide) in alignment at lines 349--371
+Overfull \hbox (2.93333pt too wide) in alignment at lines 377--399
  [] [] [] [] [] 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 373--373
+Underfull \hbox (badness 10000) in paragraph at lines 401--401
 []|\OT1/cmr/m/n/12 PD3 (lm
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--377
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
 []|\OT1/cmr/m/n/12 PB4
  []
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 386--386
+Underfull \hbox (badness 1092) in paragraph at lines 414--414
 []|\OT1/cmr/m/n/12 right mo-tor PWM(timer pin in PWM
  []
 
 
-Overfull \hbox (2.93333pt too wide) in alignment at lines 371--391
+Overfull \hbox (2.93333pt too wide) in alignment at lines 399--419
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (2.93333pt too wide) in alignment at lines 391--408
+Overfull \hbox (2.93333pt too wide) in alignment at lines 419--436
  [] [] [] [] [] 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 411--411
+Underfull \hbox (badness 10000) in paragraph at lines 439--439
 []|\OT1/cmr/m/n/12 Pin
  []
 
 
-Overfull \hbox (8.07646pt too wide) in paragraph at lines 411--411
+Overfull \hbox (8.07646pt too wide) in paragraph at lines 439--439
 \OT1/cmr/m/n/12 Name| 
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 421--421
+Overfull \hbox (0.56961pt too wide) in paragraph at lines 449--449
 []|\OT1/cmr/m/n/12 PB0| 
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 422--422
+Overfull \hbox (0.56961pt too wide) in paragraph at lines 450--450
 []|\OT1/cmr/m/n/12 PB1| 
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 423--423
+Overfull \hbox (0.56961pt too wide) in paragraph at lines 451--451
 []|\OT1/cmr/m/n/12 PB2| 
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 424--424
+Overfull \hbox (0.56961pt too wide) in paragraph at lines 452--452
 []|\OT1/cmr/m/n/12 PB3| 
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 425--425
+Overfull \hbox (0.56961pt too wide) in paragraph at lines 453--453
 []|\OT1/cmr/m/n/12 PB4| 
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 426--426
+Overfull \hbox (0.56961pt too wide) in paragraph at lines 454--454
 []|\OT1/cmr/m/n/12 PB5| 
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 427--427
+Overfull \hbox (0.56961pt too wide) in paragraph at lines 455--455
 []|\OT1/cmr/m/n/12 PB6| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 428--428
+Overfull \hbox (0.73488pt too wide) in paragraph at lines 456--456
 []|\OT1/cmr/m/n/12 PC0| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 429--429
+Overfull \hbox (0.73488pt too wide) in paragraph at lines 457--457
 []|\OT1/cmr/m/n/12 PC1| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 430--430
+Overfull \hbox (0.73488pt too wide) in paragraph at lines 458--458
 []|\OT1/cmr/m/n/12 PC2| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 431--431
+Overfull \hbox (0.73488pt too wide) in paragraph at lines 459--459
 []|\OT1/cmr/m/n/12 PC3| 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 431
+Underfull \vbox (badness 10000) detected at line 459
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 432--432
+Overfull \hbox (0.73488pt too wide) in paragraph at lines 460--460
 []|\OT1/cmr/m/n/12 PC4| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 433--433
+Overfull \hbox (0.73488pt too wide) in paragraph at lines 461--461
 []|\OT1/cmr/m/n/12 PC5| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 434--434
+Overfull \hbox (0.73488pt too wide) in paragraph at lines 462--462
 []|\OT1/cmr/m/n/12 PC6| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 435--435
+Overfull \hbox (0.73488pt too wide) in paragraph at lines 463--463
 []|\OT1/cmr/m/n/12 PC7| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 437--437
+Overfull \hbox (1.22238pt too wide) in paragraph at lines 465--465
 []|\OT1/cmr/m/n/12 PD0| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 438--438
+Overfull \hbox (1.22238pt too wide) in paragraph at lines 466--466
 []|\OT1/cmr/m/n/12 PD1| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 439--439
+Overfull \hbox (1.22238pt too wide) in paragraph at lines 467--467
 []|\OT1/cmr/m/n/12 PD2| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 440--440
+Overfull \hbox (1.22238pt too wide) in paragraph at lines 468--468
 []|\OT1/cmr/m/n/12 PD3| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 441--441
+Overfull \hbox (1.22238pt too wide) in paragraph at lines 469--469
 []|\OT1/cmr/m/n/12 PD4| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 442--442
+Overfull \hbox (1.22238pt too wide) in paragraph at lines 470--470
 []|\OT1/cmr/m/n/12 PD5| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 443--443
+Overfull \hbox (1.22238pt too wide) in paragraph at lines 471--471
 []|\OT1/cmr/m/n/12 PD6| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 444--444
+Overfull \hbox (1.22238pt too wide) in paragraph at lines 472--472
 []|\OT1/cmr/m/n/12 PD7| 
  []
 
 [21] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 472--474
+Underfull \hbox (badness 10000) in paragraph at lines 500--502
 
  []
 
-<CCSInstall1.png, id=387, 372.64218pt x 321.45094pt>
+<CCSInstall1.png, id=397, 372.64218pt x 321.45094pt>
 File: CCSInstall1.png Graphic file (type png)
  <use CCSInstall1.png>
-Package pdftex.def Info: CCSInstall1.png used on input line 476.
+Package pdftex.def Info: CCSInstall1.png used on input line 504.
 (pdftex.def)             Requested size: 170.7124pt x 170.72133pt.
 
-<CCSInstall2.png, id=388, 370.38374pt x 319.1925pt>
+<CCSInstall2.png, id=398, 370.38374pt x 319.1925pt>
 File: CCSInstall2.png Graphic file (type png)
  <use CCSInstall2.png>
-Package pdftex.def Info: CCSInstall2.png used on input line 479.
+Package pdftex.def Info: CCSInstall2.png used on input line 507.
 (pdftex.def)             Requested size: 170.71768pt x 170.71515pt.
 
-[23 <./CCSInstall1.png>] <CCSInstall3.png, id=397, 372.64218pt x 319.1925pt>
+[23 <./CCSInstall1.png>] <CCSInstall3.png, id=407, 372.64218pt x 319.1925pt>
 File: CCSInstall3.png Graphic file (type png)
 
 <use CCSInstall3.png>
-Package pdftex.def Info: CCSInstall3.png used on input line 482.
+Package pdftex.def Info: CCSInstall3.png used on input line 510.
 (pdftex.def)             Requested size: 170.7124pt x 170.71515pt.
- <CCSInstall4.png, id=398, 367.3725pt x 319.1925pt>
+ <CCSInstall4.png, id=408, 367.3725pt x 319.1925pt>
 File: CCSInstall4.png Graphic file (type png)
 
 <use CCSInstall4.png>
-Package pdftex.def Info: CCSInstall4.png used on input line 485.
+Package pdftex.def Info: CCSInstall4.png used on input line 513.
 (pdftex.def)             Requested size: 170.71992pt x 170.71515pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--489
+Underfull \hbox (badness 10000) in paragraph at lines 514--517
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 493--500
+Underfull \hbox (badness 10000) in paragraph at lines 521--528
 
  []
 
 [24 <./CCSInstall2.png> <./CCSInstall3.png> <./CCSInstall4.png>]
-<CreatingNewProject1.png, id=412, 446.41782pt x 146.79843pt>
+<CreatingNewProject1.png, id=422, 446.41782pt x 146.79843pt>
 File: CreatingNewProject1.png Graphic file (type png)
 
 <use CreatingNewProject1.png>
-Package pdftex.def Info: CreatingNewProject1.png used on input line 504.
+Package pdftex.def Info: CreatingNewProject1.png used on input line 532.
 (pdftex.def)             Requested size: 170.71678pt x 56.90396pt.
 
-<CreatingNewProject2.png, id=413, 447.17062pt x 548.0475pt>
+<CreatingNewProject2.png, id=423, 447.17062pt x 548.0475pt>
 File: CreatingNewProject2.png Graphic file (type png)
 
 <use CreatingNewProject2.png>
-Package pdftex.def Info: CreatingNewProject2.png used on input line 506.
+Package pdftex.def Info: CreatingNewProject2.png used on input line 534.
 (pdftex.def)             Requested size: 184.9446pt x 227.6278pt.
  [25 <./CreatingNewProject1.png> <./CreatingNewProject2.png>] <AddVariables.png
-, id=423, 149.05687pt x 195.73125pt>
+, id=433, 149.05687pt x 195.73125pt>
 File: AddVariables.png Graphic file (type png)
 
 <use AddVariables.png>
-Package pdftex.def Info: AddVariables.png used on input line 523.
+Package pdftex.def Info: AddVariables.png used on input line 551.
 (pdftex.def)             Requested size: 85.35904pt x 113.81091pt.
- <AddVariables2.png, id=424, 185.94469pt x 332.74312pt>
+ <AddVariables2.png, id=434, 185.94469pt x 332.74312pt>
 File: AddVariables2.png Graphic file (type png)
 
 <use AddVariables2.png>
-Package pdftex.def Info: AddVariables2.png used on input line 526.
+Package pdftex.def Info: AddVariables2.png used on input line 554.
 (pdftex.def)             Requested size: 127.20108pt x 227.62204pt.
- <AddVariables3.png, id=425, 450.18187pt x 271.76532pt>
+ <AddVariables3.png, id=435, 450.18187pt x 271.76532pt>
 File: AddVariables3.png Graphic file (type png)
 
 <use AddVariables3.png>
-Package pdftex.def Info: AddVariables3.png used on input line 532.
+Package pdftex.def Info: AddVariables3.png used on input line 560.
 (pdftex.def)             Requested size: 450.18077pt x 271.76465pt.
  [26 <./AddVariables.png> <./AddVariables2.png>]
-<AddVariables4.png, id=433, 271.76532pt x 265.74281pt>
+<AddVariables4.png, id=443, 271.76532pt x 265.74281pt>
 File: AddVariables4.png Graphic file (type png)
  <use AddVariables4.png>
-Package pdftex.def Info: AddVariables4.png used on input line 539.
+Package pdftex.def Info: AddVariables4.png used on input line 567.
 (pdftex.def)             Requested size: 271.76465pt x 265.74216pt.
 
-<AddVariables5.png, id=434, 414.04688pt x 219.82124pt>
+<AddVariables5.png, id=444, 414.04688pt x 219.82124pt>
 File: AddVariables5.png Graphic file (type png)
  <use AddVariables5.png>
-Package pdftex.def Info: AddVariables5.png used on input line 540.
+Package pdftex.def Info: AddVariables5.png used on input line 568.
 (pdftex.def)             Requested size: 256.08093pt x 227.62926pt.
 
 [27 <./AddVariables3.png> <./AddVariables4.png>]
-<AddVariables6.png, id=441, 732.48656pt x 509.65407pt>
+<AddVariables6.png, id=451, 732.48656pt x 509.65407pt>
 File: AddVariables6.png Graphic file (type png)
  <use AddVariables6.png>
-Package pdftex.def Info: AddVariables6.png used on input line 542.
+Package pdftex.def Info: AddVariables6.png used on input line 570.
 (pdftex.def)             Requested size: 284.52856pt x 227.62355pt.
 
-<AddVariables7.png, id=442, 178.41656pt x 252.945pt>
+<AddVariables7.png, id=452, 178.41656pt x 252.945pt>
 File: AddVariables7.png Graphic file (type png)
  <use AddVariables7.png>
-Package pdftex.def Info: AddVariables7.png used on input line 549.
+Package pdftex.def Info: AddVariables7.png used on input line 577.
 (pdftex.def)             Requested size: 199.17995pt x 227.62523pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 548--550
+Underfull \hbox (badness 10000) in paragraph at lines 576--578
 
  []
 
 [28 <./AddVariables5.png> <./AddVariables6.png>]
-Overfull \hbox (24.44662pt too wide) in paragraph at lines 550--554
+Overfull \hbox (24.44662pt too wide) in paragraph at lines 578--582
 []\OT1/cmr/m/n/12 Click the Add but-ton. When the De-fine a New Build Vari-able
  di-a-log ap-pears, in-sert TIVAWARE[]INSTALL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 550--554
+Underfull \hbox (badness 10000) in paragraph at lines 578--582
 
  []
 
-<AddVariables8.png, id=450, 376.40625pt x 247.67531pt>
+<AddVariables8.png, id=460, 376.40625pt x 247.67531pt>
 File: AddVariables8.png Graphic file (type png)
  <use AddVariables8.png>
-Package pdftex.def Info: AddVariables8.png used on input line 557.
+Package pdftex.def Info: AddVariables8.png used on input line 585.
 (pdftex.def)             Requested size: 284.54968pt x 227.62218pt.
 
-<AddVariables9.png, id=451, 667.74469pt x 203.25937pt>
+<AddVariables9.png, id=461, 667.74469pt x 203.25937pt>
 File: AddVariables9.png Graphic file (type png)
  <use AddVariables9.png>
-Package pdftex.def Info: AddVariables9.png used on input line 561.
+Package pdftex.def Info: AddVariables9.png used on input line 589.
 (pdftex.def)             Requested size: 569.09363pt x 284.53946pt.
 
-Overfull \hbox (53.49127pt too wide) in paragraph at lines 559--562
+Overfull \hbox (53.49127pt too wide) in paragraph at lines 587--590
 [] 
  []
 
 [29 <./AddVariables7.png> <./AddVariables8.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 577--662
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+)
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 599.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 599.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 608.
+ [30 <./AddVariables9.png>] [31] [32]
+Underfull \hbox (badness 10000) in paragraph at lines 788--789
+
+ []
+
+<MotorConnection.png, id=641, 381.67593pt x 120.45pt>
+File: MotorConnection.png Graphic file (type png)
+
+<use MotorConnection.png>
+Package pdftex.def Info: MotorConnection.png used on input line 793.
+(pdftex.def)             Requested size: 170.71593pt x 56.90556pt.
+ [33 <./MotorConnection.png>] [34]
+Underfull \hbox (badness 10000) in paragraph at lines 987--988
+
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 989--990
+
+ []
+
+[36] [37] [38] [39] [40]
+Underfull \hbox (badness 10000) in paragraph at lines 1384--1385
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 577--662
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1395
 
  []
 
+[41] [42] <PWM.png, id=1353, 358.33875pt x 304.13625pt>
+File: PWM.png Graphic file (type png)
+ <use PWM.png>
+Package pdftex.def Info: PWM.png used on input line 1511.
+(pdftex.def)             Requested size: 113.80682pt x 113.80948pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 577--662
-
- []
-
-
-Overfull \hbox (29.15184pt too wide) in paragraph at lines 577--662
-\OT1/cmr/m/n/12 SysCtlClockSet(SYSCTL[]SYSDIV[]5|SYSCTL[]USE[]PLL | SYSCTL[]XTA
-L[]16MHZ|SYSCTLOSC[]MAIN); 
- []
-
-
-Overfull \hbox (24.64905pt too wide) in paragraph at lines 577--662
-\OT1/cmr/m/n/12 /***** Just in case you are not fa-mil-iar with macros***** Sys
-CtlPe-riph-eralEn-able(SYSCTL[]PERIPH[]GPIOF); 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 577--662
+Underfull \hbox (badness 10000) in paragraph at lines 1513--1515
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 577--662
-
- []
-
-[30 <./AddVariables9.png>] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 665--678
-
- []
-
-
-Overfull \hbox (28.16092pt too wide) in paragraph at lines 679--775
-\OT1/cmr/m/n/12 SysCtlClockSet(SYSCTL[]SYSDIV[]4|SYSCTL[]USE[]PLL|SYSCTL[]XTAL[
-]16MHZ|SYSCTL[]OSC[]MAIN); 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 679--775
-
- []
-
-[32] [33]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 783.
- [34]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 783.
+[43 <./PWM.png>] [44] [45] [46] [47] [48] [49] [50] [51]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2147.
+ [52]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2147.
  (Manual.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 783.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 783.
-Package rerunfilecheck Info: File `Manual.out' has not changed.
-(rerunfilecheck)             Checksum: 2B015874ED5E5DF8F630C56807BD4B4C;3265.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 783.
- )
-(\end occurred inside a group at level 1)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2147.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2147.
 
-### simple group (level 1) entered at line 664 ({)
-### bottom level 
+Package rerunfilecheck Info: File `Manual.out' has not changed.
+(rerunfilecheck)             Checksum: 662057D7E0725A93EA9AA8F5DDDACAC7;3461.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2147.
+ ) 
 Here is how much of TeX's memory you used:
- 8113 strings out of 493333
- 116767 string characters out of 3130143
- 257203 words of memory out of 3000000
- 11414 multiletter control sequences out of 15000+200000
- 11556 words of font info for 40 fonts, out of 3000000 for 9000
+ 11735 strings out of 493333
+ 166537 string characters out of 3139197
+ 560207 words of memory out of 3000000
+ 13540 multiletter control sequences out of 15000+200000
+ 11783 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,43p,1010b,626s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmbx10.pfb><C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Ayush/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb><C:/Users/Ayush/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/
-Ayush/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pf
-b><C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr8.pfb><C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsl10.pfb><C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Manual.pdf (34 pages, 798556 bytes).
+ 41i,13n,58p,1010b,1959s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Manual.pdf (52 pages, 989611 bytes).
 PDF statistics:
- 529 PDF objects out of 1000 (max. 8388607)
- 100 named destinations out of 1000 (max. 500000)
- 534 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2382 PDF objects out of 2487 (max. 8388607)
+ 1573 named destinations out of 1728 (max. 500000)
+ 560 words of extra memory for PDF output out of 10000 (max. 10000000)
 

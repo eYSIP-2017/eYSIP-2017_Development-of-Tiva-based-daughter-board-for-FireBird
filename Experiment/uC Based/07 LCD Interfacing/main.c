@@ -93,6 +93,9 @@ void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
 }
 void configIOPin(){
+    HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
+    HWREG(GPIO_PORTF_BASE + GPIO_O_CR) |= 0x01;
+    HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = 0;
     GPIOPinTypeGPIOOutput(lcdPORT,EN|RS);
     GPIOPinTypeGPIOOutput(lcdDDR,D4|D5|D6|D7);
 }
@@ -133,10 +136,10 @@ void lcdCommand(unsigned char command){
     _delay_us(100);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command<<4));
     //lcdPORT=(0x0f&command)<<4;
-    _delay_ms(1);
+    _delay_us(100);
     GPIOPinWrite(lcdPORT,EN|RS,0x04);
     //lcdPORT|=(0<<RS)|(0<<RW)|(1<<EN);
-    _delay_us(100);
+    _delay_ms(1);
     GPIOPinWrite(lcdPORT,EN,0);
   //lcdPORT&=~(1<<EN);
     _delay_us(100);

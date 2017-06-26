@@ -38,9 +38,11 @@
 \BOOKMARK [2][-]{subsection.6.6}{Simple I/O Operation}{section.6}% 38
 \BOOKMARK [2][-]{subsection.6.7}{Robot Direction Control}{section.6}% 39
 \BOOKMARK [2][-]{subsection.6.8}{Robot Position Control Using Interrupts}{section.6}% 40
-\BOOKMARK [2][-]{subsection.6.9}{Timers and its Interrupts}{section.6}% 41
-\BOOKMARK [2][-]{subsection.6.10}{Robot Speed Control}{section.6}% 42
-\BOOKMARK [2][-]{subsection.6.11}{LCD Interfacing}{section.6}% 43
-\BOOKMARK [2][-]{subsection.6.12}{Analog To Digital Converter}{section.6}% 44
-\BOOKMARK [2][-]{subsection.6.13}{Serial Communication}{section.6}% 45
-\BOOKMARK [2][-]{subsection.6.14}{I2C Communication}{section.6}% 46
+\BOOKMARK [3][-]{subsubsection.6.8.1}{Calculation of position encoder resolution:}{subsection.6.8}% 41
+\BOOKMARK [2][-]{subsection.6.9}{Timers and its Interrupts}{section.6}% 42
+\BOOKMARK [2][-]{subsection.6.10}{Robot Speed Control}{section.6}% 43
+\BOOKMARK [3][-]{subsubsection.6.10.1}{Pulse Width Modulation\(PWM\)}{subsection.6.10}% 44
+\BOOKMARK [2][-]{subsection.6.11}{LCD Interfacing}{section.6}% 45
+\BOOKMARK [2][-]{subsection.6.12}{Analog To Digital Converter}{section.6}% 46
+\BOOKMARK [2][-]{subsection.6.13}{Serial Communication}{section.6}% 47
+\BOOKMARK [2][-]{subsection.6.14}{I2C Communication}{section.6}% 48

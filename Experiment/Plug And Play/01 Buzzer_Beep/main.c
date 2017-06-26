@@ -23,17 +23,17 @@
 #include "driverlib/gpio.h"
 
 /**** Useful Macros Definition******/
-/******Remove the comments if you are using uC board******
+/******Remove the comments if you are using uC board******/
 #define buzzerEnable    SYSCTL_PERIPH_GPIOA
 #define buzzer          GPIO_PORTA_BASE
 #define buzzerPin       GPIO_PIN_2
-**********************************************************/
+/**********************************************************/
 
-/******Remove the comments if you are using uC board******/
+/******Remove the comments if you are using uC board******
 #define buzzerEnable    SYSCTL_PERIPH_GPIOF
 #define buzzer          GPIO_PORTF_BASE
 #define buzzerPin       GPIO_PIN_4
-/**********************************************************/
+**********************************************************/
 
 #define buzzerOn()      GPIOPinWrite(buzzer,buzzerPin,255)
 #define buzzerOff()     GPIOPinWrite(buzzer,buzzerPin,0)
