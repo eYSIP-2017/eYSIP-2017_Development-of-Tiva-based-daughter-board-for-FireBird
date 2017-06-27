@@ -1,0 +1,208 @@
+\documentclass[a4paper,12pt,oneside]{book}
+
+%-------------------------------Start of the Preable------------------------------------------------
+\usepackage[english]{babel}
+\usepackage{blindtext}
+%packagr for hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\urlstyle{same}
+%use of package fancy header
+\usepackage{fancyhdr}
+\setlength\headheight{26pt}
+\fancyhf{}
+%\rhead{\includegraphics[width=1cm]{logo}}
+\lhead{\rightmark}
+\rhead{\includegraphics[width=1cm]{logo}}
+\fancyfoot[RE, RO]{\thepage}
+\fancyfoot[CE, CO]{\href{http://www.e-yantra.org}{www.e-yantra.org}}
+
+\pagestyle{fancy}
+
+%use of package for section title formatting
+\usepackage{titlesec}
+\titleformat{\chapter}
+  {\Large\bfseries} % format
+  {}                % label
+  {0pt}             % sep
+  {\huge}           % before-code
+ 
+%use of package tcolorbox for colorful textbox
+\usepackage[most]{tcolorbox}
+\tcbset{colback=cyan!5!white,colframe=cyan!75!black,halign title = flush center}
+
+\newtcolorbox{mybox}[1]{colback=cyan!5!white,
+colframe=cyan!75!black,fonttitle=\bfseries,
+title=\textbf{\Large{#1}}}
+
+%use of package marginnote for notes in margin
+\usepackage{marginnote}
+
+%use of packgage watermark for pages
+%\usepackage{draftwatermark}
+%\SetWatermarkText{\includegraphics{logo}}
+\usepackage[scale=2,opacity=0.1,angle=0]{background}
+\backgroundsetup{
+contents={\includegraphics{logo}}
+}
+
+%use of newcommand for keywords color
+\usepackage{xcolor}
+\newcommand{\keyword}[1]{\textcolor{red}{\textbf{#1}}}
+
+%package for inserting pictures
+\usepackage{graphicx}
+
+%package for highlighting
+\usepackage{color,soul}
+
+%new command for table
+\newcommand{\head}[1]{\textnormal{\textbf{#1}}}
+
+
+%----------------------End of the Preamble---------------------------------------
+
+
+\begin{document}
+
+%---------------------Title Page------------------------------------------------
+\begin{titlepage}
+\raggedright
+{\Large eYSIP2017\\[1cm]}
+{\Huge\scshape Tiva Based Daughter Board For Firebird V.  \\[.1in]}
+\vfill
+\begin{flushright}
+{\large Ayush Gaurav \\}
+{\large Nagesh K. \\}
+{\large Piyush Manavar \\}
+{\large Saurav Shandilya \\}
+{\large Duration of Internship: $ 22/05/2017-07/07/2017 $ \\}
+\end{flushright}
+{\itshape 2017, e-Yantra Publication}
+\end{titlepage}
+%-------------------------------------------------------------------------------
+
+\chapter[Project Tag]{Tiva Based Daughter Board For Firebird V.}
+\section*{Abstract}
+%Give the brief introduction and overview of the project
+The objective of the project was to design two daughter boards for firebird V
+which has following features:
+\begin{itemize}
+	\item  Compatible With TIVA based platform.
+	\item must support all the necessary features of firebird.
+\end{itemize}
+The deliverables expected were
+\begin{itemize}
+	\item 2 working daughter boards one with tiva launch pad and another with the Tiva TM4C123GH6PM.
+	\item Hardware and software manual for anyone using it in future.
+	\item All the demo codes for assistance.
+\end{itemize}
+\subsection*{Completion status}
+%Give details for work/project completed successfully. If work is not
+%complete, mention the details till which task is done.
+The project was divided in many small tasks which were to be completed in given time. Though we refrain from mentioning that long list but still will give some important one.
+\begin{itemize}
+	\item Learning Tiva Platform.
+	\item Finding solution for limitations offered by Tiva, like limited GPIO pins and limited ADC channels.
+	\item Utilizing the functionality provided to the maximum.
+	\item Creating schematic and layout for the daughter boards.
+	\item Testing the boards and writing all the test codes.
+	\item Making hardware and software manuals.
+\end{itemize}
+\section{Hardware parts}
+\begin{itemize}
+  \item List of hardware used :
+  \begin{itemize}
+  	\item Tiva launchpad. 
+  	\item TM4C123GH6PM.
+  	\item MCP23017 port expander.
+  	\item ADC128D818 external adc.
+  	\item Voltage regulator(lm1117,7805).
+  \end{itemize} 
+  \item Detail of each hardware:
+  \begin{enumerate}
+  	\item Tiva Launchpad: It is a micro-controller  board by Texas Instruments that has on board programmer with real time debugger feature. The micro-controller is very efficient with system clock up to 80MHz and CAN protocol. The tutorial and more information can be
+  read from \href{./datasheet/TIVALaunchpad.pdf}{Datasheet,}, 			
+	\item TM4C123GH6PM is a ARM cortex M4 based micro-controller that is used as a controller of the Tiva Launchpad. You can read \href{./datasheet/tm4c123gh6pm.pdf}{Datasheet} for more details.
+	
+	\item Voltage Regulators:The voltage source available on the Firebird is 9.6V. But the TIVA platform works on 3.3V and the servos
+	can operate upto 6V. So there must be 3 different voltage levels on the board. The uC based board has
+	2 voltage regulators and the plug and play board has 1 voltage regulator. In the uC based board the
+	9.6 volts is regulated 3.3V to power the micro-controller. In the plug and play board the there is an inbuilt voltage
+	regulator, so it is directly connected connected to 5v, 300mA source. The servo in both the boards has a
+	separate 5V regulator. Datasheets for\href{./datasheet/lm1117.pdf}{3.3 volts regulator lm1117}, and \href{./datasheet/LM7805.pdf}{ 5 volts regulator 7805} 5 volts regulator can be accessed from the links,
+	
+	\item Level Converters TIVA platform operates at 3.3V and the Firebird operates at 5V. Directly connecting these pins to
+	the TIVA may be fatal. So to for proper level maintenance, a level converter is used. A bidirectional MOS-
+	FET based level converter used. The level converter is necessary is for input pins. In the boards Level
+	converter is used for interfacing the position encoders of the motors.
+	\href{./datasheet/BSS138.pdf}{ Datasheet} of MOSFET is also provided.
+	
+	\item Port Expander(MCP23017):TM4C123GH6PM has only 64 pins out which only 43 are GPIO pins. This limits our application to read input and respond correspondingly. To increase the number of GPIO and there interrupts we have
+	used I2C compatible a port expander MCP23017. It has 2 PORTS A and B, with each port having 8
+	Pins.The interrupts on each pin can also be monitored. To read more about it, download the datasheet
+	from here.The schematic of the connection is shown below.Keep in mind that I2C SCL and SDA have
+	already been pulled up using 10K resistor.\href{./datasheet/MCP23017.pdf}{ Datasheet} of the port expander can be fount here. 
+	\item Serial Communication
+	\end{enumerate} %\href[page=5]{./datasheet/MPU-9150.pdf}{Datasheet, page 5}, \href{http://www.amazon.in}{Vendor link}, 
+  \item Connection diagram
+\end{itemize}
+
+\section{Software used}
+\begin{itemize}
+  \item Code Composer Studio
+  \item Detail of software: version, 7.1.0  \href{http://processors.wiki.ti.com/index.php/Download_CCS}{download link}, 
+  \item Installation steps
+\end{itemize}
+
+\section{Assembly of hardware}
+Circuit diagram and 
+m,>Steps of assembly of hardware with pictures for each step
+\subsection*{Circuit Diagram}
+Circuit schematic, simplified circuit diagram , block diagram of system
+\subsection*{Step 1}
+Steps for assembling part 1
+\subsection*{Step 2}
+Steps for assembling part 2
+\subsection*{Step 3}
+Steps for assembling part 3
+
+
+
+\section{Software and Code}
+\href{http://www.github.com}{Github link} for the repository of code
+
+Brief explanation of various parts of code 
+
+\section{Use and Demo}
+Final Setup Image
+
+User Instruction for demonstration
+
+\href{http://www.youtube.com}{Youtube Link} of demonstration video 
+
+\section{Future Work}
+What can be done to take this work ahead in future as projects.
+
+\section{Bug report and Challenges}
+Any issues in code and hardware.
+
+Any failure or challenges faced during project
+
+\begin{thebibliography}{li}
+\bibitem{wavelan97}
+Ad Kamerman and Leo Monteban,
+{\em WaveLAN-II: A High-Performance Wireless LAN for the Unlicensed band},
+1997.
+
+\end{thebibliography}
+
+
+\end{document}
+
