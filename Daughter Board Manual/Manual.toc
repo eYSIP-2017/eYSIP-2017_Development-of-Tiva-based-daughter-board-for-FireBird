@@ -46,5 +46,5 @@
 \contentsline {subsubsection}{\numberline {6.10.1}\textbf {Pulse Width Modulation(PWM)}}{43}{subsubsection.6.10.1}
 \contentsline {subsection}{\numberline {6.11}\relax \fontsize {20.74}{25}\selectfont \textbf {LCD Interfacing}}{47}{subsection.6.11}
 \contentsline {subsection}{\numberline {6.12}\relax \fontsize {20.74}{25}\selectfont \textbf {Analog To Digital Converter}}{52}{subsection.6.12}
-\contentsline {subsection}{\numberline {6.13}\relax \fontsize {20.74}{25}\selectfont \textbf {Serial Communication}}{52}{subsection.6.13}
-\contentsline {subsection}{\numberline {6.14}\relax \fontsize {20.74}{25}\selectfont \textbf {I2C Communication}}{52}{subsection.6.14}
+\contentsline {subsection}{\numberline {6.13}\relax \fontsize {20.74}{25}\selectfont \textbf {Serial Communication}}{56}{subsection.6.13}
+\contentsline {subsection}{\numberline {6.14}\relax \fontsize {20.74}{25}\selectfont \textbf {I2C Communication}}{56}{subsection.6.14}

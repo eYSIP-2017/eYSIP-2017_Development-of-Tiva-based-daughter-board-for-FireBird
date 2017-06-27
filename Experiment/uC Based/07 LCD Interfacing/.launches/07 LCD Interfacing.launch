@@ -5,7 +5,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.Stellaris In-Circuit Debug Interface/CORTEX_M4_0" value="${build_artifact:07 LCD Interfacing}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.Stellaris In-Circuit Debug Interface/CORTEX_M4_0" value="07 LCD Interfacing"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:07 LCD Interfacing}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.Stellaris In-Circuit Debug Interface/CORTEX_M4_0" value="C:/Users\nagu\Desktop\eYSIP\Experiment\uC Based\07 LCD Interfacing\Debug\07 LCD Interfacing.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.Stellaris In-Circuit Debug Interface/CORTEX_M4_0" value="D:/eYSIP-2017_Development-of-Tiva-based-daughter-board-for-FireBird-master\Experiment\uC Based\07 LCD Interfacing\Debug\07 LCD Interfacing.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/07 LCD Interfacing"/>
 </listAttribute>
