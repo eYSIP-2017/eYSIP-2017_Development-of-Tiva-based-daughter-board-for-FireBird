@@ -13,11 +13,39 @@
 \usepackage{longtable}
 \usepackage{setspace}
 \usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+
 
 \hypersetup{
 	colorlinks=true,      
 	urlcolor=magenta,
 	linkcolor  = black
+}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+	backgroundcolor=\color{backgroundColour},   
+	commentstyle=\color{mGreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{mGray},
+	stringstyle=\color{mPurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2,
+	language=C
 }
 
 \title{\Huge{\textbf{Tiva Based Daughter Board for Firebird V \\ Hardware And Software Manual.}}}
@@ -564,220 +592,1860 @@
 		\subsection{\huge \textbf{Buzzer}}
 		
 			Located in the folder “Buzzer\_Beep” folder in the documentation.
-			In this example, we will load buzzer beep code in Tiva based Fire Bird V. Now we will see in
-			detail the structure of this code.This experiment demonstrates the simple operation of Buzzer ON/OFF with one some delay.
+			In this example, we will load buzzer beep code in Tiva based Fire Bird V. Now we will see in detail the structure of this code.This experiment demonstrates the simple operation of Buzzer ON/OFF with one second delay.
 			Buzzer is connected to PORTF 4 pin of the Tiva Launchpad. If you have uC based board then it is connected to PORTA 2.
-			Concepts covered: Output operation, generating delay
-			Note: Make sure that you have included  driver.lib
-			Buzzer is connected at PF4/PA2 on Tiva launchPad/uC
-			To turn it on make PF4/PA2 pin logic 1
-			This experiment demonstrates the simple operation of Buzzer ON/OFF with
-			one delay. Buzzer is connected to PF4 on plug and play board and to PA2 on uC board.
+		
+			\begin{lstlisting}[style=CStyle]
+				#include <stdint.h>
+				#include <stdbool.h>
+				#include "inc/hw_types.h"
+				#include "inc/hw_memmap.h"
+				//This header File is important to Unlock GPIO Pins
+				#include "inc/hw_gpio.h"
+				#include "driverlib/sysctl.h"
+				#include "driverlib/gpio.h"
+				
+				/**** Useful Macros Definition******/
+				/******Remove the comments if you are using uC board******
+				#define buzzerEnable    SYSCTL_PERIPH_GPIOA
+				#define buzzer          GPIO_PORTA_BASE
+				#define buzzerPin       GPIO_PIN_2
+				**********************************************************/
+				
+				/******Remove the comments if you are using uC board******/
+				#define buzzerEnable    SYSCTL_PERIPH_GPIOF
+				#define buzzer          GPIO_PORTF_BASE
+				#define buzzerPin       GPIO_PIN_4
+				/**********************************************************/
+				
+				#define buzzerOn()      GPIOPinWrite(buzzer,buzzerPin,255)
+				#define buzzerOff()     GPIOPinWrite(buzzer,buzzerPin,0)
+				/***********************************/
+				void setupCLK();
+				void peripheralEnable();
+				void configIOPin();
+				void delay_ms(uint64_t delay);
+				void delay_ms(uint64_t delay);
+				
+				int main(void) {
+					setupCLK();
+					peripheralEnable();
+					configIOPin();
+					while(1){
+						buzzerOn();
+						delay_ms(1000);
+						buzzerOff();
+						delay_ms(1000);
+					}
+				}
+				/***************************************************************************************
+				* This function is used to setup Clock frequency of the controller
+				* It can be changed through codes
+				* In this we have set frequency as 40Mhz
+				* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+				***************************************************************************************/
+				void setupCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+				}
+				/*******************************
+				* Enabling System Peripherals
+				* buzzer Port in this case
+				* buzzerPin for buzzer output
+				******************************/
+				void peripheralEnable(){
+					SysCtlPeripheralEnable(buzzerEnable);
+					/***** Just in case you are not familiar with macros*****
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+					*************This is enabling PORTF*********************/
+				}
+				/*************************************
+				* Configuring Pin as Input Or Output
+				*************************************/
+				void configIOPin(){
+					GPIOPinTypeGPIOOutput(buzzer, buzzerPin);
+					/***** Just in case you are not familiar with macros*****
+					GPIOPinTypeGPIOOutput(buzzer, GPIO_PIN_4);
+					*****************This is P4 output*********************/
+				}
+				/*********************************************
+				* Calculating Delays
+				* extern void SysCtlDelay(uint32_t ui32Count)
+				* waits until the counting has been completed
+				**********************************************/
+				void delay_ms(uint64_t delay){
+					SysCtlDelay(delay*SysCtlClockGet()/3000.0);
+				}
+				void delay_us(uint64_t delay){
+					SysCtlDelay(delay*SysCtlClockGet()/3000000.0);
+				}
+			\end{lstlisting}
 			
-			Concepts covered:
-			Output operation, generating delay,setting operating frequency of the board.\\
-			\#include <stdint.h>\\
-			\#include <stdbool.h>\\
-			\#include "inc/hw\_types.h"\\
-			\#include "inc/hw\_memmap.h"\\
-			//This header File is important to Unlock GPIO Pins\\
-			\#include "inc/hw\_gpio.h"\\
-			\#include "driverlib/sysctl.h"\\
-			\#include "driverlib/gpio.h"\\
-			\\
-			/**** Useful Macros Definition******/\\
-			/******Remove the comments if you are using uC board******/\\
-			\#define buzzerEnable    SYSCTL\_PERIPH\_GPIOA\\
-			\#define buzzer          GPIO\_PORTA\_BASE\\
-			\#define buzzerPin       GPIO\_PIN\_2\\
-			/**********************************************************/\\
-			\\
-			/******Remove the comments if you are using uC board******\\
-			\#define buzzerEnable    SYSCTL\_PERIPH\_GPIOF\\
-			\#define buzzer          GPIO\_PORTF\_BASE\\
-			\#define buzzerPin       GPIO\_PIN\_4\\
-			**********************************************************/\\
-			\\
-			\#define buzzerOn()      GPIOPinWrite(buzzer,buzzerPin,255)\\
-			\#define buzzerOff()     GPIOPinWrite(buzzer,buzzerPin,0)\\
-			/***********************************/\\
-			void setupCLK();\\
-			void peripheralEnable();\\
-			void configIOPin();\\
-			void delay\_ms(uint64\_t delay);\\
-			void delay\_ms(uint64\_t delay);\\
-			int main(void) \{\\
-				setupCLK();\\
-				peripheralEnable();\\
-				configIOPin();\\
-				while(1)\{\\
-					buzzerOn();\\
-					delay\_ms(1000);\\
-					buzzerOff();\\
-					delay\_ms(1000);\\
-			\}\\
-			\}\\
-			/***************************************************************************************\\
-			* This function is used to setup Clock frequency of the\ controller\\
-			* It can be changed through codes\\
-			* In this we have set frequency as 40Mhz\\
-			* Frequency is set by SYSDIV which can be found in data sheet for different frequencies\\
-			***************************************************************************************/\\
-			void setupCLK()\{\\
-				SysCtlClockSet(SYSCTL\_SYSDIV\_5|SYSCTL\_USE\_PLL | SYSCTL\_XTAL\_16MHZ|SYSCTLOSC\_MAIN);\\
-			\}\\
-			/*******************************\\
-			* Enabling System Peripherals\\
-			* buzzer Port in this case\\
-			* buzzerPin for buzzer output\\
-			******************************/\\
-			void peripheralEnable()\{\\
-				SysCtlPeripheralEnable(buzzerEnable);\\
-				/***** Just in case you are not familiar with macros*****
-				SysCtlPeripheralEnable(SYSCTL\_PERIPH\_GPIOF);\\
-				*************This is enabling PORTF*********************/\\
-			\}\\
-			/*************************************\\
-			* Configuring Pin as Input Or Output\\
-			*************************************/\\
-			void configIOPin()\{\\
-				GPIOPinTypeGPIOOutput(buzzer, buzzerPin);\\
-				/***** Just in case you are not familiar with macros*****\\
-				GPIOPinTypeGPIOOutput(buzzer, GPIO\_PIN\_4);\\
-				*****************This is P4 output*********************/\\
-			\}\\
-			/*********************************************\\
-			* Calculating Delays\\
-			* extern void SysCtlDelay(uint32\_t ui32Count)\\
-			* waits until the counting has been completed\\
-			**********************************************/
-			void delay\_ms(uint64\_t delay)\{\\
-				SysCtlDelay(delay*SysCtlClockGet()/3000.0);\\
-			\}\\
-			void delay\_us(uint64\_t delay)\{\\
-				SysCtlDelay(delay*SysCtlClockGet()/3000000.0);\\
-			\}\\
-			\\
-		\}\\
 		\subsection{\huge \textbf{Programming the Robot}}
 		\subsection{\huge \textbf{Using Debugger of The Programmer}}
-		\subsection{\huge \textbf{Simple I/O Operation}}{		
-		This experiment demonstrates the simple I/O operations.
-		This example is only for plug and play board, but this should not discourage
-		you from understanding the example as it provide very important example of I/O
-		on TIVA platform.\\
-		Concepts covered:\\
-		input/Output operation, generating exact delay
-		\\
-		Connections:\\
-		Switch2 PF0\\
-		Red led PF1\\
-		Blue led PF2\\
-		Green led PF3\\
-		Switch1 PF4\\
+		\subsection{\huge \textbf{Simple I/O Operation}}		
+			{This experiment demonstrates the simple I/O operations.
+			This example is only for plug and play board, but this should not discourage
+			the user from understanding the example as it provide very important example of I/O operation 
+			on TIVA platform.\\
+			In this lab you have to use switch SW1, SW2 and RGB LED present on Tiva C series board.\\
+			1. Use switch SW1 to Turn on Red LED on first switch press, Green LED on second
+			switch press and Blue LED on third switch press. Repeat the same cycle next switch
+			press onwards. Note that LED should remain on for the duration switch is kept pressed
+			i.e. LED should turn off when switch is released.\\
+			2. Use switch SW2 and sw2Status (a variable). Your program should increment sw2Status
+			by one, every time switch is pressed. Note how the value of sw2Status changes on each
+			switch press. Use debugger and add sw2Status to  Watch Expression" 	window.
+			(You will find Continuous Refresh button on top of the Expression 	Window). You can
+			use step debugging or breakpoints to check the variable value.
+			Hint:To add variable to Expression Window, select and right click the variable name
+			and select  Add Watch Expression". To view Expression Window, click on View button from CCS menu bar and select Expressions.}
+			
+			\begin{lstlisting}[style=CStyle]
+				#include <stdint.h>
+				#include <stdbool.h>
+				#include "inc/hw_types.h"
+				#include "inc/hw_memmap.h"
+				#include "inc/hw_gpio.h" //To unlock locked pins for GPIO
+				#include "driverlib/sysctl.h"
+				#include "driverlib/gpio.h"
+				#define userSwitch1 GPIO_PIN_0
+				#define redLed      GPIO_PIN_1
+				#define blueLed     GPIO_PIN_2
+				#define greenLed    GPIO_PIN_3
+				#define userSwitch2 GPIO_PIN_4
+				#define LOCK_F (*((volatile unsigned long *)0x40025520))
+				#define CR_F   (*((volatile unsigned long *)0x40025524))
+				void setupCLK();
+				void configIOPin();
+				void delay_ms(uint64_t delay);
+				void delay_us(uint64_t delay);
+				
+				int main(){
+					setupCLK();
+					SysCtlDelay(3);
+					configIOPin();
+					unsigned char pinData=1;
+					unsigned char state=2;
+					unsigned char countSwitch2=0;
+					unsigned char flagSW1=0;
+					unsigned char flagSW2=0;
+					while(1){
+						pinData=GPIOPinRead(GPIO_PORTF_BASE,userSwitch2|userSwitch1);
+						if((pinData&0x01)==0)
+							flagSW1=1;
+						else if((flagSW1==1)&&(pinData&0x01)==1){
+							countSwitch2+=1;
+							flagSW1=0;
+						}	
+						if((pinData&0x10)==0){
+							GPIOPinWrite(GPIO_PORTF_BASE,redLed|blueLed|greenLed,state);
+							flagSW2=1;
+						}
+						else if(((flagSW2==1)&&(pinData&0x10)==0x10)){
+							flagSW2=0;
+							GPIOPinWrite(GPIO_PORTF_BASE,redLed|blueLed|greenLed,0);
+							state=state*2;
+							if(state>8)
+								state=2;
+						}
+						delay_ms(5);
+					}
+				}
+				/***************************************************************************************
+				* This function is used to setup Clock frequency of the controller
+				* Enabling System Peripherals
+				* PORTF in this case
+				******************************/
+				void setupCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_4|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+				}
+				/**********************************************
+				* Configuring Pin as Input Or Output
+				* PF0 by default is locked and cannot
+				* be used as input unless it is unlocked
+				***********************************************/
+				void configIOPin(){
+					GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, redLed|blueLed|greenLed);
+					HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
+					HWREG(GPIO_PORTF_BASE + GPIO_O_CR) |= 0x01;
+					HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = 0;
+					GPIOPinTypeGPIOInput(GPIO_PORTF_BASE, userSwitch2|userSwitch1);
+					GPIOPadConfigSet(GPIO_PORTF_BASE ,userSwitch2|userSwitch1,GPIO_STRENGTH_12MA,GPIO_PIN_TYPE_STD_WPU);
+				}
+				/*************************************
+				* Calculating Delays
+				*************************************/
+				void delay_ms(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000));
+				}
+				void delay_us(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));
+				}
+			\end{lstlisting}
 		
-		Explanation of the working:\\
-		In this lab you have to use switch SW1, SW2 and RGB LED present on Tiva C series board.
-		1. Use switch SW1 to Turn on Red LED on first switch press, Green LED on second
-		switch press and Blue LED on third switch press. Repeat the same cycle next switch
-		press onwards. Note that LED should remain on for the duration switch is kept pressed
-		i.e. LED should turn off when switch is released.\\
-		2. Use switch SW2 and sw2Status (a variable). Your program should increment sw2Status
-		by one, every time switch is pressed. Note how the value of sw2Status changes on each
-		switch press. Use debugger and add sw2Status to  Watch Expression" window.
-		(You will find Continuous Refresh button on top of the Expression Window). You can
-		use step debugging or breakpoints to check the variable value.
-		Hint:To add variable to Expression Window, select and right click the variable name
-		and select  Add Watch Expression". To view Expression Window, click on View but-
-		ton from CCS menu bar and select Expressions.\\
-		*********************************************************************************/\\
-		\#include <stdint.h>\\
-		\#include <stdbool.h>\\
-		\#include "inc/hw\_types.h"\\
-		\#include "inc/hw\_memmap.h"\\
-		\#include "inc/hw\_gpio.h" //To unlock locked pins for GPIO\\
-		\#include "driverlib/sysctl.h"\\
-		\#include "driverlib/gpio.h"\\
-		\#define userSwitch1 GPIO\_PIN\_0\\
-		\#define redLed      GPIO\_PIN\_1\\
-		\#define blueLed     GPIO\_PIN\_2\\
-		\#define greenLed    GPIO\_PIN\_3\\
-		\#define userSwitch2 GPIO\_PIN\_4\\
-		\#define LOCK\_F (*((volatile unsigned long *)0x40025520))\\
-		\#define CR\_F   (*((volatile unsigned long *)0x40025524))\\
-		void setupCLK();\\
-		void configIOPin();\\
-		void delay\_ms(uint64\_t delay);\\
-		void delay\_us(uint64\_t delay);\\
-		int main()\{\\
-			setupCLK();\\
-			SysCtlDelay(3);\\
-			configIOPin();\\
-			unsigned char pinData=1;\\
-			unsigned char state=2;\\
-			unsigned char countSwitch2=0;\\
-			unsigned char flagSW1=0;\\
-			unsigned char flagSW2=0;\\
-			while(1)\{\\
-				pinData=GPIOPinRead(GPIO\_PORTF\_BASE,userSwitch2| userSwitch1);\\
-				if((pinData\&0x01)==0)\\
-				flagSW1=1;\\
-				else if((flagSW1==1)\&\&(pinData\&0x01)==1)\{\\
-					countSwitch2+=1;\\
-					flagSW1=0;\\
-				\}\\
-				if((pinData\&0x10)==0)\{\\
-					GPIOPinWrite(GPIO\_PORTF\_BASE,redLed | blueLed | greenLed,state);\\
-					flagSW2=1;\\
-				\}\\
-				else if(((flagSW2==1)\&\&(pinData\&0x10)==0x10))\{\\
-					flagSW2=0;\\
-					GPIOPinWrite(GPIO\_PORTF\_BASE,redLed | blueLed | greenLed,0);\\
-					state=state*2;\\
-					if(state>8)\\
-					state=2;\\
-				\}\\
-				delay\_ms(5);\\
-			\}\\
-		\}\\
-		/***************************************************************************************\\
-		* This function is used to setup Clock frequency of the controller\\
-		* Enabling System Peripherals\\
-		* PORTF in this case\\
-		******************************/\\
-		void setupCLK()\{\\
-			SysCtlClockSet(SYSCTL\_SYSDIV\_4|SYSCTL\_USE\_PLL|SYSCTL\_XTAL\_16MHZ|SYSCTL\_OSC\_MAIN);\\
-			SysCtlPeripheralEnable(SYSCTL\_PERIPH\_GPIOF);\\
-		\}\\
-		/**********************************************\\
-		* Configuring Pin as Input Or Output\\
-		* PF0 by default is locked and cannot\\
-		* be used as input unless it is unlocked\\
-		***********************************************/\\
-		void configIOPin()\{\\
-			GPIOPinTypeGPIOOutput(GPIO\_PORTF\_BASE,\\ redLed|blueLed|greenLed);\\
-			HWREG(GPIO\_PORTF\_BASE + GPIO\_O\_LOCK) = GPIO\_LOCK\_KEY;\\
-			HWREG(GPIO\_PORTF\_BASE + GPIO\_O\_CR) |= 0x01;\\
-			HWREG(GPIO\_PORTF\_BASE + GPIO\_O\_LOCK) = 0;\\
-			GPIOPinTypeGPIOInput(GPIO\_PORTF\_BASE,\\ userSwitch2|userSwitch1);\\
-			GPIOPadConfigSet(GPIO\_PORTF\_BASE\\ ,userSwitch2|userSwitch1,GPIO\_STRENGTH\_12MA,GPIO\_PIN\_TYPE\_STD\_WPU);\\
-		\}\\
-		/*************************************\\
-		* Calculating Delays\\
-		*************************************/\\
-		void delay\_ms(uint64\_t delay)\{\\
-			SysCtlDelay(delay*(SysCtlClockGet()/3000));\\
-		\}\\
-		void delay\_us(uint64\_t delay)\{\\
-			SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));\\
-		\}\\
-	\}\\
 		\subsection{\huge \textbf{Robot Direction Control}}
+			{Located in the folder “Experiments \ Motion Control Simple” folder. Robot’s motors are controlled by L293D motor controller. Using L293D, microcontroller can control direction and velocity of both of the motors. To change the direction appropriate logic levels (High/Low) are applied to IC L293D’s direction pins. Velocity control is done using pulse width modulation (PWM) applied to Enable pins of L293D IC.\\}
+			
+			The Motor connections are as shown below 
+			
+			\begin{center}
+				\includegraphics[width=6cm, height=2cm]{MotorConnection}
+			\end{center}
+			
+			\textbf{Code for Plug and Play Board:}
+			\begin{lstlisting}[style=CStyle]
+				#include <stdint.h>
+				#include <stdbool.h>
+				#include "inc/hw_types.h"
+				#include "inc/hw_memmap.h"
+				//This header File is important to Unlock GPIO Pins
+				#include "inc/hw_gpio.h"
+				#include "driverlib/sysctl.h"
+				#include "driverlib/gpio.h"
+				//Used for controlling Motor direction
+				#define right           0x41
+				#define left            0x18
+				#define softRight       0x10
+				#define softLeft        0x01
+				#define forward         0x11
+				#define backward        0x48
+				
+				void setupCLK();
+				void peripheralEnable();
+				void configIOPin();
+				void delay_ms(uint64_t delay);
+				void delay_us(uint64_t delay);
+				void motion(uint8_t);
+				
+				int main(void) {
+					setupCLK();
+					peripheralEnable();
+					configIOPin();
+					while(1){
+						motion(forward);
+						delay_ms(1000);
+						motion(right);
+						delay_ms(1000);
+						motion(left);
+						delay_ms(1000);
+						motion(backward);
+						delay_ms(1000);
+					}
+				}
+				/***************************************************************************************
+				* This function is used to setup Clock frequency of the controller
+				* It can be changed through codes
+				* In this we have set frequency as 40Mhz
+				* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+				***************************************************************************************/
+				void setupCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+				}
+				/*******************************
+				* Enabling System Peripherals
+				* PORTF,PORTB and PORTC in this case
+				******************************/
+				void peripheralEnable(){
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+				}
+				/*************************************
+				* Configuring Pin as Input Or Output
+				* And Setting PWM Pin to Always High
+				*************************************/
+				void configIOPin(){
+					GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE,GPIO_PIN_3);
+					GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE,GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6);
+					GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_3|GPIO_PIN_2);
+					GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_2,255);
+					GPIOPinWrite(GPIO_PORTC_BASE,GPIO_PIN_5,255);
+				}
+				/*************************************
+				* Calculating Delays
+				*************************************/
+				void delay_ms(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000));
+				}
+				void delay_us(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));
+				}
+				/******************************************************
+				* This function is for giving the direction of motion
+				* Macros have been defined at starting
+				* Macros for directions are 8 bits
+				* Out of these 8 bits only 4 are used
+				* Bit 0 (LSB) corresponds to PB3
+				* Bit 3       corresponds to PF3
+				* Bit 4       corresponds to PC4
+				* Bit 6       corresponds to PF6
+				*****************************************************/
+				void motion(uint8_t direction){
+					GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_3,direction<<3);
+					GPIOPinWrite(GPIO_PORTC_BASE,GPIO_PIN_4|GPIO_PIN_6,direction);
+					GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_3,direction);
+				}
+			\end{lstlisting}
+	
+			\textbf{Code for uC based Board:}
+			\begin{lstlisting}[style=CStyle]
+				#include <stdint.h>
+				#include <stdbool.h>
+				#include "inc/hw_types.h"
+				#include "inc/hw_memmap.h"
+				//This header File is important to Unlock GPIO Pins
+				#include "inc/hw_gpio.h"
+				#include "driverlib/sysctl.h"
+				#include "driverlib/gpio.h"	
+				//Used for control Motor direction
+				#define right           0x22
+				#define left            0x11
+				#define softRight       0x02
+				#define softLeft        0x10
+				#define forward         0x12
+				#define backward        0x21
+				#define stop            0x00
+			
+				void setupCLK();
+				void peripheralEnable();
+				void configIOPin();
+				void delay_ms(uint64_t delay);
+				void delay_ms(uint64_t delay);
+				void motion(uint8_t);
+				
+				int main(void) {
+					setupCLK();
+					peripheralEnable();
+					configIOPin();
+					while(1){
+						motion(forward);
+						delay_ms(1000);
+						motion(right);
+						delay_ms(1000);
+						motion(left);
+						delay_ms(1000);
+						motion(backward);
+						delay_ms(1000);
+					}
+				}
+				/***************************************************************************************
+				* This function is used to setup Clock frequency of the controller
+				* It can be changed through codes
+				* In this we have set frequency as 40Mhz
+				* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+				***************************************************************************************/
+				void setupCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+				}
+				/*******************************
+				* Enabling System Peripherals
+				* PORTF,PORTB and PORTC in this case
+				******************************/
+				void peripheralEnable(){
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+				}
+				/*************************************
+				* Configuring Pin as Input Or Output
+				* And Setting PWM Pin to Always High
+				*************************************/
+				void configIOPin(){
+					GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1);
+					GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE,GPIO_PIN_6|GPIO_PIN_5);
+					GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_4|GPIO_PIN_3);
+					GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_3,255);
+					GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_6,255);
+				}
+				/*************************************
+				* Calculating Delays
+				*************************************/
+				void delay_ms(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000));
+				}
+				void delay_us(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));
+				}
+				/******************************************************
+				* This function is for giving the direction of motion
+				* Macros have been defined at starting
+				* Macros for directions are 8 bits
+				* Out of these 8 bits only 4 are used
+				* Bit 0 (LSB) corresponds to PB0
+				* Bit 1       corresponds to PF1
+				* Bit 4       corresponds to PF4
+				* Bit 5       corresponds to PA5
+				*****************************************************/
+				void motion(uint8_t direction){
+					GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,direction);
+					GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_5,direction);
+					GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_4,direction);
+				}
+			\end{lstlisting}
 		\subsection{\huge \textbf{Robot Position Control Using Interrupts}}
+			{Position encoders give position / velocity feedback to the robot. It is used in closed loop to control robot’s position and velocity.  Position encoder consists of optical  encoder and slotted disc assembly. When this slotted disc moves in between the optical encoder we get square wave signal whose pulse  count  indicates  position  and  time  period indicates  velocity.}\\
+			
+			\textbf{Connections:\\}
+			\begin{center}
+				
+				\textbf{Plug and Play Board:}\\
+				PB2 : External interrupt for left motor position encoder\\
+				PF0 : External interrupt for the right position encoder\\
+			
+				\textbf{uC Based Board:}\\
+				PA4 : External interrupt for left motor position encoder\\
+				PA3 : External interrupt for the right position encoder\\
+			\end{center}
+			\subsubsection{\textbf{Calculation of position encoder resolution:}}	
+			To be added later
+			
+			\textbf{Code for Plug and Play Board:}
+			\begin{lstlisting}[style=CStyle]
+				#include <stdint.h>
+				#include <stdbool.h>
+				#include "inc/tm4c123gh6pm.h"
+				#include "inc/hw_memmap.h"
+				#include "inc/hw_types.h"
+				#include "inc/hw_gpio.h"
+				#include "driverlib/sysctl.h"
+				#include "driverlib/interrupt.h"
+				#include "driverlib/gpio.h"
+				//This header File is important to Unlock GPIO Pins
+				#include "inc/hw_gpio.h"
+				#include "driverlib/sysctl.h"
+				#include "driverlib/gpio.h"
+				
+				#define right           0x41
+				#define left            0x18
+				#define softRight       0x10
+				#define softLeft        0x01
+				#define forward         0x11
+				#define backward        0x48
+				#define stop            0x00
+				
+				void setupCLK();
+				void peripheralEnable();
+				void configIOPin();
+				void delay_ms(uint64_t delay);
+				void delay_us(uint64_t delay);
+				void motion(uint8_t);
+				void interruptEnable();
+				void encoderInterruptEncountered();
+				void encoderInterruptEncountered1();
+				void angleRotate(uint16_t Degrees);
+				void linearDistanceMM(unsigned int DistanceInMM);
+				void rightDegrees(unsigned int Degrees);
+				void leftDegrees(unsigned int Degrees);
+				void forwardMM(unsigned int DistanceInMM);
+				void backwardMM(unsigned int DistanceInMM);
+				volatile unsigned long int ShaftCountRight = 0;
+				volatile unsigned long int ShaftCountLeft = 0;
+				
+				int main(void) {
+					setupCLK();
+					peripheralEnable();
+					configIOPin();
+					interruptEnable();
+					while(1){
+						forwardMM(100);
+						delay_ms(1000);
+						leftDegrees(90);
+						delay_ms(1000);
+					}
+				}
+				/***************************************************************************************
+				* This function is used to setup Clock frequency of the controller
+				* It can be changed through codes
+				* In this we have set frequency as 40Mhz
+				* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+				***************************************************************************************/
+				void setupCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+				}
+				/*******************************
+				* Enabling System Peripherals
+				* PORTF,PORTB and PORTC in this case
+				******************************/
+				void peripheralEnable(){
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+				}
+				/*************************************
+				* Configuring Pin as Input Or Output
+				* Unlocking PF0
+				* Setting PWM Pins to Always High
+				* Weak Pull to the Input Pins
+				*************************************/
+				void configIOPin(){
+					GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE,GPIO_PIN_3);
+					GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE,GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6);
+					GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_3|GPIO_PIN_2|GPIO_PIN_1);
+					GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_2,255);
+					GPIOPinWrite(GPIO_PORTC_BASE,GPIO_PIN_5,255);
+					HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
+					HWREG(GPIO_PORTF_BASE + GPIO_O_CR) |= 0x01;
+					HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = 0;
+					GPIOPinTypeGPIOInput(GPIO_PORTF_BASE, GPIO_PIN_0);
+					GPIOPadConfigSet(GPIO_PORTF_BASE,GPIO_PIN_0,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);
+					GPIOPinTypeGPIOInput(GPIO_PORTB_BASE, GPIO_PIN_2);
+					GPIOPadConfigSet(GPIO_PORTB_BASE,GPIO_PIN_2,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);
+				}
+				/*************************************
+				* Calculating Delays
+				*************************************/
+				void delay_ms(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000));
+				}
+				void delay_us(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));
+				}
+				/******************************************************
+				* This function is for giving the direction of motion
+				* Macros have been defined at starting
+				* Macros for directions are 8 bits
+				* Out of these 8 bits only 4 are used
+				* Bit 0 (LSB) corresponds to PB3
+				* Bit 3       corresponds to PF3
+				* Bit 4       corresponds to PC4
+				* Bit 6       corresponds to PF6
+				*****************************************************/
+				void motion(uint8_t direction){
+					GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_3,direction<<3);
+					GPIOPinWrite(GPIO_PORTC_BASE,GPIO_PIN_4|GPIO_PIN_6,direction);
+					GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_3,direction);
+					}
+					/****For Enabling Interrupt on PORTF and PORTB****/
+					void interruptEnable(){
+					GPIOIntDisable(GPIO_PORTF_BASE,GPIO_PIN_0);
+					GPIOIntClear(GPIO_PORTF_BASE,GPIO_PIN_0);
+					GPIOIntRegister(GPIO_PORTF_BASE, encoderInterruptEncountered);
+					GPIOIntTypeSet(GPIO_PORTF_BASE,GPIO_PIN_0,GPIO_FALLING_EDGE);
+					GPIOIntEnable(GPIO_PORTF_BASE,GPIO_PIN_0);			
+					GPIOIntDisable(GPIO_PORTB_BASE,GPIO_PIN_2);
+					GPIOIntClear(GPIO_PORTB_BASE,GPIO_PIN_2);
+					GPIOIntRegister(GPIO_PORTB_BASE, encoderInterruptEncountered1);
+					GPIOIntTypeSet(GPIO_PORTB_BASE,GPIO_PIN_2,GPIO_FALLING_EDGE);
+					GPIOIntEnable(GPIO_PORTB_BASE,GPIO_PIN_2);
+				}	
+				/**** ISR For External Interrupt on PortF************************
+				* Check on which pin of the PORTA has encountered an interrupt
+				* There is only one ISR for complete PORT
+				* No two PORTs can have same ISR
+				****************************************************************/
+				void encoderInterruptEncountered(){
+					if(GPIOIntStatus(GPIO_PORTF_BASE, false)&GPIO_PIN_0){
+						ShaftCountRight++;
+						GPIOIntClear(GPIO_PORTF_BASE, GPIO_PIN_0);
+					}
+					if(GPIOIntStatus(GPIO_PORTB_BASE, false)&GPIO_PIN_2){
+						ShaftCountLeft++;
+						GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1,2);
+						GPIOIntClear(GPIO_PORTB_BASE, GPIO_PIN_2);
+					}
+				}
+				/****************************************************
+				* Function to Rotate to desired Angle
+				* Resolution can be Change to Get Higher Precision
+				****************************************************/
+				void angleRotate(uint16_t Degrees){
+					unsigned long int ReqdShaftCountInt = 0;
+					ReqdShaftCountInt = Degrees/ 4.09;// division by resolution to get shaft count
+					ShaftCountRight = 0;
+					while (1){
+						if((ShaftCountRight>=ReqdShaftCountInt))
+							break;
+					}
+					motion(stop);
+				}
+				/****************************************************
+				* Function to Move in a Linear Distance
+				* Resolution can be Change to Get Higher Precision
+				****************************************************/
+				void linearDistanceMM(unsigned int DistanceInMM){
+					unsigned long int ReqdShaftCountInt = 0;
+					ReqdShaftCountInt =DistanceInMM / 5.338;;
+					ShaftCountRight=0;
+					ShaftCountLeft=0;
+					while(1){
+						if((ShaftCountRight >=ReqdShaftCountInt)&&(ShaftCountLeft >= ReqdShaftCountInt))
+							break;
+						else if((ShaftCountRight > ReqdShaftCountInt))
+							motion(softRight);
+						else if((ShaftCountLeft > ReqdShaftCountInt))
+							motion(softLeft);
+					}
+					motion(stop); //Stop robot
+				}
+				void forwardMM(unsigned int DistanceInMM){
+					motion(forward);
+					linearDistanceMM(DistanceInMM);
+				}
+				
+				void backwardMM(unsigned int DistanceInMM){
+					motion(backward);
+					linearDistanceMM(DistanceInMM);
+				}
+				void leftDegrees(unsigned int Degrees){
+					motion(left); //Turn left
+					angleRotate(Degrees);
+				}
+				void rightDegrees(unsigned int Degrees){
+					motion(right); //Turn right
+					angleRotate(Degrees);
+				}
+			\end{lstlisting}	
+			
+			\textbf{Code for uC based Board:}
+			\begin{lstlisting}[style=CStyle]
+				#include <stdint.h>
+				#include <stdbool.h>
+				#include "inc/tm4c123gh6pm.h"
+				#include "inc/hw_memmap.h"
+				#include "inc/hw_types.h"
+				#include "inc/hw_gpio.h"
+				#include "driverlib/sysctl.h"
+				#include "driverlib/interrupt.h"
+				#include "driverlib/gpio.h"
+				
+				#define right           0x22
+				#define left            0x11
+				#define softRight       0x02
+				#define softLeft        0x10
+				#define forward         0x12
+				#define backward        0x21
+				#define stop            0x00
+				
+				void setupCLK();
+				void peripheralEnable();
+				void gpioEnable();
+				void interruptEnable();
+				void encoderInterruptEncountered();
+				void linearDistanceMM(unsigned int);
+				void angleRotate(uint16_t);
+				void forwardMM(unsigned int);
+				void backwardMM(unsigned int);
+				void leftDegrees(unsigned int);
+				void rightDegrees(unsigned int);
+				void delay_ms(uint64_t delay);
+				void delay_us(uint64_t delay);
+				void motion(uint8_t direction);
+				volatile uint16_t ShaftCountRight=0,ShaftCountLeft=0;
+				
+				int main(void) {
+					setupCLK();
+					peripheralEnable();
+					gpioEnable();
+					interruptEnable();
+					while(1){
+						forwardMM(100);
+						delay_ms(1000);
+						rightDegrees(90);
+						delay_ms(1000);
+					}
+				}
+				
+				/***************************************************************************************
+				* This function is used to setup Clock frequency of the controller
+				* It can be changed through codes
+				* In this we have set frequency as 40Mhz
+				* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+				***************************************************************************************/
+				void setupCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+				}
+				
+				/*******************************
+				* Enabling System Peripherals
+				* PORTF,PORTB and PORTA in this case
+				******************************/
+				void peripheralEnable(){
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+				}
+				
+				/*************************************
+				* Configuring Pin as Input Or Output
+				* Setting PWM Pins to Always High
+				* Weak Pull to the Input Pins
+				*************************************/
+				void gpioEnable(){
+					GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2);
+					GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1);
+					GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE,GPIO_PIN_6|GPIO_PIN_5);
+					GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_4|GPIO_PIN_3);
+					GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_3,255);
+					GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_6,255);
+					GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_4|GPIO_PIN_3);
+					GPIOPadConfigSet(GPIO_PORTA_BASE ,GPIO_PIN_4|GPIO_PIN_5,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);
+				}
+				/****For Enabling Interrupt on PortA****/
+				void interruptEnable(){
+					GPIOIntDisable(GPIO_PORTA_BASE,GPIO_PIN_4|GPIO_PIN_3);
+					GPIOIntClear(GPIO_PORTA_BASE, GPIO_PIN_4|GPIO_PIN_3);
+					GPIOIntRegister(GPIO_PORTA_BASE, encoderInterruptEncountered);
+					GPIOIntTypeSet(GPIO_PORTA_BASE,GPIO_PIN_4|GPIO_PIN_3,GPIO_FALLING_EDGE);
+					GPIOIntEnable(GPIO_PORTA_BASE,GPIO_PIN_4|GPIO_PIN_3);
+				}
+				/**** ISR For External Interrupt on PortA************************
+				* Check on which pin of the PORTA has encountered an interrupt
+				* There is only one ISR for complete PORT
+				* No two PORTs can have same ISR
+				****************************************************************/
+				void encoderInterruptEncountered(){
+					if(GPIOIntStatus(GPIO_PORTA_BASE, false)&GPIO_PIN_4){
+						ShaftCountLeft++;
+						GPIOIntClear(GPIO_PORTA_BASE, GPIO_PIN_4);
+					}
+					if(GPIOIntStatus(GPIO_PORTA_BASE, false)&GPIO_PIN_3){
+						ShaftCountRight++;
+						GPIOIntClear(GPIO_PORTA_BASE, GPIO_PIN_3);
+					}
+				}
+				/*************************************
+				* Calculating Delays
+				*************************************/
+				void delay_ms(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000));
+				}
+				void delay_us(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));
+				}
+				/******************************************************
+				* This function is for giving the direction of motion
+				* Macros have been defined at starting
+				* Macros for directions are 8 bits
+				* Out of these 8 bits only 4 are used
+				* Bit 0 (LSB) corresponds to PB3
+				* Bit 3       corresponds to PF3
+				* Bit 4       corresponds to PC4
+				* Bit 6       corresponds to PF6
+				*****************************************************/
+				void motion(uint8_t direction){
+					GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,direction);
+					GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_5,direction);
+					GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_4,direction);
+				}
+				/****************************************************
+				* Function to Rotate to desired Angle
+				* Resolution can be Change to Get Higher Precision
+				****************************************************/
+				void angleRotate(uint16_t Degrees){
+					unsigned long int ReqdShaftCountInt = 0;  // division by resolution to get shaft count
+					ReqdShaftCountInt = Degrees/ 4.09;;
+					ShaftCountRight = 0;
+					ShaftCountLeft = 0;
+					while (1){
+						if((ShaftCountRight>=ReqdShaftCountInt)&&(ShaftCountLeft>=ReqdShaftCountInt))
+							break;
+					}
+					motion(stop);
+				}
+				/****************************************************
+				* Function to Move in a Linear Distance
+				* Resolution can be Change to Get Higher Precision
+				****************************************************/
+				void linearDistanceMM(unsigned int DistanceInMM){
+					unsigned long int ReqdShaftCountInt = 0;
+					ReqdShaftCountInt =DistanceInMM / 5.338;;
+					ShaftCountRight=0;
+					ShaftCountLeft=0;
+					while(1){
+						if((ShaftCountRight > ReqdShaftCountInt)&&(ShaftCountLeft > ReqdShaftCountInt))
+							break;
+						else if((ShaftCountRight > ReqdShaftCountInt))
+							motion(softRight);
+						else if((ShaftCountLeft > ReqdShaftCountInt))
+						motion(softLeft);
+					}
+					motion(stop); //Stop robot
+				}
+				void forwardMM(unsigned int DistanceInMM){
+					motion(forward);
+					linearDistanceMM(DistanceInMM);
+				}	
+				void backwardMM(unsigned int DistanceInMM){
+					motion(backward);
+					linearDistanceMM(DistanceInMM);
+				}
+				void leftDegrees(unsigned int Degrees){
+					motion(left); //Turn left
+					angleRotate(Degrees);
+				}
+				void rightDegrees(unsigned int Degrees){
+					motion(right); //Turn right
+					angleRotate(Degrees);
+				}
+			\end{lstlisting}
+			
 		\subsection{\huge \textbf{Timers and its Interrupts}}
+			{The TM4C123GH6PM General-Purpose Timer Module (GPTM) contains six 16/32-bit GPTM blocks	and six 32/64-bit Wide GPTM blocks. Each 16/32-bit GPTM block provides two 16-bit timers/counters	(referred to as Timer A and Timer B) that can be configured to operate independently as timers or event counters, or concatenated to operate as one 32-bit timer or one 32-bit Real-Time Clock (RTC). Each 32/64-bit Wide GPTM block provides 32-bit timers for Timer A and Timer B that can be concatenated to operate as a 64-bit timer.}\\
+			
+			Timers are mainly used for
+			\begin{itemize}
+				\item Velocity Control
+				\item Servo Motor Control
+				\item Event Scheduling
+				\item Velocity Calculation
+			\end{itemize}
+			
+			In this section the event scheduling application of timer is explained. To illustrate this the buzzer is switched On and OFF periodically. The remaining applications are explained in the further sections. \\
+			
+			\begin{lstlisting}[style=CStyle]
+				#include <stdint.h>
+				#include <stdbool.h>
+				#include "inc/hw_types.h"
+				#include "inc/hw_memmap.h"
+				#include "inc/tm4c123gh6pm.h"
+				//This header File is important to Unlock GPIO Pins
+				#include "inc/hw_gpio.h"
+				#include "driverlib/sysctl.h"
+				#include "driverlib/gpio.h"
+				//Used for enabling the timer
+				#include "driverlib/timer.h"
+				//Used for enabling interrupt
+				#include "driverlib/interrupt.h"
+				/**** Useful Macros Definition******/
+				/******Remove the comments if you are using uC board******
+				#define buzzerEnable    SYSCTL_PERIPH_GPIOA
+				#define buzzer          GPIO_PORTA_BASE
+				#define buzzerPin       GPIO_PIN_2
+				**********************************************************/
+				
+				/******Remove the comments if you are using uC board******/
+				#define buzzerEnable    SYSCTL_PERIPH_GPIOF
+				#define buzzer          GPIO_PORTF_BASE
+				#define buzzerPin       GPIO_PIN_4
+				/**********************************************************/
+				
+				#define buzzerOn()      GPIOPinWrite(buzzer,buzzerPin,255)
+				#define buzzerOff()     GPIOPinWrite(buzzer,buzzerPin,0)
+				/***********************************/
+				void setupCLK();
+				void peripheralEnable();
+				void configIOPin();
+				void timerEnable();
+				
+				uint32_t ui32Period;    // used for generating one second delay
+				volatile int flag = 0;           //used to monitor the state of buzzer
+				
+				int main(void) {
+					setupCLK();
+					peripheralEnable();
+					configIOPin();
+					timerEnable();
+					flag = 0;
+					while(1){
+					}
+				}
+				/***************************************************************************************
+				* This function is used to setup Clock frequency of the controller
+				* It can be changed through codes
+				* In this we have set frequency as 40Mhz
+				* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+				***************************************************************************************/
+				void setupCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+				}
+				/*******************************
+				* Enabling System Peripherals
+				* buzzer Port in this case
+				* buzzerPin for buzzer output
+				* Enabling Timer 0
+				******************************/
+				void peripheralEnable(){
+					SysCtlPeripheralEnable(buzzerEnable);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
+					/***** Just in case you are not familiar with macros*****
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+					*************This is enabling PORTF*********************/
+				}
+				/*************************************
+				* Configuring Pin as Input Or Output
+				*************************************/
+				void configIOPin(){
+					GPIOPinTypeGPIOOutput(buzzer, buzzerPin);
+				}
+				/*******************************
+				* Enabling Timer 0
+				* Timer is configured to be generate
+				interrupt every second
+				* Here sysCtlClockGet() is divided
+				by the on time of buzzer
+				******************************/
+				void timerEnable(){
+					TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC);
+					ui32Period = (SysCtlClockGet() / 1) / 2;
+					TimerLoadSet(TIMER0_BASE, TIMER_A, ui32Period -1);
+					IntEnable(INT_TIMER0A);
+					TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+					IntMasterEnable();
+					TimerEnable(TIMER0_BASE, TIMER_A);
+				}
+				/*******************************************************************
+				* This function is executed when the timer overflows
+				* In this example the buzzer is switched on and off alternatively
+				*******************************************************************/
+				void Timer0IntHandler(void)
+				{
+				// Clear the timer interrupt
+					TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+					flag = !flag;
+					if(flag == 0){
+						buzzerOn();
+					}
+					else{
+						buzzerOff();
+					}
+				}
+			\end{lstlisting}
+			 
 		\subsection{\huge \textbf{Robot Speed Control}}
+			\subsubsection{\textbf{Pulse Width Modulation(PWM)}}
+				Pulse width modulation is a process in which duty cycle of constant frequency square wave is modulated to control power delivered to the load i.e. motor. \\
+				Duty cycle is the ratio of ‘T-ON/ T’. Where ‘T-ON’ is ON time and ‘T’ is the time period of the wave. Power delivered to the motor is proportional to the ‘T-ON’ time of the signal. In case of PWM the motor reacts to the time average of the signal. \\
+				PWM is used to control total amount of power delivered to the load without power losses which generally occur in resistive methods of power control. 
+				\begin{center}
+					\includegraphics[width=4cm, height=4cm]{PWM}
+				\end{center}
+				Above figure shows the PWM waveforms for motor velocity control. In case (A), ON time is
+				90 percent of time period. This wave has more average value. Hence more power is delivered to themotor. In case (B), the motor will run slower as the ON time is just 10 percent of time period. \\
+				
+				\hspace{-.7cm}
+				The TM4C123GH6PM microcontroller contains two PWM modules, each with four PWM generator blocks and a control block, for a total of 16 PWM outputs. The control block determines the polarity of the PWM signals, and which signals are passed through to the pins. The connections of PWM motor pins are given in the section 6.7. The same code is modified to change the velocity of the motors.
+				
+				\textbf{Code for Plug and Play Board:}
+				\begin{lstlisting}[style=CStyle]
+					include <stdint.h>
+					#include <stdbool.h>
+					#include "inc/hw_types.h"
+					#include "inc/hw_memmap.h"
+					#include "driverlib/pin_map.h"
+					//This header File is important to Unlock GPIO Pins
+					#include "inc/hw_gpio.h"
+					#include "driverlib/sysctl.h"
+					#include "driverlib/gpio.h"
+					//Used for PWM
+					#include "driverlib/pwm.h"
+					
+					#define right           0x41
+					#define left            0x18
+					#define softRight       0x10
+					#define softLeft        0x01
+					#define forward         0x11
+					#define backward        0x48
+					#define stop            0x00
+					
+					void setupCLK();
+					void peripheralEnable();
+					void configIOPin();
+					void delay_ms(uint64_t delay);
+					void delay_ms(uint64_t delay);
+					void motion(uint8_t);
+					void enablePWM();
+					void Velocity(uint8_t lSpeed,uint8_t rSpeed);
+					
+					int main(void) {
+						setupCLK();
+						peripheralEnable();
+						configIOPin();
+						enablePWM();
+						while(1){
+							Velocity(150, 150);
+							motion(forward);
+							delay_ms(2000);
+							motion(stop);
+							delay_ms(500);
+							Velocity(255, 255);
+							motion(backward);
+							delay_ms(800);
+							motion(stop);
+							delay_ms(500);
+							Velocity(255, 255);
+							motion(right);
+							delay_ms(1000);
+							motion(stop);
+							delay_ms(500);
+							Velocity(150, 150);
+							motion(left);
+							delay_ms(1000);
+							motion(stop);
+							delay_ms(500);
+							Velocity(150, 150);
+							motion(backward);
+							delay_ms(1000);
+						}
+					}
+					/***************************************************************************************
+					* This function is used to setup Clock frequency of the controller
+					* It can be changed through codes
+					* In this we have set frequency as 40Mhz
+					* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+					* The PWM module is clocked by the system clock through a divider, and that divider has
+					a range of 2 to 64.
+					* By setting the divider to 64, it will run the PWM clock at 625 kHz.
+					***************************************************************************************/
+					void setupCLK(){
+						SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+						SysCtlPWMClockSet(SYSCTL_PWMDIV_64);    //625kHz PWM Clock
+					}
+					/*******************************
+					* Enabling System Peripherals
+					* PORTF,PORTB and PORTC in this case
+					******************************/
+					void peripheralEnable(){
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM0); // Enabling PWM0
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1); // Enabling PWM1
+					}
+					/*************************************
+					* Configuring Pin as Input Or Output
+					* And Setting PWM Pin to Always High
+					*************************************/
+					void configIOPin(){
+						GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE,GPIO_PIN_3);
+						GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE,GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6);
+						GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_3|GPIO_PIN_2);
+					}
+					/*************************************
+					* Calculating Delays
+					*************************************/
+					void delay_ms(uint64_t delay){
+						SysCtlDelay(delay*(SysCtlClockGet()/3000));
+						}
+						void delay_us(uint64_t delay){
+						SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));
+					}
+					/******************************************************
+					* This function is for giving the direction of motion
+					* Macros have been defined at starting
+					* Macros for directions are 8 bits
+					* Out of these 8 bits only 4 are used
+					* Bit 0 (LSB) corresponds to PB3
+					* Bit 3       corresponds to PF3
+					* Bit 4       corresponds to PC4
+					* Bit 6       corresponds to PF6
+					*****************************************************/
+					void motion(uint8_t direction){
+						GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_3,direction<<3);
+						GPIOPinWrite(GPIO_PORTC_BASE,GPIO_PIN_4|GPIO_PIN_6,direction);
+						GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_3,direction);
+					}
+					/******************************************************
+					* This function is for enabling the PWM Modules
+					* PWM can be enabled on a pin based on the datasheet
+					*****************************************************/
+					void enablePWM(){
+						GPIOPinTypePWM(GPIO_PORTF_BASE, GPIO_PIN_2);
+						GPIOPinConfigure(GPIO_PF2_M1PWM6);
+						GPIOPinTypePWM(GPIO_PORTC_BASE, GPIO_PIN_5);
+						GPIOPinConfigure(GPIO_PC5_M0PWM7);
+						//Count Down Mode
+						PWMGenConfigure(PWM0_BASE, PWM_GEN_3, PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);
+						PWMGenPeriodSet(PWM0_BASE, PWM_GEN_3, 255); //Load Count value
+						//Count Down Mode
+						PWMGenConfigure(PWM1_BASE, PWM_GEN_3, PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);
+						PWMGenPeriodSet(PWM1_BASE, PWM_GEN_3, 255); //Load Count value
+						PWMGenEnable(PWM0_BASE, PWM_GEN_3);
+						PWMGenEnable(PWM1_BASE, PWM_GEN_3);
+						PWMOutputState(PWM1_BASE, PWM_OUT_6_BIT, true);
+						PWMOutputState(PWM0_BASE, PWM_OUT_7_BIT, true);
+					}
+					/*************************************************************
+					* This function is used to control the speed of the motors
+					* The speed can changed by the PWMPulseWidthSet() function
+					* lSpeed is used to control the speed of left motor
+					* rSpeed is used to control the speed of right motor
+					************************************************************/
+					void Velocity(uint8_t lSpeed,uint8_t rSpeed){
+						lSpeed=(lSpeed>255)?255:lSpeed;
+						rSpeed=(rSpeed>255)?255:rSpeed;
+						PWMPulseWidthSet(PWM1_BASE, PWM_OUT_6, lSpeed);
+						PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, rSpeed);
+					}
+				\end{lstlisting}
+				
+				\textbf{Code for uC based Board:}
+				\begin{lstlisting}[style=CStyle]
+					#include <stdint.h>
+					#include <stdbool.h>
+					#include "inc/hw_types.h"
+					#include "inc/hw_memmap.h"
+					#include "driverlib/pin_map.h"
+					
+					//This header File is important to Unlock GPIO Pins
+					#include "inc/hw_gpio.h"
+					#include "driverlib/sysctl.h"
+					#include "driverlib/gpio.h"
+					//Used for PWM
+					#include "driverlib/pwm.h"
+					
+					#define right           0x22
+					#define left            0x11
+					#define softRight       0x10
+					#define softLeft        0x02
+					#define forward         0x12
+					#define backward        0x21
+					#define stop            0x00
+					
+					void setupCLK();
+					void peripheralEnable();
+					void configIOPin();
+					void delay_ms(uint64_t delay);
+					void delay_ms(uint64_t delay);
+					void motion(uint8_t);
+					void enablePWM();
+					void Velocity(uint8_t lSpeed,uint8_t rSpeed);
+					
+					int main(void) {
+						setupCLK();
+						peripheralEnable();
+						configIOPin();
+						enablePWM();
+						while(1){
+							Velocity(150, 150);
+							motion(forward);
+							delay_ms(2000);
+							motion(stop);
+							delay_ms(500);
+							Velocity(255, 255);
+							motion(backward);
+							delay_ms(800);
+							motion(stop);
+							delay_ms(500);
+							Velocity(255, 255);
+							motion(right);
+							delay_ms(1000);
+							motion(stop);
+							delay_ms(500);
+							Velocity(150, 150);
+							motion(left);
+							delay_ms(1000);
+							motion(stop);
+							delay_ms(500);
+							Velocity(150, 150);
+							motion(backward);
+							delay_ms(1000);
+						}
+					}
+					/***************************************************************************************
+					* This function is used to setup Clock frequency of the controller
+					* It can be changed through codes
+					* In this we have set frequency as 40Mhz
+					* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+					* * The PWM module is clocked by the system clock through a divider, and that divider has
+					a range of 2 to 64.
+					* By setting the divider to 64, it will run the PWM clock at 625 kHz.
+					***************************************************************************************/
+					void setupCLK(){
+						SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+						SysCtlPWMClockSet(SYSCTL_PWMDIV_64);    //625kHz PWM Clock
+					
+					}
+					/*******************************
+					* Enabling System Peripherals
+					* PORTF,PORTB and PORTA in this case
+					******************************/
+					void peripheralEnable(){
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1); // Enabling PWM1
+					}
+					/*************************************
+					* Configuring Pin as Input Or Output
+					* And Setting PWM Pin to Always High
+					*************************************/
+					void configIOPin(){
+						GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1);
+						GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE,GPIO_PIN_5);
+						GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_4);
+						}
+					/*************************************
+					* Calculating Delays
+					*************************************/
+					void delay_ms(uint64_t delay){
+						SysCtlDelay(delay*(SysCtlClockGet()/3000));
+						}
+						void delay_us(uint64_t delay){
+						SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));
+						}
+					/******************************************************
+					* This function is for giving the direction of motion
+					* Macros have been defined at starting
+					* Macros for directions are 8 bits
+					* Out of these 8 bits only 4 are used
+					* Bit 0       corresponds to PB0
+					* Bit 1       corresponds to PB1
+					* Bit 4       corresponds to PF4
+					* Bit 5       corresponds to PA5
+					*****************************************************/
+					void motion(uint8_t direction){
+						GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_1|GPIO_PIN_0,direction);
+						GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_4,direction);
+						GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_5,direction);
+					}
+					/******************************************************
+					* This function is for enabling the PWM Modules
+					* PWM can be enabled on a pin based on the datasheet
+					*****************************************************/
+					void enablePWM(){
+						GPIOPinTypePWM(GPIO_PORTF_BASE, GPIO_PIN_3);
+						GPIOPinConfigure(GPIO_PF3_M1PWM7);
+						GPIOPinTypePWM(GPIO_PORTA_BASE, GPIO_PIN_6);
+						GPIOPinConfigure(GPIO_PA6_M1PWM2);
+						//Count Down Mode
+						PWMGenConfigure(PWM1_BASE, PWM_GEN_3, PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);
+						PWMGenPeriodSet(PWM1_BASE, PWM_GEN_3, 255); //Load Count value
+						//Count Down Mode
+						PWMGenConfigure(PWM1_BASE, PWM_GEN_1, PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);
+						PWMGenPeriodSet(PWM1_BASE, PWM_GEN_1, 255); //Load Count value
+						PWMGenEnable(PWM1_BASE, PWM_GEN_3); //Enable the generators
+						PWMGenEnable(PWM1_BASE, PWM_GEN_1);
+						PWMOutputState(PWM1_BASE, PWM_OUT_7_BIT|PWM_OUT_2_BIT, true);
+					}
+					/*************************************************************
+					* This function is used to control the speed of the motors
+					* The speed can changed by the PWMPulseWidthSet() function
+					* lSpeed is used to control the speed of left motor
+					* rSpeed is used to control the speed of right motor
+					************************************************************/
+					void Velocity(uint8_t lSpeed,uint8_t rSpeed){
+						lSpeed=(lSpeed>255)?255:lSpeed;
+						rSpeed=(rSpeed>255)?255:rSpeed;
+						PWMPulseWidthSet(PWM1_BASE, PWM_OUT_7, lSpeed);
+						PWMPulseWidthSet(PWM1_BASE, PWM_OUT_2, rSpeed);
+					}
+				\end{lstlisting}
+				
 		\subsection{\huge \textbf{LCD Interfacing}}
+			{To interface LCD with the microcontroller in default configuration requires 3 control signals and 8 data lines. This is known as 8 bit interfacing mode which requires total 11 I/O lines. To reduce the number  of  I/Os  required for  LCD interfacing we can use 4 bit  interfacing mode  which requires  3 control  signals  with 4 data lines.  In this  mode upper  nibble and lower  nibble of commands/data set needs to be sent separately. The three control lines are referred to as EN, RS, and RW. The LCD connections are given in section 5.6.}
+			
+			\textbf{Code for Plug and Play Board:}
+			\begin{lstlisting}[style=CStyle]
+				#include <stdint.h>
+				#include <stdbool.h>
+				#include "inc/hw_types.h"
+				#include "inc/hw_memmap.h"
+				#include "inc/hw_gpio.h" //To unlock locked pins for GPIO
+				#include "driverlib/sysctl.h"
+				#include "driverlib/gpio.h"
+				#include<math.h>
+				#include<stdlib.h>
+				#ifndef     lcdPORT
+				#define     lcdPORT     GPIO_PORTD_BASE
+				#endif
+				#ifndef     lcdDDR
+				#define     lcdDDR      GPIO_PORTA_BASE
+				#endif
+				#ifndef     lcdPIN
+				#define     lcdPIN      PINC
+				#endif
+				#ifndef     RS
+				#define     RS          GPIO_PIN_6
+				#endif
+				//#ifndef     RW
+				//#define     RW          GPIO_PIN_1
+				//#endif
+				#ifndef     EN
+				#define     EN          GPIO_PIN_7
+				#endif
+				#ifndef     D4
+				#define     D4          GPIO_PIN_2
+				#endif
+				#ifndef     D5
+				#define     D5          GPIO_PIN_3
+				#endif
+				#ifndef     D6
+				#define     D6          GPIO_PIN_4
+				#endif
+				#ifndef     D7
+				#define     D7          GPIO_PIN_5
+				#endif
+				unsigned char cursorPositionCheck=0;
+				
+				void lcdInit();
+				void lcdCommand(unsigned char);
+				void lcdData(unsigned char);
+				void lcdString(char*);
+				void lcdGotoxy(unsigned char,unsigned char);
+				void lcdClear();
+				void lcdCheck();
+				void setupCLK();
+				void peripheralEnable();
+				void configIOPin();
+				void _delay_ms(uint64_t delay);
+				void _delay_us(uint64_t delay);
+				
+				int main(){
+				setupCLK();
+					peripheralEnable();
+					configIOPin();
+					lcdInit();
+					lcdGotoxy(0,0);
+					lcdString("TIVA C Series");
+					while(1){
+					}
+				}
+				void setupCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_4|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+				}
+				void peripheralEnable(){
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
+				}
+				void configIOPin(){
+					HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
+					HWREG(GPIO_PORTD_BASE + GPIO_O_CR) |= (1<<7);
+					HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = 0;
+					GPIOPinTypeGPIOOutput(GPIO_PORTD_BASE,EN|RS);
+					GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE,D4|D5|D6|D7);	
+				}
+				void lcdInit(){
+					lcdCommand(0x28);
+					/**************************
+					0x30 8bit mode single line*
+					0x38 8bit mode double line*
+					0x20 4bit mode single line*
+					0x28 4bit mode double line*
+					***************************/
+					lcdCommand(0x06);//entry mode and auto increment mode
+					lcdCommand(0x0F);//
+					/********************************
+					Display off Cursor off      0x08*
+					Display on Cursor on        0x0E*
+					Display on Cursor off       0x0C*
+					Display on Cursor blinking  0x0F*
+					*********************************/
+				}
+				void lcdCommand(unsigned char command){
+					GPIOPinWrite(lcdPORT,RS|EN,0);
+					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
+					_delay_us(100);
+					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command>>2));
+					_delay_ms(1);
+					GPIOPinWrite(lcdPORT,EN|RS,0x80);
+					_delay_us(100);
+					GPIOPinWrite(lcdPORT,EN,0);
+					_delay_us(100);
+					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command<<2));;
+					_delay_ms(1);
+					GPIOPinWrite(lcdPORT,EN|RS,0x80);
+					_delay_us(100);
+					GPIOPinWrite(lcdPORT,EN,0);
+					_delay_us(100);
+				}
+				void lcdData(unsigned char data){
+					lcdCheck();
+					GPIOPinWrite(lcdPORT,RS|EN,0);
+					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
+					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(data>>2));
+					_delay_us(100);
+					GPIOPinWrite(lcdPORT,EN|RS,0xc0);
+					_delay_ms(1);
+					GPIOPinWrite(lcdPORT,EN,0);
+					_delay_us(100);
+					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(data<<2));
+					_delay_us(100);
+					GPIOPinWrite(lcdPORT,EN|RS,0xc0);
+					_delay_us(100);
+					GPIOPinWrite(lcdPORT,EN,0);
+					cursorPositionCheck=(cursorPositionCheck+1)%32;
+				}
+				void lcdString(char* string){
+					unsigned char i=0;
+					while(string[i])
+					lcdData(string[i++]);
+				}
+				void lcdGotoxy(unsigned char x,unsigned char y)
+				{
+					cursorPositionCheck=y*16+x;
+					lcdCommand(0x80+x+(64*y));
+				}
+				void lcdClear(){
+					cursorPositionCheck=0;
+					lcdCommand(0x01);
+					_delay_ms(3);
+				}
+				void lcdCheck(){
+					if(cursorPositionCheck==16)
+						lcdGotoxy(0,1);
+					else if(cursorPositionCheck==0)
+						lcdGotoxy(0,0);
+				}
+				void _delay_ms(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000));
+				}
+				void _delay_us(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));
+				}
+			\end{lstlisting}
+			
+			\textbf{Code for uC based Board}
+			\begin{lstlisting}[style=CStyle]
+				#include <stdint.h>
+				#include <stdbool.h>
+				#include "inc/hw_types.h"
+				#include "inc/hw_memmap.h"
+				#include "inc/hw_gpio.h" //To unlock locked pins for GPIO
+				#include "driverlib/sysctl.h"
+				#include "driverlib/gpio.h"
+				#include<math.h>
+				#include<stdlib.h>
+				#ifndef     lcdPORT
+				#define     lcdPORT     GPIO_PORTF_BASE
+				#endif
+				#ifndef     lcdDDR
+				#define     lcdDDR      GPIO_PORTD_BASE
+				#endif
+				#ifndef     lcdPIN
+				#define     lcdPIN      PINC
+				#endif
+				#ifndef     RS
+				#define     RS          GPIO_PIN_0
+				#endif
+				#ifndef     EN
+				#define     EN          GPIO_PIN_2
+				#endif
+				#ifndef     D4
+				#define     D4          GPIO_PIN_4
+				#endif
+				#ifndef     D5
+				#define     D5          GPIO_PIN_5
+				#endif
+				#ifndef     D6
+				#define     D6          GPIO_PIN_6
+				#endif
+				#ifndef     D7
+				#define     D7          GPIO_PIN_7
+				#endif
+				unsigned char cursorPositionCheck=0;
+				
+				void lcdInit();
+				void lcdCommand(unsigned char);
+				void lcdData(unsigned char);
+				void lcdString(char*);
+				void lcdGotoxy(unsigned char,unsigned char);
+				void lcdClear();
+				void lcdCheck();
+				void setupCLK();
+				void peripheralEnable();
+				void configIOPin();
+				void _delay_ms(uint64_t delay);
+				void _delay_us(uint64_t delay);
+				
+				int main(){
+					setupCLK();
+					peripheralEnable();
+					configIOPin();
+					lcdInit();
+					lcdGotoxy(0,0);
+					lcdString("TIVA C Series");
+					while(1){
+					}
+				}
+				void setupCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_4|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+					}
+					void peripheralEnable(){
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
+				}
+				void configIOPin(){
+					HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
+					HWREG(GPIO_PORTF_BASE + GPIO_O_CR) |= 0x01;
+					HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = 0;
+					GPIOPinTypeGPIOOutput(lcdPORT,EN|RS);
+					GPIOPinTypeGPIOOutput(lcdDDR,D4|D5|D6|D7);
+				}
+				void lcdInit(){
+					lcdCommand(0x28);
+					/**************************
+					0x30 8bit mode single line*
+					0x38 8bit mode double line*
+					0x20 4bit mode single line*
+					0x28 4bit mode double line*
+					***************************/
+					lcdCommand(0x06);//entry mode and auto increment mode
+					lcdCommand(0x0F);//
+					/********************************
+					Display off Cursor off      0x08*
+					Display on Cursor on        0x0E*
+					Display on Cursor off       0x0C*
+					Display on Cursor blinking  0x0F*
+					*********************************/
+				}
+				void lcdCommand(unsigned char command){
+					GPIOPinWrite(lcdPORT,RS|EN,0);
+					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
+					_delay_us(100);
+					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,command);
+					_delay_us(100);
+					GPIOPinWrite(lcdPORT,EN|RS,0x04);
+					_delay_ms(1);
+					GPIOPinWrite(lcdPORT,EN,0);
+					_delay_us(100);
+					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command<<4));
+					_delay_us(100);
+					GPIOPinWrite(lcdPORT,EN|RS,0x04);
+					_delay_ms(1);
+					GPIOPinWrite(lcdPORT,EN,0);
+					_delay_us(100);
+				}
+				void lcdData(unsigned char data){
+					lcdCheck();
+					GPIOPinWrite(lcdPORT,RS|EN,0);
+					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
+					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,data);
+					_delay_us(100);
+					GPIOPinWrite(lcdPORT,EN|RS,0x05);
+					_delay_ms(1);
+					GPIOPinWrite(lcdPORT,EN,0);
+					_delay_us(100);
+					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(data<<4));
+					_delay_us(100);
+					GPIOPinWrite(lcdPORT,EN|RS,0x05);
+					_delay_ms(1);
+					GPIOPinWrite(lcdPORT,EN,0);
+					cursorPositionCheck=(cursorPositionCheck+1)%32;
+				}
+				void lcdString(char* string){
+					unsigned char i=0;
+					while(string[i])
+						lcdData(string[i++]);
+				}
+				void lcdGotoxy(unsigned char x,unsigned char y)
+				{
+					cursorPositionCheck=y*16+x;
+					lcdCommand(0x80+x+(64*y));
+				}
+				void lcdClear(){
+					cursorPositionCheck=0;
+					lcdCommand(0x01);
+					_delay_ms(3);
+				}
+				void lcdCheck(){
+					if(cursorPositionCheck==16)
+						lcdGotoxy(0,1);
+					else if(cursorPositionCheck==0)
+						lcdGotoxy(0,0);
+				}
+				void _delay_ms(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000));
+				}
+				void _delay_us(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));
+				}
+			\end{lstlisting}
 		\subsection{\huge \textbf{Analog To Digital Converter}}
+			{Fire Bird V has three white line sensors, one Sharp IR range sensor with four add-on sockets for additional Sharp IR range sensors, eight Analog IR proximity sensors. All these sensors give analog output.  We need to use ADC (Analog to Digital Converter) to convert  these analog values in to digital values.}\\
+			{The TM4C123GH6PM ADC module features 12-bit conversion resolution and supports 12 input channels, plus an internal temperature sensor. Each ADC module contains four programmable sequencers allowing the sampling of multiple analog input sources without controller intervention. Each sample sequencer provides flexible programming with fully configurable input source, trigger events, interrupt generation, and sequencer priority.}\\
+			{Due to limiited number of sensors in TM4C123GH6PM, an external ADC(ADC128d818) is added to the daughter Board. Details about interfacing this module is given in the next section.}\\
+			The Connections of internal ADC is as shown below
+			\begin{center}
+				\includegraphics[width=15cm, height=8cm]{ADC}
+			\end{center}
+			\textbf{Code for Plug and Play Board:}
+			\begin{lstlisting}[style=CStyle]
+				#include <stdint.h>
+				#include <stdbool.h>
+				#include "stdlib.h"
+				#include "inc/hw_ints.h"
+				#include "inc/hw_memmap.h"
+				#include "inc/hw_uart.h"
+				#include "inc/hw_gpio.h"
+				#include "inc/hw_pwm.h"
+				#include "inc/hw_types.h"
+				#include "driverlib/adc.h"
+				#include "driverlib/timer.h"
+				#include "driverlib/gpio.h"
+				#include "driverlib/interrupt.h"
+				#include "driverlib/pin_map.h"
+				#include "driverlib/rom.h"
+				#include "driverlib/rom_map.h"
+				#include "driverlib/sysctl.h"
+				#include "driverlib/uart.h"
+				#include "driverlib/udma.h"
+				#include "driverlib/pwm.h"
+				#include "driverlib/ssi.h"
+				#include "driverlib/systick.h"
+				#include "driverlib/adc.h"
+				#include "utils/uartstdio.h"
+				#include "utils/uartstdio.c"
+				#include <string.h>
+				
+				void configCLK();
+				void peripheralEnable();
+				void uartEnable();
+				
+				void ADC0Enable();
+				unsigned int readADC();
+				void tranString(char * data,char delimeter);
+				void uartInteger(long long int integer,char delimeter);
+				void converter(unsigned int);
+				void _delay_ms(uint64_t delay);
+				uint32_t senval;
+
+				int main(){
+					configCLK();
+					peripheralEnable();
+					ADC0Enable();
+					uartEnable();
+					while(1){
+						senval = readADC();
+						converter(senval);
+						_delay_ms(1000);
+					}
+				}
+				/***************************************************************************************
+				* This function is used to setup Clock frequency of the controller
+				* It can be changed through codes
+				* In this we have set frequency as 40Mhz
+				* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+				***************************************************************************************/
+				void configCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
+				}
+				/*******************************
+				* Enabling System Peripherals
+				* PortB and PortD in this case
+				******************************/
+				void peripheralEnable(){
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);//Enabling TIMER0
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
+					ADCHardwareOversampleConfigure(ADC0_BASE, 64);
+				}
+				/****************************************
+				* This function is used to enable UART1
+				* The baudrate is set at 9600
+				****************************************/
+				void uartEnable(){
+					GPIOPinConfigure(GPIO_PB0_U1RX);    //Configure Pin B0 as RX of U0
+					GPIOPinConfigure(GPIO_PB1_U1TX);    //Configure Pin B1 as TX of U0
+					GPIOPinTypeUART(GPIO_PORTB_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+					UARTConfigSetExpClk(UART1_BASE, SysCtlClockGet(), 9600,(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+				}
+				/********************************************************
+				* This function is used to enable ADC0
+				* 4 step sequencer is used
+				* Change the channel number to use any of the other ADCs
+				********************************************************/
+				void ADC0Enable(){
+					ADCSequenceConfigure(ADC0_BASE, 1, ADC_TRIGGER_PROCESSOR, 0);
+					ADCSequenceStepConfigure(ADC0_BASE, 1, 0, ADC_CTL_CH4);
+					ADCSequenceStepConfigure(ADC0_BASE, 1, 1, ADC_CTL_CH4);
+					ADCSequenceStepConfigure(ADC0_BASE, 1, 2, ADC_CTL_CH4);
+					ADCSequenceStepConfigure(ADC0_BASE,1,3,ADC_CTL_CH4|ADC_CTL_IE|ADC_CTL_END);
+					ADCSequenceEnable(ADC0_BASE, 1);
+					GPIOPinTypeADC(GPIO_PORTD_BASE, GPIO_PIN_3);
+				}
+				/*************************************************************
+				* This function is used to read the value from ADC
+				* Average of 4 values is returned to the calling function
+				************************************************************/
+				unsigned int readADC(){
+					unsigned int Avg;
+					uint32_t ADC0Value[4];
+					ADCIntClear(ADC0_BASE, 1);
+					ADCProcessorTrigger(ADC0_BASE, 1);
+					while(!ADCIntStatus(ADC0_BASE, 1, false));
+					ADCSequenceDataGet(ADC0_BASE, 1, ADC0Value);
+					Avg = (ADC0Value[0] + ADC0Value[1] + ADC0Value[2] + ADC0Value[3] + 2)/4;
+					return(Avg);
+				}
+				/*************************************************************
+				* This function is used to send the ADC values through UART
+				* Here the value is sent in reverse order
+				************************************************************/
+				void converter(uint32_t q)
+				{
+					unsigned int p;
+					p=q;
+					do
+					{
+						p = (q % 10);
+						UARTCharPut(UART1_BASE,48+(int)p);
+						SysCtlDelay(400000);
+						q = q / 10;
+					}while(q != 0);
+					UARTCharPut(UART1_BASE,' ');
+				}
+				/*************************************
+				* Calculating Delays
+				*************************************/
+				void _delay_ms(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000));
+				}
+			\end{lstlisting}
+			
+			\textbf{Code for uC based Board}
+			\begin{lstlisting}[style=CStyle]
+				#include <stdint.h>
+				#include <stdbool.h>
+				#include "stdlib.h"
+				#include "inc/hw_ints.h"
+				#include "inc/hw_memmap.h"
+				#include "inc/hw_uart.h"
+				#include "inc/hw_gpio.h"
+				#include "inc/hw_pwm.h"
+				#include "inc/hw_types.h"
+				#include "driverlib/adc.h"
+				#include "driverlib/timer.h"
+				#include "driverlib/gpio.h"
+				#include "driverlib/interrupt.h"
+				#include "driverlib/pin_map.h"
+				#include "driverlib/rom.h"
+				#include "driverlib/rom_map.h"
+				#include "driverlib/sysctl.h"
+				#include "driverlib/uart.h"
+				#include "driverlib/udma.h"
+				#include "driverlib/pwm.h"
+				#include "driverlib/ssi.h"
+				#include "driverlib/systick.h"
+				#include "driverlib/adc.h"
+				#include "utils/uartstdio.h"
+				#include "utils/uartstdio.c"
+				#include <string.h>
+				#include <math.h>
+				
+				void configCLK();
+				void peripheralEnable();
+				void uartEnable();
+				unsigned int Sharp_GP2D12_estimation(uint16_t adc_reading);
+				void ADC0Enable();
+				unsigned int readADC();
+				void tranString(char * data,char delimeter);
+				void uartInteger(long long int integer,char delimeter);
+				void _delay_ms(uint64_t delay);
+				void itoa(long long a,char *arr);
+				
+				int main(){
+					configCLK();
+					peripheralEnable();
+					ADC0Enable();
+					uartEnable();
+					
+					while(1){
+						uartInteger(Sharp_GP2D12_estimation(readADC()),' ');
+						_delay_ms(1000);
+					}
+				}
+				/***************************************************************************************
+				* This function is used to setup Clock frequency of the controller
+				* It can be changed through codes
+				* In this we have set frequency as 40Mhz
+				* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+				***************************************************************************************/
+				void configCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
+				}
+				/*******************************
+				* Enabling System Peripherals
+				* PortB and PortD in this case
+				******************************/
+				void peripheralEnable(){
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
+					ADCHardwareOversampleConfigure(ADC0_BASE, 64);
+				}
+				/****************************************
+				* This function is used to enable UART1
+				* The baudrate is set at 9600
+				****************************************/
+				void uartEnable(){
+					GPIOPinConfigure(GPIO_PC4_U1RX);    //Configure Pin B0 as RX of U0
+					GPIOPinConfigure(GPIO_PC5_U1TX);    //Configure Pin B1 as TX of U0
+					GPIOPinTypeUART(GPIO_PORTC_BASE, GPIO_PIN_5 | GPIO_PIN_4);
+					UARTConfigSetExpClk(UART1_BASE, SysCtlClockGet(), 9600,(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+				}
+				/********************************************************
+				* This function is used to enable ADC0
+				* 4 step sequencer is used
+				* Change the channel number to use any of the other ADCs
+				********************************************************/
+				void ADC0Enable(){
+					ADCSequenceConfigure(ADC0_BASE, 1, ADC_TRIGGER_PROCESSOR, 0);
+					ADCSequenceStepConfigure(ADC0_BASE, 1, 0, ADC_CTL_CH1);
+					ADCSequenceStepConfigure(ADC0_BASE, 1, 1, ADC_CTL_CH1);
+					ADCSequenceStepConfigure(ADC0_BASE, 1, 2, ADC_CTL_CH1);
+					ADCSequenceStepConfigure(ADC0_BASE,1,3,ADC_CTL_CH1|ADC_CTL_IE|ADC_CTL_END);
+					ADCSequenceEnable(ADC0_BASE, 1);
+					GPIOPinTypeADC(GPIO_PORTE_BASE, GPIO_PIN_2);
+				}
+				/*************************************************************
+				* This function is used to read the value from ADC
+				* Average of 4 values is returned to the calling function
+				************************************************************/
+				unsigned int readADC(){
+					unsigned int Avg;
+					uint32_t ADC0Value[4];
+					ADCIntClear(ADC0_BASE, 1);
+					ADCProcessorTrigger(ADC0_BASE, 1);
+					while(!ADCIntStatus(ADC0_BASE, 1, false));
+					ADCSequenceDataGet(ADC0_BASE, 1, ADC0Value);
+					Avg = (ADC0Value[0] + ADC0Value[1] + ADC0Value[2] + ADC0Value[3] + 2)/4;
+					return(Avg);
+				}
+				void itoa(long long a,char *arr){
+					int i=0,j=0;
+					long long tmp=a;
+					if(a<0){
+						arr[i++]='-';
+						tmp*=-1;
+						j=1;
+					}
+					for(;tmp>0;i++){
+						arr[i]=(tmp%10)+'0';
+						tmp/=10;
+					}
+					arr[i--]='\0';
+					for(;j<i;j++,i--){
+						tmp=arr[i];
+						arr[i]=arr[j];
+						arr[j]=tmp;
+					}
+				}
+				/*************************************
+				* Calculating Delays
+				*************************************/
+				void _delay_ms(uint64_t delay){
+					SysCtlDelay(delay*(SysCtlClockGet()/3000));
+				}
+				void uartInteger(long long int integer,char delimeter){
+					char ch[20];
+					itoa(integer,ch);
+					tranString(ch,delimeter);
+				}
+				void tranString(char *data,char delimeter){
+					int k=0;
+					while(data[k]){
+						UARTCharPut(UART1_BASE,data[k++]);
+					}
+					UARTCharPut(UART1_BASE,delimeter);
+					}
+				unsigned int Sharp_GP2D12_estimation(uint16_t adc_reading){
+					float distance;
+					unsigned int distanceInt;
+					distance = (int)(10.00*(2799.6*(1.00/(pow(adc_reading,1.1546)))));
+					distanceInt = (int)distance;
+					if(distanceInt>800){
+						distanceInt=800;
+					}
+					return distanceInt;
+				}
+			\end{lstlisting}
+			
 		\subsection{\huge \textbf{Serial Communication}}
+			{The Fire Bird V can communicate with other robots / devices serially using either wired link or wireless module. Serial  communication is done in asynchronous mode. In the asynchronous mode, the common clock signal is not required at both the transmitter  and receiver  for data synchronization. As an example of serial communication code for interfacing Zigbee module is given below.}\\
+			
+			
 		\subsection{\huge \textbf{I2C Communication}}
 \end{document}
