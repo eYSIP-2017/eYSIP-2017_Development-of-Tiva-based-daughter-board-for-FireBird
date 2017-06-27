@@ -24,7 +24,7 @@ int main(){
     uartEnable();
     uartInterruptEnable();
     while(1){
-       tranString("Ayush",' ');
+       tranString("Hello",' ');
     }
 }
 void configCLK(){
