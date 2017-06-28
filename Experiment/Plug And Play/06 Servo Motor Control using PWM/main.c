@@ -26,6 +26,7 @@ Note: Refer the hardware manual to identify the ground pin.
 #include "inc/hw_gpio.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/gpio.h"
+#include "driverlib/debug.h"
 //Used for PWM
 #include "driverlib/pwm.h"
 
@@ -42,13 +43,13 @@ void delay_ms(uint64_t delay);
 void enablePWM();
 
 int main(void){
-    void setupCLK();
-    void peripheralEnable();
-    void delay_ms(uint64_t delay);
-    void delay_ms(uint64_t delay);
-    void enablePWM();
+    setupCLK();
+    peripheralEnable();
+    enablePWM();
+    ui8Adjust=30;
+    delay_ms(2000);
     while(1){
-        for(ui8Adjust = 56;ui8Adjust < 111; ui8Adjust ++){
+        for(ui8Adjust=30; ui8Adjust < 130; ui8Adjust++){
             PWMPulseWidthSet(PWM1_BASE, PWM_OUT_5, ui8Adjust * ui32Load / 1000);
             PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0, ui8Adjust * ui32Load / 1000);
             PWMPulseWidthSet(PWM0_BASE, PWM_OUT_1, ui8Adjust * ui32Load / 1000);
@@ -104,13 +105,16 @@ void enablePWM(){
     ui32PWMClock = SysCtlClockGet() / 64;   //Divide the system clock by 64 to get the PWM frequency
     ui32Load = (ui32PWMClock / PWM_FREQUENCY) - 1;  //Calculate the number of counts required for 55Hz
 
-    PWMGenConfigure(PWM0_BASE, PWM_GEN_0, PWM_GEN_MODE_DOWN);//Count Down Mode
+    PWMGenConfigure(PWM0_BASE, PWM_GEN_0, PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);//Count Down Mode
     PWMGenPeriodSet(PWM0_BASE, PWM_GEN_0, ui32Load); //Load Count value
-    PWMGenConfigure(PWM1_BASE, PWM_GEN_2, PWM_GEN_MODE_DOWN);//Count Down Mode
+    PWMGenConfigure(PWM1_BASE, PWM_GEN_2, PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);//Count Down Mode
     PWMGenPeriodSet(PWM1_BASE, PWM_GEN_2, ui32Load); //Load Count value
-    PWMGenEnable(PWM0_BASE, PWM_GEN_0);
-    PWMGenEnable(PWM1_BASE, PWM_GEN_2);
+    PWMPulseWidthSet(PWM1_BASE, PWM_OUT_5, ui8Adjust);
+    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0, ui8Adjust);
+    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_1, ui8Adjust);
     PWMOutputState(PWM1_BASE, PWM_OUT_5_BIT, true);
     PWMOutputState(PWM0_BASE, PWM_OUT_0_BIT, true);
     PWMOutputState(PWM0_BASE, PWM_OUT_1_BIT, true);
+    PWMGenEnable(PWM0_BASE, PWM_GEN_0);
+    PWMGenEnable(PWM1_BASE, PWM_GEN_2);
 }
