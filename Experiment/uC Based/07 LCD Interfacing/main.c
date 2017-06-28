@@ -82,9 +82,8 @@ int main(){
     lcdGotoxy(0,0);
     lcdString("TIVA C Series");
     while(1){
-
-    lcdGotoxy(0,0);
-    lcdString("Ayush");
+        lcdGotoxy(0,0);
+        lcdString("Ayush");
     }
 
 

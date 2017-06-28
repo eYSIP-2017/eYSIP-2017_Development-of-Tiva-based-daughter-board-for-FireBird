@@ -93,8 +93,8 @@ void configCLK(){
  ******************************/
 void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
     ADCHardwareOversampleConfigure(ADC0_BASE, 64);
  }
@@ -118,9 +118,9 @@ void ADC0Enable(){
     ADCSequenceStepConfigure(ADC0_BASE, 1, 0, ADC_CTL_CH5);
     ADCSequenceStepConfigure(ADC0_BASE, 1, 1, ADC_CTL_CH5);
     ADCSequenceStepConfigure(ADC0_BASE, 1, 2, ADC_CTL_CH5);
-    ADCSequenceStepConfigure(ADC0_BASE,1,3,ADC_CTL_CH1|ADC_CTL_IE|ADC_CTL_END);
+    ADCSequenceStepConfigure(ADC0_BASE,1,3,ADC_CTL_CH5|ADC_CTL_IE|ADC_CTL_END);
     ADCSequenceEnable(ADC0_BASE, 1);
-    GPIOPinTypeADC(GPIO_PORTE_BASE, GPIO_PIN_2);
+    GPIOPinTypeADC(GPIO_PORTD_BASE, GPIO_PIN_2);
 }
 /*************************************************************
  * This function is used to read the value from ADC
@@ -176,7 +176,7 @@ void tranString(char *data,char delimeter){
 unsigned int Sharp_GP2D12_estimation(uint16_t adc_reading){
     float distance;
     unsigned int distanceInt;
-    distance = (int)(10.00*(2799.6*(1.00/(pow(adc_reading,1.1546)))));
+    distance = (int)(10.00*(2799.6*(1.00/(float)(pow((double)adc_reading,1.1546)))));
     distanceInt = (int)distance;
     if(distanceInt>800)
     {
