@@ -8,7 +8,7 @@
 
  Concepts covered:  ADC, UART interfacing
 
-ADC Connection:
+ADC Connection for uC based Board:
           CH       PORT    Sensor
            5       PD2     White line sensor 3
            6       PD1     White line sensor 2
@@ -163,11 +163,17 @@ void itoa(long long a,char *arr){
 void _delay_ms(uint64_t delay){
     SysCtlDelay(delay*(SysCtlClockGet()/3000));
 }
+/*************************************************************
+ * This function is used send integers through UART
+ ************************************************************/
 void uartInteger(long long int integer,char delimeter){
     char ch[20];
     itoa(integer,ch);
     tranString(ch,delimeter);
 }
+/*************************************************************
+ * This function is used to send string through UART
+ ************************************************************/
 void tranString(char *data,char delimeter){
     int k=0;
     while(data[k]){
@@ -175,14 +181,19 @@ void tranString(char *data,char delimeter){
     }
     UARTCharPut(UART1_BASE,delimeter);
 }
+/*********************************************************************
+ * This function is used to estimate the distance of the obstacle
+ * The linearization is based on "Piecewise Linear Approximation"
+ ********************************************************************/
 unsigned int Sharp_GP2D12_estimation(uint16_t adc_reading){
     float distance;
     unsigned int distanceInt;
-    distance = (int)(10.00*(2799.6*(1.00/(pow(adc_reading,1.1546)))));
+    adc_reading = adc_reading >> 2;
+    distance = (6787/(adc_reading-3)-4)*1.45;
     distanceInt = (int)distance;
-    if(distanceInt>800)
+    if(distanceInt>80)
     {
-        distanceInt=800;
+        distanceInt=80;
     }
     return distanceInt;
 }

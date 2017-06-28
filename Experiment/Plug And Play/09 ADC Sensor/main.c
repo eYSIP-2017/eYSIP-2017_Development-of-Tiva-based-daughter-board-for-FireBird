@@ -1,4 +1,4 @@
-/*****************************************************************************************
+/****************************************************************************************************
  Written by: Ayush Gaurav And Nagesh K.
  From eRTS Lab, CSE Department, IIT Bombay.
 
@@ -8,7 +8,7 @@
 
  Concepts covered:  ADC, UART interfacing
 
-ADC Connection:
+ADC Connection for Plug and Play Board:
           CH       PORT    Sensor
            2       PE1     White line sensor 3
            1       PE2     White line sensor 2
@@ -27,7 +27,7 @@ Refer the Channel numbers mentioned to interface other sensors
 
  Note: Make sure that in the configuration options following settings are
  done for proper operation of the code.
-*****************************************************************************************/
+*************************************************************************************************/
 #include <stdint.h>
 #include <stdbool.h>
 #include "stdlib.h"
@@ -136,6 +136,9 @@ unsigned int readADC(){
     Avg = (ADC0Value[0] + ADC0Value[1] + ADC0Value[2] + ADC0Value[3] + 2)/4;
     return(Avg);
 }
+/*************************************************************
+ * This function is used to convert from integer to ASCII
+ ************************************************************/
 void itoa(long long a,char *arr){
     int i=0,j=0;
     long long tmp=a;
@@ -161,11 +164,17 @@ void itoa(long long a,char *arr){
 void _delay_ms(uint64_t delay){
     SysCtlDelay(delay*(SysCtlClockGet()/3000));
 }
+/*************************************************************
+ * This function is used send integers through UART
+ ************************************************************/
 void uartInteger(long long int integer,char delimeter){
     char ch[20];
     itoa(integer,ch);
     tranString(ch,delimeter);
 }
+/*************************************************************
+ * This function is used to send string through UART
+ ************************************************************/
 void tranString(char *data,char delimeter){
     int k=0;
     while(data[k]){
@@ -173,14 +182,19 @@ void tranString(char *data,char delimeter){
     }
     UARTCharPut(UART1_BASE,delimeter);
 }
+/*********************************************************************
+ * This function is used to estimate the distance of the obstacle
+ * The linearization is based on "Piecewise Linear Approximation"
+ ********************************************************************/
 unsigned int Sharp_GP2D12_estimation(uint16_t adc_reading){
     float distance;
     unsigned int distanceInt;
-    distance = (int)(10.00*(2799.6*(1.00/(float)(pow((double)adc_reading,1.1546)))));
+    adc_reading = adc_reading >> 2;
+    distance = (6787/(adc_reading-3)-4)*1.45;
     distanceInt = (int)distance;
-    if(distanceInt>800)
+    if(distanceInt>80)
     {
-        distanceInt=800;
+        distanceInt=80;
     }
     return distanceInt;
 }

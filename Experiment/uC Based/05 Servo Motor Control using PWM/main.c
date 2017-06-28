@@ -42,13 +42,14 @@ void delay_ms(uint64_t delay);
 void enablePWM();
 
 int main(void){
-    void setupCLK();
-    void peripheralEnable();
-    void delay_ms(uint64_t delay);
-    void delay_ms(uint64_t delay);
-    void enablePWM();
+    setupCLK();
+    peripheralEnable();
+    delay_ms(uint64_t delay);
+    delay_ms(uint64_t delay);
+    enablePWM();
+    ui8Adjust = 30;
     while(1){
-        for(ui8Adjust = 56;ui8Adjust < 111; ui8Adjust ++){
+        for(ui8Adjust = 30;ui8Adjust < 130; ui8Adjust ++){
             PWMPulseWidthSet(PWM1_BASE, PWM_OUT_3, ui8Adjust * ui32Load / 1000);
             PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0, ui8Adjust * ui32Load / 1000);
             PWMPulseWidthSet(PWM0_BASE, PWM_OUT_1, ui8Adjust * ui32Load / 1000);
@@ -100,14 +101,15 @@ void enablePWM(){
     GPIOPinConfigure(GPIO_PB6_M0PWM0);
     GPIOPinTypePWM(GPIO_PORTB_BASE, GPIO_PIN_7);
     GPIOPinConfigure(GPIO_PB7_M0PWM1);
-
     ui32PWMClock = SysCtlClockGet() / 64;   //Divide the system clock by 64 to get the PWM frequency
     ui32Load = (ui32PWMClock / PWM_FREQUENCY) - 1;  //Calculate the number of counts required for 55Hz
-
     PWMGenConfigure(PWM0_BASE, PWM_GEN_0, PWM_GEN_MODE_DOWN);//Count Down Mode
     PWMGenPeriodSet(PWM0_BASE, PWM_GEN_0, ui32Load); //Load Count value
     PWMGenConfigure(PWM1_BASE, PWM_GEN_1, PWM_GEN_MODE_DOWN);//Count Down Mode
     PWMGenPeriodSet(PWM1_BASE, PWM_GEN_1, ui32Load); //Load Count value
+    PWMPulseWidthSet(PWM1_BASE, PWM_OUT_3, ui8Adjust * ui32Load / 1000);
+    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0, ui8Adjust * ui32Load / 1000);
+    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_1, ui8Adjust * ui32Load / 1000);
     PWMGenEnable(PWM0_BASE, PWM_GEN_0);
     PWMGenEnable(PWM1_BASE, PWM_GEN_1);
     PWMOutputState(PWM1_BASE, PWM_OUT_3_BIT, true);
