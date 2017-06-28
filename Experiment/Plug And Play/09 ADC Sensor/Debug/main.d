@@ -30,6 +30,8 @@ main.obj: C:/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.c
 main.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.1.LTS/include/stdarg.h
 main.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/debug.h
 main.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.1.LTS/include/string.h
+main.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.1.LTS/include/math.h
+main.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.1.LTS/include/_defs.h
 
 ../main.c: 
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.1.LTS/include/stdint.h: 
@@ -61,3 +63,5 @@ C:/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.c:
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.1.LTS/include/stdarg.h: 
 C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/debug.h: 
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.1.LTS/include/string.h: 
+C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.1.LTS/include/math.h: 
+C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.1.LTS/include/_defs.h: 
