@@ -34,8 +34,8 @@ void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);//Enablinig TIMER0
  }
 void uartEnable(){
-    GPIOPinConfigure(GPIO_PC6_U3RX);//Configure Pin PC6 as RX of U0
-    GPIOPinConfigure(GPIO_PC7_U3TX);//Configure Pin PC7 as TX of U0
+    GPIOPinConfigure(GPIO_PC6_U3RX);//Configure Pin A0 as RX of U0
+    GPIOPinConfigure(GPIO_PC7_U3TX);//Configure Pin A1 as TX of U0
     GPIOPinTypeUART(GPIO_PORTC_BASE, GPIO_PIN_6 | GPIO_PIN_7);
     UARTConfigSetExpClk(UART3_BASE, SysCtlClockGet(), 9600,
         (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));

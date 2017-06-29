@@ -16,7 +16,6 @@
 \usepackage{xcolor}
 \usepackage{listings}
 
-
 \hypersetup{
 	colorlinks=true,      
 	urlcolor=magenta,
@@ -52,6 +51,7 @@
 
 \author{\textbf{ eRTS Lab IIT Bombay}}
 
+\lhead{ }
 \rhead{Manual for Tiva Based Daughter Board for Firebird V.}
 \lfoot{eRTS Lab IIT Bombay}
 
@@ -67,6 +67,14 @@
 \begin{document}
 	\large
 	\maketitle
+		\begin{center}
+			\includegraphics[width=9cm, height=9cm]{uC_DB} \\
+		\end{center}
+		
+		\begin{center}
+			\includegraphics[width=9cm, height=9cm]{Plug_Play_DB}
+		\end{center}
+	
 	\newpage
 	\section{\Huge{\textbf{Credits}}}
 	\textbf{\\\\ Version 1.0\\\date{\today}}% Right allign
@@ -157,11 +165,19 @@
 			Top Speed: 24 cm / second\\
 			Wheel Diameter: 51mm\\
 			Position encoder: 30 pulses per revolution\\
-			Position encoder resolution: 5.44 mm\\\\}
+			Position encoder resolution: 5.44 mm\\
+			\\
+			\\
+			\\
+			\\
+			\\}
 		%\subsection{}%start with the functionality
+		
+		
+		
 	\section{\Huge\textbf{Hardware Manual:}}
 	%mention about the upcoming sub section in brief
-	\subsection{\huge \textbf{Voltage Regulation on the Daughter Board\\}}
+	\subsection{\huge \textbf{Voltage Regulation on the Daughter Board}}
 	{The voltage source available on the Firebird is 9.6V. But the TIVA platform works on 3.3V and the servos can operate upto 6V. So there must be 3 different voltage levels on the board. The uC based board has 2 voltage regulators and the plug and play board has 1 voltage regulator. In the uC based board the 9.6 volts is 3.3V to power the microcontroller. In the plug and play board the there is an inbuilt voltage regulator, so it is directly connected connected to 5v, 300mA source. The servo in both the boards has a separate 5V regulator.}
 	
 	\subsubsection{\Large \textbf{Powering Micro-controller}}
@@ -204,6 +220,7 @@
 		\includegraphics{portexpandePlug}\\
 		\includegraphics{portExpanderuc}\\
 		\end{center}
+	\hspace{2cm}
 	\subsection{\huge \textbf{External ADC}}
 	{It has already been mentioned that adc channels on the microcontroller is limited to 12 while firebird has 22 sensors available. We have interfaced an external ADC which is also I2C compatible. It has  8 channel with 12 bit resolution.To read more about it, download the datasheet from \href{www.ti.com/lit/pdf/snas483}{here.}The schematic of the connection is shown below.Keep in mind that I2C SCL and SDA have already been pulled up using 10K resistor.\\}
 		\begin{center}
@@ -223,13 +240,16 @@
 	the LCD datasheet, and end by bringing it to low (0) again.\\
 	When RS is low (0), data is treated as a command or special
 	instruction by the LCD (such as clear screen, position cursor, etc.). When RS is high (1), data
-	being sent is treated as text data which should be displayed on the screen.\\
-	written to the LCD.//}
+	being sent is treated as text data which should be displayed on the screen.\\}
 		\begin{center}
-		\includegraphics{lcdPlug}\\
-		\includegraphics{lcduC}\\
+		\includegraphics{lcdPlug} \\
+		\vspace{1cm}
+		\hspace{2cm}\includegraphics{lcduC} \\
+		\vspace{1cm}		
 		\includegraphics{lcdpin}
 		\end{center}
+	
+	\vspace{4 cm}
 	\subsection{\huge \textbf{USB Communication}}
 	{Fire Bird V’s main board has USB port socket. Microcontroller accesses USB port via main
 		board socket. All its pins are connected to the microcontroller adapter board via main board's
@@ -241,12 +261,13 @@
 		\begin{center}
 		\includegraphics{ft232}\\
 		\end{center}
-	\subsection{\huge \textbf{Programing the Controller}}
+	%\subsection{\huge \textbf{Programing the Controller}}
 	\subsection{\huge \textbf{Reset Switch}}
 	{The Plug and play board makes use of reset button present on the TIVA launchpad. The uC based has a switch connected to the reset the reset pin 38 of the microcontroller. The schematic is given below.}\\
 	\begin{center}
-	\includegraphics[width=13cm, height=6cm]{Reset_Switch}
+		\includegraphics[width=13cm, height=6cm]{Reset_Switch}
 	\end{center}
+	\vspace{4 cm}
 	\subsection{\huge \textbf{Servo Connectors}}
 	{The microcontroller board has three Servo connectors. It can be used for
 		driving servo motors of camera pod or any other attachment. Power for the servo connector is
@@ -255,6 +276,7 @@
 			\includegraphics{servoPlug}\\
 			\includegraphics{servouc}\\
 		\end{center}
+	\vspace{4 cm}
 	\subsection{\huge \textbf{TM4C123GH6PM Micro-controller:}}
 	{The Tiva™ C Series ARM Cortex-M4 microcontrollers provide top performance and advanced
 		integration. The product family is positioned for cost-conscious applications requiring significant
@@ -272,9 +294,20 @@
 		\item Intelligent lighting control
 		\item Transportation
 	\end{itemize}
+	\subsubsection{\textbf{Feature of TM4C123GH6PM}}
+		\begin{itemize}
+			\item 32-bit ARM Cortex M4F architecture optimized for small-footprint embedded applications
+			\item 80-MHz operation; 100 DMIPS performance
+			\item 16-bit SIMD vector processing unit
+			\item Harvard architecture characterized by separate buses for instruction and data
+			\item Deterministic, high-performance interrupt handling for time-critical applications
+			\item Enhanced system debug with extensive breakpoint and trace capabilities
+			\item Ultra-low power consumption with integrated sleep modes
+		\end{itemize}
+	\newpage
 	Schematic Of the connections is shown below.}
 	\begin{center}
-		\includegraphics{uc}\\
+		\includegraphics[width=15cm, height=23cm]{uc}\\
 	\end{center}
 	\subsection{\huge \textbf{Pin Functionality}}
 		\subsubsection{\Large\textbf{Pin of uC}}
@@ -433,7 +466,7 @@
 				74&	RS232 RX&	NC& &	\\ \hline
 
 		\end{longtable}
-	\subsubsection{Pin Connection Of Plug And Play Board}
+	\subsubsection{\textbf{Pin Connection Of Plug And Play Board}}
 		\begin{longtable}{|p{.04\textwidth}|p{.25\textwidth}|p{.4\textwidth}|}\hline
 			Pin Name&	Pin Connection on Main Board&	Function \\ \hline
 			PA0&&	Used for Programming\\ \hline
@@ -1861,6 +1894,7 @@
 				#include "driverlib/gpio.h"
 				#include<math.h>
 				#include<stdlib.h>
+				
 				#ifndef     lcdPORT
 				#define     lcdPORT     GPIO_PORTD_BASE
 				#endif
@@ -1873,9 +1907,6 @@
 				#ifndef     RS
 				#define     RS          GPIO_PIN_6
 				#endif
-				//#ifndef     RW
-				//#define     RW          GPIO_PIN_1
-				//#endif
 				#ifndef     EN
 				#define     EN          GPIO_PIN_7
 				#endif
@@ -1907,29 +1938,48 @@
 				void _delay_us(uint64_t delay);
 				
 				int main(){
-				setupCLK();
+					setupCLK();
 					peripheralEnable();
 					configIOPin();
 					lcdInit();
 					lcdGotoxy(0,0);
 					lcdString("TIVA C Series");
 					while(1){
-					}
 				}
+				}
+				/***************************************************************************************
+				* This function is used to setup Clock frequency of the controller
+				* It can be changed through codes
+				* In this we have set frequency as 40Mhz
+				* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+				***************************************************************************************/
 				void setupCLK(){
 					SysCtlClockSet(SYSCTL_SYSDIV_4|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
 				}
+				/*******************************
+				* Enabling System Peripherals
+				* PORTA and PORTD in this case
+				******************************/
 				void peripheralEnable(){
 					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
 					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
 				}
+				/*************************************
+				* Configuring LCD Pins as Output
+				*************************************/
 				void configIOPin(){
 					HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
 					HWREG(GPIO_PORTD_BASE + GPIO_O_CR) |= (1<<7);
 					HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = 0;
 					GPIOPinTypeGPIOOutput(GPIO_PORTD_BASE,EN|RS);
-					GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE,D4|D5|D6|D7);	
+					GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE,D4|D5|D6|D7);
+				
 				}
+				/******************************************
+				* This function is used to initialize LCD
+				* The LCD is operated in 4 bit mode
+				* It is also set in auto increment mode
+				*****************************************/
 				void lcdInit(){
 					lcdCommand(0x28);
 					/**************************
@@ -1938,8 +1988,8 @@
 					0x20 4bit mode single line*
 					0x28 4bit mode double line*
 					***************************/
-					lcdCommand(0x06);//entry mode and auto increment mode
-					lcdCommand(0x0F);//
+					lcdCommand(0x06); //entry mode and auto increment mode
+					lcdCommand(0x0F);
 					/********************************
 					Display off Cursor off      0x08*
 					Display on Cursor on        0x0E*
@@ -1947,6 +1997,11 @@
 					Display on Cursor blinking  0x0F*
 					*********************************/
 				}
+				/***************************************************************************************
+				* This function is used to send commands to LCD
+				* The first 4 bits are sent first and then the last 4 bits
+				* The bits are shifted left and right appropriately to fit in middle 4 bits of port A
+				***************************************************************************************/
 				void lcdCommand(unsigned char command){
 					GPIOPinWrite(lcdPORT,RS|EN,0);
 					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
@@ -1957,13 +2012,18 @@
 					_delay_us(100);
 					GPIOPinWrite(lcdPORT,EN,0);
 					_delay_us(100);
-					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command<<2));;
+					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command<<2));
 					_delay_ms(1);
 					GPIOPinWrite(lcdPORT,EN|RS,0x80);
 					_delay_us(100);
 					GPIOPinWrite(lcdPORT,EN,0);
 					_delay_us(100);
 				}
+				/***************************************************************************************
+				* This function is used to send data to LCD
+				* The first 4 bits are sent first and then the last 4 bits
+				* The bits are shifted left and right appropriately to fit in middle 4 bits of port A
+				***************************************************************************************/
 				void lcdData(unsigned char data){
 					lcdCheck();
 					GPIOPinWrite(lcdPORT,RS|EN,0);
@@ -1981,27 +2041,42 @@
 					GPIOPinWrite(lcdPORT,EN,0);
 					cursorPositionCheck=(cursorPositionCheck+1)%32;
 				}
+				/************************************************
+				* This function is used to send strings to LCD
+				***********************************************/
 				void lcdString(char* string){
 					unsigned char i=0;
 					while(string[i])
 					lcdData(string[i++]);
 				}
+				/***********************************************************
+				* This function is used to position of the cursor on LCD
+				**********************************************************/
 				void lcdGotoxy(unsigned char x,unsigned char y)
 				{
 					cursorPositionCheck=y*16+x;
 					lcdCommand(0x80+x+(64*y));
 				}
+				/************************************************
+				* This function is used to clear the LCD
+				***********************************************/
 				void lcdClear(){
 					cursorPositionCheck=0;
 					lcdCommand(0x01);
-					_delay_ms(3);
+					_delay_ms(5);
 				}
+				/******************************************************************
+				* This function is used to check the position of cursor on LCD
+				*****************************************************************/
 				void lcdCheck(){
 					if(cursorPositionCheck==16)
 						lcdGotoxy(0,1);
 					else if(cursorPositionCheck==0)
 						lcdGotoxy(0,0);
 				}
+				/*************************************
+				* Calculating Delays
+				*************************************/
 				void _delay_ms(uint64_t delay){
 					SysCtlDelay(delay*(SysCtlClockGet()/3000));
 				}
@@ -2021,14 +2096,12 @@
 				#include "driverlib/gpio.h"
 				#include<math.h>
 				#include<stdlib.h>
+				
 				#ifndef     lcdPORT
 				#define     lcdPORT     GPIO_PORTF_BASE
 				#endif
 				#ifndef     lcdDDR
 				#define     lcdDDR      GPIO_PORTD_BASE
-				#endif
-				#ifndef     lcdPIN
-				#define     lcdPIN      PINC
 				#endif
 				#ifndef     RS
 				#define     RS          GPIO_PIN_0
@@ -2048,6 +2121,8 @@
 				#ifndef     D7
 				#define     D7          GPIO_PIN_7
 				#endif
+				#define LOCK_F (*((volatile unsigned long *)0x40025520))
+				#define CR_F   (*((volatile unsigned long *)0x40025524))
 				unsigned char cursorPositionCheck=0;
 				
 				void lcdInit();
@@ -2068,25 +2143,48 @@
 					peripheralEnable();
 					configIOPin();
 					lcdInit();
+					lcdClear();
 					lcdGotoxy(0,0);
 					lcdString("TIVA C Series");
 					while(1){
 					}
 				}
+				/***************************************************************************************
+				* This function is used to setup Clock frequency of the controller
+				* It can be changed through codes
+				* In this we have set frequency as 40Mhz
+				* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+				***************************************************************************************/
 				void setupCLK(){
 					SysCtlClockSet(SYSCTL_SYSDIV_4|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
-					}
-					void peripheralEnable(){
+				}
+				/*******************************
+				* Enabling System Peripherals
+				* PORTA and PORTD in this case
+				******************************/
+				void peripheralEnable(){
 					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
 					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
 				}
+				/*************************************
+				* Configuring LCD Pins as Output
+				*************************************/
 				void configIOPin(){
+					HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
+					HWREG(GPIO_PORTD_BASE + GPIO_O_CR) |= (1<<7);
+					HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = 0;
+					
 					HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
 					HWREG(GPIO_PORTF_BASE + GPIO_O_CR) |= 0x01;
 					HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = 0;
 					GPIOPinTypeGPIOOutput(lcdPORT,EN|RS);
 					GPIOPinTypeGPIOOutput(lcdDDR,D4|D5|D6|D7);
 				}
+				/******************************************
+				* This function is used to initialize LCD
+				* The LCD is operated in 4 bit mode
+				* It is also set in auto increment mode
+				*****************************************/
 				void lcdInit(){
 					lcdCommand(0x28);
 					/**************************
@@ -2102,8 +2200,13 @@
 					Display on Cursor on        0x0E*
 					Display on Cursor off       0x0C*
 					Display on Cursor blinking  0x0F*
-					*********************************/
+				*********************************/
 				}
+				/*******************************************************************
+				* This function is used to send commands to LCD
+				* The first 4 bits are sent first and then the last 4 bits
+				* The bits are shifted left to fit in middle 4 bits of port D
+				******************************************************************/
 				void lcdCommand(unsigned char command){
 					GPIOPinWrite(lcdPORT,RS|EN,0);
 					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
@@ -2115,12 +2218,17 @@
 					GPIOPinWrite(lcdPORT,EN,0);
 					_delay_us(100);
 					GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command<<4));
-					_delay_us(100);
-					GPIOPinWrite(lcdPORT,EN|RS,0x04);
 					_delay_ms(1);
+					GPIOPinWrite(lcdPORT,EN|RS,0x04);
+					_delay_us(100);
 					GPIOPinWrite(lcdPORT,EN,0);
 					_delay_us(100);
 				}
+				/*******************************************************************
+				* This function is used to send data to LCD
+				* The first 4 bits are sent first and then the last 4 bits
+				* The bits are shifted left to fit in middle 4 bits of port D
+				******************************************************************/
 				void lcdData(unsigned char data){
 					lcdCheck();
 					GPIOPinWrite(lcdPORT,RS|EN,0);
@@ -2138,31 +2246,46 @@
 					GPIOPinWrite(lcdPORT,EN,0);
 					cursorPositionCheck=(cursorPositionCheck+1)%32;
 				}
+				/************************************************
+				* This function is used to send strings to LCD
+				***********************************************/
 				void lcdString(char* string){
 					unsigned char i=0;
 					while(string[i])
-						lcdData(string[i++]);
+					lcdData(string[i++]);
 				}
+				/***********************************************************
+				* This function is used to position of the cursor on LCD
+				**********************************************************/
 				void lcdGotoxy(unsigned char x,unsigned char y)
 				{
 					cursorPositionCheck=y*16+x;
 					lcdCommand(0x80+x+(64*y));
 				}
+				/************************************************
+				* This function is used to clear the LCD
+				***********************************************/
 				void lcdClear(){
 					cursorPositionCheck=0;
 					lcdCommand(0x01);
 					_delay_ms(3);
 				}
+				/******************************************************************
+				* This function is used to check the position of cursor on LCD
+				*****************************************************************/
 				void lcdCheck(){
 					if(cursorPositionCheck==16)
-						lcdGotoxy(0,1);
+					lcdGotoxy(0,1);
 					else if(cursorPositionCheck==0)
-						lcdGotoxy(0,0);
+					lcdGotoxy(0,0);
 				}
+				/*************************************
+				* Calculating Delays
+				*************************************/
 				void _delay_ms(uint64_t delay){
 					SysCtlDelay(delay*(SysCtlClockGet()/3000));
 				}
-				void _delay_us(uint64_t delay){
+					void _delay_us(uint64_t delay){
 					SysCtlDelay(delay*(SysCtlClockGet()/3000000UL));
 				}
 			\end{lstlisting}
@@ -2468,6 +2591,554 @@
 				}
 			\end{lstlisting}
 			
+		\subsection{\huge\textbf{External ADC Interface}}
+			{The TM4C123GHP6 microcontroller has only 12 internal ADC's. So to interface all the sensors of Firebird an external ADC is required. For this purpose \textit{adc128d818} IC is used. It has 12 bit resolution with 8 channels. It can be interfaced using I2C protocols. For more details about the click on this link  
+			\href{www.ti.com/general/docs/lit/getliterature.tsp?baseLiteratureNumber=snas483&fileType=pdf}{adc128d818}}
+			
+			\subsubsection{\textbf{Code for Plug and Play Board:}}
+				\begin{lstlisting}[style=CStyle]
+					#include <stdarg.h>
+					#include <stdbool.h>
+					#include <stdint.h>
+					#include "inc/hw_i2c.h"
+					#include "inc/hw_memmap.h"
+					#include "inc/hw_types.h"
+					#include "inc/hw_gpio.h"
+					#include "driverlib/i2c.h"
+					#include "driverlib/sysctl.h"
+					#include "driverlib/gpio.h"
+					#include "driverlib/pin_map.h"
+					#include "inc/tm4c123gh6pm.h"
+					#include "driverlib/interrupt.h"
+					#include "driverlib/uart.h"
+					
+					void setupCLK();
+					void InitI2C1(void);
+					void peripheralEnable();
+					void I2CSendString(uint32_t slave_addr, char array[]);
+					void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...);
+					uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg);
+					uint16_t read2Bytes(uint8_t slave_addr, uint8_t reg);
+					uint16_t readExternalADC(uint8_t channel);
+					void uartEnable();
+					void uartInterruptEnable();
+					void UARTIntHandler(void);
+					void tranString(char *,char);
+					void itoa(long long a,char *arr);
+					void uartInteger(long long int integer,char delimeter);
+					void setupExternalADC();
+					
+					int main(void) {
+						setupCLK();
+						peripheralEnable();
+						uartEnable();
+						InitI2C1();
+						setupExternalADC();
+						while(1){
+							uartInteger(readExternalADC(0),' ');
+							SysCtlDelay((SysCtlClockGet())/3);
+						}	
+					}
+					
+					/***************************************************************************************
+					* This function is used to setup Clock frequency of the controller
+					* It can be changed through codes
+					* In this we have set frequency as 40Mhz
+					* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+					***************************************************************************************/
+					void setupCLK(){
+						SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+					}
+					/*******************************
+					* Enabling System Peripherals
+					* UART1 and PortB in this case
+					******************************/
+					void peripheralEnable(){
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+					}
+					/****************************************
+					* This function is used to enable UART0
+					* The baudrate is set at 9600
+					****************************************/
+					void uartEnable(){
+						GPIOPinConfigure(GPIO_PB0_U1RX);
+						GPIOPinConfigure(GPIO_PB1_U1TX);
+						GPIOPinTypeUART(GPIO_PORTB_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+						UARTConfigSetExpClk(UART1_BASE, SysCtlClockGet(), 9600,
+						(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+					}
+					
+					/**********************************************
+					* This function converts an integer to string
+					**********************************************/
+					void itoa(long long a,char *arr){
+						int i=0,j=0;
+						long long tmp=a;
+						if(a<0){
+							arr[i++]='-';
+							tmp*=-1;
+							j=1;
+						}
+						for(;tmp>0;i++){
+							arr[i]=(tmp%10)+'0';
+							tmp/=10;
+						}
+						arr[i--]='\0';
+						for(;j<i;j++,i--){
+							tmp=arr[i];
+							arr[i]=arr[j];
+							arr[j]=tmp;
+						}
+					}
+					
+					/*************************************
+					* send through serial communication
+					*************************************/
+					void uartInteger(long long int integer,char delimeter){
+						char ch[20];
+						itoa(integer,ch);
+						tranString(ch,delimeter);
+					}
+					/***********************************************************************
+					* This function is used to send a string of character with a delimiter
+					***********************************************************************/
+					void tranString(char * data,char delimeter){
+						int k=0;
+						while(data[k]){
+							UARTCharPut(UART1_BASE,data[k++]);
+						}
+						UARTCharPut(UART1_BASE,delimeter);
+					}
+					
+					/*********************************************************************************************
+					* Setting up external ADC
+					* Wait for 33ms
+					* Read the Busy Status Register (address 0Ch). If the 'Not Ready' * * bit = 1,
+					* then increase the wait time until 'Not Ready' bit = 0 before   	* proceeding to the next step.
+					*  Program the Advanced Configuration Register to Address 0Bh:
+					*  a. Choose to use the internal or external VREF (bit 0).
+					*  b. Choose the mode of operation (bits [2:1]).
+					* Program the Conversion Rate Register (address 07h).
+					* Choose to enable or disable the channels using the Channel Disable Register (address 08h).
+					* Using the Interrupt Mask Register (address 03h), choose to mask *or not to mask the interrupt status from
+					*propagating to the interrupt output pin, INT.
+					* Program the Limit Registers (addresses 2Ah to 39h).
+					* Set the START bit of the Configuration Register (address 00h, bit 0) to 1.
+					* Set the 'INT_Clear' bit (address 00h, bit 3) to 0. If needed, program the 'INT_Enable' bit (address 00h, bit 1)
+					to 1 to enable the INT output.
+					*********************************************************************************************/
+					void setupExternalADC(){
+						SysCtlDelay((5*SysCtlClockGet())/300);
+						while(I2CReceive(0x1D,0x0C)&(0x01));
+						I2CSend(0x1D,2,0x0B,0x03);
+						I2CSend(0x1D,2,0x07,0x01);
+						I2CSend(0x1D,2,0x08,0x00);
+						I2CSend(0x1D,3,0x2A,0x05);
+						I2CSend(0x1D,3,0x2B,0x00);
+						I2CSend(0x1D,3,0x2C,0x05);
+						I2CSend(0x1D,3,0x2D,0x00);
+						I2CSend(0x1D,3,0x2E,0x05);
+						I2CSend(0x1D,3,0x2F,0x00);
+						I2CSend(0x1D,3,0x30,0x05);
+						I2CSend(0x1D,3,0x31,0x00);
+						I2CSend(0x1D,3,0x32,0x05);
+						I2CSend(0x1D,3,0x33,0x00);
+						I2CSend(0x1D,3,0x34,0x05);
+						I2CSend(0x1D,3,0x35,0x00);
+						I2CSend(0x1D,3,0x36,0x05);
+						I2CSend(0x1D,3,0x37,0x00);
+						I2CSend(0x1D,3,0x38,0x05);
+						I2CSend(0x1D,3,0x39,0x00);
+						I2CSend(0x1D,2,0x00,0x01);
+					}
+					/****************************************
+					* Read ADC value from a mentioned channel
+					****************************************/
+					uint16_t readExternalADC(uint8_t channel){
+						while(I2CReceive(0x1D,0x0C)&(0x02));
+						return(read2Bytes(0x1D,(0x20+channel)));
+					}
+					/****************************************
+					* This function is used to enable I2C1
+					****************************************/
+					void InitI2C1(void){
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C1);
+						SysCtlPeripheralReset(SYSCTL_PERIPH_I2C1);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+						GPIOPinConfigure(GPIO_PA6_I2C1SCL);
+						GPIOPinConfigure(GPIO_PA7_I2C1SDA);
+						GPIOPinTypeI2CSCL(GPIO_PORTA_BASE, GPIO_PIN_6);
+						GPIOPinTypeI2C(GPIO_PORTA_BASE, GPIO_PIN_7);
+						// Enable and initialize the I2C1 master module.  Use the system clock for
+						// the I2C1 module.  The last parameter sets the I2C data transfer rate.
+						// If false the data rate is set to 100kbps and if true the data rate will
+						// be set to 400kbps.
+						I2CMasterInitExpClk(I2C1_BASE, SysCtlClockGet(), false);
+						HWREG(I2C1_BASE + I2C_O_FIFOCTL) = 80008000;
+					}
+					/***********************************************************************
+					* This function is used to send n number of data on serial Data line
+					***********************************************************************/
+					void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...){
+						I2CMasterSlaveAddrSet(I2C1_BASE, slave_addr, false);
+						va_list vargs;
+						va_start(vargs, num_of_args);
+						I2CMasterDataPut(I2C1_BASE, va_arg(vargs, uint32_t));
+						if(num_of_args == 1){
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_SINGLE_SEND);
+							while(I2CMasterBusy(I2C1_BASE));
+							va_end(vargs);
+						}
+						else{
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+							while(I2CMasterBusy(I2C1_BASE));
+							uint8_t i ;
+							for(i = 1; i < (num_of_args - 1); i++){
+								I2CMasterDataPut(I2C1_BASE, va_arg(vargs, uint32_t));
+								I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_CONT);
+								while(I2CMasterBusy(I2C1_BASE));
+							}
+							I2CMasterDataPut(I2C1_BASE, va_arg(vargs, uint32_t));
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_FINISH);
+							while(I2CMasterBusy(I2C1_BASE));
+							va_end(vargs);
+						}
+					}
+					
+					/***********************************************************************
+					* This function is used to send string data on serial Data line
+					***********************************************************************/
+					void I2CSendString(uint32_t slave_addr, char array[]){
+						I2CMasterSlaveAddrSet(I2C1_BASE, slave_addr, false);
+						I2CMasterDataPut(I2C1_BASE, array[0]);
+						if(array[1] == '\0')
+						{
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_SINGLE_SEND);
+							while(I2CMasterBusy(I2C1_BASE));
+						}
+						else{
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+							while(I2CMasterBusy(I2C1_BASE));
+							uint8_t i = 1;
+							while(array[i + 1] != '\0'){
+								I2CMasterDataPut(I2C1_BASE, array[i++]);
+								I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_CONT);
+								while(I2CMasterBusy(I2C1_BASE));
+							}
+							I2CMasterDataPut(I2C1_BASE, array[i]);
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_FINISH);
+							while(I2CMasterBusy(I2C1_BASE));
+						}
+					}
+					/***********************************************************************
+					* This function is used to receive 1 data on serial Data line
+					***********************************************************************/
+					uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg){
+						I2CMasterSlaveAddrSet(I2C1_BASE, slave_addr, false);
+						I2CMasterDataPut(I2C1_BASE, reg);
+						I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+						while(I2CMasterBusy(I2C1_BASE));
+						I2CMasterSlaveAddrSet(I2C1_BASE, slave_addr, true);
+						I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_SINGLE_RECEIVE);
+						while(I2CMasterBusy(I2C1_BASE));
+						return I2CMasterDataGet(I2C1_BASE);//return data pulled from the specified register
+					}
+					/***********************************************************************
+					* This function is used to receive 2 data on serial Data line
+					***********************************************************************/
+					uint16_t read2Bytes(uint8_t SLAVE_ADDRESS, uint8_t reg){
+							I2CMasterSlaveAddrSet(I2C1_BASE, SLAVE_ADDRESS, false);
+							I2CMasterDataPut(I2C1_BASE, reg);
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+							while(!(I2CMasterBusy(I2C1_BASE))){};
+							while(I2CMasterBusy(I2C1_BASE)){};
+							I2CMasterSlaveAddrSet(I2C1_BASE, SLAVE_ADDRESS, true);
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_RECEIVE_START);
+							while(!(I2CMasterBusy(I2C1_BASE))){};
+							while(I2CMasterBusy(I2C1_BASE)){};
+							uint8_t data=I2CMasterDataGet (I2C1_BASE);
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_RECEIVE_FINISH);
+							while(!(I2CMasterBusy(I2C1_BASE))){};
+							while(I2CMasterBusy(I2C1_BASE)){};
+							uint8_t dummy=I2CMasterDataGet (I2C1_BASE);
+							return ((((data<<8)+dummy))>>4);
+					}
+				\end{lstlisting}
+				
+				\subsubsection{\textbf{Code for uC based Board:}}
+				\begin{lstlisting}[style=CStyle]
+					#include <stdarg.h>
+					#include <stdbool.h>
+					#include <stdint.h>
+					#include "inc/hw_i2c.h"
+					#include "inc/hw_memmap.h"
+					#include "inc/hw_types.h"
+					#include "inc/hw_gpio.h"
+					#include "driverlib/i2c.h"
+					#include "driverlib/sysctl.h"
+					#include "driverlib/gpio.h"
+					#include "driverlib/pin_map.h"
+					#include "inc/tm4c123gh6pm.h"
+					#include "driverlib/interrupt.h"
+					#include "driverlib/uart.h"
+					
+					void setupCLK();
+					void InitI2C0(void);
+					void peripheralEnable();
+					void I2CSendString(uint32_t slave_addr, char array[]);
+					void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...);
+					uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg);
+					uint16_t read2Bytes(uint8_t slave_addr, uint8_t reg);
+					uint16_t readExternalADC(uint8_t channel);
+					void uartEnable();
+					void tranString(char *,char);
+					void itoa(long long a,char *arr);
+					void uartInteger(long long int integer,char delimeter);
+					void setupExternalADC();
+					
+					int main(void) {
+						setupCLK();
+						peripheralEnable();
+						uartEnable();
+						tranString("Ayush",' ');
+						InitI2C0();
+						setupExternalADC();
+						uint16_t val0=0;	
+						while(1){
+							val0=readExternalADC(5);
+							uartInteger(readExternalADC(0),' ');
+							SysCtlDelay((SysCtlClockGet())/3);
+						}
+						
+					}
+					
+					/***************************************************************************************
+					* This function is used to setup Clock frequency of the controller
+					* It can be changed through codes
+					* In this we have set frequency as 40Mhz
+					* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+					***************************************************************************************/
+					void setupCLK(){
+						SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+					}
+					/*******************************
+					* Enabling System Peripherals
+					* UART1 and PortC in this case
+					******************************/
+					void peripheralEnable(){
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+					}
+					/****************************************
+					* This function is used to enable UART1
+					* The baudrate is set at 9600
+					****************************************/
+					void uartEnable(){
+						GPIOPinConfigure(GPIO_PC4_U1RX);//Configure Pin A0 as RX of U0
+						GPIOPinConfigure(GPIO_PC5_U1TX);//Configure Pin A1 as TX of U0
+						GPIOPinTypeUART(GPIO_PORTC_BASE, GPIO_PIN_4 | GPIO_PIN_5);
+						UARTConfigSetExpClk(UART1_BASE, SysCtlClockGet(), 9600,
+						(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+					}
+					/**********************************************
+					* This function converts an integer to string
+					**********************************************/
+					void itoa(long long a,char *arr){
+						int i=0,j=0;
+						long long tmp=a;
+						if(a<0){
+							arr[i++]='-';
+							tmp*=-1;
+							j=1;
+						}
+						for(;tmp>0;i++){
+							arr[i]=(tmp%10)+'0';
+							tmp/=10;
+						}
+						arr[i--]='\0';
+						for(;j<i;j++,i--){
+							tmp=arr[i];
+							arr[i]=arr[j];
+							arr[j]=tmp;
+						}
+					}
+					
+					/*************************************
+					* send through serial communication
+					*************************************/
+					void uartInteger(long long int integer,char delimeter){
+						char ch[20];
+						itoa(integer,ch);
+						tranString(ch,delimeter);
+					}
+					/***********************************************************************
+					* This function is used to send a string of character with a delimiter
+					***********************************************************************/
+					void tranString(char * data,char delimeter){
+						int k=0;
+						while(data[k]){
+							UARTCharPut(UART1_BASE,data[k++]);
+						}
+						UARTCharPut(UART1_BASE,delimeter);
+					}
+					
+					/*********************************************************************************************
+					* Setting up external ADC
+					* Wait for 33ms
+					* Read the Busy Status Register (address 0Ch). If the 'Not Ready' bit = 1,
+					*  then increase the wait time until 'Not Ready' bit = 0 before proceeding to the next step.
+					*  Program the Advanced Configuration Register  Address 0B\h:
+					*  a. Choose to use the internal or external VREF (bit 0).
+					*  b. Choose the mode of operation (bits [2:1]).
+					* Program the Conversion Rate Register (address 07h).
+					* Choose to enable or disable the channels using the Channel Disable Register (address 08h).
+					* Using the Interrupt Mask Register (address 03h), choose to mask or not to mask the interrupt status from
+					propagating to the interrupt output pin, INT.
+					* Program the Limit Registers (addresses 2Ah to 39h).
+					* Set the START bit of the Configuration Register (address 00h, bit 0) to 1.
+					* Set the 'INT_Clear' bit (address 00h, bit 3) to 0. If needed, program the 'INT_Enable' bit (address 00h, bit 1)
+					to 1 to enable the INT output.
+					*********************************************************************************************/
+					void setupExternalADC(){
+						SysCtlDelay((5*SysCtlClockGet())/300);
+						while(I2CReceive(0x1D,0x0C)&(0x01));
+						I2CSend(0x1D,2,0x0B,0x03);
+						I2CSend(0x1D,2,0x07,0x01);
+						I2CSend(0x1D,2,0x08,0x00);
+						I2CSend(0x1D,3,0x2A,0x05);
+						I2CSend(0x1D,3,0x2B,0x00);
+						I2CSend(0x1D,3,0x2C,0x05);
+						I2CSend(0x1D,3,0x2D,0x00);
+						I2CSend(0x1D,3,0x2E,0x05);
+						I2CSend(0x1D,3,0x2F,0x00);
+						I2CSend(0x1D,3,0x30,0x05);
+						I2CSend(0x1D,3,0x31,0x00);
+						I2CSend(0x1D,3,0x32,0x05);
+						I2CSend(0x1D,3,0x33,0x00);
+						I2CSend(0x1D,3,0x34,0x05);
+						I2CSend(0x1D,3,0x35,0x00);
+						I2CSend(0x1D,3,0x36,0x05);
+						I2CSend(0x1D,3,0x37,0x00);
+						I2CSend(0x1D,3,0x38,0x05);
+						I2CSend(0x1D,3,0x39,0x00);
+						I2CSend(0x1D,2,0x00,0x01);
+					}
+					/****************************************
+					* Read ADC value from a mentioned channel
+					****************************************/
+					uint16_t readExternalADC(uint8_t channel){
+						while(I2CReceive(0x1D,0x0C)&(0x02));
+						return(read2Bytes(0x1D,(0x20+channel)));
+					}
+					/****************************************
+					* This function is used to enable I2C0
+					****************************************/
+					void InitI2C0(void){
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C0);
+						SysCtlPeripheralReset(SYSCTL_PERIPH_I2C0);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+						GPIOPinConfigure(GPIO_PB2_I2C0SCL);
+						GPIOPinConfigure(GPIO_PB3_I2C0SDA);
+						GPIOPinTypeI2CSCL(GPIO_PORTB_BASE, GPIO_PIN_2);
+						GPIOPinTypeI2C(GPIO_PORTB_BASE, GPIO_PIN_3);
+						// Enable and initialize the I2C0 master module.  Use the system clock for
+						// the I2C0 module.  The last parameter sets the I2C data transfer rate.
+						// If false the data rate is set to 100kbps and if true the data rate will
+						// be set to 400kbps.
+						I2CMasterInitExpClk(I2C0_BASE, SysCtlClockGet(), false);
+						HWREG(I2C0_BASE + I2C_O_FIFOCTL) = 80008000;
+					}
+					/***********************************************************************
+					* This function is used to send n number of data on serial Data line
+					***********************************************************************/
+					void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...){
+						I2CMasterSlaveAddrSet(I2C0_BASE, slave_addr, false);
+						va_list vargs;
+						va_start(vargs, num_of_args);
+						I2CMasterDataPut(I2C0_BASE, va_arg(vargs, uint32_t));
+						if(num_of_args == 1){
+							I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_SINGLE_SEND);
+							while(I2CMasterBusy(I2C0_BASE));
+							va_end(vargs);
+						}
+						else{
+							I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+							while(I2CMasterBusy(I2C0_BASE));
+							uint8_t i ;
+							for(i = 1; i < (num_of_args - 1); i++){
+								I2CMasterDataPut(I2C0_BASE, va_arg(vargs, uint32_t));
+								I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_CONT);
+								while(I2CMasterBusy(I2C0_BASE));
+							}
+							I2CMasterDataPut(I2C0_BASE, va_arg(vargs, uint32_t));
+							I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_FINISH);
+							while(I2CMasterBusy(I2C0_BASE));
+							va_end(vargs);
+						}
+					}
+					
+					/***********************************************************************
+					* This function is used to send string data on serial Data line
+					***********************************************************************/
+					void I2CSendString(uint32_t slave_addr, char array[]){
+						I2CMasterSlaveAddrSet(I2C0_BASE, slave_addr, false);
+						I2CMasterDataPut(I2C0_BASE, array[0]);
+						if(array[1] == '\0')
+						{
+							I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_SINGLE_SEND);
+							while(I2CMasterBusy(I2C0_BASE));
+						}
+						else{
+							I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+							while(I2CMasterBusy(I2C0_BASE));
+							uint8_t i = 1;
+							while(array[i + 1] != '\0'){
+								I2CMasterDataPut(I2C0_BASE, array[i++]);
+								I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_CONT);
+								while(I2CMasterBusy(I2C0_BASE));
+							}
+							I2CMasterDataPut(I2C0_BASE, array[i]);
+							I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_FINISH);
+							while(I2CMasterBusy(I2C0_BASE));
+							}
+					}
+					/***********************************************************************
+					* This function is used to receive 1 data on serial Data line
+					***********************************************************************/
+					uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg){
+					I2CMasterSlaveAddrSet(I2C0_BASE, slave_addr, false);
+					I2CMasterDataPut(I2C0_BASE, reg);
+					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+					while(I2CMasterBusy(I2C0_BASE));
+					I2CMasterSlaveAddrSet(I2C0_BASE, slave_addr, true);
+					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_SINGLE_RECEIVE);
+					while(I2CMasterBusy(I2C0_BASE));
+					return I2CMasterDataGet(I2C0_BASE);//return data pulled from the specified register
+					}
+					/***********************************************************************
+					* This function is used to receive 2 data on serial Data line
+					***********************************************************************/
+					uint16_t read2Bytes(uint8_t SLAVE_ADDRESS, uint8_t reg){
+						I2CMasterSlaveAddrSet(I2C0_BASE, SLAVE_ADDRESS, false);
+						I2CMasterDataPut(I2C0_BASE, reg);
+						I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+						while(!(I2CMasterBusy(I2C0_BASE))){};
+						while(I2CMasterBusy(I2C0_BASE)){};
+						I2CMasterSlaveAddrSet(I2C0_BASE, SLAVE_ADDRESS, true);
+						I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_RECEIVE_START);
+						while(!(I2CMasterBusy(I2C0_BASE))){};
+						while(I2CMasterBusy(I2C0_BASE)){};
+						uint8_t data=I2CMasterDataGet (I2C0_BASE);
+						I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_RECEIVE_FINISH);
+						while(!(I2CMasterBusy(I2C0_BASE))){};
+						while(I2CMasterBusy(I2C0_BASE)){};
+						uint8_t dummy=I2CMasterDataGet (I2C0_BASE);
+						return ((((data<<8)+dummy))>>4);
+					}
+				\end{lstlisting}
+				
+						
 		\subsection{\huge \textbf{Serial Communication}}
 			{The Fire Bird V can communicate with other robots / devices serially using either wired link or wireless module. Serial  communication is done in asynchronous mode. In the asynchronous mode, the common clock signal is not required at both the transmitter  and receiver  for data synchronization. As an example of serial communication code for interfacing Zigbee module is given below.}\\
 			
@@ -2477,74 +3148,98 @@
 				\end{center}
 			\subsubsection{\textbf{Code for Plug and Play Board:}}
 				\begin{lstlisting}[style=CStyle]
-					#include <stdlib.h>
-					#include <stdint.h>
-					#include <stdbool.h>
-					#include<math.h>
-					#include "inc/hw_memmap.h"
-					#include "inc/hw_types.h"
-					#include "driverlib/pin_map.h"
-					#include "driverlib/sysctl.h"
-					#include "driverlib/uart.h"
-					#include "driverlib/debug.h"
-					#include "driverlib/interrupt.h"
-					#include "driverlib/gpio.h"
-					#include "inc/tm4c123gh6pm.h"
-					
-					void configCLK();
-					void peripheralEnable();
-					void uartEnable();
-					void uartInterruptEnable();
-					void UARTIntHandler(void);
-					void tranString(char *,char);
-					void uartInteger(int64_t number);
-					
-					int main(){
-						configCLK();
-						peripheralEnable();
-						uartEnable();
-						uartInterruptEnable();
-						while(1){
-							tranString("Hello",' ');
-						}
+				#include <stdlib.h>
+				#include <stdint.h>
+				#include <stdbool.h>
+				#include<math.h>
+				#include "inc/hw_memmap.h"
+				#include "inc/hw_types.h"
+				#include "driverlib/pin_map.h"
+				#include "driverlib/sysctl.h"
+				#include "driverlib/uart.h"
+				#include "driverlib/debug.h"
+				#include "driverlib/interrupt.h"
+				#include "driverlib/gpio.h"
+				#include "inc/tm4c123gh6pm.h"
+			
+				void configCLK();
+				void peripheralEnable();
+				void uartEnable();
+				void uartInterruptEnable();
+				void UARTIntHandler(void);
+				void tranString(char *,char);
+				void uartInteger(int64_t number);
+			
+				int main(){
+					configCLK();
+					peripheralEnable();
+					uartEnable();
+					uartInterruptEnable();
+					while(1){
+				}
+				}
+				/***************************************************************************************
+				* This function is used to setup Clock frequency of the controller
+				* It can be changed through codes
+				* In this we have set frequency as 40Mhz
+				* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+				***************************************************************************************/
+				void configCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
+				}
+				/*******************************
+				* Enabling System Peripherals
+				* UART1 and PortB in this case
+				******************************/
+				void peripheralEnable(){
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+				}
+				/****************************************
+				* This function is used to enable UART0
+				* The baudrate is set at 9600
+				****************************************/
+				void uartEnable(){
+					GPIOPinConfigure(GPIO_PB0_U1RX);
+					GPIOPinConfigure(GPIO_PB1_U1TX);
+					GPIOPinTypeUART(GPIO_PORTB_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+					UARTConfigSetExpClk(UART1_BASE, SysCtlClockGet(), 9600,
+					(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+				}
+				/***********************************************************************
+				* This function is used to send a string of character with a delimiter
+				***********************************************************************/
+				void tranString(char * data,char delimeter){
+					int k=0;
+					while(data[k]){
+					UARTCharPut(UART1_BASE,data[k++]);
 					}
-					void configCLK(){
-						SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
+					UARTCharPut(UART1_BASE,delimeter);
+				}
+				/********************************************************************
+				* This function is used to enable UART1 Rx And Rx timeout Interrupt
+				*******************************************************************/
+				void uartInterruptEnable(){
+					IntMasterEnable();//Enable processor interrupt
+					IntEnable(INT_UART1);//Enable interrupt on UART0
+					UARTIntEnable(UART1_BASE, UART_INT_RX | UART_INT_RT);//Enable RX interrupt ant rx Timeout interrupt
+				}
+				/****************************************
+				* Interrupt sub routine for Uart0
+				* Change the name of ISR in startup file
+				* Refer to manual for proper instruction
+				****************************************/
+				void UARTIntHandler(void){
+					uint32_t ui32Status;
+					ui32Status = UARTIntStatus(UART1_BASE, true); //get interrupt status
+					UARTIntClear(UART1_BASE, ui32Status); //clear the asserted interrupts
+					while(UARTCharsAvail(UART1_BASE)){ //loop while there are chars
+					UARTCharPut(UART1_BASE, UARTCharGet(UART1_BASE));
 					}
-					void peripheralEnable(){
-						SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
-						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);//Enablinig TIMER0
-					}
-					void uartEnable(){
-						GPIOPinConfigure(GPIO_PB0_U1RX);//Configure Pin PB0 as RX of U0
-						GPIOPinConfigure(GPIO_PB1_U1TX);//Configure Pin PB1 as TX of U0
-						GPIOPinTypeUART(GPIO_PORTB_BASE, GPIO_PIN_0 | GPIO_PIN_1);
-						UARTConfigSetExpClk(UART1_BASE, SysCtlClockGet(), 9600,
-						(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
-					}
-					void tranString(char * data,char delimeter){
-						int k=0;
-						while(data[k]){
-							UARTCharPut(UART1_BASE,data[k++]);
-						}
-						UARTCharPut(UART1_BASE,delimeter);
-					}
-					void uartInterruptEnable(){
-						IntMasterEnable();//Enable processor interrupt
-						IntEnable(INT_UART1);//Enable interrupt on UART0
-						UARTIntEnable(UART1_BASE, UART_INT_RX | UART_INT_RT);//Enable RX interrupt ant rx Timeout interrupt
-					}
-					void UARTIntHandler(void){
-						uint32_t ui32Status;
-						ui32Status = UARTIntStatus(UART1_BASE, true); //get interrupt status
-						UARTIntClear(UART1_BASE, ui32Status); //clear the asserted interrupts
-						while(UARTCharsAvail(UART1_BASE)){ //loop while there are chars
-							UARTCharPut(UART1_BASE, UARTCharGet(UART1_BASE));
-						}
-					}
+				}
 				\end{lstlisting}
 				
-			\subsubsection{\textbf{Code for Plug and Play Board:}}
+			\subsubsection{\textbf{Code for uC based Board:}}
 				\begin{lstlisting}[style=CStyle]
 					#include <stdlib.h>
 					#include <stdint.h>
@@ -2559,7 +3254,7 @@
 					#include "driverlib/interrupt.h"
 					#include "driverlib/gpio.h"
 					#include "inc/tm4c123gh6pm.h"
-					
+			
 					void configCLK();
 					void peripheralEnable();
 					void uartEnable();
@@ -2580,8 +3275,8 @@
 						SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
 					}
 					void peripheralEnable(){
-							SysCtlPeripheralEnable(SYSCTL_PERIPH_UART3);
-							SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);//Enablinig TIMER0
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_UART3);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);//Enablinig TIMER0
 					}
 					void uartEnable(){
 						GPIOPinConfigure(GPIO_PC6_U3RX);//Configure Pin PC6 as RX of U0
@@ -2611,14 +3306,14 @@
 						}
 					}
 					
-				\end{lstlisting}	
+				\end{lstlisting}
 		\subsection{\huge \textbf{I2C Communication}}
 			\subsubsection{\textbf{Introduction}}
 				{I2C is a serial protocol for two-wire interface to connect low-speed devices like microcontrollers, EEPROMs, A/D and D/A converters, I/O interfaces and other similar peripherals in embedded systems. I2C combines the best features of SPI and UARTs. Like the Serial Peripheral Interface (SPI), it is only intended for short distance communications within a single device. Like Asynchronous Serial Interfaces (such as RS-232 or UARTs), it only requires two signal wires to exchange information.}
 				\begin{center}
 					\includegraphics[width=8cm, height=4cm]{I2C0}
 				\end{center}
-			\subsubsection{Features}
+			\subsubsection{\textbf{Features}}
 				\begin{itemize}
 					\item 2 bidirectional lines SDA (serial data) and SCL (serial clock) 
 					\item Independent Master, Slave, and Monitor functions
@@ -2629,14 +3324,15 @@
 				\begin{center}
 					\includegraphics[width=16cm, height=4cm]{I2C1}
 				\end{center}
-			\subsubsection{Working}
+			\subsubsection{\textbf{Working}}
 				{In normal state both lines SDA and SCL are at high state this indicates the bus is free, any device can use this bus. Master will now initiate the transfer by triggering a start condition with slave address to which it want to communicate. The corresponding slave device matches its address with master sent address, if it matches then both starts communicating.\\
 				If logic low is sent for bit 0 then the master writes data to the slave device, otherwise next byte wise of the remaining data will be read from the slave device. After all the communication between the master and slave is over master will generate a stop condition indicating that communication is over and another slave can use the bus.}
 				\begin{center}
 					\includegraphics[width=16cm, height=4cm]{I2C2}
 				\end{center}
-			{As an example of I2C communication code for interfacing port expander IC is given below. In this case MCP23017 I2C based IC is used.The data sheet of the IC can be downloaded here} \href{www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjL94feoN7UAhVCKJQKHdBYCycQFgghMAA&url=http%3A%2F%2Fww1.microchip.com%2Fdownloads%2Fen%2FDeviceDoc%2F21952b.pdf&usg=AFQjCNGBKMZsXOwf1Puo7YQAZ1CwK_52fQ}{MCP23017}
-			\subsubsection{Connections}
+			{As an example of I2C communication code for interfacing port expander IC is given below. In this case MCP23017 I2C based IC is used.The data sheet of the IC can be downloaded here} \href{www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjL94feoN7UAhVCKJQKHdBYCycQFgghMAA&url=http\%3A\%2F\%2Fww1.microchip.com\%2Fdownloads\%2Fen\%2FDeviceDoc\%2F21952b.pdf&usg=AFQjCNGBKMZsXOwf1Puo7YQAZ1CwK_52fQ}{MCP23017}
+			
+			\subsubsection{\textbf{Connections}}
 				\begin{center}
 					\includegraphics[width=8cm, height=2cm]{I2C3}
 				\end{center}
@@ -2910,10 +3606,11 @@
 					#include "driverlib/pin_map.h"
 					#include "inc/tm4c123gh6pm.h"
 					#include "driverlib/interrupt.h"
+					
 					void setupCLK();
 					void peripheralEnable();
 					void gpioEnable();
-					void InitI2C0(void);
+					void InitI2C1(void);
 					void I2CSendString(uint32_t slave_addr, char array[]);
 					void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...);
 					uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg);
@@ -2923,231 +3620,178 @@
 					void portExpanderInterruptEnableAnyChange(unsigned char,unsigned char);
 					void portExpanderpullup(unsigned char,unsigned char);
 					void portExpanderInterruptHandler();
+					
 					int main(void) {
-					setupCLK();
-					peripheralEnable();
-					gpioEnable();
-					InitI2C0();
-					portExpanderIO(0x00,0xff);
-					portExpanderIO(0x01,0x00);
-					portExpanderSetOutput(0x01,0x00);
-					portExpanderpullup(0x00,0x0f);
-					portExpanderInterruptEnableAnyChange(0x00,0xff);
-					while(1){
+						setupCLK();
+						peripheralEnable();
+						gpioEnable();
+						InitI2C1();
+						portExpanderIO(0x00,0xff);
+						portExpanderIO(0x01,0x00);
+						portExpanderSetOutput(0x01,0x00);
+						portExpanderpullup(0x00,0x0f);
+						portExpanderInterruptEnableAnyChange(0x00,0xff);
+						while(1){
+						}
 					}
-					}
+					/***************************************************************************************
+					* This function is used to setup Clock frequency of the controller
+					* It can be changed through codes
+					* In this we have set frequency as 40Mhz
+					* Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+					***************************************************************************************/
 					void setupCLK(){
-					SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+						SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
 					}
+					/*******************************
+					* Enabling System Peripherals
+					* PortC in this case
+					******************************/
 					void peripheralEnable(){
-					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
 					}
+					/************************************************
+					* Making Pin Port C7 as input with weak pull up
+					************************************************/
 					void gpioEnable(){
-					GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE, GPIO_PIN_7);;
-					GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_7);
-					GPIOPadConfigSet(GPIO_PORTC_BASE ,GPIO_PIN_7,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);
+						GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE, GPIO_PIN_7);;
+						GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_7);
+						GPIOPadConfigSet(GPIO_PORTC_BASE ,GPIO_PIN_7,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);
 					}
-					void InitI2C0(void){
-					SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C0);
-					SysCtlPeripheralReset(SYSCTL_PERIPH_I2C0);
-					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
-					GPIOPinConfigure(GPIO_PB2_I2C0SCL);
-					GPIOPinConfigure(GPIO_PB3_I2C0SDA);
-					GPIOPinTypeI2CSCL(GPIO_PORTB_BASE, GPIO_PIN_2);
-					GPIOPinTypeI2C(GPIO_PORTB_BASE, GPIO_PIN_3);
-					// Enable and initialize the I2C0 master module.  Use the system clock for
-					// the I2C0 module.  The last parameter sets the I2C data transfer rate.
-					// If false the data rate is set to 100kbps and if true the data rate will
-					// be set to 400kbps.
-					I2CMasterInitExpClk(I2C0_BASE, SysCtlClockGet(), false);
-					//clear I2C FIFOs
-					HWREG(I2C0_BASE + I2C_O_FIFOCTL) = 80008000;
-					I2CSend(0x20,2,0x0A,1<<6);
+					/****************************************
+					* This function is used to enable I2C1
+					****************************************/
+					void InitI2C1(void){
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C1);
+						SysCtlPeripheralReset(SYSCTL_PERIPH_I2C1);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+						GPIOPinConfigure(GPIO_PA6_I2C1SCL);
+						GPIOPinConfigure(GPIO_PA7_I2C1SDA);
+						GPIOPinTypeI2CSCL(GPIO_PORTA_BASE, GPIO_PIN_6);
+						GPIOPinTypeI2C(GPIO_PORTA_BASE, GPIO_PIN_7);
+						// Enable and initialize the I2C1 master module.  Use the system clock for
+						// the I2C1 module.  The last parameter sets the I2C data transfer rate.
+						// If false the data rate is set to 100kbps and if true the data rate will
+						// be set to 400kbps.
+						I2CMasterInitExpClk(I2C1_BASE, SysCtlClockGet(), false);
+						//clear I2C FIFOs
+						HWREG(I2C1_BASE + I2C_O_FIFOCTL) = 80008000;
+						I2CSend(0x20,2,0x0A,1<<6);
 					}
-					void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...)
-					{
-					// Tell the master module what address it will place on the bus when
-					// communicating with the slave.
-					I2CMasterSlaveAddrSet(I2C0_BASE, slave_addr, false);
-					
-					//stores list of variable number of arguments
-					va_list vargs;
-					
-					//specifies the va_list to "open" and the last fixed argument
-					//so vargs knows where to start looking
-					va_start(vargs, num_of_args);
-					
-					//put data to be sent into FIFO
-					I2CMasterDataPut(I2C0_BASE, va_arg(vargs, uint32_t));
-					
-					//if there is only one argument, we only need to use the
-					//single send I2C function
-					if(num_of_args == 1)
-					{
-					//Initiate send of data from the MCU
-					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_SINGLE_SEND);
-					
-					// Wait until MCU is done transferring.
-					while(I2CMasterBusy(I2C0_BASE));
-					
-					//"close" variable argument list
-					va_end(vargs);
+					/***********************************************************************
+					* This function is used to send n number of data on serial Data line
+					***********************************************************************/
+					void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...){
+						I2CMasterSlaveAddrSet(I2C1_BASE, slave_addr, false);
+						va_list vargs;
+						va_start(vargs, num_of_args);
+						I2CMasterDataPut(I2C1_BASE, va_arg(vargs, uint32_t));
+						if(num_of_args == 1){
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_SINGLE_SEND);
+							while(I2CMasterBusy(I2C1_BASE));
+							va_end(vargs);
+						}
+						else{
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+							while(I2CMasterBusy(I2C1_BASE));
+							uint8_t i ;
+							for(i = 1; i < (num_of_args - 1); i++){
+								I2CMasterDataPut(I2C1_BASE, va_arg(vargs, uint32_t));
+								I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_CONT);
+								while(I2CMasterBusy(I2C1_BASE));
+							}
+							I2CMasterDataPut(I2C1_BASE, va_arg(vargs, uint32_t));
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_FINISH);
+							while(I2CMasterBusy(I2C1_BASE));
+							va_end(vargs);
+						}
 					}
-					
-					//otherwise, we start transmission of multiple bytes on the
-					//I2C bus
-					else
-					{
-					//Initiate send of data from the MCU
-					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_START);
-					
-					// Wait until MCU is done transferring.
-					while(I2CMasterBusy(I2C0_BASE));
-					
-					//send num_of_args-2 pieces of data, using the
-					//BURST_SEND_CONT command of the I2C module
-					uint8_t i ;
-					for(i = 1; i < (num_of_args - 1); i++)
-					{
-					//put next piece of data into I2C FIFO
-					I2CMasterDataPut(I2C0_BASE, va_arg(vargs, uint32_t));
-					//send next data that was just placed into FIFO
-					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_CONT);
-					
-					// Wait until MCU is done transferring.
-					while(I2CMasterBusy(I2C0_BASE));
+					/***********************************************************************
+					* This function is used to send string data on serial Data line
+					***********************************************************************/
+					void I2CSendString(uint32_t slave_addr, char array[]){
+						I2CMasterSlaveAddrSet(I2C1_BASE, slave_addr, false);
+						I2CMasterDataPut(I2C1_BASE, array[0]);
+						if(array[1] == '\0'){
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_SINGLE_SEND);
+							while(I2CMasterBusy(I2C1_BASE));
+						}
+						else{
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+							while(I2CMasterBusy(I2C1_BASE));
+							uint8_t i = 1;
+							while(array[i + 1] != '\0'){
+								I2CMasterDataPut(I2C1_BASE, array[i++]);
+								I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_CONT);
+								while(I2CMasterBusy(I2C1_BASE));
+							}
+							I2CMasterDataPut(I2C1_BASE, array[i]);
+							I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_FINISH);
+							while(I2CMasterBusy(I2C1_BASE));
+						}
 					}
-					
-					//put last piece of data into I2C FIFO
-					I2CMasterDataPut(I2C0_BASE, va_arg(vargs, uint32_t));
-					//send next data that was just placed into FIFO
-					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_FINISH);
-					// Wait until MCU is done transferring.
-					while(I2CMasterBusy(I2C0_BASE));
-					
-					//"close" variable args list
-					va_end(vargs);
+					/***********************************************************************
+					* This function is used to receive 1 data on serial Data line
+					***********************************************************************/
+					uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg){
+						I2CMasterSlaveAddrSet(I2C1_BASE, slave_addr, false);
+						I2CMasterDataPut(I2C1_BASE, reg);
+						I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+						while(I2CMasterBusy(I2C1_BASE));
+						I2CMasterSlaveAddrSet(I2C1_BASE, slave_addr, true);
+						I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_SINGLE_RECEIVE);
+						while(I2CMasterBusy(I2C1_BASE));
+						return I2CMasterDataGet(I2C1_BASE);
 					}
-					}
-					//sends an array of data via I2C to the specified slave
-					void I2CSendString(uint32_t slave_addr, char array[])
-					{
-					// Tell the master module what address it will place on the bus when
-					// communicating with the slave.
-					I2CMasterSlaveAddrSet(I2C0_BASE, slave_addr, false);
-					
-					//put data to be sent into FIFO
-					I2CMasterDataPut(I2C0_BASE, array[0]);
-					
-					//if there is only one argument, we only need to use the
-					//single send I2C function
-					if(array[1] == '\0')
-					{
-					//Initiate send of data from the MCU
-					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_SINGLE_SEND);
-					
-					// Wait until MCU is done transferring.
-					while(I2CMasterBusy(I2C0_BASE));
-					}
-					
-					//otherwise, we start transmission of multiple bytes on the
-					//I2C bus
-					else
-					{
-					//Initiate send of data from the MCU
-					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_START);
-					
-					// Wait until MCU is done transferring.
-					while(I2CMasterBusy(I2C0_BASE));
-					
-					//initialize index into array
-					uint8_t i = 1;
-					
-					//send num_of_args-2 pieces of data, using the
-					//BURST_SEND_CONT command of the I2C module
-					while(array[i + 1] != '\0')
-					{
-					//put next piece of data into I2C FIFO
-					I2CMasterDataPut(I2C0_BASE, array[i++]);
-					
-					//send next data that was just placed into FIFO
-					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_CONT);
-					
-					// Wait until MCU is done transferring.
-					while(I2CMasterBusy(I2C0_BASE));
-					}
-					
-					//put last piece of data into I2C FIFO
-					I2CMasterDataPut(I2C0_BASE, array[i]);
-					
-					//send next data that was just placed into FIFO
-					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_FINISH);
-					
-					// Wait until MCU is done transferring.
-					while(I2CMasterBusy(I2C0_BASE));
-					}
-					}
-					//read specified register on slave device
-					uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg)
-					{
-					//specify that we are writing (a register address) to the
-					//slave device
-					I2CMasterSlaveAddrSet(I2C0_BASE, slave_addr, false);
-					
-					//specify register to be read
-					I2CMasterDataPut(I2C0_BASE, reg);
-					
-					//send control byte and register address byte to slave device
-					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_START);
-					
-					//wait for MCU to finish transaction
-					while(I2CMasterBusy(I2C0_BASE));
-					
-					//specify that we are going to read from slave device
-					I2CMasterSlaveAddrSet(I2C0_BASE, slave_addr, true);
-					
-					//send control byte and read from the register we
-					//specified
-					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_SINGLE_RECEIVE);
-					
-					//wait for MCU to finish transaction
-					while(I2CMasterBusy(I2C0_BASE));
-					
-					//return data pulled from the specified register
-					return I2CMasterDataGet(I2C0_BASE);
-					}
+					/***********************************************************************
+					* This function is used to set PORTA or PORTB pins as I/O
+					***********************************************************************/
 					void portExpanderIO(unsigned char port,unsigned char pin){
-					I2CSend(0x20,2,port,pin);
+						I2CSend(0x20,2,port,pin);
 					}
+					/***********************************************************************
+					* This function is used to give PORTA or PORTB pin output values
+					***********************************************************************/
 					void portExpanderSetOutput(unsigned char port,unsigned char pin){
-					I2CSend(0x20,2,port+(0x12),pin);
+						I2CSend(0x20,2,port+(0x12),pin);
 					}
+					/***********************************************************************
+					* This function is used to read PORTA or PORTB pin values
+					***********************************************************************/
 					unsigned char portExpanderReadInput(unsigned char port){
-					return(I2CReceive(0x20,(port+12)));
+						return(I2CReceive(0x20,(port+12)));
 					}
-					void portExpanderInterruptEnableAnyChange(unsigned char port,unsigned char pin){
-					portExpanderIO(port,pin);
-					I2CSend(0x20,2,(0x04)+port,pin);
-					I2CSend(0x20,2,(0x08)+port,pin);
-					GPIOIntDisable(GPIO_PORTC_BASE,GPIO_PIN_7);        // Disable interrupt for PF4 (in case it was enabled)
-					GPIOIntClear(GPIO_PORTC_BASE,GPIO_PIN_7);      // Clear pending interrupts for PF4
-					GPIOIntRegister(GPIO_PORTC_BASE,portExpanderInterruptHandler);     // Register our handler function for port F
-					GPIOIntTypeSet(GPIO_PORTC_BASE,GPIO_PIN_7,GPIO_FALLING_EDGE);             // Configure PF4 for falling edge trigger
-					GPIOIntEnable(GPIO_PORTC_BASE,GPIO_PIN_7);
+					/***********************************************************************
+					* This function is used to enable interrupt on PORTA or PORTB pin
+					***********************************************************************/
+						void portExpanderInterruptEnableAnyChange(unsigned char port,unsigned char pin){
+						portExpanderIO(port,pin);
+						I2CSend(0x20,2,(0x04)+port,pin);
+						I2CSend(0x20,2,(0x08)+port,pin);
+						GPIOIntDisable(GPIO_PORTC_BASE,GPIO_PIN_7);        // Disable interrupt for PF4 (in case it was enabled)
+						GPIOIntClear(GPIO_PORTC_BASE,GPIO_PIN_7);      // Clear pending interrupts for PF4
+						GPIOIntRegister(GPIO_PORTC_BASE,portExpanderInterruptHandler);     // Register our handler function for port F
+						GPIOIntTypeSet(GPIO_PORTC_BASE,GPIO_PIN_7,GPIO_FALLING_EDGE);             // Configure PF4 for falling edge trigger
+						GPIOIntEnable(GPIO_PORTC_BASE,GPIO_PIN_7);
 					}
+					/**************************************
+					* Pin change interrupt service routine
+					**************************************/
 					void portExpanderInterruptHandler(){
-					if(GPIOIntStatus(GPIO_PORTC_BASE, false)&GPIO_PIN_7){
-					if(I2CReceive(0x20,0x0e)&0x01==0x01){
-					portExpanderSetOutput(0x01,0xff);
+						if(GPIOIntStatus(GPIO_PORTC_BASE, false)&GPIO_PIN_7){
+							if(I2CReceive(0x20,0x0e)&0x01==0x01){
+								portExpanderSetOutput(0x01,0xff);
+							}
+							I2CReceive(0x20,0x10);
+							I2CReceive(0x20,0x11);
+							GPIOIntClear(GPIO_PORTC_BASE,GPIO_PIN_7);
+						}
 					}
-					I2CReceive(0x20,0x10);
-					I2CReceive(0x20,0x11);
-					GPIOIntClear(GPIO_PORTC_BASE,GPIO_PIN_7);
-					}
-					}
+					/***********************************************************************
+					* This function is used to give external 100K pull toPORTA or PORTB pin
+					***********************************************************************/
 					void portExpanderpullup(unsigned char port,unsigned char pin){
-					I2CSend(0x20,2,(0x0C)+port,pin);
+						I2CSend(0x20,2,(0x0C)+port,pin);
 					}
-					
 				\end{lstlisting}
 \end{document}

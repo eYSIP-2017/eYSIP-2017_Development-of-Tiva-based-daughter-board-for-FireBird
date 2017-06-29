@@ -5,26 +5,26 @@
 \contentsline {subsection}{\numberline {3.2}\textbf {Inappropriate Operation:}}{7}{subsection.3.2}
 \contentsline {section}{\numberline {4}\relax \fontsize {24.88}{30}\selectfont \textbf {Tiva Based Daughter Board}}{8}{section.4}
 \contentsline {subsection}{\numberline {4.1}{\relax \fontsize {20.74}{25}\selectfont \textbf {Technical Specification}}\\}{8}{subsection.4.1}
-\contentsline {section}{\numberline {5}\relax \fontsize {24.88}{30}\selectfont \textbf {Hardware Manual:}}{8}{section.5}
-\contentsline {subsection}{\numberline {5.1}\relax \fontsize {20.74}{25}\selectfont \textbf {Voltage Regulation on the Daughter Board\\}}{8}{subsection.5.1}
+\contentsline {section}{\numberline {5}\relax \fontsize {24.88}{30}\selectfont \textbf {Hardware Manual:}}{9}{section.5}
+\contentsline {subsection}{\numberline {5.1}\relax \fontsize {20.74}{25}\selectfont \textbf {Voltage Regulation on the Daughter Board}}{9}{subsection.5.1}
 \contentsline {subsubsection}{\numberline {5.1.1}\relax \fontsize {14.4}{18}\selectfont \textbf {Powering Micro-controller}}{9}{subsubsection.5.1.1}
 \contentsline {subsubsection}{\numberline {5.1.2}\relax \fontsize {14.4}{18}\selectfont \textbf {Powering Servos}}{9}{subsubsection.5.1.2}
 \contentsline {subsection}{\numberline {5.2}\relax \fontsize {20.74}{25}\selectfont \textbf {Level Converters}}{10}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}\relax \fontsize {20.74}{25}\selectfont \textbf {Sensors}}{10}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}\relax \fontsize {14.4}{18}\selectfont \textbf {3.3V sensors}}{10}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.1}\relax \fontsize {14.4}{18}\selectfont \textbf {3.3V sensors}}{11}{subsubsection.5.3.1}
 \contentsline {subsubsection}{\numberline {5.3.2}\relax \fontsize {14.4}{18}\selectfont \textbf {5V sensors}}{11}{subsubsection.5.3.2}
-\contentsline {subsection}{\numberline {5.4}\relax \fontsize {20.74}{25}\selectfont \textbf {Port Expander}}{11}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}\relax \fontsize {20.74}{25}\selectfont \textbf {External ADC}}{12}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.4}\relax \fontsize {20.74}{25}\selectfont \textbf {Port Expander}}{12}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}\relax \fontsize {20.74}{25}\selectfont \textbf {External ADC}}{13}{subsection.5.5}
 \contentsline {subsection}{\numberline {5.6}\relax \fontsize {20.74}{25}\selectfont \textbf {LCD Interfacing}}{13}{subsection.5.6}
-\contentsline {subsection}{\numberline {5.7}\relax \fontsize {20.74}{25}\selectfont \textbf {USB Communication}}{14}{subsection.5.7}
-\contentsline {subsection}{\numberline {5.8}\relax \fontsize {20.74}{25}\selectfont \textbf {Programing the Controller}}{15}{subsection.5.8}
-\contentsline {subsection}{\numberline {5.9}\relax \fontsize {20.74}{25}\selectfont \textbf {Reset Switch}}{15}{subsection.5.9}
-\contentsline {subsection}{\numberline {5.10}\relax \fontsize {20.74}{25}\selectfont \textbf {Servo Connectors}}{15}{subsection.5.10}
-\contentsline {subsection}{\numberline {5.11}\relax \fontsize {20.74}{25}\selectfont \textbf {TM4C123GH6PM Micro-controller:}}{16}{subsection.5.11}
-\contentsline {subsection}{\numberline {5.12}\relax \fontsize {20.74}{25}\selectfont \textbf {Pin Functionality}}{19}{subsection.5.12}
-\contentsline {subsubsection}{\numberline {5.12.1}\relax \fontsize {14.4}{18}\selectfont \textbf {Pin of uC}}{19}{subsubsection.5.12.1}
-\contentsline {subsubsection}{\numberline {5.12.2}\relax \fontsize {14.4}{18}\selectfont \textbf {Robot Main Board Connections}}{20}{subsubsection.5.12.2}
-\contentsline {subsubsection}{\numberline {5.12.3}Pin Connection Of Plug And Play Board}{22}{subsubsection.5.12.3}
+\contentsline {subsection}{\numberline {5.7}\relax \fontsize {20.74}{25}\selectfont \textbf {USB Communication}}{15}{subsection.5.7}
+\contentsline {subsection}{\numberline {5.8}\relax \fontsize {20.74}{25}\selectfont \textbf {Reset Switch}}{15}{subsection.5.8}
+\contentsline {subsection}{\numberline {5.9}\relax \fontsize {20.74}{25}\selectfont \textbf {Servo Connectors}}{16}{subsection.5.9}
+\contentsline {subsection}{\numberline {5.10}\relax \fontsize {20.74}{25}\selectfont \textbf {TM4C123GH6PM Micro-controller:}}{17}{subsection.5.10}
+\contentsline {subsubsection}{\numberline {5.10.1}\textbf {Feature of TM4C123GH6PM}}{17}{subsubsection.5.10.1}
+\contentsline {subsection}{\numberline {5.11}\relax \fontsize {20.74}{25}\selectfont \textbf {Pin Functionality}}{19}{subsection.5.11}
+\contentsline {subsubsection}{\numberline {5.11.1}\relax \fontsize {14.4}{18}\selectfont \textbf {Pin of uC}}{19}{subsubsection.5.11.1}
+\contentsline {subsubsection}{\numberline {5.11.2}\relax \fontsize {14.4}{18}\selectfont \textbf {Robot Main Board Connections}}{20}{subsubsection.5.11.2}
+\contentsline {subsubsection}{\numberline {5.11.3}\textbf {Pin Connection Of Plug And Play Board}}{22}{subsubsection.5.11.3}
 \contentsline {section}{\numberline {6}\relax \fontsize {24.88}{30}\selectfont \textbf {Software Manual:}}{24}{section.6}
 \contentsline {subsection}{\numberline {6.1}\relax \fontsize {20.74}{25}\selectfont \textbf {Code Composer Studio:}}{24}{subsection.6.1}
 \contentsline {subsubsection}{\numberline {6.1.1}\relax \fontsize {14.4}{18}\selectfont \textbf {Download CC Studio:}}{24}{subsubsection.6.1.1}
@@ -54,18 +54,21 @@
 \contentsline {subsubsection}{\numberline {6.7.3}\textbf {Code for uC based Board:}}{47}{subsubsection.6.7.3}
 \contentsline {subsection}{\numberline {6.8}\relax \fontsize {20.74}{25}\selectfont \textbf {LCD Interfacing}}{49}{subsection.6.8}
 \contentsline {subsubsection}{\numberline {6.8.1}\textbf {Code for Plug and Play Board:}}{49}{subsubsection.6.8.1}
-\contentsline {subsubsection}{\numberline {6.8.2}\textbf {Code for uC based Board}}{51}{subsubsection.6.8.2}
-\contentsline {subsection}{\numberline {6.9}\relax \fontsize {20.74}{25}\selectfont \textbf {Analog To Digital Converter}}{53}{subsection.6.9}
-\contentsline {subsubsection}{\numberline {6.9.1}\textbf {Code for Plug and Play Board:}}{54}{subsubsection.6.9.1}
-\contentsline {subsubsection}{\numberline {6.9.2}\textbf {Code for uC based Board}}{56}{subsubsection.6.9.2}
-\contentsline {subsection}{\numberline {6.10}\relax \fontsize {20.74}{25}\selectfont \textbf {Serial Communication}}{58}{subsection.6.10}
-\contentsline {subsubsection}{\numberline {6.10.1}Connections}{58}{subsubsection.6.10.1}
-\contentsline {subsubsection}{\numberline {6.10.2}\textbf {Code for Plug and Play Board:}}{58}{subsubsection.6.10.2}
-\contentsline {subsubsection}{\numberline {6.10.3}\textbf {Code for Plug and Play Board:}}{59}{subsubsection.6.10.3}
-\contentsline {subsection}{\numberline {6.11}\relax \fontsize {20.74}{25}\selectfont \textbf {I2C Communication}}{60}{subsection.6.11}
-\contentsline {subsubsection}{\numberline {6.11.1}\textbf {Introduction}}{60}{subsubsection.6.11.1}
-\contentsline {subsubsection}{\numberline {6.11.2}Features}{60}{subsubsection.6.11.2}
-\contentsline {subsubsection}{\numberline {6.11.3}Working}{61}{subsubsection.6.11.3}
-\contentsline {subsubsection}{\numberline {6.11.4}Connections}{61}{subsubsection.6.11.4}
-\contentsline {subsubsection}{\numberline {6.11.5}\textbf {Code for Plug and Play Board:}}{61}{subsubsection.6.11.5}
-\contentsline {subsubsection}{\numberline {6.11.6}\textbf {Code for uC based Board:}}{65}{subsubsection.6.11.6}
+\contentsline {subsubsection}{\numberline {6.8.2}\textbf {Code for uC based Board}}{52}{subsubsection.6.8.2}
+\contentsline {subsection}{\numberline {6.9}\relax \fontsize {20.74}{25}\selectfont \textbf {Analog To Digital Converter}}{55}{subsection.6.9}
+\contentsline {subsubsection}{\numberline {6.9.1}\textbf {Code for Plug and Play Board:}}{55}{subsubsection.6.9.1}
+\contentsline {subsubsection}{\numberline {6.9.2}\textbf {Code for uC based Board}}{57}{subsubsection.6.9.2}
+\contentsline {subsection}{\numberline {6.10}\relax \fontsize {20.74}{25}\selectfont \textbf {External ADC Interface}}{59}{subsection.6.10}
+\contentsline {subsubsection}{\numberline {6.10.1}\textbf {Code for Plug and Play Board:}}{59}{subsubsection.6.10.1}
+\contentsline {subsubsection}{\numberline {6.10.2}\textbf {Code for uC based Board:}}{63}{subsubsection.6.10.2}
+\contentsline {subsection}{\numberline {6.11}\relax \fontsize {20.74}{25}\selectfont \textbf {Serial Communication}}{66}{subsection.6.11}
+\contentsline {subsubsection}{\numberline {6.11.1}Connections}{67}{subsubsection.6.11.1}
+\contentsline {subsubsection}{\numberline {6.11.2}\textbf {Code for Plug and Play Board:}}{67}{subsubsection.6.11.2}
+\contentsline {subsubsection}{\numberline {6.11.3}\textbf {Code for uC based Board:}}{68}{subsubsection.6.11.3}
+\contentsline {subsection}{\numberline {6.12}\relax \fontsize {20.74}{25}\selectfont \textbf {I2C Communication}}{69}{subsection.6.12}
+\contentsline {subsubsection}{\numberline {6.12.1}\textbf {Introduction}}{69}{subsubsection.6.12.1}
+\contentsline {subsubsection}{\numberline {6.12.2}\textbf {Features}}{69}{subsubsection.6.12.2}
+\contentsline {subsubsection}{\numberline {6.12.3}\textbf {Working}}{70}{subsubsection.6.12.3}
+\contentsline {subsubsection}{\numberline {6.12.4}\textbf {Connections}}{70}{subsubsection.6.12.4}
+\contentsline {subsubsection}{\numberline {6.12.5}\textbf {Code for Plug and Play Board:}}{70}{subsubsection.6.12.5}
+\contentsline {subsubsection}{\numberline {6.12.6}\textbf {Code for uC based Board:}}{73}{subsubsection.6.12.6}

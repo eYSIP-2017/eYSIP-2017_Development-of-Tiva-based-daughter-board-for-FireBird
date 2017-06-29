@@ -17,14 +17,14 @@
 \BOOKMARK [2][-]{subsection.5.5}{External ADC}{section.5}% 17
 \BOOKMARK [2][-]{subsection.5.6}{LCD Interfacing}{section.5}% 18
 \BOOKMARK [2][-]{subsection.5.7}{USB Communication}{section.5}% 19
-\BOOKMARK [2][-]{subsection.5.8}{Programing the Controller}{section.5}% 20
-\BOOKMARK [2][-]{subsection.5.9}{Reset Switch}{section.5}% 21
-\BOOKMARK [2][-]{subsection.5.10}{Servo Connectors}{section.5}% 22
-\BOOKMARK [2][-]{subsection.5.11}{TM4C123GH6PM Micro-controller:}{section.5}% 23
-\BOOKMARK [2][-]{subsection.5.12}{Pin Functionality}{section.5}% 24
-\BOOKMARK [3][-]{subsubsection.5.12.1}{Pin of uC}{subsection.5.12}% 25
-\BOOKMARK [3][-]{subsubsection.5.12.2}{Robot Main Board Connections}{subsection.5.12}% 26
-\BOOKMARK [3][-]{subsubsection.5.12.3}{Pin Connection Of Plug And Play Board}{subsection.5.12}% 27
+\BOOKMARK [2][-]{subsection.5.8}{Reset Switch}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.9}{Servo Connectors}{section.5}% 21
+\BOOKMARK [2][-]{subsection.5.10}{TM4C123GH6PM Micro-controller:}{section.5}% 22
+\BOOKMARK [3][-]{subsubsection.5.10.1}{Feature of TM4C123GH6PM}{subsection.5.10}% 23
+\BOOKMARK [2][-]{subsection.5.11}{Pin Functionality}{section.5}% 24
+\BOOKMARK [3][-]{subsubsection.5.11.1}{Pin of uC}{subsection.5.11}% 25
+\BOOKMARK [3][-]{subsubsection.5.11.2}{Robot Main Board Connections}{subsection.5.11}% 26
+\BOOKMARK [3][-]{subsubsection.5.11.3}{Pin Connection Of Plug And Play Board}{subsection.5.11}% 27
 \BOOKMARK [1][-]{section.6}{Software Manual:}{}% 28
 \BOOKMARK [2][-]{subsection.6.1}{Code Composer Studio:}{section.6}% 29
 \BOOKMARK [3][-]{subsubsection.6.1.1}{Download CC Studio:}{subsection.6.1}% 30
@@ -54,14 +54,17 @@
 \BOOKMARK [2][-]{subsection.6.9}{Analog To Digital Converter}{section.6}% 54
 \BOOKMARK [3][-]{subsubsection.6.9.1}{Code for Plug and Play Board:}{subsection.6.9}% 55
 \BOOKMARK [3][-]{subsubsection.6.9.2}{Code for uC based Board}{subsection.6.9}% 56
-\BOOKMARK [2][-]{subsection.6.10}{Serial Communication}{section.6}% 57
-\BOOKMARK [3][-]{subsubsection.6.10.1}{Connections}{subsection.6.10}% 58
-\BOOKMARK [3][-]{subsubsection.6.10.2}{Code for Plug and Play Board:}{subsection.6.10}% 59
-\BOOKMARK [3][-]{subsubsection.6.10.3}{Code for Plug and Play Board:}{subsection.6.10}% 60
-\BOOKMARK [2][-]{subsection.6.11}{I2C Communication}{section.6}% 61
-\BOOKMARK [3][-]{subsubsection.6.11.1}{Introduction}{subsection.6.11}% 62
-\BOOKMARK [3][-]{subsubsection.6.11.2}{Features}{subsection.6.11}% 63
-\BOOKMARK [3][-]{subsubsection.6.11.3}{Working}{subsection.6.11}% 64
-\BOOKMARK [3][-]{subsubsection.6.11.4}{Connections}{subsection.6.11}% 65
-\BOOKMARK [3][-]{subsubsection.6.11.5}{Code for Plug and Play Board:}{subsection.6.11}% 66
-\BOOKMARK [3][-]{subsubsection.6.11.6}{Code for uC based Board:}{subsection.6.11}% 67
+\BOOKMARK [2][-]{subsection.6.10}{External ADC Interface}{section.6}% 57
+\BOOKMARK [3][-]{subsubsection.6.10.1}{Code for Plug and Play Board:}{subsection.6.10}% 58
+\BOOKMARK [3][-]{subsubsection.6.10.2}{Code for uC based Board:}{subsection.6.10}% 59
+\BOOKMARK [2][-]{subsection.6.11}{Serial Communication}{section.6}% 60
+\BOOKMARK [3][-]{subsubsection.6.11.1}{Connections}{subsection.6.11}% 61
+\BOOKMARK [3][-]{subsubsection.6.11.2}{Code for Plug and Play Board:}{subsection.6.11}% 62
+\BOOKMARK [3][-]{subsubsection.6.11.3}{Code for uC based Board:}{subsection.6.11}% 63
+\BOOKMARK [2][-]{subsection.6.12}{I2C Communication}{section.6}% 64
+\BOOKMARK [3][-]{subsubsection.6.12.1}{Introduction}{subsection.6.12}% 65
+\BOOKMARK [3][-]{subsubsection.6.12.2}{Features}{subsection.6.12}% 66
+\BOOKMARK [3][-]{subsubsection.6.12.3}{Working}{subsection.6.12}% 67
+\BOOKMARK [3][-]{subsubsection.6.12.4}{Connections}{subsection.6.12}% 68
+\BOOKMARK [3][-]{subsubsection.6.12.5}{Code for Plug and Play Board:}{subsection.6.12}% 69
+\BOOKMARK [3][-]{subsubsection.6.12.6}{Code for uC based Board:}{subsection.6.12}% 70
