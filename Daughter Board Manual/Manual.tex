@@ -347,91 +347,90 @@
 			\end{longtable}
 		\subsubsection{\Large\textbf{Robot Main Board Connections}}
 			\begin{longtable}{|p{.04\textwidth}|p{.25\textwidth}|p{.40\textwidth}|p{.1\textwidth}|p{.1\textwidth}|}\hline
-				Pin Out&	Pin Name&	Functionality&	PIN on DB& Pin on Pluggable B\\ \hline
-				1&	Current sensor&	Current sense analog value&	Not Using\\ \hline
-				2&	IR Proximity sensor 8&	IR Proximity sensor 8 analog value&	External Adc INT0\\ \hline
-				3&	GND&	Ground	&Ground\\ \hline
-				4&	DATA+&	USB connection going to the ATMEGA2560	USB connection with uC & C4\\ \hline
-				5&	DATA-&	microcontroller via FT232 USB to serial	USB connection with uC &PC5\\ \hline
-				6&	VCC& USB	converter.	Connect TO VCC of FT232&\\ \hline
+				Pin Out&	Pin Name&	Functionality&	PIN on uC DB& Pin on Pluggable DB\\ \hline
+				1&	Current sensor&	Current sense analog value&	Not Using & Not Using\\ \hline
+				2&	IR Proximity sensor 8&	IR Proximity sensor 8 analog value&	External Adc INT0&	External Adc INT0\\ \hline
+				3&	GND&	Ground	&Ground & Ground\\ \hline
+				4&	DATA+&	USB connection going to the ATMEGA2560	USB connection with uC & PC4 & \\ \hline
+				5&	DATA-&	microcontroller via FT232 USB to serial	USB connection with uC &PC5 & \\ \hline
+				6&	VCC& USB	converter.	Connect TO VCC of FT232& &\\ \hline
 				7&	5V System&	"5V System Voltage. Can be used for powering
 				up any digital device with current limit of
-				400mA."	&\\ \hline
+				400mA."	& &\\ \hline
 				8&	5V System&	"5V System Voltage. Can be used for powering
 				up any digital device with current limit of
-				300mA."	&\\ \hline
+				300mA."	& &\\ \hline
 				9&	5V System&	"5V System Voltage. Can be used for powering
 				up any digital device with current limit of
-				300mA."	&\\ \hline
+				300mA."	& &\\ \hline
 				10&	5V System&	"5V System Voltage. Can be used for powering
 				up any digital device with current limit of
-				400mA."	&\\ \hline
-				11&	SHARP IR Range Sensor 1	&Analog output of Sharp IR range Sensor 1&	PE0(lm324 1)\\ \hline
-				12&	IR Proximity Sensor 1&	Analog output of IR Proximity sensor 1&	PE1\\ \hline
-				13&	XBee RXD&	XBee wireless module Serial data in	&PC7\\ \hline
-				14&	XBee TXD&	XBee wireless module Serial data out&	PC6\\ \hline
-				15&	SHARP IR Range Sensor 2	& Analog output of Sharp IR range sensor 2&	PE2(lm324 2)\\ \hline
-				16&	IR Proximity Sensor 2&	Analog output of IR Proximity sensor 2&	PE3\\ \hline
-				17&	RSSI&	To capture the RSSI signal&\\ \hline	
-				18&	MOSI&	MOSI of the Controller/NC create extra expansion headers&\\ \hline	
-				19&	MISO&	MISO of controller/NC create extra expansion headers	&\\ \hline
-				20&	SCK&	SCK of the controller/NC create extra expansion headers&	\\ \hline
-				21&	SSI	&SS of the controller/ NC create extra expansion headers	&\\ \hline
-				22&	RS&	connected to RS of LCD normal I/O&	PF0\\ \hline
-				23&	RW&	connected to RW of LCD normal I/O&	GND\\ \hline
-				24&	EN&	connected to EN of LCD normal I/O&	PF2\\ \hline
-				25&	DB5	&data pin of lcd normal I/O	&PD5\\ \hline
-				26&	DB4&	data pin of lcd normal I/O&	PD4\\ \hline
-				27&	DB6	&data pin of lcd normal I/O	&PD6\\ \hline
-				28&	DB7	&data pin of lcd normal I/O	&PD7\\ \hline
-				29&	V Battery System&	ADC to check the level of battery voltage	&\\ \hline
-				30&	WL1&	Analog output of white line sensor 1	&PD2\\ \hline
-				31&	WL2&	Analog output of white line sensor 2&	PD1\\ \hline
-				32&	WL3&	Analog output of white line sensor 3&	PD0\\ \hline
-				33&	"Sharp IR Sensors 1and 5
-				Disable"& &		\\ \hline
-				34&	IR Proximity Sensor Disable& &	\\ \hline	
+				400mA."	& &\\ \hline
+				11&	SHARP IR Range Sensor 1	&Analog output of Sharp IR range Sensor 1&	PE0(lm324 1) & PB4\\ \hline
+				12&	IR Proximity Sensor 1&	Analog output of IR Proximity sensor 1&	PE1 & PB5\\ \hline
+				13&	XBee RXD&	XBee wireless module Serial data in	&PC7 & PB1\\ \hline
+				14&	XBee TXD&	XBee wireless module Serial data out&	PC6 & PB0\\ \hline
+				15&	SHARP IR Range Sensor 2	& Analog output of Sharp IR range sensor 2&	PE2(lm324 2) & External ADC INT1\\ \hline
+				16&	IR Proximity Sensor 2&	Analog output of IR Proximity sensor 2&	PE3 & PD0\\ \hline
+				17&	RSSI&	To capture the RSSI signal& &\\ \hline	
+				18&	MOSI&	MOSI of the Controller/NC create extra expansion headers& &\\ \hline	
+				19&	MISO&	MISO of controller/NC create extra expansion headers & &\\ \hline
+				20&	SCK&	SCK of the controller/NC create extra expansion headers&&	\\ \hline
+				21&	SSI	&SS of the controller/ NC create extra expansion headers	&&\\ \hline
+				22&	RS&	connected to RS of LCD normal I/O&	PF0 & PD6\\ \hline
+				23&	RW&	connected to RW of LCD normal I/O&	GND & GND\\ \hline
+				24&	EN&	connected to EN of LCD normal I/O&	PF2 & PD7\\ \hline
+				25&	DB5	&data pin of lcd normal I/O	&PD5 & PA3\\ \hline
+				26&	DB4&	data pin of lcd normal I/O&	PD4 & PA2\\ \hline
+				27&	DB6	&data pin of lcd normal I/O	&PD6 & PA1\\ \hline
+				28&	DB7	&data pin of lcd normal I/O	&PD7 & PA0\\ \hline
+				29&	V Battery System&	ADC to check the level of battery voltage &	&\\ \hline
+				30&	WL1&	Analog output of white line sensor 1	&PD2 & PE1\\ \hline
+				31&	WL2&	Analog output of white line sensor 2&	PD1 & PE2\\ \hline
+				32&	WL3&	Analog output of white line sensor 3&	PD0 & PE3\\ \hline
+				33&	"Sharp IR Sensors 1and 5 Disable" & &	&	\\ \hline
+				34&	IR Proximity Sensor Disable& & &	\\ \hline	
 				35&	5V System&	"5V system Voltage. Can be used for powering&
-				up any digital device. Current Limit: 400mA."\\ \hline
-				36&	WL4&	Analog output of white line sensor 4&	External Adc INT1\\ \hline
-				37&	WL5&	Analog output of white line sensor 5&	External Adc INT2\\ \hline
-				38&	WL6&	Analog output of white line sensor 6	&External Adc INT3\\ \hline
-				39&	WL7&	Analog output of white line sensor 7&	External Adc INT4\\ \hline
-				40&	White Line Sensors Disable&&\\ \hline		
-				41&	Sharp IR Range Finder 3&	Analog output of Sharp IR range sensor 3	&PD3 (lm 324 3)\\ \hline
-				42&	IR Proximity Sensor 3&	Analog output of IR Proximity sensor 3	&PE5\\ \hline
-				43&	IR Proximity Sensor 4&	Analog output of IR Proximity sensor 4&	PE4\\ \hline
-				44&	Sharp IR Range Finder 4	&Analog output of Sharp IR range sensor 4&	in 5 ex (lm 324 5)\\ \hline
-				45&	Sharp IR Range Finder 5&	Analog output of Sharp IR range sensor 5&	PB4 (lm358 1)\\ \hline
-				46&	IR Proximity Sensor 5&	Analog output of IR Proximity sensor 5&	PB5\\ \hline
-				47&	C11& motor 	not present&	\\ \hline
-				48&	C1 &PWM	not present	&\\ \hline
-				49&	c12&	not present	&\\ \hline
-				50&	PWM L&	left motor PWM(timer pin in PWM mode)&	PF3\\ \hline
-				51&	L1&	left motor pin1 normal I/O&	PB0\\ \hline
-				52&	L2&	left motor pin2 normal I/O&	PB1\\ \hline
-				53&	R1&	right motor pin1 normal I/O&	PF4\\ \hline
-				54&	PWM R2&	right motor PWM(timer pin in PWM  mode)&	PA6\\ \hline
-				55&	R2&	right motor pin2&	PA5\\ \hline
-				56&	NC&&	\\ \hline	
-				57&	NC&&	\\ \hline	
-				58&	NC&&	\\ \hline	
-				59&	NC&&	\\ \hline	
-				60&	NC&&	\\ \hline	
-				61&	NC	&&	\\ \hline
-				62&	Position encoder left&	Output of Left position encoder (0-5V)	PA4&&\\ \hline
-				63&	Position encoder right& 	Output of Right position encoder (0-5V)	PA3&&\\ \hline
+				up any digital device. Current Limit: 400mA." & \\ \hline
+				36&	WL4&	Analog output of white line sensor 4&	External Adc INT1&	External Adc INT2\\ \hline
+				37&	WL5&	Analog output of white line sensor 5&	External Adc INT2&	External Adc INT3\\ \hline
+				38&	WL6&	Analog output of white line sensor 6	&External Adc INT3&	External Adc INT4\\ \hline
+				39&	WL7&	Analog output of white line sensor 7&	External Adc INT4&	External Adc INT5\\ \hline
+				40&	White Line Sensors Disable&& &\\ \hline		
+				41&	Sharp IR Range Finder 3&	Analog output of Sharp IR range sensor 3	&PD3 (lm 324 3) & PD2\\ \hline
+				42&	IR Proximity Sensor 3&	Analog output of IR Proximity sensor 3	&PE5 & PD3\\ \hline
+				43&	IR Proximity Sensor 4&	Analog output of IR Proximity sensor 4&	PE4 & PD1\\ \hline
+				44&	Sharp IR Range Finder 4	&Analog output of Sharp IR range sensor 4&	in 5 ex (lm 324 5) &	External Adc INT6\\ \hline
+				45&	Sharp IR Range Finder 5&	Analog output of Sharp IR range sensor 5&	PB4 (lm358 1) & PE4\\ \hline
+				46&	IR Proximity Sensor 5&	Analog output of IR Proximity sensor 5&	PB5 & PE5\\ \hline
+				47&	C11& motor 	not present& &	\\ \hline
+				48&	C1 &PWM	not present	& &\\ \hline
+				49&	c12&	not present	& &\\ \hline
+				50&	PWM L&	left motor PWM(timer pin in PWM mode)&	PF3 & PF2\\ \hline
+				51&	L1&	left motor pin1 normal I/O&	PB0 & PF3\\ \hline
+				52&	L2&	left motor pin2 normal I/O&	PB1 & PB3\\ \hline
+				53&	R1&	right motor pin1 normal I/O&	PF4 & PC4\\ \hline
+				54&	PWM R2&	right motor PWM(timer pin in PWM  mode)&	PA6 & PC5\\ \hline
+				55&	R2&	right motor pin2&	PA5 & PC6\\ \hline
+				56&	NC&&&	\\ \hline	
+				57&	NC&&&	\\ \hline	
+				58&	NC&&&	\\ \hline	
+				59&	NC&&&	\\ \hline	
+				60&	NC&&&	\\ \hline	
+				61&	NC&&&	\\ \hline
+				62&	Position encoder left&	Output of Left position encoder (0-5V)	PA4&PB2&\\ \hline
+				63&	Position encoder right& 	Output of Right position encoder (0-5V)	PA3&PF0&\\ \hline
 				64&	position enocder C2&	Output of C2 position encoder (0-5V)&&	\\ \hline
 				65&	Position encoder C1& Output of C1 position encoder (0-5V)&&	\\ \hline
-				66&	C22&	NC&	\\ \hline
-				67&	C21	& NC&	\\ \hline
-				68&	C2&Pwm&	NC	\\ \hline
-				69&	IR Prox6&	Analog output of IR Proximity sensor 6	External Adc &INT6\\ \hline
-				70&	IR Prox7&	Analog output of IR Proximity sensor 7	External Adc &INT7\\ \hline
-				71&	Buzzer&	Input, V>0.65V turns on the Buzzer&	PA2\\ \hline
-				72&	DAC Out&	NC&	\\ \hline
-				73&	RS232 TX&	NC&	\\ \hline
-				74&	RS232 RX&	NC&	\\ \hline
+				66&	C22&	NC& &	\\ \hline
+				67&	C21	& NC& &	\\ \hline
+				68&	C2&Pwm&	NC &	\\ \hline
+				69&	IR Prox6&	Analog output of IR Proximity sensor 6	External Adc &INT6 &	External Adc INT7\\ \hline
+				70&	IR Prox7&	Analog output of IR Proximity sensor 7	External Adc &INT7 & PE0\\ \hline
+				71&	Buzzer&	Input, V>0.65V turns on the Buzzer&	PA2 & PF4\\ \hline
+				72&	DAC Out&	NC& &	\\ \hline
+				73&	RS232 TX&	NC& &	\\ \hline
+				74&	RS232 RX&	NC& &	\\ \hline
 
 		\end{longtable}
 	\subsubsection{Pin Connection Of Plug And Play Board}
@@ -588,7 +587,33 @@
 						the Build Properties window.\\
 						\includegraphics[width=20cm,height=10cm]{AddVariables9}
 					\end{itemize}
-	%	\subsection{\huge \textbf{driver.lib}}
+					\paragraph{\Large \textbf{Adding driver.lib}}
+					We have to add the TivaWare driverlib.lib object library. 
+					\begin{center}
+						Right Click on Project, select Add Files and Navigate to: \\	
+						C:/TI/TivaWare\_C\_Series-1.1/driverlib/ccs/Debug/driverlib.lib \\
+					\end{center}
+
+					and click Open. The File Operation dialog will open \\
+					\begin{center}
+						\includegraphics[width=8cm, height=4cm]{driverlib}
+					\end{center}
+					Use the TIVAWARE\_INSTALL path variable you created earlier. This means that the LINK
+					(or reference to the library) file will be RELATIVE to the location of the TivaWare
+					installation. If you hand this project to someone else, they can install the project anywhere in
+					the file system and this link will still work. If you choose PROJECT\_LOC, you would get a
+					path that is relative to the location of your project and it would require the project to be
+					installed at the same “level” in the directory structure. Another advantage of this approach is 
+					that if you wanted to link to a new version, say TivaWare\_C\_Series-1.2, all you have
+					to do is modify the variable to the new folder name.\\ 
+					\\
+					\\
+					\\
+					
+					\paragraph{\Large \textbf{Build, Load, and Run }}
+					Assure that Daughter Board is connected to the laptop. Build and load your project to the TM4C123GH6PM flash memory by clicking the Debug button. If you ever want to build the project without loading it, click the HAMMER (Build) button. \\
+					Click the Resume button or press the F8 key on your keyboard.
+					
 		\subsection{\huge \textbf{Buzzer}}
 		
 			Located in the folder “Buzzer\_Beep” folder in the documentation.
@@ -681,8 +706,6 @@
 				}
 			\end{lstlisting}
 			
-%		\subsection{\huge \textbf{Programming the Robot}}
-%		\subsection{\huge \textbf{Using Debugger of The Programmer}}
 		\subsection{\huge \textbf{Simple I/O Operation}}		
 			{This experiment demonstrates the simple I/O operations.
 			This example is only for plug and play board, but this should not discourage

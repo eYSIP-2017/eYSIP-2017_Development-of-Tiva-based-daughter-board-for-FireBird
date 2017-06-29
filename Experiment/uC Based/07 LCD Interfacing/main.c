@@ -9,7 +9,7 @@
  Concepts covered:  LCD interfacing
 
 Connections:
-               Plug and play board
+               uC based board
              LCD      Board Pins
               RS  --> PF0
               RW  --> GND
@@ -120,10 +120,7 @@ void configIOPin(){
  * It is also set in auto increment mode
  *****************************************/
 void lcdInit(){
-    //GPIOPinWrite(lcdPORT,RS|EN,0);
-    //GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
     lcdCommand(0x28);
-    //lcdCommand(0x02);//get the cursor to home
     /**************************
     0x30 8bit mode single line*
     0x38 8bit mode double line*
