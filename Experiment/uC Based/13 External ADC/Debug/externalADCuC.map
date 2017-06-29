@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker PC v16.9.1                     
 ******************************************************************************
->> Linked Wed Jun 28 19:51:02 2017
+>> Linked Thu Jun 29 12:51:52 2017
 
 OUTPUT FILE NAME:   <externalADCuC.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 00000f4d
@@ -175,7 +175,7 @@ address   name
 00000767  I2CReceive                     
 000005dd  I2CSend                        
 000006c1  I2CSendString                  
-00000573  InitI2C0                       
+00000571  InitI2C0                       
 00001271  ResetISR                       
 UNDEFED   SHT$$INIT_ARRAY$$Base          
 UNDEFED   SHT$$INIT_ARRAY$$Limit         
@@ -228,18 +228,18 @@ ffffffff  binit
 00001091  copy_in                        
 00000fad  exit                           
 00000000  g_pfnVectors                   
-000002ff  itoa                           
+000002fd  itoa                           
 0000026d  main                           
 20000214  main_func_sp                   
 00000dd9  memcpy                         
-000002c5  peripheralEnable               
+000002c3  peripheralEnable               
 000007bd  read2Bytes                     
-00000551  readExternalADC                
-000002bb  setupCLK                       
-0000043d  setupExternalADC               
-00000409  tranString                     
-000002d5  uartEnable                     
-000003e3  uartInteger                    
+0000054f  readExternalADC                
+000002b9  setupCLK                       
+0000043b  setupExternalADC               
+00000407  tranString                     
+000002d3  uartEnable                     
+000003e1  uartInteger                    
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -250,15 +250,15 @@ address   name
 00000000  g_pfnVectors                   
 00000200  __STACK_SIZE                   
 0000026d  main                           
-000002bb  setupCLK                       
-000002c5  peripheralEnable               
-000002d5  uartEnable                     
-000002ff  itoa                           
-000003e3  uartInteger                    
-00000409  tranString                     
-0000043d  setupExternalADC               
-00000551  readExternalADC                
-00000573  InitI2C0                       
+000002b9  setupCLK                       
+000002c3  peripheralEnable               
+000002d3  uartEnable                     
+000002fd  itoa                           
+000003e1  uartInteger                    
+00000407  tranString                     
+0000043b  setupExternalADC               
+0000054f  readExternalADC                
+00000571  InitI2C0                       
 000005dd  I2CSend                        
 000006c1  I2CSendString                  
 00000767  I2CReceive                     

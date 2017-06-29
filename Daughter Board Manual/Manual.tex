@@ -588,13 +588,14 @@
 						the Build Properties window.\\
 						\includegraphics[width=20cm,height=10cm]{AddVariables9}
 					\end{itemize}
-		\subsection{\huge \textbf{driver.lib}}
+	%	\subsection{\huge \textbf{driver.lib}}
 		\subsection{\huge \textbf{Buzzer}}
 		
 			Located in the folder “Buzzer\_Beep” folder in the documentation.
 			In this example, we will load buzzer beep code in Tiva based Fire Bird V. Now we will see in detail the structure of this code.This experiment demonstrates the simple operation of Buzzer ON/OFF with one second delay.
 			Buzzer is connected to PORTF 4 pin of the Tiva Launchpad. If you have uC based board then it is connected to PORTA 2.
 		
+			\subsubsection{\textbf{Code}}
 			\begin{lstlisting}[style=CStyle]
 				#include <stdint.h>
 				#include <stdbool.h>
@@ -680,8 +681,8 @@
 				}
 			\end{lstlisting}
 			
-		\subsection{\huge \textbf{Programming the Robot}}
-		\subsection{\huge \textbf{Using Debugger of The Programmer}}
+%		\subsection{\huge \textbf{Programming the Robot}}
+%		\subsection{\huge \textbf{Using Debugger of The Programmer}}
 		\subsection{\huge \textbf{Simple I/O Operation}}		
 			{This experiment demonstrates the simple I/O operations.
 			This example is only for plug and play board, but this should not discourage
@@ -700,6 +701,7 @@
 			Hint:To add variable to Expression Window, select and right click the variable name
 			and select  Add Watch Expression". To view Expression Window, click on View button from CCS menu bar and select Expressions.}
 			
+			\subsubsection{\textbf{Code for Plug and Play Board}}
 			\begin{lstlisting}[style=CStyle]
 				#include <stdint.h>
 				#include <stdbool.h>
@@ -793,7 +795,7 @@
 				\includegraphics[width=6cm, height=2cm]{MotorConnection}
 			\end{center}
 			
-			\textbf{Code for Plug and Play Board:}
+			\subsubsection{\textbf{Code for Plug and Play Board:}}
 			\begin{lstlisting}[style=CStyle]
 				#include <stdint.h>
 				#include <stdbool.h>
@@ -888,7 +890,7 @@
 				}
 			\end{lstlisting}
 	
-			\textbf{Code for uC based Board:}
+			\subsubsection{\textbf{Code for uC based Board:}}
 			\begin{lstlisting}[style=CStyle]
 				#include <stdint.h>
 				#include <stdbool.h>
@@ -1000,7 +1002,7 @@
 			\subsubsection{\textbf{Calculation of position encoder resolution:}}	
 			To be added later
 			
-			\textbf{Code for Plug and Play Board:}
+			\subsubsection{\textbf{Code for Plug and Play Board:}}
 			\begin{lstlisting}[style=CStyle]
 				#include <stdint.h>
 				#include <stdbool.h>
@@ -1197,7 +1199,7 @@
 				}
 			\end{lstlisting}	
 			
-			\textbf{Code for uC based Board:}
+			\subsubsection{\textbf{Code for uC based Board:}}
 			\begin{lstlisting}[style=CStyle]
 				#include <stdint.h>
 				#include <stdbool.h>
@@ -1392,7 +1394,7 @@
 			\end{itemize}
 			
 			In this section the event scheduling application of timer is explained. To illustrate this the buzzer is switched On and OFF periodically. The remaining applications are explained in the further sections. \\
-			
+			\subsubsection{\textbf{Code}}
 			\begin{lstlisting}[style=CStyle]
 				#include <stdint.h>
 				#include <stdbool.h>
@@ -1516,7 +1518,7 @@
 				\hspace{-.7cm}
 				The TM4C123GH6PM microcontroller contains two PWM modules, each with four PWM generator blocks and a control block, for a total of 16 PWM outputs. The control block determines the polarity of the PWM signals, and which signals are passed through to the pins. The connections of PWM motor pins are given in the section 6.7. The same code is modified to change the velocity of the motors.
 				
-				\textbf{Code for Plug and Play Board:}
+				\subsubsection{\textbf{Code for Plug and Play Board:}}
 				\begin{lstlisting}[style=CStyle]
 					include <stdint.h>
 					#include <stdbool.h>
@@ -1669,7 +1671,7 @@
 					}
 				\end{lstlisting}
 				
-				\textbf{Code for uC based Board:}
+				\subsubsection{\textbf{Code for uC based Board:}}
 				\begin{lstlisting}[style=CStyle]
 					#include <stdint.h>
 					#include <stdbool.h>
@@ -1825,7 +1827,7 @@
 		\subsection{\huge \textbf{LCD Interfacing}}
 			{To interface LCD with the microcontroller in default configuration requires 3 control signals and 8 data lines. This is known as 8 bit interfacing mode which requires total 11 I/O lines. To reduce the number  of  I/Os  required for  LCD interfacing we can use 4 bit  interfacing mode  which requires  3 control  signals  with 4 data lines.  In this  mode upper  nibble and lower  nibble of commands/data set needs to be sent separately. The three control lines are referred to as EN, RS, and RW. The LCD connections are given in section 5.6.}
 			
-			\textbf{Code for Plug and Play Board:}
+			\subsubsection{\textbf{Code for Plug and Play Board:}}
 			\begin{lstlisting}[style=CStyle]
 				#include <stdint.h>
 				#include <stdbool.h>
@@ -1985,7 +1987,7 @@
 				}
 			\end{lstlisting}
 			
-			\textbf{Code for uC based Board}
+			\subsubsection{\textbf{Code for uC based Board}}
 			\begin{lstlisting}[style=CStyle]
 				#include <stdint.h>
 				#include <stdbool.h>
@@ -2149,7 +2151,7 @@
 			\begin{center}
 				\includegraphics[width=15cm, height=8cm]{ADC}
 			\end{center}
-			\textbf{Code for Plug and Play Board:}
+			\subsubsection{\textbf{Code for Plug and Play Board:}}
 			\begin{lstlisting}[style=CStyle]
 				#include <stdint.h>
 				#include <stdbool.h>
@@ -2284,7 +2286,7 @@
 				}
 			\end{lstlisting}
 			
-			\textbf{Code for uC based Board}
+			\subsubsection{\textbf{Code for uC based Board}}
 			\begin{lstlisting}[style=CStyle]
 				#include <stdint.h>
 				#include <stdbool.h>
@@ -2446,6 +2448,683 @@
 		\subsection{\huge \textbf{Serial Communication}}
 			{The Fire Bird V can communicate with other robots / devices serially using either wired link or wireless module. Serial  communication is done in asynchronous mode. In the asynchronous mode, the common clock signal is not required at both the transmitter  and receiver  for data synchronization. As an example of serial communication code for interfacing Zigbee module is given below.}\\
 			
-			
+			\subsubsection{Connections}
+				\begin{center}
+					\includegraphics[width=8cm, height=2cm]{Serial}
+				\end{center}
+			\subsubsection{\textbf{Code for Plug and Play Board:}}
+				\begin{lstlisting}[style=CStyle]
+					#include <stdlib.h>
+					#include <stdint.h>
+					#include <stdbool.h>
+					#include<math.h>
+					#include "inc/hw_memmap.h"
+					#include "inc/hw_types.h"
+					#include "driverlib/pin_map.h"
+					#include "driverlib/sysctl.h"
+					#include "driverlib/uart.h"
+					#include "driverlib/debug.h"
+					#include "driverlib/interrupt.h"
+					#include "driverlib/gpio.h"
+					#include "inc/tm4c123gh6pm.h"
+					
+					void configCLK();
+					void peripheralEnable();
+					void uartEnable();
+					void uartInterruptEnable();
+					void UARTIntHandler(void);
+					void tranString(char *,char);
+					void uartInteger(int64_t number);
+					
+					int main(){
+						configCLK();
+						peripheralEnable();
+						uartEnable();
+						uartInterruptEnable();
+						while(1){
+							tranString("Hello",' ');
+						}
+					}
+					void configCLK(){
+						SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
+					}
+					void peripheralEnable(){
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
+						SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);//Enablinig TIMER0
+					}
+					void uartEnable(){
+						GPIOPinConfigure(GPIO_PB0_U1RX);//Configure Pin PB0 as RX of U0
+						GPIOPinConfigure(GPIO_PB1_U1TX);//Configure Pin PB1 as TX of U0
+						GPIOPinTypeUART(GPIO_PORTB_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+						UARTConfigSetExpClk(UART1_BASE, SysCtlClockGet(), 9600,
+						(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+					}
+					void tranString(char * data,char delimeter){
+						int k=0;
+						while(data[k]){
+							UARTCharPut(UART1_BASE,data[k++]);
+						}
+						UARTCharPut(UART1_BASE,delimeter);
+					}
+					void uartInterruptEnable(){
+						IntMasterEnable();//Enable processor interrupt
+						IntEnable(INT_UART1);//Enable interrupt on UART0
+						UARTIntEnable(UART1_BASE, UART_INT_RX | UART_INT_RT);//Enable RX interrupt ant rx Timeout interrupt
+					}
+					void UARTIntHandler(void){
+						uint32_t ui32Status;
+						ui32Status = UARTIntStatus(UART1_BASE, true); //get interrupt status
+						UARTIntClear(UART1_BASE, ui32Status); //clear the asserted interrupts
+						while(UARTCharsAvail(UART1_BASE)){ //loop while there are chars
+							UARTCharPut(UART1_BASE, UARTCharGet(UART1_BASE));
+						}
+					}
+				\end{lstlisting}
+				
+			\subsubsection{\textbf{Code for Plug and Play Board:}}
+				\begin{lstlisting}[style=CStyle]
+					#include <stdlib.h>
+					#include <stdint.h>
+					#include <stdbool.h>
+					#include<math.h>
+					#include "inc/hw_memmap.h"
+					#include "inc/hw_types.h"
+					#include "driverlib/pin_map.h"
+					#include "driverlib/sysctl.h"
+					#include "driverlib/uart.h"
+					#include "driverlib/debug.h"
+					#include "driverlib/interrupt.h"
+					#include "driverlib/gpio.h"
+					#include "inc/tm4c123gh6pm.h"
+					
+					void configCLK();
+					void peripheralEnable();
+					void uartEnable();
+					void uartInterruptEnable();
+					void UARTIntHandler(void);
+					void tranString(char *,char);
+					void uartInteger(int64_t number);
+					
+					int main(){
+						configCLK();
+						peripheralEnable();
+						uartEnable();
+						uartInterruptEnable();
+						while(1){
+						}
+					}
+					void configCLK(){
+						SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
+					}
+					void peripheralEnable(){
+							SysCtlPeripheralEnable(SYSCTL_PERIPH_UART3);
+							SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);//Enablinig TIMER0
+					}
+					void uartEnable(){
+						GPIOPinConfigure(GPIO_PC6_U3RX);//Configure Pin PC6 as RX of U0
+						GPIOPinConfigure(GPIO_PC7_U3TX);//Configure Pin PC7 as TX of U0
+						GPIOPinTypeUART(GPIO_PORTC_BASE, GPIO_PIN_6 | GPIO_PIN_7);
+						UARTConfigSetExpClk(UART3_BASE, SysCtlClockGet(), 9600,
+						(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+					}
+					void tranString(char * data,char delimeter){
+						int k=0;
+						while(data[k]){
+							UARTCharPut(UART3_BASE,data[k++]);
+						}
+						UARTCharPut(UART3_BASE,delimeter);
+					}
+					void uartInterruptEnable(){
+						IntMasterEnable();//Enable processor interrupt
+						IntEnable(INT_UART3);//Enable interrupt on UART0
+						UARTIntEnable(UART3_BASE, UART_INT_RX | UART_INT_RT);//Enable RX interrupt ant rx Timeout interrupt
+					}
+					void UARTIntHandler(void){
+						uint32_t ui32Status;
+						ui32Status = UARTIntStatus(UART3_BASE, true); //get interrupt status
+						UARTIntClear(UART3_BASE, ui32Status); //clear the asserted interrupts
+						while(UARTCharsAvail(UART3_BASE)){ //loop while there are chars
+							UARTCharPut(UART3_BASE, UARTCharGet(UART3_BASE));
+						}
+					}
+					
+				\end{lstlisting}	
 		\subsection{\huge \textbf{I2C Communication}}
+			\subsubsection{\textbf{Introduction}}
+				{I2C is a serial protocol for two-wire interface to connect low-speed devices like microcontrollers, EEPROMs, A/D and D/A converters, I/O interfaces and other similar peripherals in embedded systems. I2C combines the best features of SPI and UARTs. Like the Serial Peripheral Interface (SPI), it is only intended for short distance communications within a single device. Like Asynchronous Serial Interfaces (such as RS-232 or UARTs), it only requires two signal wires to exchange information.}
+				\begin{center}
+					\includegraphics[width=8cm, height=4cm]{I2C0}
+				\end{center}
+			\subsubsection{Features}
+				\begin{itemize}
+					\item 2 bidirectional lines SDA (serial data) and SCL (serial clock) 
+					\item Independent Master, Slave, and Monitor functions
+					\item Supports both Multi-master and Multi-master with 	Slave functions
+					\item One slave address can be selectively qualified with a bit mask or an address range in order to respond to multiple I2C bus addresses
+					\item advanced features such as automatic multi master arbitration management
+				\end{itemize}
+				\begin{center}
+					\includegraphics[width=16cm, height=4cm]{I2C1}
+				\end{center}
+			\subsubsection{Working}
+				{In normal state both lines SDA and SCL are at high state this indicates the bus is free, any device can use this bus. Master will now initiate the transfer by triggering a start condition with slave address to which it want to communicate. The corresponding slave device matches its address with master sent address, if it matches then both starts communicating.\\
+				If logic low is sent for bit 0 then the master writes data to the slave device, otherwise next byte wise of the remaining data will be read from the slave device. After all the communication between the master and slave is over master will generate a stop condition indicating that communication is over and another slave can use the bus.}
+				\begin{center}
+					\includegraphics[width=16cm, height=4cm]{I2C2}
+				\end{center}
+			{As an example of I2C communication code for interfacing port expander IC is given below. In this case MCP23017 I2C based IC is used.The data sheet of the IC can be downloaded here} \href{www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjL94feoN7UAhVCKJQKHdBYCycQFgghMAA&url=http%3A%2F%2Fww1.microchip.com%2Fdownloads%2Fen%2FDeviceDoc%2F21952b.pdf&usg=AFQjCNGBKMZsXOwf1Puo7YQAZ1CwK_52fQ}{MCP23017}
+			\subsubsection{Connections}
+				\begin{center}
+					\includegraphics[width=8cm, height=2cm]{I2C3}
+				\end{center}
+			
+			\subsubsection{\textbf{Code for Plug and Play Board:}}
+				\begin{lstlisting}[style=CStyle]
+					#include <stdarg.h>
+					#include <stdbool.h>
+					#include <stdint.h>
+					#include "inc/hw_i2c.h"
+					#include "inc/hw_memmap.h"
+					#include "inc/hw_types.h"
+					#include "inc/hw_gpio.h"
+					#include "driverlib/i2c.h"
+					#include "driverlib/sysctl.h"
+					#include "driverlib/gpio.h"
+					#include "driverlib/pin_map.h"
+					#include "inc/tm4c123gh6pm.h"
+					#include "driverlib/interrupt.h"
+					void setupCLK();
+					void peripheralEnable();
+					void gpioEnable();
+					void InitI2C1(void);
+					void I2CSendString(uint32_t slave_addr, char array[]);
+					void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...);
+					uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg);
+					void portExpanderIO(unsigned char port,unsigned char pin);
+					void portExpanderSetOutput(unsigned char,unsigned char);
+					unsigned char portExpanderReadInput(unsigned char);
+					void portExpanderInterruptEnableAnyChange(unsigned char,unsigned char);
+					void portExpanderpullup(unsigned char,unsigned char);
+					void portExpanderInterruptHandler();
+					int main(void) {
+					setupCLK();
+					peripheralEnable();
+					gpioEnable();
+					InitI2C1();
+					portExpanderIO(0x00,0xff);
+					portExpanderIO(0x01,0x00);
+					portExpanderSetOutput(0x01,0x00);
+					portExpanderpullup(0x00,0x0f);
+					portExpanderInterruptEnableAnyChange(0x00,0xff);
+					while(1){
+					}
+					}
+					void setupCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+					}
+					void peripheralEnable(){
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+					}
+					void gpioEnable(){
+					GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE, GPIO_PIN_7);;
+					GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_7);
+					GPIOPadConfigSet(GPIO_PORTC_BASE ,GPIO_PIN_7,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);
+					}
+					void InitI2C1(void){
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C1);
+					SysCtlPeripheralReset(SYSCTL_PERIPH_I2C1);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+					GPIOPinConfigure(GPIO_PA6_I2C1SCL);
+					GPIOPinConfigure(GPIO_PA7_I2C1SDA);
+					GPIOPinTypeI2CSCL(GPIO_PORTA_BASE, GPIO_PIN_6);
+					GPIOPinTypeI2C(GPIO_PORTA_BASE, GPIO_PIN_7);
+					// Enable and initialize the I2C1 master module.  Use the system clock for
+					// the I2C1 module.  The last parameter sets the I2C data transfer rate.
+					// If false the data rate is set to 100kbps and if true the data rate will
+					// be set to 400kbps.
+					I2CMasterInitExpClk(I2C1_BASE, SysCtlClockGet(), false);
+					//clear I2C FIFOs
+					HWREG(I2C1_BASE + I2C_O_FIFOCTL) = 80008000;
+					I2CSend(0x20,2,0x0A,1<<6);
+					}
+					void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...)
+					{
+					// Tell the master module what address it will place on the bus when
+					// communicating with the slave.
+					I2CMasterSlaveAddrSet(I2C1_BASE, slave_addr, false);
+					
+					//stores list of variable number of arguments
+					va_list vargs;
+					
+					//specifies the va_list to "open" and the last fixed argument
+					//so vargs knows where to start looking
+					va_start(vargs, num_of_args);
+					
+					//put data to be sent into FIFO
+					I2CMasterDataPut(I2C1_BASE, va_arg(vargs, uint32_t));
+					
+					//if there is only one argument, we only need to use the
+					//single send I2C function
+					if(num_of_args == 1)
+					{
+					//Initiate send of data from the MCU
+					I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_SINGLE_SEND);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C1_BASE));
+					
+					//"close" variable argument list
+					va_end(vargs);
+					}
+					
+					//otherwise, we start transmission of multiple bytes on the
+					//I2C bus
+					else
+					{
+					//Initiate send of data from the MCU
+					I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C1_BASE));
+					
+					//send num_of_args-2 pieces of data, using the
+					//BURST_SEND_CONT command of the I2C module
+					uint8_t i ;
+					for(i = 1; i < (num_of_args - 1); i++)
+					{
+					//put next piece of data into I2C FIFO
+					I2CMasterDataPut(I2C1_BASE, va_arg(vargs, uint32_t));
+					//send next data that was just placed into FIFO
+					I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_CONT);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C1_BASE));
+					}
+					
+					//put last piece of data into I2C FIFO
+					I2CMasterDataPut(I2C1_BASE, va_arg(vargs, uint32_t));
+					//send next data that was just placed into FIFO
+					I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_FINISH);
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C1_BASE));
+					
+					//"close" variable args list
+					va_end(vargs);
+					}
+					}
+					//sends an array of data via I2C to the specified slave
+					void I2CSendString(uint32_t slave_addr, char array[])
+					{
+					// Tell the master module what address it will place on the bus when
+					// communicating with the slave.
+					I2CMasterSlaveAddrSet(I2C1_BASE, slave_addr, false);
+					
+					//put data to be sent into FIFO
+					I2CMasterDataPut(I2C1_BASE, array[0]);
+					
+					//if there is only one argument, we only need to use the
+					//single send I2C function
+					if(array[1] == '\0')
+					{
+					//Initiate send of data from the MCU
+					I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_SINGLE_SEND);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C1_BASE));
+					}
+					
+					//otherwise, we start transmission of multiple bytes on the
+					//I2C bus
+					else
+					{
+					//Initiate send of data from the MCU
+					I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C1_BASE));
+					
+					//initialize index into array
+					uint8_t i = 1;
+					
+					//send num_of_args-2 pieces of data, using the
+					//BURST_SEND_CONT command of the I2C module
+					while(array[i + 1] != '\0')
+					{
+					//put next piece of data into I2C FIFO
+					I2CMasterDataPut(I2C1_BASE, array[i++]);
+					
+					//send next data that was just placed into FIFO
+					I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_CONT);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C1_BASE));
+					}
+					
+					//put last piece of data into I2C FIFO
+					I2CMasterDataPut(I2C1_BASE, array[i]);
+					
+					//send next data that was just placed into FIFO
+					I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_FINISH);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C1_BASE));
+					}
+					}
+					//read specified register on slave device
+					uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg)
+					{
+					//specify that we are writing (a register address) to the
+					//slave device
+					I2CMasterSlaveAddrSet(I2C1_BASE, slave_addr, false);
+					
+					//specify register to be read
+					I2CMasterDataPut(I2C1_BASE, reg);
+					
+					//send control byte and register address byte to slave device
+					I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+					
+					//wait for MCU to finish transaction
+					while(I2CMasterBusy(I2C1_BASE));
+					
+					//specify that we are going to read from slave device
+					I2CMasterSlaveAddrSet(I2C1_BASE, slave_addr, true);
+					
+					//send control byte and read from the register we
+					//specified
+					I2CMasterControl(I2C1_BASE, I2C_MASTER_CMD_SINGLE_RECEIVE);
+					
+					//wait for MCU to finish transaction
+					while(I2CMasterBusy(I2C1_BASE));
+					
+					//return data pulled from the specified register
+					return I2CMasterDataGet(I2C1_BASE);
+					}
+					void portExpanderIO(unsigned char port,unsigned char pin){
+					I2CSend(0x20,2,port,pin);
+					}
+					void portExpanderSetOutput(unsigned char port,unsigned char pin){
+					I2CSend(0x20,2,port+(0x12),pin);
+					}
+					unsigned char portExpanderReadInput(unsigned char port){
+					return(I2CReceive(0x20,(port+12)));
+					}
+					void portExpanderInterruptEnableAnyChange(unsigned char port,unsigned char pin){
+					portExpanderIO(port,pin);
+					I2CSend(0x20,2,(0x04)+port,pin);
+					I2CSend(0x20,2,(0x08)+port,pin);
+					GPIOIntDisable(GPIO_PORTC_BASE,GPIO_PIN_7);        // Disable interrupt for PF4 (in case it was enabled)
+					GPIOIntClear(GPIO_PORTC_BASE,GPIO_PIN_7);      // Clear pending interrupts for PF4
+					GPIOIntRegister(GPIO_PORTC_BASE,portExpanderInterruptHandler);     // Register our handler function for port F
+					GPIOIntTypeSet(GPIO_PORTC_BASE,GPIO_PIN_7,GPIO_FALLING_EDGE);             // Configure PF4 for falling edge trigger
+					GPIOIntEnable(GPIO_PORTC_BASE,GPIO_PIN_7);
+					}
+					void portExpanderInterruptHandler(){
+					if(GPIOIntStatus(GPIO_PORTC_BASE, false)&GPIO_PIN_7){
+					if(I2CReceive(0x20,0x0e)&0x01==0x01){
+					portExpanderSetOutput(0x01,0xff);
+					}
+					I2CReceive(0x20,0x10);
+					I2CReceive(0x20,0x11);
+					GPIOIntClear(GPIO_PORTC_BASE,GPIO_PIN_7);
+					}
+					}
+					void portExpanderpullup(unsigned char port,unsigned char pin){
+					I2CSend(0x20,2,(0x0C)+port,pin);
+					}
+				\end{lstlisting}	
+			\subsubsection{\textbf{Code for uC based Board:}}
+				\begin{lstlisting}[style=CStyle]
+					#include <stdarg.h>
+					#include <stdbool.h>
+					#include <stdint.h>
+					#include "inc/hw_i2c.h"
+					#include "inc/hw_memmap.h"
+					#include "inc/hw_types.h"
+					#include "inc/hw_gpio.h"
+					#include "driverlib/i2c.h"
+					#include "driverlib/sysctl.h"
+					#include "driverlib/gpio.h"
+					#include "driverlib/pin_map.h"
+					#include "inc/tm4c123gh6pm.h"
+					#include "driverlib/interrupt.h"
+					void setupCLK();
+					void peripheralEnable();
+					void gpioEnable();
+					void InitI2C0(void);
+					void I2CSendString(uint32_t slave_addr, char array[]);
+					void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...);
+					uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg);
+					void portExpanderIO(unsigned char port,unsigned char pin);
+					void portExpanderSetOutput(unsigned char,unsigned char);
+					unsigned char portExpanderReadInput(unsigned char);
+					void portExpanderInterruptEnableAnyChange(unsigned char,unsigned char);
+					void portExpanderpullup(unsigned char,unsigned char);
+					void portExpanderInterruptHandler();
+					int main(void) {
+					setupCLK();
+					peripheralEnable();
+					gpioEnable();
+					InitI2C0();
+					portExpanderIO(0x00,0xff);
+					portExpanderIO(0x01,0x00);
+					portExpanderSetOutput(0x01,0x00);
+					portExpanderpullup(0x00,0x0f);
+					portExpanderInterruptEnableAnyChange(0x00,0xff);
+					while(1){
+					}
+					}
+					void setupCLK(){
+					SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+					}
+					void peripheralEnable(){
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+					}
+					void gpioEnable(){
+					GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE, GPIO_PIN_7);;
+					GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_7);
+					GPIOPadConfigSet(GPIO_PORTC_BASE ,GPIO_PIN_7,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);
+					}
+					void InitI2C0(void){
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C0);
+					SysCtlPeripheralReset(SYSCTL_PERIPH_I2C0);
+					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+					GPIOPinConfigure(GPIO_PB2_I2C0SCL);
+					GPIOPinConfigure(GPIO_PB3_I2C0SDA);
+					GPIOPinTypeI2CSCL(GPIO_PORTB_BASE, GPIO_PIN_2);
+					GPIOPinTypeI2C(GPIO_PORTB_BASE, GPIO_PIN_3);
+					// Enable and initialize the I2C0 master module.  Use the system clock for
+					// the I2C0 module.  The last parameter sets the I2C data transfer rate.
+					// If false the data rate is set to 100kbps and if true the data rate will
+					// be set to 400kbps.
+					I2CMasterInitExpClk(I2C0_BASE, SysCtlClockGet(), false);
+					//clear I2C FIFOs
+					HWREG(I2C0_BASE + I2C_O_FIFOCTL) = 80008000;
+					I2CSend(0x20,2,0x0A,1<<6);
+					}
+					void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...)
+					{
+					// Tell the master module what address it will place on the bus when
+					// communicating with the slave.
+					I2CMasterSlaveAddrSet(I2C0_BASE, slave_addr, false);
+					
+					//stores list of variable number of arguments
+					va_list vargs;
+					
+					//specifies the va_list to "open" and the last fixed argument
+					//so vargs knows where to start looking
+					va_start(vargs, num_of_args);
+					
+					//put data to be sent into FIFO
+					I2CMasterDataPut(I2C0_BASE, va_arg(vargs, uint32_t));
+					
+					//if there is only one argument, we only need to use the
+					//single send I2C function
+					if(num_of_args == 1)
+					{
+					//Initiate send of data from the MCU
+					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_SINGLE_SEND);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C0_BASE));
+					
+					//"close" variable argument list
+					va_end(vargs);
+					}
+					
+					//otherwise, we start transmission of multiple bytes on the
+					//I2C bus
+					else
+					{
+					//Initiate send of data from the MCU
+					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C0_BASE));
+					
+					//send num_of_args-2 pieces of data, using the
+					//BURST_SEND_CONT command of the I2C module
+					uint8_t i ;
+					for(i = 1; i < (num_of_args - 1); i++)
+					{
+					//put next piece of data into I2C FIFO
+					I2CMasterDataPut(I2C0_BASE, va_arg(vargs, uint32_t));
+					//send next data that was just placed into FIFO
+					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_CONT);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C0_BASE));
+					}
+					
+					//put last piece of data into I2C FIFO
+					I2CMasterDataPut(I2C0_BASE, va_arg(vargs, uint32_t));
+					//send next data that was just placed into FIFO
+					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_FINISH);
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C0_BASE));
+					
+					//"close" variable args list
+					va_end(vargs);
+					}
+					}
+					//sends an array of data via I2C to the specified slave
+					void I2CSendString(uint32_t slave_addr, char array[])
+					{
+					// Tell the master module what address it will place on the bus when
+					// communicating with the slave.
+					I2CMasterSlaveAddrSet(I2C0_BASE, slave_addr, false);
+					
+					//put data to be sent into FIFO
+					I2CMasterDataPut(I2C0_BASE, array[0]);
+					
+					//if there is only one argument, we only need to use the
+					//single send I2C function
+					if(array[1] == '\0')
+					{
+					//Initiate send of data from the MCU
+					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_SINGLE_SEND);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C0_BASE));
+					}
+					
+					//otherwise, we start transmission of multiple bytes on the
+					//I2C bus
+					else
+					{
+					//Initiate send of data from the MCU
+					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C0_BASE));
+					
+					//initialize index into array
+					uint8_t i = 1;
+					
+					//send num_of_args-2 pieces of data, using the
+					//BURST_SEND_CONT command of the I2C module
+					while(array[i + 1] != '\0')
+					{
+					//put next piece of data into I2C FIFO
+					I2CMasterDataPut(I2C0_BASE, array[i++]);
+					
+					//send next data that was just placed into FIFO
+					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_CONT);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C0_BASE));
+					}
+					
+					//put last piece of data into I2C FIFO
+					I2CMasterDataPut(I2C0_BASE, array[i]);
+					
+					//send next data that was just placed into FIFO
+					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_FINISH);
+					
+					// Wait until MCU is done transferring.
+					while(I2CMasterBusy(I2C0_BASE));
+					}
+					}
+					//read specified register on slave device
+					uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg)
+					{
+					//specify that we are writing (a register address) to the
+					//slave device
+					I2CMasterSlaveAddrSet(I2C0_BASE, slave_addr, false);
+					
+					//specify register to be read
+					I2CMasterDataPut(I2C0_BASE, reg);
+					
+					//send control byte and register address byte to slave device
+					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_BURST_SEND_START);
+					
+					//wait for MCU to finish transaction
+					while(I2CMasterBusy(I2C0_BASE));
+					
+					//specify that we are going to read from slave device
+					I2CMasterSlaveAddrSet(I2C0_BASE, slave_addr, true);
+					
+					//send control byte and read from the register we
+					//specified
+					I2CMasterControl(I2C0_BASE, I2C_MASTER_CMD_SINGLE_RECEIVE);
+					
+					//wait for MCU to finish transaction
+					while(I2CMasterBusy(I2C0_BASE));
+					
+					//return data pulled from the specified register
+					return I2CMasterDataGet(I2C0_BASE);
+					}
+					void portExpanderIO(unsigned char port,unsigned char pin){
+					I2CSend(0x20,2,port,pin);
+					}
+					void portExpanderSetOutput(unsigned char port,unsigned char pin){
+					I2CSend(0x20,2,port+(0x12),pin);
+					}
+					unsigned char portExpanderReadInput(unsigned char port){
+					return(I2CReceive(0x20,(port+12)));
+					}
+					void portExpanderInterruptEnableAnyChange(unsigned char port,unsigned char pin){
+					portExpanderIO(port,pin);
+					I2CSend(0x20,2,(0x04)+port,pin);
+					I2CSend(0x20,2,(0x08)+port,pin);
+					GPIOIntDisable(GPIO_PORTC_BASE,GPIO_PIN_7);        // Disable interrupt for PF4 (in case it was enabled)
+					GPIOIntClear(GPIO_PORTC_BASE,GPIO_PIN_7);      // Clear pending interrupts for PF4
+					GPIOIntRegister(GPIO_PORTC_BASE,portExpanderInterruptHandler);     // Register our handler function for port F
+					GPIOIntTypeSet(GPIO_PORTC_BASE,GPIO_PIN_7,GPIO_FALLING_EDGE);             // Configure PF4 for falling edge trigger
+					GPIOIntEnable(GPIO_PORTC_BASE,GPIO_PIN_7);
+					}
+					void portExpanderInterruptHandler(){
+					if(GPIOIntStatus(GPIO_PORTC_BASE, false)&GPIO_PIN_7){
+					if(I2CReceive(0x20,0x0e)&0x01==0x01){
+					portExpanderSetOutput(0x01,0xff);
+					}
+					I2CReceive(0x20,0x10);
+					I2CReceive(0x20,0x11);
+					GPIOIntClear(GPIO_PORTC_BASE,GPIO_PIN_7);
+					}
+					}
+					void portExpanderpullup(unsigned char port,unsigned char pin){
+					I2CSend(0x20,2,(0x0C)+port,pin);
+					}
+					
+				\end{lstlisting}
 \end{document}

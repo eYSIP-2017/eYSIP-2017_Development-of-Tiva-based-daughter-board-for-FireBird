@@ -52,9 +52,9 @@ int main(void) {
     uint16_t val0=0;
 
     while(1){
-        val0=readExternalADC(0);
+        val0=readExternalADC(5);
         uartInteger(readExternalADC(0),' ');
-        SysCtlDelay((SysCtlClockGet())/300);
+        SysCtlDelay((SysCtlClockGet())/3);
     }
 
 }

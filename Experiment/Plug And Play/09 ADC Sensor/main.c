@@ -1,4 +1,4 @@
-/*****************************************************************************************
+/****************************************************************************************************
  Written by: Ayush Gaurav And Nagesh K.
  From eRTS Lab, CSE Department, IIT Bombay.
 
@@ -8,7 +8,7 @@
 
  Concepts covered:  ADC, UART interfacing
 
-ADC Connection:
+ADC Connection for Plug and Play Board:
           CH       PORT    Sensor
            2       PE1     White line sensor 3
            1       PE2     White line sensor 2
@@ -27,7 +27,7 @@ Refer the Channel numbers mentioned to interface other sensors
 
  Note: Make sure that in the configuration options following settings are
  done for proper operation of the code.
-*****************************************************************************************/
+*************************************************************************************************/
 #include <stdint.h>
 #include <stdbool.h>
 #include "stdlib.h"
@@ -54,27 +54,27 @@ Refer the Channel numbers mentioned to interface other sensors
 #include "utils/uartstdio.h"
 #include "utils/uartstdio.c"
 #include <string.h>
+#include <math.h>
 
 void configCLK();
 void peripheralEnable();
 void uartEnable();
-
+unsigned int Sharp_GP2D12_estimation(uint16_t adc_reading);
 void ADC0Enable();
 unsigned int readADC();
 void tranString(char * data,char delimeter);
 void uartInteger(long long int integer,char delimeter);
-void converter(unsigned int);
 void _delay_ms(uint64_t delay);
+void itoa(long long a,char *arr);
 
-uint32_t senval;
 int main(){
     configCLK();
     peripheralEnable();
     ADC0Enable();
     uartEnable();
+
     while(1){
-        senval = readADC();
-        converter(senval);
+        uartInteger(Sharp_GP2D12_estimation(readADC()),' ');
         _delay_ms(1000);
     }
 }
@@ -93,7 +93,7 @@ void configCLK(){
  ******************************/
 void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);//Enabling TIMER0
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
     ADCHardwareOversampleConfigure(ADC0_BASE, 64);
@@ -115,12 +115,12 @@ void uartEnable(){
  ********************************************************/
 void ADC0Enable(){
     ADCSequenceConfigure(ADC0_BASE, 1, ADC_TRIGGER_PROCESSOR, 0);
-    ADCSequenceStepConfigure(ADC0_BASE, 1, 0, ADC_CTL_CH4);
-    ADCSequenceStepConfigure(ADC0_BASE, 1, 1, ADC_CTL_CH4);
-    ADCSequenceStepConfigure(ADC0_BASE, 1, 2, ADC_CTL_CH4);
-    ADCSequenceStepConfigure(ADC0_BASE,1,3,ADC_CTL_CH4|ADC_CTL_IE|ADC_CTL_END);
+    ADCSequenceStepConfigure(ADC0_BASE, 1, 0, ADC_CTL_CH5);
+    ADCSequenceStepConfigure(ADC0_BASE, 1, 1, ADC_CTL_CH5);
+    ADCSequenceStepConfigure(ADC0_BASE, 1, 2, ADC_CTL_CH5);
+    ADCSequenceStepConfigure(ADC0_BASE,1,3,ADC_CTL_CH5|ADC_CTL_IE|ADC_CTL_END);
     ADCSequenceEnable(ADC0_BASE, 1);
-    GPIOPinTypeADC(GPIO_PORTD_BASE, GPIO_PIN_3);
+    GPIOPinTypeADC(GPIO_PORTD_BASE, GPIO_PIN_2);
 }
 /*************************************************************
  * This function is used to read the value from ADC
@@ -137,25 +137,64 @@ unsigned int readADC(){
     return(Avg);
 }
 /*************************************************************
- * This function is used to send the ADC values through UART
- * Here the value is sent in reverse order
+ * This function is used to convert from integer to ASCII
  ************************************************************/
-void converter(uint32_t q)
-{
-    unsigned int p;
-    p=q;
-    do
-    {
-        p = (q % 10);
-        UARTCharPut(UART1_BASE,48+(int)p);
-        SysCtlDelay(400000);
-        q = q / 10;
-    }while(q != 0);
-    UARTCharPut(UART1_BASE,' ');
+void itoa(long long a,char *arr){
+    int i=0,j=0;
+    long long tmp=a;
+    if(a<0){
+            arr[i++]='-';
+            tmp*=-1;
+            j=1;
+        }
+    for(;tmp>0;i++){
+        arr[i]=(tmp%10)+'0';
+        tmp/=10;
+    }
+    arr[i--]='\0';
+    for(;j<i;j++,i--){
+            tmp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=tmp;
+    }
 }
 /*************************************
  * Calculating Delays
  *************************************/
 void _delay_ms(uint64_t delay){
     SysCtlDelay(delay*(SysCtlClockGet()/3000));
+}
+/*************************************************************
+ * This function is used send integers through UART
+ ************************************************************/
+void uartInteger(long long int integer,char delimeter){
+    char ch[20];
+    itoa(integer,ch);
+    tranString(ch,delimeter);
+}
+/*************************************************************
+ * This function is used to send string through UART
+ ************************************************************/
+void tranString(char *data,char delimeter){
+    int k=0;
+    while(data[k]){
+        UARTCharPut(UART1_BASE,data[k++]);
+    }
+    UARTCharPut(UART1_BASE,delimeter);
+}
+/*********************************************************************
+ * This function is used to estimate the distance of the obstacle
+ * The linearization is based on "Piecewise Linear Approximation"
+ ********************************************************************/
+unsigned int Sharp_GP2D12_estimation(uint16_t adc_reading){
+    float distance;
+    unsigned int distanceInt;
+    adc_reading = adc_reading >> 2;
+    distance = (6787/(adc_reading-3)-4)*1.45;
+    distanceInt = (int)distance;
+    if(distanceInt>80)
+    {
+        distanceInt=80;
+    }
+    return distanceInt;
 }

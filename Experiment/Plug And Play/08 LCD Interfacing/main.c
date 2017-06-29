@@ -43,9 +43,6 @@ Connections:
 #ifndef     RS
 #define     RS          GPIO_PIN_6
 #endif
-//#ifndef     RW
-//#define     RW          GPIO_PIN_1
-//#endif
 #ifndef     EN
 #define     EN          GPIO_PIN_7
 #endif
@@ -63,38 +60,47 @@ Connections:
 #endif
 unsigned char cursorPositionCheck=0;
 void lcdInit();
-//void isBusy();
 void lcdCommand(unsigned char);
 void lcdData(unsigned char);
 void lcdString(char*);
 void lcdGotoxy(unsigned char,unsigned char);
 void lcdClear();
 void lcdCheck();
-//void lcdInteger(long long int);
 void setupCLK();
 void peripheralEnable();
 void configIOPin();
 void _delay_ms(uint64_t delay);
 void _delay_us(uint64_t delay);
 int main(){
-   // _delay_ms(2000);
     setupCLK();
     peripheralEnable();
     configIOPin();
     lcdInit();
-    //lcdClear();
     lcdGotoxy(0,0);
     lcdString("TIVA C Series");
     while(1){
     }
 }
+/***************************************************************************************
+ * This function is used to setup Clock frequency of the controller
+ * It can be changed through codes
+ * In this we have set frequency as 40Mhz
+ * Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+ ***************************************************************************************/
 void setupCLK(){
     SysCtlClockSet(SYSCTL_SYSDIV_4|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
 }
+/*******************************
+ * Enabling System Peripherals
+ * PORTA and PORTD in this case
+ ******************************/
 void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
 }
+/*************************************
+ * Configuring LCD Pins as Output
+ *************************************/
 void configIOPin(){
     HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
     HWREG(GPIO_PORTD_BASE + GPIO_O_CR) |= (1<<7);
@@ -103,19 +109,21 @@ void configIOPin(){
     GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE,D4|D5|D6|D7);
 
 }
+/******************************************
+ * This function is used to initialize LCD
+ * The LCD is operated in 4 bit mode
+ * It is also set in auto increment mode
+ *****************************************/
 void lcdInit(){
-    //GPIOPinWrite(lcdPORT,RS|EN,0);
-    //GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
     lcdCommand(0x28);
-    //lcdCommand(0x02);//get the cursor to home
     /**************************
     0x30 8bit mode single line*
     0x38 8bit mode double line*
     0x20 4bit mode single line*
     0x28 4bit mode double line*
     ***************************/
-    lcdCommand(0x06);//entry mode and auto increment mode
-    lcdCommand(0x0F);//
+    lcdCommand(0x06); //entry mode and auto increment mode
+    lcdCommand(0x0F);
     /********************************
     Display off Cursor off      0x08*
     Display on Cursor on        0x0E*
@@ -123,81 +131,86 @@ void lcdInit(){
     Display on Cursor blinking  0x0F*
     *********************************/
 }
+/***************************************************************************************
+ * This function is used to send commands to LCD
+ * The first 4 bits are sent first and then the last 4 bits
+ * The bits are shifted left and right appropriately to fit in middle 4 bits of port A
+ ***************************************************************************************/
 void lcdCommand(unsigned char command){
     GPIOPinWrite(lcdPORT,RS|EN,0);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
-    //lcdPORT=0;
     _delay_us(100);
-    //GPIOPinWrite(lcdPORT,RS|RW|EN|D4|D5|D6|D7,0xf0&command);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command>>2));
-    //lcdPORT=(0xf0&command);
     _delay_ms(1);
     GPIOPinWrite(lcdPORT,EN|RS,0x80);
-    //lcdPORT|=(0<<RS)|(0<<RW)|(1<<EN);
     _delay_us(100);
     GPIOPinWrite(lcdPORT,EN,0);
-    //lcdPORT&=~(1<<EN);
     _delay_us(100);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command<<2));
-    //lcdPORT=(0x0f&command)<<4;
     _delay_ms(1);
     GPIOPinWrite(lcdPORT,EN|RS,0x80);
-    //lcdPORT|=(0<<RS)|(0<<RW)|(1<<EN);
     _delay_us(100);
     GPIOPinWrite(lcdPORT,EN,0);
-  //lcdPORT&=~(1<<EN);
     _delay_us(100);
 }
+/***************************************************************************************
+ * This function is used to send data to LCD
+ * The first 4 bits are sent first and then the last 4 bits
+ * The bits are shifted left and right appropriately to fit in middle 4 bits of port A
+ ***************************************************************************************/
 void lcdData(unsigned char data){
     lcdCheck();
     GPIOPinWrite(lcdPORT,RS|EN,0);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
-    //lcdPORT=0;
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(data>>2));
-    //lcdPORT=(0xf0&data);
     _delay_us(100);
     GPIOPinWrite(lcdPORT,EN|RS,0xc0);
-    //lcdPORT|=(0<<RW)|(1<<EN)|(1<<RS);
     _delay_ms(1);
     GPIOPinWrite(lcdPORT,EN,0);
-    //lcdPORT&=~(1<<EN);
     _delay_us(100);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(data<<2));
-    //lcdPORT=(0x0f&(data))<<4;
     _delay_us(100);
     GPIOPinWrite(lcdPORT,EN|RS,0xc0);
-    //lcdPORT|=(0<<RW)|(1<<EN)|(1<<RS);
     _delay_us(100);
     GPIOPinWrite(lcdPORT,EN,0);
-    //lcdPORT&=~(1<<EN);
     cursorPositionCheck=(cursorPositionCheck+1)%32;
 }
+/************************************************
+ * This function is used to send strings to LCD
+ ***********************************************/
 void lcdString(char* string){
     unsigned char i=0;
     while(string[i])
         lcdData(string[i++]);
 }
-/*void lcdInteger(long long int integer){
-    char ch[20];
-    itoa(integer,ch,10);
-    lcdString(ch);
-}*/
+/***********************************************************
+ * This function is used to position of the cursor on LCD
+ **********************************************************/
 void lcdGotoxy(unsigned char x,unsigned char y)
 {
     cursorPositionCheck=y*16+x;
     lcdCommand(0x80+x+(64*y));
 }
+/************************************************
+ * This function is used to clear the LCD
+ ***********************************************/
 void lcdClear(){
     cursorPositionCheck=0;
     lcdCommand(0x01);
-    _delay_ms(3);
+    _delay_ms(5);
 }
+/******************************************************************
+ * This function is used to check the position of cursor on LCD
+ *****************************************************************/
 void lcdCheck(){
     if(cursorPositionCheck==16)
     lcdGotoxy(0,1);
     else if(cursorPositionCheck==0)
     lcdGotoxy(0,0);
 }
+/*************************************
+ * Calculating Delays
+ *************************************/
 void _delay_ms(uint64_t delay){
     SysCtlDelay(delay*(SysCtlClockGet()/3000));
 }
