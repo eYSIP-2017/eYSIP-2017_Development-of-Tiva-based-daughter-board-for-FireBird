@@ -39,32 +39,31 @@
 \BOOKMARK [3][-]{subsubsection.6.4.1}{Code for Plug and Play Board:}{subsection.6.4}% 39
 \BOOKMARK [3][-]{subsubsection.6.4.2}{Code for uC based Board:}{subsection.6.4}% 40
 \BOOKMARK [2][-]{subsection.6.5}{Robot Position Control Using Interrupts}{section.6}% 41
-\BOOKMARK [3][-]{subsubsection.6.5.1}{Calculation of position encoder resolution:}{subsection.6.5}% 42
-\BOOKMARK [3][-]{subsubsection.6.5.2}{Code for Plug and Play Board:}{subsection.6.5}% 43
-\BOOKMARK [3][-]{subsubsection.6.5.3}{Code for uC based Board:}{subsection.6.5}% 44
-\BOOKMARK [2][-]{subsection.6.6}{Timers and its Interrupts}{section.6}% 45
-\BOOKMARK [3][-]{subsubsection.6.6.1}{Code}{subsection.6.6}% 46
-\BOOKMARK [2][-]{subsection.6.7}{Robot Speed Control}{section.6}% 47
-\BOOKMARK [3][-]{subsubsection.6.7.1}{Pulse Width Modulation\(PWM\)}{subsection.6.7}% 48
-\BOOKMARK [3][-]{subsubsection.6.7.2}{Code for Plug and Play Board:}{subsection.6.7}% 49
-\BOOKMARK [3][-]{subsubsection.6.7.3}{Code for uC based Board:}{subsection.6.7}% 50
-\BOOKMARK [2][-]{subsection.6.8}{LCD Interfacing}{section.6}% 51
-\BOOKMARK [3][-]{subsubsection.6.8.1}{Code for Plug and Play Board:}{subsection.6.8}% 52
-\BOOKMARK [3][-]{subsubsection.6.8.2}{Code for uC based Board}{subsection.6.8}% 53
-\BOOKMARK [2][-]{subsection.6.9}{Analog To Digital Converter}{section.6}% 54
-\BOOKMARK [3][-]{subsubsection.6.9.1}{Code for Plug and Play Board:}{subsection.6.9}% 55
-\BOOKMARK [3][-]{subsubsection.6.9.2}{Code for uC based Board}{subsection.6.9}% 56
-\BOOKMARK [2][-]{subsection.6.10}{External ADC Interface}{section.6}% 57
-\BOOKMARK [3][-]{subsubsection.6.10.1}{Code for Plug and Play Board:}{subsection.6.10}% 58
-\BOOKMARK [3][-]{subsubsection.6.10.2}{Code for uC based Board:}{subsection.6.10}% 59
-\BOOKMARK [2][-]{subsection.6.11}{Serial Communication}{section.6}% 60
-\BOOKMARK [3][-]{subsubsection.6.11.1}{Connections}{subsection.6.11}% 61
-\BOOKMARK [3][-]{subsubsection.6.11.2}{Code for Plug and Play Board:}{subsection.6.11}% 62
-\BOOKMARK [3][-]{subsubsection.6.11.3}{Code for uC based Board:}{subsection.6.11}% 63
-\BOOKMARK [2][-]{subsection.6.12}{I2C Communication}{section.6}% 64
-\BOOKMARK [3][-]{subsubsection.6.12.1}{Introduction}{subsection.6.12}% 65
-\BOOKMARK [3][-]{subsubsection.6.12.2}{Features}{subsection.6.12}% 66
-\BOOKMARK [3][-]{subsubsection.6.12.3}{Working}{subsection.6.12}% 67
-\BOOKMARK [3][-]{subsubsection.6.12.4}{Connections}{subsection.6.12}% 68
-\BOOKMARK [3][-]{subsubsection.6.12.5}{Code for Plug and Play Board:}{subsection.6.12}% 69
-\BOOKMARK [3][-]{subsubsection.6.12.6}{Code for uC based Board:}{subsection.6.12}% 70
+\BOOKMARK [3][-]{subsubsection.6.5.1}{Code for Plug and Play Board:}{subsection.6.5}% 42
+\BOOKMARK [3][-]{subsubsection.6.5.2}{Code for uC based Board:}{subsection.6.5}% 43
+\BOOKMARK [2][-]{subsection.6.6}{Timers and its Interrupts}{section.6}% 44
+\BOOKMARK [3][-]{subsubsection.6.6.1}{Code}{subsection.6.6}% 45
+\BOOKMARK [2][-]{subsection.6.7}{Robot Speed Control}{section.6}% 46
+\BOOKMARK [3][-]{subsubsection.6.7.1}{Pulse Width Modulation\(PWM\)}{subsection.6.7}% 47
+\BOOKMARK [3][-]{subsubsection.6.7.2}{Code for Plug and Play Board:}{subsection.6.7}% 48
+\BOOKMARK [3][-]{subsubsection.6.7.3}{Code for uC based Board:}{subsection.6.7}% 49
+\BOOKMARK [2][-]{subsection.6.8}{LCD Interfacing}{section.6}% 50
+\BOOKMARK [3][-]{subsubsection.6.8.1}{Code for Plug and Play Board:}{subsection.6.8}% 51
+\BOOKMARK [3][-]{subsubsection.6.8.2}{Code for uC based Board}{subsection.6.8}% 52
+\BOOKMARK [2][-]{subsection.6.9}{Analog To Digital Converter}{section.6}% 53
+\BOOKMARK [3][-]{subsubsection.6.9.1}{Code for Plug and Play Board:}{subsection.6.9}% 54
+\BOOKMARK [3][-]{subsubsection.6.9.2}{Code for uC based Board}{subsection.6.9}% 55
+\BOOKMARK [2][-]{subsection.6.10}{External ADC Interface}{section.6}% 56
+\BOOKMARK [3][-]{subsubsection.6.10.1}{Code for Plug and Play Board:}{subsection.6.10}% 57
+\BOOKMARK [3][-]{subsubsection.6.10.2}{Code for uC based Board:}{subsection.6.10}% 58
+\BOOKMARK [2][-]{subsection.6.11}{Serial Communication}{section.6}% 59
+\BOOKMARK [3][-]{subsubsection.6.11.1}{Connections}{subsection.6.11}% 60
+\BOOKMARK [3][-]{subsubsection.6.11.2}{Code for Plug and Play Board:}{subsection.6.11}% 61
+\BOOKMARK [3][-]{subsubsection.6.11.3}{Code for uC based Board:}{subsection.6.11}% 62
+\BOOKMARK [2][-]{subsection.6.12}{I2C Communication}{section.6}% 63
+\BOOKMARK [3][-]{subsubsection.6.12.1}{Introduction}{subsection.6.12}% 64
+\BOOKMARK [3][-]{subsubsection.6.12.2}{Features}{subsection.6.12}% 65
+\BOOKMARK [3][-]{subsubsection.6.12.3}{Working}{subsection.6.12}% 66
+\BOOKMARK [3][-]{subsubsection.6.12.4}{Connections}{subsection.6.12}% 67
+\BOOKMARK [3][-]{subsubsection.6.12.5}{Code for Plug and Play Board:}{subsection.6.12}% 68
+\BOOKMARK [3][-]{subsubsection.6.12.6}{Code for uC based Board:}{subsection.6.12}% 69

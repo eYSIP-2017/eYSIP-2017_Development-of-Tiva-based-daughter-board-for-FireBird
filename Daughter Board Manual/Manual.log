@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.6.16)  29 JUN 2017 16:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.6.16)  29 JUN 2017 21:44
 entering extended mode
 **./Manual.tex
 (Manual.tex
@@ -774,13 +774,13 @@ G,.JBIG2,.JB2,.eps]
 )
 \c@lstlisting=\count137
 
-<uC_DB.jpg, id=283, 3260.18pt x 3235.08624pt>
+<uC_DB.jpg, id=279, 3260.18pt x 3235.08624pt>
 File: uC_DB.jpg Graphic file (type jpg)
  <use uC_DB.jpg>
 Package pdftex.def Info: uC_DB.jpg used on input line 71.
 (pdftex.def)             Requested size: 256.04408pt x 256.04784pt.
 
-<Plug_Play_DB.jpg, id=284, 2906.86pt x 2914.89pt>
+<Plug_Play_DB.jpg, id=280, 2906.86pt x 2914.89pt>
 File: Plug_Play_DB.jpg Graphic file (type jpg)
  <use Plug_Play_DB.jpg>
 Package pdftex.def Info: Plug_Play_DB.jpg used on input line 75.
@@ -896,7 +896,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
-<3VPowerSupply.png, id=402, 796.47563pt x 355.3275pt>
+<3VPowerSupply.png, id=397, 796.47563pt x 355.3275pt>
 File: 3VPowerSupply.png Graphic file (type png)
  <use 3VPowerSupply.png>
 Package pdftex.def Info: 3VPowerSupply.png used on input line 186.
@@ -916,7 +916,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
-<ServoPowerSupply.png, id=404, 797.22844pt x 305.64188pt>
+<ServoPowerSupply.png, id=399, 797.22844pt x 305.64188pt>
 File: ServoPowerSupply.png Graphic file (type png)
 
 <use ServoPowerSupply.png>
@@ -932,7 +932,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
-<Level_Converter.png, id=411, 502.12593pt x 272.51813pt>
+<Level_Converter.png, id=406, 502.12593pt x 272.51813pt>
 File: Level_Converter.png Graphic file (type png)
 
 <use Level_Converter.png>
@@ -959,19 +959,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 206--207
  []
 
 [10 <./ServoPowerSupply.png> <./Level_Converter.png>]
-<3v3Sensors.png, id=418, 348.55219pt x 275.52937pt>
+<3v3Sensors.png, id=413, 348.55219pt x 275.52937pt>
 File: 3v3Sensors.png Graphic file (type png)
  <use 3v3Sensors.png>
 Package pdftex.def Info: 3v3Sensors.png used on input line 208.
 (pdftex.def)             Requested size: 348.55132pt x 275.52869pt.
 
-<5Vsensor1.png, id=419, 325.215pt x 170.13562pt>
+<5Vsensor1.png, id=414, 325.215pt x 170.13562pt>
 File: 5Vsensor1.png Graphic file (type png)
  <use 5Vsensor1.png>
 Package pdftex.def Info: 5Vsensor1.png used on input line 214.
 (pdftex.def)             Requested size: 325.2142pt x 170.1352pt.
 
-<5Vsensor2.png, id=420, 347.79938pt x 91.09032pt>
+<5Vsensor2.png, id=415, 347.79938pt x 91.09032pt>
 File: 5Vsensor2.png Graphic file (type png)
  <use 5Vsensor2.png>
 Package pdftex.def Info: 5Vsensor2.png used on input line 215.
@@ -982,14 +982,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--219
  []
 
 [11 <./3v3Sensors.png> <./5Vsensor1.png> <./5Vsensor2.png>]
-<portexpandePlug.png, id=429, 306.39468pt x 249.18094pt>
+<portexpandePlug.png, id=424, 306.39468pt x 249.18094pt>
 File: portexpandePlug.png Graphic file (type png)
 
 <use portexpandePlug.png>
 Package pdftex.def Info: portexpandePlug.png used on input line 220.
 (pdftex.def)             Requested size: 306.39394pt x 249.18031pt.
 
-<portExpanderuc.png, id=430, 338.01282pt x 276.28218pt>
+<portExpanderuc.png, id=425, 338.01282pt x 276.28218pt>
 File: portExpanderuc.png Graphic file (type png)
 
 <use portExpanderuc.png>
@@ -1001,13 +1001,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--226
  []
 
 [12 <./portexpandePlug.png> <./portExpanderuc.png>]
-<externaladcuC.png, id=438, 374.90062pt x 161.85469pt>
+<externaladcuC.png, id=433, 374.90062pt x 161.85469pt>
 File: externaladcuC.png Graphic file (type png)
  <use externaladcuC.png>
 Package pdftex.def Info: externaladcuC.png used on input line 227.
 (pdftex.def)             Requested size: 374.8997pt x 161.85428pt.
 
-<externalADCplug.png, id=439, 386.19281pt x 151.3153pt>
+<externalADCplug.png, id=434, 386.19281pt x 151.3153pt>
 File: externalADCplug.png Graphic file (type png)
 
 <use externalADCplug.png>
@@ -1018,25 +1018,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 231--244
 
  []
 
-<lcdPlug.png, id=440, 295.1025pt x 231.86626pt>
+<lcdPlug.png, id=435, 295.1025pt x 231.86626pt>
 File: lcdPlug.png Graphic file (type png)
  <use lcdPlug.png>
 Package pdftex.def Info: lcdPlug.png used on input line 245.
 (pdftex.def)             Requested size: 295.10176pt x 231.86568pt.
  [13 <./externaladcuC.png> <./externalADCplug.png>]
-<lcduC.png, id=448, 259.7203pt x 213.79875pt>
+<lcduC.png, id=443, 259.7203pt x 213.79875pt>
 File: lcduC.png Graphic file (type png)
  <use lcduC.png>
 Package pdftex.def Info: lcduC.png used on input line 247.
 (pdftex.def)             Requested size: 259.71967pt x 213.79822pt.
 
-<lcdpin.png, id=449, 345.54094pt x 104.64093pt>
+<lcdpin.png, id=444, 345.54094pt x 104.64093pt>
 File: lcdpin.png Graphic file (type png)
  <use lcdpin.png>
 Package pdftex.def Info: lcdpin.png used on input line 249.
 (pdftex.def)             Requested size: 345.54008pt x 104.64066pt.
  [14 <./lcdPlug.png> <./lcduC.png> <./lcdpin.png>]
-<ft232.png, id=457, 387.69844pt x 288.3272pt>
+<ft232.png, id=452, 387.69844pt x 288.3272pt>
 File: ft232.png Graphic file (type png)
  <use ft232.png>
 Package pdftex.def Info: ft232.png used on input line 262.
@@ -1046,7 +1046,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
-<Reset_Switch.png, id=458, 553.31718pt x 270.25969pt>
+<Reset_Switch.png, id=453, 553.31718pt x 270.25969pt>
 File: Reset_Switch.png Graphic file (type png)
  <use Reset_Switch.png>
 Package pdftex.def Info: Reset_Switch.png used on input line 268.
@@ -1057,18 +1057,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 272--275
 
  []
 
-<servoPlug.png, id=465, 396.7322pt x 225.09094pt>
+<servoPlug.png, id=460, 396.7322pt x 225.09094pt>
 File: servoPlug.png Graphic file (type png)
  <use servoPlug.png>
 Package pdftex.def Info: servoPlug.png used on input line 276.
 (pdftex.def)             Requested size: 396.73122pt x 225.09038pt.
 
-<servouc.png, id=466, 313.17pt x 228.855pt>
+<servouc.png, id=461, 313.17pt x 228.855pt>
 File: servouc.png Graphic file (type png)
  <use servouc.png>
 Package pdftex.def Info: servouc.png used on input line 277.
 (pdftex.def)             Requested size: 313.16922pt x 228.85443pt.
- [16 <./servoPlug.png> <./servouc.png>] [17] <uc.png, id=478, 238.64156pt x 741
+ [16 <./servoPlug.png> <./servouc.png>] [17] <uc.png, id=473, 238.64156pt x 741
 .52031pt>
 File: uc.png Graphic file (type png)
 
@@ -1377,25 +1377,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 532--534
 
  []
 
-<CCSInstall1.png, id=510, 372.64218pt x 321.45094pt>
+<CCSInstall1.png, id=505, 372.64218pt x 321.45094pt>
 File: CCSInstall1.png Graphic file (type png)
  <use CCSInstall1.png>
 Package pdftex.def Info: CCSInstall1.png used on input line 536.
 (pdftex.def)             Requested size: 170.7124pt x 170.72133pt.
 
-<CCSInstall2.png, id=511, 370.38374pt x 319.1925pt>
+<CCSInstall2.png, id=506, 370.38374pt x 319.1925pt>
 File: CCSInstall2.png Graphic file (type png)
  <use CCSInstall2.png>
 Package pdftex.def Info: CCSInstall2.png used on input line 539.
 (pdftex.def)             Requested size: 170.71768pt x 170.71515pt.
 
-[24 <./CCSInstall1.png>] <CCSInstall3.png, id=520, 372.64218pt x 319.1925pt>
+[24 <./CCSInstall1.png>] <CCSInstall3.png, id=515, 372.64218pt x 319.1925pt>
 File: CCSInstall3.png Graphic file (type png)
 
 <use CCSInstall3.png>
 Package pdftex.def Info: CCSInstall3.png used on input line 542.
 (pdftex.def)             Requested size: 170.7124pt x 170.71515pt.
- <CCSInstall4.png, id=521, 367.3725pt x 319.1925pt>
+ <CCSInstall4.png, id=516, 367.3725pt x 319.1925pt>
 File: CCSInstall4.png Graphic file (type png)
 
 <use CCSInstall4.png>
@@ -1412,59 +1412,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 553--560
  []
 
 [25 <./CCSInstall2.png> <./CCSInstall3.png> <./CCSInstall4.png>]
-<CreatingNewProject1.png, id=536, 446.41782pt x 146.79843pt>
+<CreatingNewProject1.png, id=531, 446.41782pt x 146.79843pt>
 File: CreatingNewProject1.png Graphic file (type png)
 
 <use CreatingNewProject1.png>
 Package pdftex.def Info: CreatingNewProject1.png used on input line 564.
 (pdftex.def)             Requested size: 170.71678pt x 56.90396pt.
 
-<CreatingNewProject2.png, id=537, 447.17062pt x 548.0475pt>
+<CreatingNewProject2.png, id=532, 447.17062pt x 548.0475pt>
 File: CreatingNewProject2.png Graphic file (type png)
 
 <use CreatingNewProject2.png>
 Package pdftex.def Info: CreatingNewProject2.png used on input line 566.
 (pdftex.def)             Requested size: 184.9446pt x 227.6278pt.
  [26 <./CreatingNewProject1.png> <./CreatingNewProject2.png>] <AddVariables.png
-, id=546, 149.05687pt x 195.73125pt>
+, id=541, 149.05687pt x 195.73125pt>
 File: AddVariables.png Graphic file (type png)
 
 <use AddVariables.png>
 Package pdftex.def Info: AddVariables.png used on input line 583.
 (pdftex.def)             Requested size: 85.35904pt x 113.81091pt.
- <AddVariables2.png, id=547, 185.94469pt x 332.74312pt>
+ <AddVariables2.png, id=542, 185.94469pt x 332.74312pt>
 File: AddVariables2.png Graphic file (type png)
 
 <use AddVariables2.png>
 Package pdftex.def Info: AddVariables2.png used on input line 586.
 (pdftex.def)             Requested size: 127.20108pt x 227.62204pt.
- <AddVariables3.png, id=548, 450.18187pt x 271.76532pt>
+ <AddVariables3.png, id=543, 450.18187pt x 271.76532pt>
 File: AddVariables3.png Graphic file (type png)
 
 <use AddVariables3.png>
 Package pdftex.def Info: AddVariables3.png used on input line 592.
 (pdftex.def)             Requested size: 450.18077pt x 271.76465pt.
  [27 <./AddVariables.png> <./AddVariables2.png>]
-<AddVariables4.png, id=556, 271.76532pt x 265.74281pt>
+<AddVariables4.png, id=551, 271.76532pt x 265.74281pt>
 File: AddVariables4.png Graphic file (type png)
  <use AddVariables4.png>
 Package pdftex.def Info: AddVariables4.png used on input line 599.
 (pdftex.def)             Requested size: 271.76465pt x 265.74216pt.
 
-<AddVariables5.png, id=557, 414.04688pt x 219.82124pt>
+<AddVariables5.png, id=552, 414.04688pt x 219.82124pt>
 File: AddVariables5.png Graphic file (type png)
  <use AddVariables5.png>
 Package pdftex.def Info: AddVariables5.png used on input line 600.
 (pdftex.def)             Requested size: 256.08093pt x 227.62926pt.
 
 [28 <./AddVariables3.png> <./AddVariables4.png>]
-<AddVariables6.png, id=564, 732.48656pt x 509.65407pt>
+<AddVariables6.png, id=559, 732.48656pt x 509.65407pt>
 File: AddVariables6.png Graphic file (type png)
  <use AddVariables6.png>
 Package pdftex.def Info: AddVariables6.png used on input line 602.
 (pdftex.def)             Requested size: 284.52856pt x 227.62355pt.
 
-<AddVariables7.png, id=565, 178.41656pt x 252.945pt>
+<AddVariables7.png, id=560, 178.41656pt x 252.945pt>
 File: AddVariables7.png Graphic file (type png)
  <use AddVariables7.png>
 Package pdftex.def Info: AddVariables7.png used on input line 609.
@@ -1485,13 +1485,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 610--614
 
  []
 
-<AddVariables8.png, id=573, 376.40625pt x 247.67531pt>
+<AddVariables8.png, id=568, 376.40625pt x 247.67531pt>
 File: AddVariables8.png Graphic file (type png)
  <use AddVariables8.png>
 Package pdftex.def Info: AddVariables8.png used on input line 617.
 (pdftex.def)             Requested size: 284.54968pt x 227.62218pt.
 
-<AddVariables9.png, id=574, 667.74469pt x 203.25937pt>
+<AddVariables9.png, id=569, 667.74469pt x 203.25937pt>
 File: AddVariables9.png Graphic file (type png)
  <use AddVariables9.png>
 Package pdftex.def Info: AddVariables9.png used on input line 621.
@@ -1506,7 +1506,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 630--631
 
  []
 
-<driverlib.png, id=581, 332.74312pt x 170.13562pt>
+<driverlib.png, id=576, 332.74312pt x 170.13562pt>
 File: driverlib.png Graphic file (type png)
  <use driverlib.png>
 Package pdftex.def Info: driverlib.png used on input line 632.
@@ -1559,7 +1559,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 846--847
 
  []
 
-<MotorConnection.png, id=707, 381.67593pt x 120.45pt>
+<MotorConnection.png, id=702, 381.67593pt x 120.45pt>
 File: MotorConnection.png Graphic file (type png)
 
 <use MotorConnection.png>
@@ -1585,18 +1585,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 1452--1453
 
  []
 
-[43] [44] <PWM.png, id=1488, 358.33875pt x 304.13625pt>
+[43] <PWM.png, id=1420, 358.33875pt x 304.13625pt>
 File: PWM.png Graphic file (type png)
  <use PWM.png>
 Package pdftex.def Info: PWM.png used on input line 1569.
 (pdftex.def)             Requested size: 113.80682pt x 113.80948pt.
-
+ [44]
 Underfull \hbox (badness 10000) in paragraph at lines 1571--1573
 
  []
 
 [45 <./PWM.png>] [46] [47] [48] [49] [50] [51] [52] [53] [54]
-<ADC.png, id=2236, 517.18219pt x 234.1247pt>
+<ADC.png, id=2231, 517.18219pt x 234.1247pt>
 File: ADC.png Graphic file (type png)
  <use ADC.png>
 Package pdftex.def Info: ADC.png used on input line 2298.
@@ -1607,29 +1607,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 3143--3144
 
  []
 
-<Serial.png, id=3054, 205.5178pt x 55.70813pt>
+<Serial.png, id=3056, 205.5178pt x 55.70813pt>
 File: Serial.png Graphic file (type png)
  <use Serial.png>
 Package pdftex.def Info: Serial.png used on input line 3147.
 (pdftex.def)             Requested size: 227.62257pt x 56.90567pt.
- [66] [67 <./Serial.png>] [68] <I2C0.png, id=3268, 602.25pt x 295.1025pt>
+ [66 <./Serial.png>] [67] [68] <I2C0.png, id=3272, 602.25pt x 295.1025pt>
 File: I2C0.png Graphic file (type png)
  <use I2C0.png>
 Package pdftex.def Info: I2C0.png used on input line 3314.
 (pdftex.def)             Requested size: 227.62596pt x 113.81068pt.
 
-<I2C1.png, id=3269, 963.6pt x 243.15843pt>
+<I2C1.png, id=3273, 963.6pt x 243.15843pt>
 File: I2C1.png Graphic file (type png)
  <use I2C1.png>
 Package pdftex.def Info: I2C1.png used on input line 3325.
 (pdftex.def)             Requested size: 455.2446pt x 113.80956pt.
- [69 <./I2C0.png> <./I2C1.png>] <I2C2.png, id=3296, 1589.1872pt x 371.13657pt>
+ [69 <./I2C0.png> <./I2C1.png>] <I2C2.png, id=3291, 1589.1872pt x 371.13657pt>
 File: I2C2.png Graphic file (type png)
  <use I2C2.png>
 Package pdftex.def Info: I2C2.png used on input line 3331.
 (pdftex.def)             Requested size: 455.25096pt x 113.81093pt.
 
-<I2C3.png, id=3298, 204.01219pt x 54.9553pt>
+<I2C3.png, id=3293, 204.01219pt x 54.9553pt>
 File: I2C3.png Graphic file (type png)
  <use I2C3.png>
 Package pdftex.def Info: I2C3.png used on input line 3337.
@@ -1643,14 +1643,14 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3797.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3797.
 
 Package rerunfilecheck Info: File `Manual.out' has not changed.
-(rerunfilecheck)             Checksum: 6F0256A6443747DE07D9D9013A96A928;5316.
+(rerunfilecheck)             Checksum: 33059EDC8A09DD5FF31A815009812411;5212.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3797.
  ) 
 Here is how much of TeX's memory you used:
- 13694 strings out of 493333
- 198540 string characters out of 3139197
- 602647 words of memory out of 3000000
- 13911 multiletter control sequences out of 15000+200000
+ 13692 strings out of 493333
+ 198500 string characters out of 3139197
+ 604647 words of memory out of 3000000
+ 13910 multiletter control sequences out of 15000+200000
  10355 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,58p,1010b,2015s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1663,9 +1663,9 @@ public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 msy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Manual.pdf (76 pages, 4936087 bytes).
+Output written on Manual.pdf (76 pages, 4901713 bytes).
 PDF statistics:
- 4455 PDF objects out of 5155 (max. 8388607)
- 3153 named destinations out of 3580 (max. 500000)
- 781 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4450 PDF objects out of 5155 (max. 8388607)
+ 3152 named destinations out of 3580 (max. 500000)
+ 773 words of extra memory for PDF output out of 10000 (max. 10000000)
 
