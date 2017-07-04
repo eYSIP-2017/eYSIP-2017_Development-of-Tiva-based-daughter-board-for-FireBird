@@ -31,7 +31,7 @@ void configCLK(){
 }
 void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_UART3);
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);//Enablinig TIMER0
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
  }
 void uartEnable(){
     GPIOPinConfigure(GPIO_PC6_U3RX);//Configure Pin PC6 as RX of U0

@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.6.16)  27 JUN 2017 20:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.17)  4 JUL 2017 17:39
 entering extended mode
 **./Manual.tex
 (Manual.tex
 LaTeX2e <2017/01/01> patch level 1
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -21,21 +21,26 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
+sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.st
+y"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.s
+ty"
 Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.
+sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.
+sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count87
@@ -51,20 +56,20 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks15
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
+cfg"))
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -301,7 +306,7 @@ File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -342,7 +347,7 @@ File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
 File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -366,14 +371,17 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hyperref.
+sty"
 Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsub-
+hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsub-
+generic.sty"
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
@@ -412,24 +420,28 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\auxhook.s
+ty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions
+.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen111
 \Hy@linkcounter=\count90
 \Hy@pagecounter=\count91
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.de
+f"
 File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count92
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperref.
+cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4486.
@@ -440,8 +452,7 @@ Package hyperref Info: Backreferencing OFF on input line 4506.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4735.
 \c@Hy@tempcnt=\count93
-
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+ ("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -466,19 +477,23 @@ LaTeX Info: Redefining \pageref on input line 6416.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex.d
+ef"
 File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
 \Fld@listcount=\count98
 \c@bookmark@seq@number=\count99
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfile
+check.sty"
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip43
 )
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\enumitem\enumitem.sty
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\enumitem\enumitem.
+sty"
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip44
 \enit@outerparindent=\dimen115
@@ -486,27 +501,31 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box26
 \enitdp@description=\count100
 )
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\changepage\changepage.sty
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\changepage\changep
+age.sty"
 Package: changepage 2009/10/20 v1.0c check page and change page layout
 \c@cp@cntr=\count101
 \cp@tempcnt=\count102
 )
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\color
+.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdfte
+x.def"
 File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
 \Gread@gobject=\count103
 )
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\colortbl\colortbl.sty
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\colortbl\colortbl.
+sty"
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \col@sep=\dimen116
 \extrarowheight=\dimen117
@@ -528,16 +547,19 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.
+sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.
+sty"
 Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\graph
+ics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
@@ -545,7 +567,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 \Gin@req@height=\dimen118
 \Gin@req@width=\dimen119
 )
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\fancyhdr\fancyhdr.sty
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.
+sty"
 Package: fancyhdr 2016/10/11 v3.9 Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip48
@@ -558,7 +581,8 @@ Package: fancyhdr 2016/10/11 v3.9 Extensive control of page headers and footers
 \f@nch@O@olf=\skip55
 \f@nch@O@orf=\skip56
 )
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\titlesec\titlesec.sty
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\titlesec\titlesec.
+sty"
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box27
 \beforetitleunit=\skip57
@@ -570,7 +594,8 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \titlewidthlast=\dimen123
 \titlewidthfirst=\dimen124
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\longtable.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\longtable.st
+y"
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip59
 \LTright=\skip60
@@ -588,27 +613,34 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count109
 \LT@p@ftn=\toks22
 )
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\setspace\setspace.sty
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\setspace\setspace.
+sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.st
+y"
 Package: amsmath 2016/11/05 v2.16a AMS math features
 \@mathmargin=\skip63
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.st
+y"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
+"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks23
 \ex@=\dimen126
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty
+"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen127
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty
+"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count110
@@ -649,7 +681,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings.
+sty"
 \lst@mode=\count122
 \lst@gtempboxa=\box34
 \lst@token=\toks28
@@ -663,19 +696,20 @@ LaTeX Info: Redefining \] on input line 2818.
 \lst@lineno=\count127
 \lst@maxwidth=\dimen138
 
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc.s
+ty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count128
 \lst@skipnumbers=\count129
 \lst@framebox=\box35
 )
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings.
+cfg"
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 Package hyperref Info: Option `colorlinks' set `true' on input line 24.
-
-(Manual.aux)
+ (Manual.aux)
 \openout1 = `Manual.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
@@ -712,12 +746,12 @@ LaTeX Font Info:    ... okay on input line 67.
 * \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=57.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -729,10 +763,13 @@ LaTeX Font Info:    ... okay on input line 67.
 
 \AtBeginShipoutBox=\box36
 Package hyperref Info: Link coloring ON on input line 67.
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
+ty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\gettitl
+estring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count130
@@ -740,13 +777,13 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 67.
 LaTeX Info: Redefining \pageref on input line 67.
 LaTeX Info: Redefining \nameref on input line 67.
-
-(Manual.out) (Manual.out)
+ (Manual.out) (Manual.out)
 \@outlinefile=\write3
 \openout3 = `Manual.out'.
 
 
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
+ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count131
 \scratchdimen=\dimen139
@@ -759,10 +796,13 @@ LaTeX Info: Redefining \nameref on input line 67.
 \MPnumerator=\count135
 \makeMPintoPDFobject=\count136
 \everyMPtoPDFconversion=\toks30
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+)
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
+base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.st
+y"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -775,7 +815,7 @@ G,.JBIG2,.JB2,.eps]
 \c@lstlisting=\count137
  [1
 
-{C:/Users/nagu/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{C:/Users/Ayush/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 72--79
 
  []
@@ -794,32 +834,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--79
 Underfull \hbox (badness 10000) in paragraph at lines 72--79
 
  []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 [2]
 Underfull \hbox (badness 10000) in paragraph at lines 91--94
 
  []
 
-[3] (Manual.toc)
-\tf@toc=\write4
-\openout4 = `Manual.toc'.
+[3] (Manual.toc
 
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 20.67049pt.
+Package Fancyhdr Warning: \headheight is too small (14.49998pt): 
+ Make it at least 21.42049pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4]
+[4] [5])
+\tf@toc=\write4
+\openout4 = `Manual.toc'.
+
+ [6] [7]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 104.
 
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <14.4> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 104.
 
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
@@ -863,41 +911,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--162
 
  []
 
-[5]
+[9]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 164.
 
-[6]
+
 Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
-<3VPowerSupply.png, id=181, 796.47563pt x 355.3275pt>
-File: 3VPowerSupply.png Graphic file (type png)
- <use 3VPowerSupply.png>
-Package pdftex.def Info: 3VPowerSupply.png used on input line 170.
+<Images/3VPowerSupply.png, id=391, 796.47563pt x 355.3275pt>
+File: Images/3VPowerSupply.png Graphic file (type png)
+
+<use Images/3VPowerSupply.png>
+Package pdftex.def Info: Images/3VPowerSupply.png used on input line 170.
 (pdftex.def)             Requested size: 512.16116pt x 227.62569pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.171 	\caption
+               {figure 1.}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--172
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
-
- []
-
-
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
-<ServoPowerSupply.png, id=183, 797.22844pt x 305.64188pt>
-File: ServoPowerSupply.png Graphic file (type png)
+<Images/ServoPowerSupply.png, id=397, 797.22844pt x 305.64188pt>
+File: Images/ServoPowerSupply.png Graphic file (type png)
 
-<use ServoPowerSupply.png>
-Package pdftex.def Info: ServoPowerSupply.png used on input line 175.
+<use Images/ServoPowerSupply.png>
+Package pdftex.def Info: Images/ServoPowerSupply.png used on input line 175.
 (pdftex.def)             Requested size: 512.17082pt x 227.62184pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 175--176
@@ -910,20 +967,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 177--178
  []
 
 
-Package Fancyhdr Warning: \headheight is too small (20.67049pt): 
- Make it at least 46.90285pt.
+Package Fancyhdr Warning: \headheight is too small (21.42049pt): 
+ Make it at least 30.0pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7 <./3VPowerSupply.png> <./ServoPowerSupply.png>]
-<Level_Converter.png, id=193, 502.12593pt x 272.51813pt>
-File: Level_Converter.png Graphic file (type png)
+[11 <./Images/3VPowerSupply.png> <./Images/ServoPowerSupply.png>]
+<Images/Level_Converter.png, id=405, 502.12593pt x 272.51813pt>
+File: Images/Level_Converter.png Graphic file (type png)
 
-<use Level_Converter.png>
-Package pdftex.def Info: Level_Converter.png used on input line 180.
+<use Images/Level_Converter.png>
+Package pdftex.def Info: Images/Level_Converter.png used on input line 180.
 (pdftex.def)             Requested size: 341.44878pt x 170.71428pt.
 
-Overfull \hbox (20.51294pt too wide) in paragraph at lines 179--188
+Overfull \hbox (130.1753pt too wide) in paragraph at lines 179--188
 [] 
  []
 
@@ -942,164 +999,196 @@ Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
-<3v3Sensors.png, id=194, 348.55219pt x 275.52937pt>
-File: 3v3Sensors.png Graphic file (type png)
- <use 3v3Sensors.png>
-Package pdftex.def Info: 3v3Sensors.png used on input line 192.
+<Images/3v3Sensors.png, id=406, 348.55219pt x 275.52937pt>
+File: Images/3v3Sensors.png Graphic file (type png)
+
+<use Images/3v3Sensors.png>
+Package pdftex.def Info: Images/3v3Sensors.png used on input line 192.
 (pdftex.def)             Requested size: 348.55132pt x 275.52869pt.
+ [12 <./Images/Level_Converter.png>]
+<Images/5Vsensor1.png, id=412, 325.215pt x 170.13562pt>
+File: Images/5Vsensor1.png Graphic file (type png)
 
-[8 <./Level_Converter.png>] <5Vsensor1.png, id=200, 325.215pt x 170.13562pt>
-File: 5Vsensor1.png Graphic file (type png)
-
-<use 5Vsensor1.png>
-Package pdftex.def Info: 5Vsensor1.png used on input line 198.
+<use Images/5Vsensor1.png>
+Package pdftex.def Info: Images/5Vsensor1.png used on input line 198.
 (pdftex.def)             Requested size: 325.2142pt x 170.1352pt.
- <5Vsensor2.png, id=201, 347.79938pt x 91.09032pt>
-File: 5Vsensor2.png Graphic file (type png)
 
-<use 5Vsensor2.png>
-Package pdftex.def Info: 5Vsensor2.png used on input line 199.
+<Images/5Vsensor2.png, id=413, 347.79938pt x 91.09032pt>
+File: Images/5Vsensor2.png Graphic file (type png)
+
+<use Images/5Vsensor2.png>
+Package pdftex.def Info: Images/5Vsensor2.png used on input line 199.
 (pdftex.def)             Requested size: 347.79852pt x 91.09007pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
-[9 <./3v3Sensors.png> <./5Vsensor1.png> <./5Vsensor2.png>]
-<portexpandePlug.png, id=210, 306.39468pt x 249.18094pt>
-File: portexpandePlug.png Graphic file (type png)
+[13 <./Images/3v3Sensors.png> <./Images/5Vsensor1.png> <./Images/5Vsensor2.png>
+] <Images/portexpandePlug.png, id=423, 306.39468pt x 249.18094pt>
+File: Images/portexpandePlug.png Graphic file (type png)
 
-<use portexpandePlug.png>
-Package pdftex.def Info: portexpandePlug.png used on input line 204.
+<use Images/portexpandePlug.png>
+Package pdftex.def Info: Images/portexpandePlug.png used on input line 204.
 (pdftex.def)             Requested size: 306.39394pt x 249.18031pt.
 
-<portExpanderuc.png, id=211, 338.01282pt x 276.28218pt>
-File: portExpanderuc.png Graphic file (type png)
+<Images/portExpanderuc.png, id=424, 338.01282pt x 276.28218pt>
+File: Images/portExpanderuc.png Graphic file (type png)
 
-<use portExpanderuc.png>
-Package pdftex.def Info: portExpanderuc.png used on input line 205.
+<use Images/portExpanderuc.png>
+Package pdftex.def Info: Images/portExpanderuc.png used on input line 205.
 (pdftex.def)             Requested size: 338.01198pt x 276.2815pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
 
-[10 <./portexpandePlug.png> <./portExpanderuc.png>]
-<externaladcuC.png, id=219, 374.90062pt x 161.85469pt>
-File: externaladcuC.png Graphic file (type png)
- <use externaladcuC.png>
-Package pdftex.def Info: externaladcuC.png used on input line 210.
+[14 <./Images/portexpandePlug.png> <./Images/portExpanderuc.png>]
+<Images/externaladcuC.png, id=432, 374.90062pt x 161.85469pt>
+File: Images/externaladcuC.png Graphic file (type png)
+
+<use Images/externaladcuC.png>
+Package pdftex.def Info: Images/externaladcuC.png used on input line 210.
 (pdftex.def)             Requested size: 374.8997pt x 161.85428pt.
 
-<externalADCplug.png, id=220, 386.19281pt x 151.3153pt>
-File: externalADCplug.png Graphic file (type png)
+<Images/externalADCplug.png, id=433, 386.19281pt x 151.3153pt>
+File: Images/externalADCplug.png Graphic file (type png)
 
-<use externalADCplug.png>
-Package pdftex.def Info: externalADCplug.png used on input line 211.
+<use Images/externalADCplug.png>
+Package pdftex.def Info: Images/externalADCplug.png used on input line 211.
 (pdftex.def)             Requested size: 386.19185pt x 151.31493pt.
- <lcdPlug.png, id=221, 295.1025pt x 231.86626pt>
-File: lcdPlug.png Graphic file (type png)
+ [15 <./Images/externaladcuC.png> <./Images/externalADCplug.png>] <Images/lcdPl
+ug.png, id=440, 295.1025pt x 231.86626pt>
+File: Images/lcdPlug.png Graphic file (type png)
 
-<use lcdPlug.png>
-Package pdftex.def Info: lcdPlug.png used on input line 229.
+<use Images/lcdPlug.png>
+Package pdftex.def Info: Images/lcdPlug.png used on input line 229.
 (pdftex.def)             Requested size: 295.10176pt x 231.86568pt.
- <lcduC.png, id=222, 249.93375pt x 213.79875pt> [11 <./externaladcuC.png> <./ex
-ternalADCplug.png>]
-File: lcduC.png Graphic file (type png)
- <use lcduC.png>
-Package pdftex.def Info: lcduC.png used on input line 230.
+ <Images/lcduC.png, id=441, 249.93375pt x 213.79875pt>
+File: Images/lcduC.png Graphic file (type png)
+
+<use Images/lcduC.png>
+Package pdftex.def Info: Images/lcduC.png used on input line 230.
 (pdftex.def)             Requested size: 249.93314pt x 213.79822pt.
+ <Images/lcdpin.png, id=442, 345.54094pt x 104.64093pt>
+File: Images/lcdpin.png Graphic file (type png)
 
-<lcdpin.png, id=229, 345.54094pt x 104.64093pt>
-File: lcdpin.png Graphic file (type png)
- <use lcdpin.png>
-Package pdftex.def Info: lcdpin.png used on input line 231.
+<use Images/lcdpin.png>
+Package pdftex.def Info: Images/lcdpin.png used on input line 231.
 (pdftex.def)             Requested size: 345.54008pt x 104.64066pt.
+ [16 <./Images/lcdPlug.png> <./Images/lcduC.png> <./Images/lcdpin.png>] <Images
+/ft232.png, id=450, 387.69844pt x 288.3272pt>
+File: Images/ft232.png Graphic file (type png)
 
-<ft232.png, id=230, 387.69844pt x 288.3272pt>
-File: ft232.png Graphic file (type png)
- <use ft232.png>
-Package pdftex.def Info: ft232.png used on input line 242.
+<use Images/ft232.png>
+Package pdftex.def Info: Images/ft232.png used on input line 242.
 (pdftex.def)             Requested size: 387.69748pt x 288.32648pt.
- [12 <./lcdPlug.png> <./lcduC.png> <./lcdpin.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
-<Reset_Switch.png, id=238, 553.31718pt x 270.25969pt>
-File: Reset_Switch.png Graphic file (type png)
- <use Reset_Switch.png>
-Package pdftex.def Info: Reset_Switch.png used on input line 248.
-(pdftex.def)             Requested size: 369.88474pt x 170.71811pt.
+<Images/Reset_Switch.png, id=451, 553.31718pt x 270.25969pt>
+File: Images/Reset_Switch.png Graphic file (type png)
 
+<use Images/Reset_Switch.png>
+Package pdftex.def Info: Images/Reset_Switch.png used on input line 248.
+(pdftex.def)             Requested size: 369.88474pt x 170.71811pt.
+ [17 <./Images/ft232.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 251--254
 
  []
 
-<servoPlug.png, id=239, 396.7322pt x 225.09094pt>
-File: servoPlug.png Graphic file (type png)
- <use servoPlug.png>
-Package pdftex.def Info: servoPlug.png used on input line 255.
-(pdftex.def)             Requested size: 396.73122pt x 225.09038pt.
+<Images/servoPlug.png, id=457, 396.7322pt x 225.09094pt>
+File: Images/servoPlug.png Graphic file (type png)
 
-<servouc.png, id=240, 313.17pt x 228.855pt> [13 <./ft232.png> <./Reset_Switch.p
-ng>]
-File: servouc.png Graphic file (type png)
- <use servouc.png>
-Package pdftex.def Info: servouc.png used on input line 256.
+<use Images/servoPlug.png>
+Package pdftex.def Info: Images/servoPlug.png used on input line 255.
+(pdftex.def)             Requested size: 396.73122pt x 225.09038pt.
+ <Images/servouc.png, id=458, 313.17pt x 228.855pt>
+File: Images/servouc.png Graphic file (type png)
+
+<use Images/servouc.png>
+Package pdftex.def Info: Images/servouc.png used on input line 256.
 (pdftex.def)             Requested size: 313.16922pt x 228.85443pt.
- [14 <./servoPlug.png> <./servouc.png>]
-<uc.png, id=255, 238.64156pt x 741.52031pt>
-File: uc.png Graphic file (type png)
- <use uc.png>
-Package pdftex.def Info: uc.png used on input line 277.
+ [18 <./Images/Reset_Switch.png> <./Images/servoPlug.png>] <Images/uc.png, id=4
+65, 238.64156pt x 741.52031pt>
+File: Images/uc.png Graphic file (type png)
+ <use Images/uc.png>
+Package pdftex.def Info: Images/uc.png used on input line 277.
 (pdftex.def)             Requested size: 238.64096pt x 741.5185pt.
- [15]
+
+[19 <./Images/servouc.png>]
 Overfull \vbox (10.28265pt too high) has occurred while \output is active []
 
 
-[16 <./uc.png>]
+[20 <./Images/uc.png>]
 Underfull \vbox (badness 10000) detected at line 301
  []
 
-[17]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 350--350
-[]|\OT1/cmr/m/n/12 Pin
+[]|\OT1/cmr/m/n/14.4 Pin
+ []
+
+
+Overfull \hbox (2.66258pt too wide) in paragraph at lines 350--350
+\OT1/cmr/m/n/14.4 Out| 
+ []
+
+
+Underfull \hbox (badness 6063) in paragraph at lines 350--350
+[]|\OT1/cmr/m/n/14.4 PIN on
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 350--350
-[]|\OT1/cmr/m/n/12 PIN on
+[]|\OT1/cmr/m/n/14.4 Pin on
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 350--350
-[]|\OT1/cmr/m/n/12 Pin on
+\OT1/cmr/m/n/14.4 Plug-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 350--350
-\OT1/cmr/m/n/12 Plug-gable
+\OT1/cmr/m/n/14.4 gable
+ []
+
+
+Underfull \hbox (badness 1231) in paragraph at lines 351--351
+[]|\OT1/cmr/m/n/14.4 Not Us-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 352--352
-[]|\OT1/cmr/m/n/12 External
+[]|\OT1/cmr/m/n/14.4 External
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--354
-[]|\OT1/cmr/m/n/12 USB con-nec-tion go-ing to the AT-
+Underfull \hbox (badness 10000) in paragraph at lines 352--352
+\OT1/cmr/m/n/14.4 Adc
  []
 
 
-Overfull \hbox (3.04977pt too wide) in paragraph at lines 369--369
-[]|\OT1/cmr/m/n/12 PE0(lm324
+Underfull \hbox (badness 10000) in paragraph at lines 369--369
+[]|\OT1/cmr/m/n/14.4 SHARP IR Range
  []
 
 
-Overfull \hbox (3.04977pt too wide) in paragraph at lines 373--373
-[]|\OT1/cmr/m/n/12 PE2(lm324
+Overfull \hbox (14.4723pt too wide) in paragraph at lines 369--369
+[]|\OT1/cmr/m/n/14.4 PE0(lm324
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 373--373
+[]|\OT1/cmr/m/n/14.4 SHARP IR Range
+ []
+
+
+Overfull \hbox (14.4723pt too wide) in paragraph at lines 373--373
+[]|\OT1/cmr/m/n/14.4 PE2(lm324
  []
 
 
@@ -1112,48 +1201,73 @@ Underfull \vbox (badness 10000) detected at line 377
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--395
-[]|\OT1/cmr/m/n/12 up any
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
+[]|\OT1/cmr/m/n/14.4 "Sharp IR Sen-sors
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 395--395
-\OT1/cmr/m/n/12 dig-i-tal
+[]|\OT1/cmr/m/n/14.4 up any
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 395--395
-\OT1/cmr/m/n/12 de-vice.
+\OT1/cmr/m/n/14.4 dig-i-tal
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 395--395
-\OT1/cmr/m/n/12 Cur-rent
+\OT1/cmr/m/n/14.4 de-vice.
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 395--395
-\OT1/cmr/m/n/12 Limit:
+\OT1/cmr/m/n/14.4 Cur-rent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+\OT1/cmr/m/n/14.4 Limit:
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 396--396
-[]|\OT1/cmr/m/n/12 External
+[]|\OT1/cmr/m/n/14.4 External
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--396
+\OT1/cmr/m/n/14.4 Adc
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 397--397
-[]|\OT1/cmr/m/n/12 External
+[]|\OT1/cmr/m/n/14.4 External
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
+\OT1/cmr/m/n/14.4 Adc
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 398--398
-[]|\OT1/cmr/m/n/12 External
+[]|\OT1/cmr/m/n/14.4 External
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--398
+\OT1/cmr/m/n/14.4 Adc
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 399--399
-[]|\OT1/cmr/m/n/12 External
+[]|\OT1/cmr/m/n/14.4 External
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--399
+\OT1/cmr/m/n/14.4 Adc
  []
 
 
@@ -1161,19 +1275,49 @@ Overfull \hbox (2.93333pt too wide) in alignment at lines 377--399
  [] [] [] [] [] 
  []
 
-[18]
+[22]
+Underfull \hbox (badness 3471) in paragraph at lines 400--400
+[]|\OT1/cmr/m/n/14.4 White Line Sen-sors
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 401--401
-[]|\OT1/cmr/m/n/12 PD3 (lm
+[]|\OT1/cmr/m/n/14.4 Sharp IR Range
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
+[]|\OT1/cmr/m/n/14.4 Sharp IR Range
+ []
+
+
+Underfull \hbox (badness 1728) in paragraph at lines 404--404
+[]|\OT1/cmr/m/n/14.4 in 5 ex
+ []
+
+
+Underfull \hbox (badness 2707) in paragraph at lines 404--404
+\OT1/cmr/m/n/14.4 (lm 324
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 405--405
-[]|\OT1/cmr/m/n/12 PB4
+[]|\OT1/cmr/m/n/14.4 Sharp IR Range
  []
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 414--414
-[]|\OT1/cmr/m/n/12 right mo-tor PWM(timer pin in PWM
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+[]|\OT1/cmr/m/n/14.4 PB4
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+\OT1/cmr/m/n/14.4 (lm358
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 414--414
+[]|\OT1/cmr/m/n/14.4 right mo-tor PWM(timer pin in
  []
 
 
@@ -1181,74 +1325,119 @@ Overfull \hbox (2.93333pt too wide) in alignment at lines 399--419
  [] [] [] [] [] 
  []
 
-
+[23] [24]
 Overfull \hbox (2.93333pt too wide) in alignment at lines 419--436
  [] [] [] [] [] 
  []
 
-[19]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 439--439
-[]|\OT1/cmr/m/n/12 Pin
+[]|\OT1/cmr/m/n/14.4 Pin
  []
 
 
-Overfull \hbox (8.07646pt too wide) in paragraph at lines 439--439
-\OT1/cmr/m/n/12 Name| 
+Overfull \hbox (14.01581pt too wide) in paragraph at lines 439--439
+\OT1/cmr/m/n/14.4 Name| 
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 449--449
-[]|\OT1/cmr/m/n/12 PB0| 
+Underfull \hbox (badness 7468) in paragraph at lines 439--439
+[]|\OT1/cmr/m/n/14.4 Pin Con-nec-tion on
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 450--450
-[]|\OT1/cmr/m/n/12 PB1| 
+Overfull \hbox (4.4176pt too wide) in paragraph at lines 440--440
+[]|\OT1/cmr/m/n/14.4 PA0| 
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 451--451
-[]|\OT1/cmr/m/n/12 PB2| 
+Overfull \hbox (4.4176pt too wide) in paragraph at lines 441--441
+[]|\OT1/cmr/m/n/14.4 PA1| 
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 452--452
-[]|\OT1/cmr/m/n/12 PB3| 
+Overfull \hbox (4.4176pt too wide) in paragraph at lines 442--442
+[]|\OT1/cmr/m/n/14.4 PA2| 
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 453--453
-[]|\OT1/cmr/m/n/12 PB4| 
+Overfull \hbox (4.4176pt too wide) in paragraph at lines 443--443
+[]|\OT1/cmr/m/n/14.4 PA3| 
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 454--454
-[]|\OT1/cmr/m/n/12 PB5| 
+Overfull \hbox (4.4176pt too wide) in paragraph at lines 444--444
+[]|\OT1/cmr/m/n/14.4 PA4| 
  []
 
 
-Overfull \hbox (0.56961pt too wide) in paragraph at lines 455--455
-[]|\OT1/cmr/m/n/12 PB6| 
+Overfull \hbox (4.4176pt too wide) in paragraph at lines 445--445
+[]|\OT1/cmr/m/n/14.4 PA5| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 456--456
-[]|\OT1/cmr/m/n/12 PC0| 
+Overfull \hbox (4.4176pt too wide) in paragraph at lines 446--446
+[]|\OT1/cmr/m/n/14.4 PA6| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 457--457
-[]|\OT1/cmr/m/n/12 PC1| 
+Overfull \hbox (4.4176pt too wide) in paragraph at lines 447--447
+[]|\OT1/cmr/m/n/14.4 PA7| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 458--458
-[]|\OT1/cmr/m/n/12 PC2| 
+Overfull \hbox (5.00758pt too wide) in paragraph at lines 449--449
+[]|\OT1/cmr/m/n/14.4 PB0| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 459--459
-[]|\OT1/cmr/m/n/12 PC3| 
+Overfull \hbox (5.00758pt too wide) in paragraph at lines 450--450
+[]|\OT1/cmr/m/n/14.4 PB1| 
+ []
+
+
+Overfull \hbox (5.00758pt too wide) in paragraph at lines 451--451
+[]|\OT1/cmr/m/n/14.4 PB2| 
+ []
+
+
+Overfull \hbox (5.00758pt too wide) in paragraph at lines 452--452
+[]|\OT1/cmr/m/n/14.4 PB3| 
+ []
+
+
+Overfull \hbox (5.00758pt too wide) in paragraph at lines 453--453
+[]|\OT1/cmr/m/n/14.4 PB4| 
+ []
+
+
+Overfull \hbox (5.00758pt too wide) in paragraph at lines 454--454
+[]|\OT1/cmr/m/n/14.4 PB5| 
+ []
+
+
+Overfull \hbox (5.00758pt too wide) in paragraph at lines 455--455
+[]|\OT1/cmr/m/n/14.4 PB6| 
+ []
+
+
+Overfull \hbox (5.2059pt too wide) in paragraph at lines 456--456
+[]|\OT1/cmr/m/n/14.4 PC0| 
+ []
+
+
+Overfull \hbox (5.2059pt too wide) in paragraph at lines 457--457
+[]|\OT1/cmr/m/n/14.4 PC1| 
+ []
+
+
+Overfull \hbox (5.2059pt too wide) in paragraph at lines 458--458
+[]|\OT1/cmr/m/n/14.4 PC2| 
+ []
+
+
+Overfull \hbox (5.2059pt too wide) in paragraph at lines 459--459
+[]|\OT1/cmr/m/n/14.4 PC3| 
  []
 
 
@@ -1256,171 +1445,240 @@ Underfull \vbox (badness 10000) detected at line 459
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 460--460
-[]|\OT1/cmr/m/n/12 PC4| 
+Overfull \hbox (5.2059pt too wide) in paragraph at lines 460--460
+[]|\OT1/cmr/m/n/14.4 PC4| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 461--461
-[]|\OT1/cmr/m/n/12 PC5| 
+Overfull \hbox (5.2059pt too wide) in paragraph at lines 461--461
+[]|\OT1/cmr/m/n/14.4 PC5| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 462--462
-[]|\OT1/cmr/m/n/12 PC6| 
+Overfull \hbox (5.2059pt too wide) in paragraph at lines 462--462
+[]|\OT1/cmr/m/n/14.4 PC6| 
  []
 
 
-Overfull \hbox (0.73488pt too wide) in paragraph at lines 463--463
-[]|\OT1/cmr/m/n/12 PC7| 
+Overfull \hbox (5.2059pt too wide) in paragraph at lines 463--463
+[]|\OT1/cmr/m/n/14.4 PC7| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 465--465
-[]|\OT1/cmr/m/n/12 PD0| 
+Overfull \hbox (5.79091pt too wide) in paragraph at lines 465--465
+[]|\OT1/cmr/m/n/14.4 PD0| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 466--466
-[]|\OT1/cmr/m/n/12 PD1| 
+Overfull \hbox (5.79091pt too wide) in paragraph at lines 466--466
+[]|\OT1/cmr/m/n/14.4 PD1| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 467--467
-[]|\OT1/cmr/m/n/12 PD2| 
+Overfull \hbox (5.79091pt too wide) in paragraph at lines 467--467
+[]|\OT1/cmr/m/n/14.4 PD2| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 468--468
-[]|\OT1/cmr/m/n/12 PD3| 
+Overfull \hbox (5.79091pt too wide) in paragraph at lines 468--468
+[]|\OT1/cmr/m/n/14.4 PD3| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 469--469
-[]|\OT1/cmr/m/n/12 PD4| 
+Overfull \hbox (5.79091pt too wide) in paragraph at lines 469--469
+[]|\OT1/cmr/m/n/14.4 PD4| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 470--470
-[]|\OT1/cmr/m/n/12 PD5| 
+Overfull \hbox (5.79091pt too wide) in paragraph at lines 470--470
+[]|\OT1/cmr/m/n/14.4 PD5| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 471--471
-[]|\OT1/cmr/m/n/12 PD6| 
+Overfull \hbox (5.79091pt too wide) in paragraph at lines 471--471
+[]|\OT1/cmr/m/n/14.4 PD6| 
  []
 
 
-Overfull \hbox (1.22238pt too wide) in paragraph at lines 472--472
-[]|\OT1/cmr/m/n/12 PD7| 
+Overfull \hbox (5.79091pt too wide) in paragraph at lines 472--472
+[]|\OT1/cmr/m/n/14.4 PD7| 
  []
 
-[20] [21]
+
+Overfull \hbox (4.61592pt too wide) in paragraph at lines 474--474
+[]|\OT1/cmr/m/n/14.4 PE0| 
+ []
+
+
+Overfull \hbox (4.61592pt too wide) in paragraph at lines 475--475
+[]|\OT1/cmr/m/n/14.4 PE1| 
+ []
+
+
+Overfull \hbox (4.61592pt too wide) in paragraph at lines 476--476
+[]|\OT1/cmr/m/n/14.4 PE2| 
+ []
+
+
+Overfull \hbox (4.61592pt too wide) in paragraph at lines 477--477
+[]|\OT1/cmr/m/n/14.4 PE3| 
+ []
+
+
+Overfull \hbox (4.61592pt too wide) in paragraph at lines 478--478
+[]|\OT1/cmr/m/n/14.4 PE4| 
+ []
+
+
+Overfull \hbox (4.61592pt too wide) in paragraph at lines 479--479
+[]|\OT1/cmr/m/n/14.4 PE5| 
+ []
+
+
+Overfull \hbox (4.61592pt too wide) in paragraph at lines 480--480
+[]|\OT1/cmr/m/n/14.4 PE6| 
+ []
+
+
+Overfull \hbox (4.61592pt too wide) in paragraph at lines 481--481
+[]|\OT1/cmr/m/n/14.4 PE7| 
+ []
+
+[26]
+Overfull \hbox (4.22426pt too wide) in paragraph at lines 483--483
+[]|\OT1/cmr/m/n/14.4 PF0| 
+ []
+
+
+Overfull \hbox (4.22426pt too wide) in paragraph at lines 484--484
+[]|\OT1/cmr/m/n/14.4 PF1| 
+ []
+
+
+Overfull \hbox (4.22426pt too wide) in paragraph at lines 485--485
+[]|\OT1/cmr/m/n/14.4 PF2| 
+ []
+
+
+Overfull \hbox (4.22426pt too wide) in paragraph at lines 486--486
+[]|\OT1/cmr/m/n/14.4 PF3| 
+ []
+
+
+Overfull \hbox (4.22426pt too wide) in paragraph at lines 487--487
+[]|\OT1/cmr/m/n/14.4 PF4| 
+ []
+
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 500--502
 
  []
 
-<CCSInstall1.png, id=291, 372.64218pt x 321.45094pt>
-File: CCSInstall1.png Graphic file (type png)
- <use CCSInstall1.png>
-Package pdftex.def Info: CCSInstall1.png used on input line 504.
+<Images/CCSInstall1.png, id=512, 372.64218pt x 321.45094pt>
+File: Images/CCSInstall1.png Graphic file (type png)
+
+<use Images/CCSInstall1.png>
+Package pdftex.def Info: Images/CCSInstall1.png used on input line 504.
 (pdftex.def)             Requested size: 170.7124pt x 170.72133pt.
 
-<CCSInstall2.png, id=292, 370.38374pt x 319.1925pt>
-File: CCSInstall2.png Graphic file (type png)
- <use CCSInstall2.png>
-Package pdftex.def Info: CCSInstall2.png used on input line 507.
+<Images/CCSInstall2.png, id=513, 370.38374pt x 319.1925pt>
+File: Images/CCSInstall2.png Graphic file (type png)
+
+<use Images/CCSInstall2.png>
+Package pdftex.def Info: Images/CCSInstall2.png used on input line 507.
 (pdftex.def)             Requested size: 170.71768pt x 170.71515pt.
+ [28 <./Images/CCSInstall1.png>]
+<Images/CCSInstall3.png, id=520, 372.64218pt x 319.1925pt>
+File: Images/CCSInstall3.png Graphic file (type png)
 
-[22 <./CCSInstall1.png>] <CCSInstall3.png, id=301, 372.64218pt x 319.1925pt>
-File: CCSInstall3.png Graphic file (type png)
-
-<use CCSInstall3.png>
-Package pdftex.def Info: CCSInstall3.png used on input line 510.
+<use Images/CCSInstall3.png>
+Package pdftex.def Info: Images/CCSInstall3.png used on input line 510.
 (pdftex.def)             Requested size: 170.7124pt x 170.71515pt.
- <CCSInstall4.png, id=302, 367.3725pt x 319.1925pt>
-File: CCSInstall4.png Graphic file (type png)
 
-<use CCSInstall4.png>
-Package pdftex.def Info: CCSInstall4.png used on input line 513.
+<Images/CCSInstall4.png, id=521, 367.3725pt x 319.1925pt>
+File: Images/CCSInstall4.png Graphic file (type png)
+
+<use Images/CCSInstall4.png>
+Package pdftex.def Info: Images/CCSInstall4.png used on input line 513.
 (pdftex.def)             Requested size: 170.71992pt x 170.71515pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 514--517
 
  []
 
-
+[29 <./Images/CCSInstall2.png> <./Images/CCSInstall3.png> <./Images/CCSInstall4
+.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 521--528
 
  []
 
-[23 <./CCSInstall2.png> <./CCSInstall3.png> <./CCSInstall4.png>]
-<CreatingNewProject1.png, id=316, 446.41782pt x 146.79843pt>
-File: CreatingNewProject1.png Graphic file (type png)
+<Images/CreatingNewProject1.png, id=535, 446.41782pt x 146.79843pt>
+File: Images/CreatingNewProject1.png Graphic file (type png)
 
-<use CreatingNewProject1.png>
-Package pdftex.def Info: CreatingNewProject1.png used on input line 532.
+<use Images/CreatingNewProject1.png>
+Package pdftex.def Info: Images/CreatingNewProject1.png used on input line 532.
+
 (pdftex.def)             Requested size: 170.71678pt x 56.90396pt.
 
-<CreatingNewProject2.png, id=317, 447.17062pt x 548.0475pt>
-File: CreatingNewProject2.png Graphic file (type png)
+<Images/CreatingNewProject2.png, id=536, 447.17062pt x 548.0475pt>
+File: Images/CreatingNewProject2.png Graphic file (type png)
 
-<use CreatingNewProject2.png>
-Package pdftex.def Info: CreatingNewProject2.png used on input line 534.
+<use Images/CreatingNewProject2.png>
+Package pdftex.def Info: Images/CreatingNewProject2.png used on input line 534.
+
 (pdftex.def)             Requested size: 184.9446pt x 227.6278pt.
- [24 <./CreatingNewProject1.png> <./CreatingNewProject2.png>] <AddVariables.png
-, id=326, 149.05687pt x 195.73125pt>
-File: AddVariables.png Graphic file (type png)
+ [30 <./Images/CreatingNewProject1.png>]
+<Images/AddVariables.png, id=546, 149.05687pt x 195.73125pt>
+File: Images/AddVariables.png Graphic file (type png)
 
-<use AddVariables.png>
-Package pdftex.def Info: AddVariables.png used on input line 551.
+<use Images/AddVariables.png>
+Package pdftex.def Info: Images/AddVariables.png used on input line 551.
 (pdftex.def)             Requested size: 85.35904pt x 113.81091pt.
- <AddVariables2.png, id=327, 185.94469pt x 332.74312pt>
-File: AddVariables2.png Graphic file (type png)
 
-<use AddVariables2.png>
-Package pdftex.def Info: AddVariables2.png used on input line 554.
+<Images/AddVariables2.png, id=547, 185.94469pt x 332.74312pt>
+File: Images/AddVariables2.png Graphic file (type png)
+
+<use Images/AddVariables2.png>
+Package pdftex.def Info: Images/AddVariables2.png used on input line 554.
 (pdftex.def)             Requested size: 127.20108pt x 227.62204pt.
- <AddVariables3.png, id=328, 450.18187pt x 271.76532pt>
-File: AddVariables3.png Graphic file (type png)
+ [31 <./Images/CreatingNewProject2.png> <./Images/AddVariables.png>]
+<Images/AddVariables3.png, id=556, 450.18187pt x 271.76532pt>
+File: Images/AddVariables3.png Graphic file (type png)
 
-<use AddVariables3.png>
-Package pdftex.def Info: AddVariables3.png used on input line 560.
+<use Images/AddVariables3.png>
+Package pdftex.def Info: Images/AddVariables3.png used on input line 560.
 (pdftex.def)             Requested size: 450.18077pt x 271.76465pt.
- [25 <./AddVariables.png> <./AddVariables2.png>]
-<AddVariables4.png, id=337, 271.76532pt x 265.74281pt>
-File: AddVariables4.png Graphic file (type png)
- <use AddVariables4.png>
-Package pdftex.def Info: AddVariables4.png used on input line 567.
+
+<Images/AddVariables4.png, id=557, 271.76532pt x 265.74281pt>
+File: Images/AddVariables4.png Graphic file (type png)
+
+<use Images/AddVariables4.png>
+Package pdftex.def Info: Images/AddVariables4.png used on input line 567.
 (pdftex.def)             Requested size: 271.76465pt x 265.74216pt.
 
-<AddVariables5.png, id=338, 414.04688pt x 219.82124pt>
-File: AddVariables5.png Graphic file (type png)
- <use AddVariables5.png>
-Package pdftex.def Info: AddVariables5.png used on input line 568.
+<Images/AddVariables5.png, id=558, 414.04688pt x 219.82124pt>
+File: Images/AddVariables5.png Graphic file (type png)
+
+<use Images/AddVariables5.png>
+Package pdftex.def Info: Images/AddVariables5.png used on input line 568.
 (pdftex.def)             Requested size: 256.08093pt x 227.62926pt.
+ [32 <./Images/AddVariables2.png> <./Images/AddVariables3.png>] <Images/AddVari
+ables6.png, id=565, 732.48656pt x 509.65407pt>
+File: Images/AddVariables6.png Graphic file (type png)
 
-[26 <./AddVariables3.png> <./AddVariables4.png>]
-<AddVariables6.png, id=345, 732.48656pt x 509.65407pt>
-File: AddVariables6.png Graphic file (type png)
- <use AddVariables6.png>
-Package pdftex.def Info: AddVariables6.png used on input line 570.
+<use Images/AddVariables6.png>
+Package pdftex.def Info: Images/AddVariables6.png used on input line 570.
 (pdftex.def)             Requested size: 284.52856pt x 227.62355pt.
+ [33 <./Images/AddVariables4.png> <./Images/AddVariables5.png>] <Images/AddVari
+ables7.png, id=572, 178.41656pt x 252.945pt>
+File: Images/AddVariables7.png Graphic file (type png)
 
-<AddVariables7.png, id=346, 178.41656pt x 252.945pt>
-File: AddVariables7.png Graphic file (type png)
- <use AddVariables7.png>
-Package pdftex.def Info: AddVariables7.png used on input line 577.
+<use Images/AddVariables7.png>
+Package pdftex.def Info: Images/AddVariables7.png used on input line 577.
 (pdftex.def)             Requested size: 199.17995pt x 227.62523pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 576--578
 
- []
-
-[27 <./AddVariables5.png> <./AddVariables6.png>]
-Overfull \hbox (24.44662pt too wide) in paragraph at lines 578--582
-[]\OT1/cmr/m/n/12 Click the Add but-ton. When the De-fine a New Build Vari-able
- di-a-log ap-pears, in-sert TIVAWARE[]INSTALL
  []
 
 
@@ -1428,61 +1686,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 578--582
 
  []
 
-<AddVariables8.png, id=354, 376.40625pt x 247.67531pt>
-File: AddVariables8.png Graphic file (type png)
- <use AddVariables8.png>
-Package pdftex.def Info: AddVariables8.png used on input line 585.
-(pdftex.def)             Requested size: 284.54968pt x 227.62218pt.
+<Images/AddVariables8.png, id=573, 376.40625pt x 247.67531pt>
+File: Images/AddVariables8.png Graphic file (type png)
 
-<AddVariables9.png, id=355, 667.74469pt x 203.25937pt>
-File: AddVariables9.png Graphic file (type png)
- <use AddVariables9.png>
-Package pdftex.def Info: AddVariables9.png used on input line 589.
+<use Images/AddVariables8.png>
+Package pdftex.def Info: Images/AddVariables8.png used on input line 585.
+(pdftex.def)             Requested size: 284.54968pt x 227.62218pt.
+ [34 <./Images/AddVariables6.png> <./Images/AddVariables7.png>] <Images/AddVari
+ables9.png, id=581, 667.74469pt x 203.25937pt>
+File: Images/AddVariables9.png Graphic file (type png)
+
+<use Images/AddVariables9.png>
+Package pdftex.def Info: Images/AddVariables9.png used on input line 589.
 (pdftex.def)             Requested size: 569.09363pt x 284.53946pt.
 
-Overfull \hbox (53.49127pt too wide) in paragraph at lines 587--590
+Overfull \hbox (57.86594pt too wide) in paragraph at lines 587--590
 [] 
  []
 
-[28 <./AddVariables7.png> <./AddVariables8.png>]
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
+
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang1.
+sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-(C:\Users\nagu\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc.s
+ty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-)
+) [35 <./Images/AddVariables8.png> <./Images/AddVariables9.png>]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 600.
 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+("C:\Users\Ayush\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 600.
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 609.
- [29 <./AddVariables9.png>] [30] [31]
+
+[36]
+Overfull \hbox (2.90482pt too wide) in paragraph at lines 687--703
+\OT1/cmr/m/n/14.4 2. Use switch SW2 and sw2Status (a vari-able). Your pro-gram 
+should in-cre-ment sw2Status
+ []
+
+[37] [38]
 Underfull \hbox (badness 10000) in paragraph at lines 790--791
 
  []
 
-<MotorConnection.png, id=539, 381.67593pt x 120.45pt>
-File: MotorConnection.png Graphic file (type png)
 
-<use MotorConnection.png>
-Package pdftex.def Info: MotorConnection.png used on input line 795.
-(pdftex.def)             Requested size: 170.71593pt x 56.90556pt.
- [32 <./MotorConnection.png>] [33]
+! LaTeX Error: File `MotorConnection' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.795 ...s[width=6cm, height=2cm]{MotorConnection}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[39] [40] [41] [42]
 Underfull \hbox (badness 10000) in paragraph at lines 989--990
 
  []
 
-[34]
+
 Underfull \hbox (badness 10000) in paragraph at lines 991--992
 
  []
 
-[35] [36] [37] [38] [39]
+[43] [44] [45] [46] [47] [48] [49]
 Underfull \hbox (badness 10000) in paragraph at lines 1386--1387
 
  []
@@ -1492,98 +1769,152 @@ Underfull \hbox (badness 10000) in paragraph at lines 1396--1397
 
  []
 
-[40] [41] <PWM.png, id=1259, 358.33875pt x 304.13625pt>
-File: PWM.png Graphic file (type png)
- <use PWM.png>
-Package pdftex.def Info: PWM.png used on input line 1513.
-(pdftex.def)             Requested size: 113.80682pt x 113.80948pt.
+[50] [51]
+
+! LaTeX Error: File `PWM' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1513 ...ludegraphics[width=4cm, height=4cm]{PWM}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 1515--1517
 
  []
 
-[42 <./PWM.png>] [43] [44] [45] [46] [47] [48] [49] [50]
-<ADC.png, id=1925, 517.18219pt x 234.1247pt>
-File: ADC.png Graphic file (type png)
- <use ADC.png>
-Package pdftex.def Info: ADC.png used on input line 2152.
-(pdftex.def)             Requested size: 426.80684pt x 227.63297pt.
- [51 <./ADC.png>]
-[52] [53] [54]
+[52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63]
+
+! LaTeX Error: File `ADC' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2152 ...udegraphics[width=15cm, height=8cm]{ADC}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[64] [65] [66] [67] [68]
 Underfull \hbox (badness 10000) in paragraph at lines 2449--2450
 
  []
 
-<Serial.png, id=2198, 205.5178pt x 55.70813pt>
-File: Serial.png Graphic file (type png)
- <use Serial.png>
-Package pdftex.def Info: Serial.png used on input line 2453.
-(pdftex.def)             Requested size: 227.62257pt x 56.90567pt.
- [55 <./Serial.png>] [56] <I2C0.png, id=2338, 602.25pt x 295.1025pt>
-File: I2C0.png Graphic file (type png)
- <use I2C0.png>
-Package pdftex.def Info: I2C0.png used on input line 2596.
-(pdftex.def)             Requested size: 227.62596pt x 113.81068pt.
- [57]
-<I2C1.png, id=2400, 963.6pt x 243.15843pt>
-File: I2C1.png Graphic file (type png)
- <use I2C1.png>
-Package pdftex.def Info: I2C1.png used on input line 2607.
-(pdftex.def)             Requested size: 455.2446pt x 113.80956pt.
 
-<I2C2.png, id=2401, 1589.1872pt x 371.13657pt>
-File: I2C2.png Graphic file (type png)
- <use I2C2.png>
-Package pdftex.def Info: I2C2.png used on input line 2613.
-(pdftex.def)             Requested size: 455.25096pt x 113.81093pt.
+! LaTeX Error: File `Serial' not found.
 
-<I2C3.png, id=2403, 204.01219pt x 54.9553pt>
-File: I2C3.png Graphic file (type png)
- <use I2C3.png>
-Package pdftex.def Info: I2C3.png used on input line 2618.
-(pdftex.def)             Requested size: 227.6329pt x 56.90729pt.
- [58 <./I2C0.png> <./I2C1.png> <./I2C2.png>] [59 <./I2C3.png>] [60] [61] [62] [
-63] [64]
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2453 ...egraphics[width=8cm, height=2cm]{Serial}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[69] [70] [71]
+
+! LaTeX Error: File `I2C0' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2596 ...udegraphics[width=8cm, height=4cm]{I2C0}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `I2C1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2607 ...degraphics[width=16cm, height=4cm]{I2C1}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[72]
+
+! LaTeX Error: File `I2C2' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2613 ...degraphics[width=16cm, height=4cm]{I2C2}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `I2C3' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2618 ...udegraphics[width=8cm, height=2cm]{I2C3}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[73] [74] [75] [76] [77] [78] [79] [80] [81]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3130.
- [65]
+ [82]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 3130.
-
-(Manual.aux)
+ (Manual.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3130.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3130.
 
-
-
-Package rerunfilecheck Warning: File `Manual.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Manual.out':
-(rerunfilecheck)             Before: 011C5473BA5594F557D4AB5613F9BFC7;2445
-(rerunfilecheck)             After:  516CFF2ECA6FA84C39801AB7383CCB73;5059.
+Package rerunfilecheck Info: File `Manual.out' has not changed.
+(rerunfilecheck)             Checksum: 96FDDC851B458DDB2C6EE3D1AE761343;5060.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3130.
  ) 
 Here is how much of TeX's memory you used:
- 12973 strings out of 493333
- 186826 string characters out of 3139197
- 555044 words of memory out of 3000000
- 13809 multiletter control sequences out of 15000+200000
- 11484 words of font info for 40 fonts, out of 3000000 for 9000
+ 12987 strings out of 493333
+ 190191 string characters out of 3130143
+ 490298 words of memory out of 3000000
+ 13801 multiletter control sequences out of 15000+200000
+ 9018 words of font info for 32 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,58p,1010b,1961s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Manual.pdf (65 pages, 1607608 bytes).
+ 41i,13n,58p,1010b,2015s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb><C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmbxsl10.pfb><C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Ayush/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Ayush/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Ay
+ush/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+<C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr6.pfb><C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmsl12.pfb><C:/Users/Ayush/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Manual.pdf (82 pages, 1402193 bytes).
 PDF statistics:
- 3501 PDF objects out of 3580 (max. 8388607)
- 2536 named destinations out of 2984 (max. 500000)
- 486 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3717 PDF objects out of 4296 (max. 8388607)
+ 2553 named destinations out of 2984 (max. 500000)
+ 702 words of extra memory for PDF output out of 10000 (max. 10000000)
 
