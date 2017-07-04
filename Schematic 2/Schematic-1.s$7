@@ -11375,6 +11375,14 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="185.42" y1="66.04" x2="195.58" y2="66.04" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="IC3" gate="G$1" pin="VSS"/>
+<pinref part="IC3" gate="G$1" pin="A2"/>
+<pinref part="IC3" gate="G$1" pin="A0"/>
+<wire x1="228.6" y1="12.7" x2="228.6" y2="17.78" width="0.1524" layer="91"/>
+<label x="223.52" y="12.7" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="228.6" y1="7.62" x2="228.6" y2="12.7" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="PF1" class="0">
 <segment>
@@ -11614,16 +11622,6 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <wire x1="149.86" y1="-15.24" x2="149.86" y2="-12.7" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="-12.7" x2="152.4" y2="-12.7" width="0.1524" layer="91"/>
 <pinref part="JP2" gate="A" pin="2"/>
-</segment>
-</net>
-<net name="GND1" class="0">
-<segment>
-<pinref part="IC3" gate="G$1" pin="VSS"/>
-<pinref part="IC3" gate="G$1" pin="A2"/>
-<pinref part="IC3" gate="G$1" pin="A0"/>
-<wire x1="228.6" y1="12.7" x2="228.6" y2="17.78" width="0.1524" layer="91"/>
-<label x="228.6" y="15.24" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="228.6" y1="7.62" x2="228.6" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RST" class="0">

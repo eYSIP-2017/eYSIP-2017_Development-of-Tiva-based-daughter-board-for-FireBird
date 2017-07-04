@@ -94,7 +94,7 @@ void configCLK(){
 void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
     ADCHardwareOversampleConfigure(ADC0_BASE, 64);
  }
@@ -115,12 +115,12 @@ void uartEnable(){
  ********************************************************/
 void ADC0Enable(){
     ADCSequenceConfigure(ADC0_BASE, 1, ADC_TRIGGER_PROCESSOR, 0);
-    ADCSequenceStepConfigure(ADC0_BASE, 1, 0, ADC_CTL_CH5);
-    ADCSequenceStepConfigure(ADC0_BASE, 1, 1, ADC_CTL_CH5);
-    ADCSequenceStepConfigure(ADC0_BASE, 1, 2, ADC_CTL_CH5);
-    ADCSequenceStepConfigure(ADC0_BASE,1,3,ADC_CTL_CH5|ADC_CTL_IE|ADC_CTL_END);
+    ADCSequenceStepConfigure(ADC0_BASE, 1, 0, ADC_CTL_CH1);
+    ADCSequenceStepConfigure(ADC0_BASE, 1, 1, ADC_CTL_CH1);
+    ADCSequenceStepConfigure(ADC0_BASE, 1, 2, ADC_CTL_CH1);
+    ADCSequenceStepConfigure(ADC0_BASE,1,3,ADC_CTL_CH1|ADC_CTL_IE|ADC_CTL_END);
     ADCSequenceEnable(ADC0_BASE, 1);
-    GPIOPinTypeADC(GPIO_PORTD_BASE, GPIO_PIN_2);
+    GPIOPinTypeADC(GPIO_PORTE_BASE, GPIO_PIN_2);
 }
 /*************************************************************
  * This function is used to read the value from ADC
