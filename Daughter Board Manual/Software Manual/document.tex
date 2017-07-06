@@ -97,77 +97,14 @@
 	\tableofcontents
 	\singlespacing
 	\newpage 
-	\section{\Huge\textbf{Introduction}}
-	Tiva Daughter board for Fire Bird V will help you gain exposure to the world of robotics and embedded systems with ARM Cortex M4. The board is designed with Open Source Philosophy in software and hardware design ,you will be able to create and contribute to complex applications that run on this platform, helping you	acquire expertise as you spend more time with them.
-	\subsection{\textbf{Safety precautions:}}
-	\begin{itemize}
 
-	\item  Robot’s electronics is static sensitive. Use robot in static free environment.
-	\item Read the assembling and operating instructions before working with the robot.
-	\item If robot’s battery low buzzer starts beeping, immediately charge the batteries.
-	\item To prevent fire hazard, do not expose the equipment to rain or moisture.
-	\item Refrain from dismantling the unit or any of its accessories once robot is assembled.
-	\item Charge the NiMH battery only with the charger provided on the robot.
-	\item Never allow NiMH battery to deep discharge.
-	\item Mount all the components with correct polarity.
-	\item Keep wheels away from long hair or fur.
-	\item Keep the robot away from the wet areas. Contact with water will damage the robot.
-	\item To avoid risk of fall, keep your robot in a stable position.
-	\item Do not attach any connectors while robot is powered ON.
-	\item Never leave the robot powered ON when it is not in use.
-	\item Disconnect the battery charger after charging the robot. 
-\end{itemize}
-	\subsection{\textbf{Inappropriate Operation:}}
-	Inappropriate operation can damage your robot. Inappropriate operation includes, but is not
-	limited to:
-	\begin{itemize}
-	\item Dropping the robot, running it off an edge, or otherwise operating it in irresponsible
-	manner.
-	\item Interfacing new hardware without considering compatibility.
-	\item Overloading the robot above its payload capacity.
-	\item Exposing the robot to wet environments.
-	\item Continuing to run the robot after hair, yarn, string, or any other item is entangled in the
-	robot’s axles or wheels.
-	\item All other forms of inappropriate operations.
-	\item Using robot in areas prone to static electricity.
-	\item Read carefully paragraphs marked with caution symbol.
-	\end{itemize}
-	\section{\Huge\textbf{Tiva Based Daughter Board}}
-		{There are two daughter boards one with the launchpad and other one with the Arm Cortex M4 based uC. Almost all the specification are same unless mentioned otherwise.\\}
-		\subsection{{\huge \textbf{Technical Specification}}\\}
-			{\textbf{Microcontroller:\\}
-			TM4C123gh6pm (ARM architecture based Microcontroller)\\ To know more about the microcontroller please refer to \href{www.ti.com/lit/gpn/tm4c123gh6pm}{datasheet}.\\ \\}
-			{\textbf{Sensors:}\\
-			Three white line sensors (extendable to 7)\\
-			Five Sharp GP2Y0A02YK IR range sensor (One in default configuration)\\
-			Eight analog IR proximity sensors\\
-			Two position encoders\\\\} 
-			\textbf{Indicators:\\}
-			{2 x 16 Characters LCD\\
-			Buzzer\\\\}
-			\textbf{Communication:\\}
-			{USB Communication\\
-			Wireless ZigBee Communication (2.4GHZ) (if XBee wireless module is installed)\\
-			Bluetooth communication(Can be interfaced on external UART0 available on the board)\\
-			Simplex infrared communication (From infrared remote to robot)\\
-			I2C Communication \\\\}
-			\textbf{Battery Life:\\}
-			{2 Hours, while motors are operational at 75\% of time\\\\}
-			\textbf{Locomotion:\\}
-			{Two DC geared motors in differential drive configuration and caster wheel at front as support\\
-			Top Speed: 24 cm / second\\
-			Wheel Diameter: 51mm\\
-			Position encoder: 30 pulses per revolution\\
-			Position encoder resolution: 5.44 mm\\
-			\\
-			\\
-			\\
-			\\
-			\\}
-		%\subsection{}%start with the functionality
 		\newpage
 		\section{Software Manual}
 		
+		
+%		\subsection{Programming the bot}
+%			The uC based board does not have an onboard programmer. So the JTAG pins tapped from a functional TIVA launchpad is connected to the JTAG headers present on the Daughter board. These connections are shown in the figure
+			
 		\subsection{\textbf{Simple I/O Operation}}
 			{In this section, we will learn how to initialize GPIO pins in TM4C123G and use them for simple input-output operations. The code for TIVA is written in C99 programming standards with Hungarian standard for naming variables. }
 			\subsubsection{\textbf{Header Files}}
@@ -192,12 +129,19 @@
 				{The 16MHz crystal drives the 400MHz PLL. There is default /2 divider in the path. We are further dividing this by 5, which means that the 400MHz PLL is divided by a total factor of 10. Hence the System Clock is set at 40MHz.\\
 				Refer to the datasheet to configure the clock at different frequencies.} 	
 			\subsubsection{\textbf{GPIO Configuration}}
+				\begin{itemize}
+				\item \textbf{Output} \\
 				{The GPIO pins present in TM4C123G can be configured as input, output and interrupt. The clock of TM4C123G has to enabled for a port before using it as an input or output. This can be done by the following line of code.
 				\begin{lstlisting}[style=CStyle]
 					SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB)  \end{lstlisting}
 				In this case, clock is enabled for port B. After enabling the clock, we have to define the status of the pin. Consider an example where pin B6 should be defined as an output pin. This can be done by the following statement.
 				\begin{lstlisting}[style=CStyle]
 				GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE, GPIO_PIN_6)  \end{lstlisting}
+				
+				Now, let us write a value into the pin B6 which is configured as an output pin. The following lines of code describe the same. In this code logic 1 is written to the pin.
+				\begin{lstlisting}[style=CStyle]
+				GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_6, 0x40) \end{lstlisting}
+				\item \textbf{Input}	\\
 				Now we define the same pin(B6) as an input pin. This can be done by the following statement. 
 				\begin{lstlisting}[style=CStyle]
 				GPIOPinTypeGPIOInput(GPIO_PORTB_BASE, GPIO_PIN_6)  \end{lstlisting}
@@ -205,7 +149,12 @@
 								\begin{lstlisting}[style=CStyle]
 				GPIOPadConfigSet(GPIO_PORTB_BASE,GPIO_PIN_6,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU)  \end{lstlisting}
 				The internal pull-down resistor can be enabled by replacing WPU(Weak Pull Up) by WPD(Weak Pull Down).
-			}
+				
+				The code to read a value from a pin is given below. The value read has to be stored in a variable. In this case, the variable is test.  
+				\begin{lstlisting}[style=CStyle]
+					test=(GPIOPinRead(GPIO_PORTE_BASE, GPIO_PIN_6)\end{lstlisting}
+				}
+			\end{itemize}		
 		\subsubsection{\textbf{Assignments}}
 			\begin{itemize}
 				\item The buzzer is connected to PF4 in Plug and Play board. Write a code to switch the buzzer on and off alternatively.
