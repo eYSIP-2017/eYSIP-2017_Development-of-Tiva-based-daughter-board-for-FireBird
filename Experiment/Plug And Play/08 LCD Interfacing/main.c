@@ -1,6 +1,6 @@
 /*****************************************************************************************
  Written by: Ayush Gaurav And Nagesh K.
- From eRTS Lab, CSE Department, IIT Bombay.
+ From ERTS Lab, CSE Department, IIT Bombay.
 
  Date: 16th June 2017
 

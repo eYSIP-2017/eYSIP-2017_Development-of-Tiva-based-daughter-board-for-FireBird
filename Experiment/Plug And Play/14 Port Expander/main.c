@@ -1,14 +1,14 @@
 /*****************************************************************************************
  Written by: Ayush Gaurav And Nagesh K.
- From eRTS Lab, CSE Department, IIT Bombay.
+ From ERTS Lab, CSE Department, IIT Bombay.
 
  Date: 24th June 2017
 
- In this experiment demonstrate USB to Serial Communication.
+ In this experiment demonstrate PortExapnder.
 
  Concepts covered:  Port Expander and I2C
 
-UART Connection: I1C1.
+I2C Connections: I2C1.
 I2C1SCL-------->SCL on Port Expander.
 I2C1SDA-------->SDA on Port Expander.
 
@@ -50,7 +50,6 @@ int main(void) {
     portExpanderIO(0x01,0x00);
     portExpanderSetOutput(0x01,0x00);
     portExpanderpullup(0x00,0x0f);
-    portExpanderInterruptEnableAnyChange(0x00,0xff);
     while(1){
     }
 }

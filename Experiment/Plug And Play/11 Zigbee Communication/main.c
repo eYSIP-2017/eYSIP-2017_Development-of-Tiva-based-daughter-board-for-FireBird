@@ -1,10 +1,10 @@
 /*****************************************************************************************
  Written by: Ayush Gaurav And Nagesh K.
- From eRTS Lab, CSE Department, IIT Bombay.
+ From ERTS Lab, CSE Department, IIT Bombay.
 
  Date: 24th June 2017
 
- In this experiment demonstrate USB to Serial Communication.
+ In this experiment demonstrate Wireless Serial Communication.
 
  Concepts covered:  UART and its Interrupt
 

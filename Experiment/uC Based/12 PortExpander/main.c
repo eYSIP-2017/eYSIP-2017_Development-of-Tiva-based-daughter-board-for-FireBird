@@ -1,7 +1,23 @@
-#include <stdarg.h>
+/********************************************************************************
+   Written by: Ayush Gaurav And Nagesh K.
+   From ERTS Lab, CSE Department, IIT Bombay.
+
+   Date: 24th June 2017
+
+   In this experiment demonstrate PortExapnder.
+
+   Concepts covered:  Port Expander and I2C
+
+   I2C Connections: I2C0.
+   I2C1SCL-------->SCL on Port Expander.
+   I2C1SDA-------->SDA on Port Expander.
+
+ Note: Make sure that in the configuration options following settings are
+ done for proper operation of the code.
+ ******************************************************************************/
+ #include <stdarg.h>
 #include <stdbool.h>
 #include <stdint.h>
-#include "inc/hw_i2c.h"
 #include "inc/hw_memmap.h"
 #include "inc/hw_types.h"
 #include "inc/hw_gpio.h"
@@ -37,17 +53,33 @@ int main(void) {
     while(1){
     }
 }
+/***************************************************************************************
+ * This function is used to setup Clock frequency of the controller
+ * It can be changed through codes
+ * In this we have set frequency as 40Mhz
+ * Frequency is set by SYSDIV which can be found in data sheet for different frequencies
+ ***************************************************************************************/
 void setupCLK(){
     SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
 }
+/*******************************
+ * Enabling System Peripherals
+ * PortC in this case
+ ******************************/
 void peripheralEnable(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
 }
+/************************************************
+ * Making Pin Port C7 as input with weak pull up
+ ************************************************/
 void gpioEnable(){
     GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE, GPIO_PIN_7);;
     GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_7);
     GPIOPadConfigSet(GPIO_PORTC_BASE ,GPIO_PIN_7,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);
 }
+/****************************************
+* This function is used to enable I2C0
+*****************************************/
 void InitI2C0(void){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C0);
     SysCtlPeripheralReset(SYSCTL_PERIPH_I2C0);
@@ -65,6 +97,9 @@ void InitI2C0(void){
     HWREG(I2C0_BASE + I2C_O_FIFOCTL) = 80008000;
     I2CSend(0x20,2,0x0A,1<<6);
 }
+/***********************************************************************
+ * This function is used to send n number of data on serial Data line
+ ***********************************************************************/
 void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...)
 {
     // Tell the master module what address it will place on the bus when
@@ -130,7 +165,9 @@ void I2CSend(uint8_t slave_addr, uint8_t num_of_args, ...)
         va_end(vargs);
     }
 }
-//sends an array of data via I2C to the specified slave
+/***********************************************************************
+* This function is used to send string data on serial Data line
+***********************************************************************/
 void I2CSendString(uint32_t slave_addr, char array[])
 {
     // Tell the master module what address it will place on the bus when
@@ -188,7 +225,9 @@ void I2CSendString(uint32_t slave_addr, char array[])
         while(I2CMasterBusy(I2C0_BASE));
     }
 }
-//read specified register on slave device
+/***********************************************************************
+ * This function is used to receive 1 data on serial Data line
+ ***********************************************************************/
 uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg)
 {
     //specify that we are writing (a register address) to the
@@ -217,15 +256,27 @@ uint32_t I2CReceive(uint32_t slave_addr, uint8_t reg)
     //return data pulled from the specified register
     return I2CMasterDataGet(I2C0_BASE);
 }
+/***********************************************************************
+ * This function is used to set PORTA or PORTB pins as I/O
+ ***********************************************************************/
 void portExpanderIO(unsigned char port,unsigned char pin){
     I2CSend(0x20,2,port,pin);
 }
+/***********************************************************************
+ * This function is used to give PORTA or PORTB pin output values
+ ***********************************************************************/
 void portExpanderSetOutput(unsigned char port,unsigned char pin){
     I2CSend(0x20,2,port+(0x12),pin);
 }
+/***********************************************************************
+ * This function is used to read PORTA or PORTB pin values
+ ***********************************************************************/
 unsigned char portExpanderReadInput(unsigned char port){
     return(I2CReceive(0x20,(port+12)));
 }
+/***********************************************************************
+ * This function is used to enable interrupt on PORTA or PORTB pin
+ ***********************************************************************/
 void portExpanderInterruptEnableAnyChange(unsigned char port,unsigned char pin){
     portExpanderIO(port,pin);
     I2CSend(0x20,2,(0x04)+port,pin);
@@ -236,6 +287,9 @@ void portExpanderInterruptEnableAnyChange(unsigned char port,unsigned char pin){
     GPIOIntTypeSet(GPIO_PORTC_BASE,GPIO_PIN_7,GPIO_FALLING_EDGE);             // Configure PF4 for falling edge trigger
     GPIOIntEnable(GPIO_PORTC_BASE,GPIO_PIN_7);
 }
+/**************************************
+ * Pin change interrupt service routine
+ **************************************/
 void portExpanderInterruptHandler(){
     if(GPIOIntStatus(GPIO_PORTC_BASE, false)&GPIO_PIN_7){
         if(I2CReceive(0x20,0x0e)&0x01==0x01){
@@ -246,6 +300,9 @@ void portExpanderInterruptHandler(){
         GPIOIntClear(GPIO_PORTC_BASE,GPIO_PIN_7);
     }
 }
+/***********************************************************************
+ * This function is used to give external 100K pull toPORTA or PORTB pin
+ ***********************************************************************/
 void portExpanderpullup(unsigned char port,unsigned char pin){
     I2CSend(0x20,2,(0x0C)+port,pin);
 }

@@ -1,5 +1,8 @@
 /********************************************************************************
+ Written by: Ayush Gaurav And Nagesh K.
+ From ERTS Lab, CSE Department, IIT Bombay.
 
+ Date: 16th June 2017
 
  This experiment demonstrates the simple I/O operations.
  This example is only for plug and play board, but this should not discourage

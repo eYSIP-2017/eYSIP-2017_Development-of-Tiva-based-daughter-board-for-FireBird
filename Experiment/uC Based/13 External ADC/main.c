@@ -1,6 +1,6 @@
 /*****************************************************************************************
  Written by: Ayush Gaurav And Nagesh K.
- From eRTS Lab, CSE Department, IIT Bombay.
+ From ERTS Lab, CSE Department, IIT Bombay.
 
  Date: 24th June 2017
 
@@ -8,7 +8,7 @@
 
  Concepts covered:  External ADC and I2C
 
-UART Connection: I1C1.
+I2C Connection: I2C0.
 I2C0SCL-------->SCL on external adc.
 I2C0SDA-------->SDA on external adc.
 
@@ -48,41 +48,12 @@ int main(void) {
     uartEnable();
     tranString("Ayush",' ');
     InitI2C0();
-    //setupExternalADC();
-    SysCtlDelay((5*SysCtlClockGet())/300);
-        while(I2CReceive(0x1D,0x0C)&(0x01));
-        //I2CSend(0x1D,2,0x0A,0x01);
-        I2CSend(0x1D,2,0x0B,0x03);
-        //I2CSend(0x1D,2,0x00,0x00);
-        I2CSend(0x1D,2,0x07,0x01);
-        I2CSend(0x1D,2,0x08,0x00);
-        //I2CSend(0x1D,2,0x03,0x00);
-        I2CSend(0x1D,3,0x2A,0x05);
-        I2CSend(0x1D,3,0x2B,0x00);
-        I2CSend(0x1D,3,0x2C,0x05);
-        I2CSend(0x1D,3,0x2D,0x00);
-        I2CSend(0x1D,3,0x2E,0x05);
-        I2CSend(0x1D,3,0x2F,0x00);
-        I2CSend(0x1D,3,0x30,0x05);
-        I2CSend(0x1D,3,0x31,0x00);
-        I2CSend(0x1D,3,0x32,0x05);
-        I2CSend(0x1D,3,0x33,0x00);
-        I2CSend(0x1D,3,0x34,0x05);
-        I2CSend(0x1D,3,0x35,0x00);
-        I2CSend(0x1D,3,0x36,0x05);
-        I2CSend(0x1D,3,0x37,0x00);
-        I2CSend(0x1D,3,0x38,0x05);
-        I2CSend(0x1D,3,0x39,0x00);
-        I2CSend(0x1D,2,0x00,0x01);
-
-    tranString("Gaurav",' ');
-    uartInteger(123,' ');
+    setupExternalADC();
     uint16_t val0=0;
+
     while(1){
         val0=readExternalADC(5);
         uartInteger(readExternalADC(0),' ');
-
-
         SysCtlDelay((SysCtlClockGet())/3);
     }
 

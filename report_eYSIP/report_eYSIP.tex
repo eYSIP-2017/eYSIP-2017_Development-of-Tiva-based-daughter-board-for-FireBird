@@ -149,24 +149,7 @@ The project was divided in many small tasks which were to be completed in given 
 	Pins.The interrupts on each pin can also be monitored. To read more about it, download the datasheet
 	from here.The schematic of the connection is shown below.Keep in mind that I2C SCL and SDA have
 	already been pulled up using 10K resistor.\href{./datasheet/MCP23017.pdf}{ Datasheet} of the port expander can be fount here. 
-	
-	
-	\item Serial Communication:Fire Bird V's main board has USB port socket. Microcontroller accesses USB port via main board socket.
-	All its pins are connected to the microcontroller adapter board via main board's socket connector.FT232
-	is a USB to TTL level serial converter. It is used for adding USB connectivity to the microcontroller
-	adapter board. With onboard USB circuit Fire Bird V can communicate serially with the PC through
-	USB port without the use of any external USB to Serial converter. Microcontroller socket uses USB port
-	from the main board. Data transmission and reception is indicated suing TX and RX LEDs which are
-	located near the FT232 IC. This IC is only on the uC based board. Plug and play board has its own usb
-	port on TIVA launcpad. The schematic of ft232 is shown below.
-	
-	
-	\item External Adc It has already been mentioned that adc channels on the microcontroller is limited to 12 while rebird has
-	22 sensors available. We have interfaced an external ADC which is also I2C compatible. It has 8 channel
-	with 12 bit resolution.To read more about it, download the datasheet from here.The schematic of the
-	connection is shown below.Keep in mind that I2C SCL and SDA have already been pulled up using 10K
-	
-
+	\item Serial Communication
 	\end{enumerate} %\href[page=5]{./datasheet/MPU-9150.pdf}{Datasheet, page 5}, \href{http://www.amazon.in}{Vendor link}, 
   \item Connection diagram
 \end{itemize}
@@ -176,27 +159,6 @@ The project was divided in many small tasks which were to be completed in given 
   \item Code Composer Studio
   \item Detail of software: version, 7.1.0  \href{http://processors.wiki.ti.com/index.php/Download_CCS}{download link}, 
   \item Installation steps
-  	{After the installer has started follow the steps mentioned below:\\
-  	\begin{enumerate}
-  		\item Accept the Software License Agreement and click Next.\\
-  		{\centering
-  			\includegraphics[width=6cm, height=6cm]{CCSInstall1}}
-  		\item Select the destination folder and click next.\\
-  		{\centering
-  			\includegraphics[width=6cm, height=6cm]{CCSInstall2}}
-  		\item Select the processors that your CCS installation will support. You
-  		must select "TM4C12X Arm Cortex M4". You can select other architectures, but the installation time and size will increase.\\{\centering
-  			\includegraphics[width=6cm, height=6cm]{CCSInstall3}}
-  		\item Select debug probes and click finish \\
-  		{\centering
-  			\includegraphics[width=6cm, height=6cm]{CCSInstall4}}
-  		\item The installer process	should take 15 - 30 minutes, depending on the speed of your connection. The offline
-  		installation should take 10 to 15 minutes. When the installation is complete, uncheck the
-  		“Launch Code Composer Studio v7” checkbox and then click Finish.There are several additional tools that require installation during the CCS install process. Click “Yes” or “OK” to proceed when these appear. \\
-  		\item Install TivaWare for C Series (Complete). Download and install the latest full version of TivaWare from: \href{http://www.ti.com/tool/sw-tm4c}{TivaWare}. The filename is SW-TM4C-x.x.exe . This
-  		workshop was built using version 1.1. Your version may be a later one. If at all possible,
-  		please install TivaWare into the default location.
-  \end{enumerate}}
 \end{itemize}
 
 \section{Assembly of hardware}
