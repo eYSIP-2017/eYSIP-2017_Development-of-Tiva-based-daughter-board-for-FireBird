@@ -1,6 +1,6 @@
 /*****************************************************************************************
  Written by: Ayush Gaurav And Nagesh K.
- From ERTS Lab, CSE Department, IIT Bombay.
+ From eRTS Lab, CSE Department, IIT Bombay.
 
  Date: 16th June 2017
 
@@ -189,7 +189,7 @@ unsigned int Sharp_GP2D12_estimation(uint16_t adc_reading){
     float distance;
     unsigned int distanceInt;
     adc_reading = adc_reading >> 2;
-    distance = (6787/(adc_reading-3)-4)*1.45;
+    distance = (6787/(adc_reading-3)-4)*0.725;
     distanceInt = (int)distance;
     if(distanceInt>80)
     {
