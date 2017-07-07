@@ -47,15 +47,15 @@
 	language=C
 }
 
-\title{\Huge{\textbf{Tiva Based Daughter Board for Firebird V \\ Hardware And Software Manual.}}}
+\title{\Huge{\textbf{Tiva Based Daughter Board for Firebird V \\Software Manual}}}
 
-\author{\textbf{ eRTS Lab IIT Bombay}}
+\author{\textbf{ ERTS Lab IIT Bombay}}
 
 \lhead{ }
-\rhead{Manual for Tiva Based Daughter Board for Firebird V.}
-\lfoot{eRTS Lab IIT Bombay}
+\rhead{Manual for Tiva Based Daughter Board for Firebird V}
+\lfoot{ERTS Lab IIT Bombay}
 
-\renewcommand*\contentsname{\Huge \textbf{Table Of Content}}
+\renewcommand*\contentsname{\textbf{Table Of Content}}
 
 \setcounter{secnumdepth}{4}
 
@@ -88,7 +88,7 @@
 			\item Saurav Shandilya, Team e-Yantra
 	\end{enumerate}}
 	\newpage
-	\section{\Huge{\textbf{Notice}}}
+	\section{\textbf{Notice}}
 	{\large The contents of this manual are subject to change without notice. All efforts have been made to
 	ensure the accuracy of contents in this manual. However, should any errors be detected, e-yantra welcomes your corrections. You can send us your queries / suggestions at
 	\href{mailto:helpdesk@eyantra.org}{Contact Us}\\}
@@ -102,8 +102,17 @@
 		\section{Software Manual}
 		
 		
-%		\subsection{Programming the bot}
-%			The uC based board does not have an onboard programmer. So the JTAG pins tapped from a functional TIVA launchpad is connected to the JTAG headers present on the Daughter board. These connections are shown in the figure
+		\subsection{Programming the bot}
+		The uC based board does not have an onboard programmer. So the JTAG pins tapped from a functional TIVA launchpad is connected to the JTAG headers present on the Daughter board. These connections are shown in the Figure1 and Figure2\\
+		\includegraphics[width=10cm, height=6cm]{Pro}
+		\includegraphics[width=6cm, height=4cm]{TI}\\
+		
+		\hspace{4cm}
+		Figure1
+		\hspace{6cm}
+		Figure2\\
+		{The TCK, TMS, TDI and TDO pins of the Daughter Board should be connected to the corresponding TCK, TMS, TDI and TDO pins of the TIVA launchpad.}			
+			
 			
 		\subsection{\textbf{Simple I/O Operation}}
 			{In this section, we will learn how to initialize GPIO pins in TM4C123G and use them for simple input-output operations. The code for TIVA is written in C99 programming standards with Hungarian standard for naming variables. }

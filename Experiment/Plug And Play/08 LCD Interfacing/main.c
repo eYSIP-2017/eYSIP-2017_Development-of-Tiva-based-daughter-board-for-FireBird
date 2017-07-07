@@ -102,9 +102,9 @@ void peripheralEnable(){
  * Configuring LCD Pins as Output
  *************************************/
 void configIOPin(){
-    HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
-    HWREG(GPIO_PORTD_BASE + GPIO_O_CR) |= (1<<7);
-    HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = 0;
+    HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;   //getting the key
+    HWREG(GPIO_PORTD_BASE + GPIO_O_CR) |= (1<<7);   //unlocking the pin
+    HWREG(GPIO_PORTD_BASE + GPIO_O_LOCK) = 0;   //relocking the pin
     GPIOPinTypeGPIOOutput(GPIO_PORTD_BASE,EN|RS);
     GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE,D4|D5|D6|D7);
 
@@ -140,15 +140,15 @@ void lcdCommand(unsigned char command){
     GPIOPinWrite(lcdPORT,RS|EN,0);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
     _delay_us(100);
-    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command>>2));
+    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command>>2));  //Putting first 4 bits in data lines of LCD
     _delay_ms(1);
-    GPIOPinWrite(lcdPORT,EN|RS,0x80);
+    GPIOPinWrite(lcdPORT,EN|RS,0x80);   //setting enable pin for a period of 1ms
     _delay_us(100);
     GPIOPinWrite(lcdPORT,EN,0);
     _delay_us(100);
-    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command<<2));
+    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(command<<2));  //Putting last 4 bits in data lines of LCD
     _delay_ms(1);
-    GPIOPinWrite(lcdPORT,EN|RS,0x80);
+    GPIOPinWrite(lcdPORT,EN|RS,0x80);   //setting enable pin for a period of 1ms
     _delay_us(100);
     GPIOPinWrite(lcdPORT,EN,0);
     _delay_us(100);
@@ -162,15 +162,15 @@ void lcdData(unsigned char data){
     lcdCheck();
     GPIOPinWrite(lcdPORT,RS|EN,0);
     GPIOPinWrite(lcdDDR,D4|D5|D6|D7,0);
-    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(data>>2));
+    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(data>>2));     //Putting the first 4 bits in data lines of LCD
     _delay_us(100);
-    GPIOPinWrite(lcdPORT,EN|RS,0xc0);
+    GPIOPinWrite(lcdPORT,EN|RS,0xc0);   //setting enable pin for a period of 1ms
     _delay_ms(1);
     GPIOPinWrite(lcdPORT,EN,0);
     _delay_us(100);
-    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(data<<2));
+    GPIOPinWrite(lcdDDR,D4|D5|D6|D7,(data<<2)); //putting last 4 bits in data lines of lCD
     _delay_us(100);
-    GPIOPinWrite(lcdPORT,EN|RS,0xc0);
+    GPIOPinWrite(lcdPORT,EN|RS,0xc0);   //setting enable pin for a period of 1ms
     _delay_us(100);
     GPIOPinWrite(lcdPORT,EN,0);
     cursorPositionCheck=(cursorPositionCheck+1)%32;
